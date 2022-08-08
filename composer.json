@@ -48,6 +48,10 @@
 				"config/",
 				"public/",
 				"src/"
+			],
+			"CodeKandis\\MinecraftManager\\Configurations\\Plain\\": [
+				"config/",
+				"src/Configurations/Plain"
 			]
 		}
 	},
