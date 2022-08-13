@@ -7,6 +7,6 @@ import DomDocument from '../library/Dom/DomDocument.js';
 DomDocument.load(
 	( event ) =>
 	{
-		DebugMode.disable();
+		DebugMode.enable();
 	}
 );
