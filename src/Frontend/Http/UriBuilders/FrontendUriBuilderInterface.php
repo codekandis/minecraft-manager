@@ -8,4 +8,15 @@ namespace CodeKandis\MinecraftManager\Frontend\Http\UriBuilders;
  */
 interface FrontendUriBuilderInterface
 {
+	/**
+	 * Builds the URI of the index.
+	 * @return string The URI of the index.
+	 */
+	public function buildIndexUri(): string;
+
+	/**
+	 * Builds the URI of the signout.
+	 * @return string The URI of the signout.
+	 */
+	public function buildSignoutUri(): string;
 }

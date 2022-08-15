@@ -1,0 +1,40 @@
+<?php declare( strict_types = 1 );
+namespace CodeKandis\MinecraftManager\Frontend\Actions\Get;
+
+use CodeKandis\Authentication\CommonSessionAuthenticator;
+use CodeKandis\MinecraftManager\Configurations\FrontendConfigurationRegistry;
+use CodeKandis\MinecraftManager\Frontend\Http\UriBuilders\FrontendUriBuilder;
+use CodeKandis\Session\SessionHandler;
+use CodeKandis\Tiphy\Actions\AbstractAction;
+use CodeKandis\Tiphy\Http\Responses\RedirectResponder;
+use CodeKandis\Tiphy\Http\Responses\StatusCodes;
+
+/**
+ * Represents the action to sign out a user.
+ * @package codekandis/minecraft-manager
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+class SignoutAction extends AbstractAction
+{
+	/**
+	 * {@inheritDoc}
+	 */
+	public function execute(): void
+	{
+		$configurationRegistry = FrontendConfigurationRegistry::_();
+
+		$sessionsConfiguration = $configurationRegistry->getSessionsConfiguration();
+		$sessionHandler        = new SessionHandler( $sessionsConfiguration );
+
+		$sessionAuthenticatorConfiguration = $configurationRegistry->getSessionAuthenticatorConfiguration();
+		( new CommonSessionAuthenticator( $sessionAuthenticatorConfiguration, $sessionHandler ) )
+			->revokePermission();
+
+		$uriBuilderConfiguration = $configurationRegistry->getUriBuilderConfiguration();
+		$uriBuilder              = new FrontendUriBuilder( $uriBuilderConfiguration );
+		$indexUri                = $uriBuilder->buildIndexUri();
+
+		( new RedirectResponder( $indexUri, StatusCodes::FOUND ) )
+			->respond();
+	}
+}
