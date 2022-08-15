@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+#subwayRailsMapper > form fieldset {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#subwayRailsMapper > form fieldset label {
+	display: inline-block;
+}
+
+#subwayRailsMapper > form fieldset input,
+#subwayRailsMapper > form fieldset select {
+	width: 150px;
+	height: 27px;
+}
+
+#subwayRailsMapper-initialValues fieldset label,
+#subwayRailsMapper-currentValues fieldset label {
+	width: 80px;
+}
+
+#subwayRailsMapper-currentValues fieldset input[data-value-is-valid='TRUE'] {
+	box-shadow: 0 0 3px var(--codekandis-color-green);
+	border-color: var(--codekandis-color-green);
+}
+
+#subwayRailsMapper-calculatedValues fieldset label {
+	width: 30px;
+}
+
+#subwayRailsMapper-calculatedValues fieldset label[for="subwayRailsMapper-calculatedPositionXN"] {
+	margin-left: 100px
+}
+
+#subwayRailsMapper-calculatedValues fieldset label[for="subwayRailsMapper-calculatedPositionYP"] {
+	margin-left: 200px;
+}
+
+#subwayRailsMapper-calculatedPositionXN,
+#subwayRailsMapper-calculatedPositionYP,
+#subwayRailsMapper-calculatedPositionZN {
+	margin-right: 20px;
+}

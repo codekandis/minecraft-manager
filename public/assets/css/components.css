@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import './components/subwayRailsMapper.css';
+
 #applicationComponents form:not(:last-child) {
 	margin-bottom: 3em;
 }

@@ -19,7 +19,9 @@ require_once __DIR__ . '/Common/htmlHeader.phtml';
 		<div id="applicationComponents">
 			<div data-control-type="TABCONTROL">
 				<nav data-control-type="TABCONTROL_HEADERS"></nav>
-				<div data-control-type="TABCONTROL_PAGES"></div>
+				<div data-control-type="TABCONTROL_PAGES">
+					<?php require_once __DIR__ . '/Components/subwayRailsMapper.phtml'; ?>
+				</div>
 			</div>
 		</div>
 	</div>

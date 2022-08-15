@@ -1,0 +1,56 @@
+<?php declare( strict_types = 1 );
+namespace CodeKandis\MinecraftManager\Frontend\Templates\Plain\Components;
+?>
+<div data-control-type="TABPAGE">
+	<label data-control-type="TABPAGE_HEADER" for="tabPageSubwayRailsMapper">Subway Rails Mapper</label>
+	<input data-control-type="TABPAGE_ACTIVATOR" id="tabPageSubwayRailsMapper" name="applicationComponent" type="radio"/>
+	<div data-control-type="TABPAGE_CONTENT">
+		<div id="subwayRailsMapper">
+			<form id="subwayRailsMapper-initialValues">
+				<h2>Initial Values</h2>
+				<fieldset>
+					<label for="subwayRailsMapper-chunksize">Chunksize</label><input id="subwayRailsMapper-chunksize" name="subwayRailsMapper-chunksize" type="text" required/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayRailsMapper-startPositionX">X</label><input id="subwayRailsMapper-startPositionX" name="subwayRailsMapper-startPositionX" type="text" required/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayRailsMapper-startPositionY">Y</label><input id="subwayRailsMapper-startPositionY" name="subwayRailsMapper-startPositionY" type="text" required/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayRailsMapper-startPositionZ">Z</label><input id="subwayRailsMapper-startPositionZ" name="subwayRailsMapper-startPositionZ" type="text" required/>
+				</fieldset>
+			</form>
+			<form id="subwayRailsMapper-currentValues">
+				<h2>Current Values</h2>
+				<fieldset>
+					<label for="subwayRailsMapper-currentPositionX">X</label><input id="subwayRailsMapper-currentPositionX" name="subwayRailsMapper-currentPositionX" type="text" required/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayRailsMapper-currentPositionY">Y</label><input id="subwayRailsMapper-currentPositionY" name="subwayRailsMapper-currentPositionY" type="text" required/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayRailsMapper-currentPositionZ">Z</label><input id="subwayRailsMapper-currentPositionZ" name="subwayRailsMapper-currentPositionZ" type="text" required/>
+				</fieldset>
+			</form>
+			<form id="subwayRailsMapper-calculatedValues">
+				<h2>Calculated Values</h2>
+				<fieldset>
+					<label for="subwayRailsMapper-calculatedPositionZP">ZP</label><input id="subwayRailsMapper-calculatedPositionZP" type="text" readonly/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayRailsMapper-calculatedPositionYP">YP</label><input id="subwayRailsMapper-calculatedPositionYP" type="text" readonly/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayRailsMapper-calculatedPositionXN">XN</label><input id="subwayRailsMapper-calculatedPositionXN" type="text" readonly/><label for="subwayRailsMapper-calculatedPositionXP">XP</label><input id="subwayRailsMapper-calculatedPositionXP" type="text" readonly/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayRailsMapper-calculatedPositionYN">YN</label><input id="subwayRailsMapper-calculatedPositionYN" type="text" readonly/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayRailsMapper-calculatedPositionZN">ZN</label><input id="subwayRailsMapper-calculatedPositionZN" type="text" readonly/>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
