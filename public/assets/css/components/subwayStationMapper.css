@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+:root {
+	--subway-station-mapper-calculated-values-base-top-position: 340px;
+	--subway-station-mapper-calculated-values-additional-top-offset: 175px;
+	--subway-station-mapper-calculated-values-base-left-position: 220px;
+}
+
+#subwayStationMapper > form fieldset {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#subwayStationMapper > form fieldset label {
+	display: inline-block;
+}
+
+#subwayStationMapper > form fieldset input,
+#subwayStationMapper > form fieldset select {
+	width: 150px;
+	height: 27px;
+}
+
+#subwayStationMapper > form fieldset input {
+	width: 150px;
+}
+
+#subwayStationMapper-initialValues fieldset label {
+	width: 80px;
+}
+
+#subwayStationMapper-calculatedValues {
+	position: relative;
+	width: 100%;
+	height: 800px;
+}
+
+#subwayStationMapper-calculatedValues > section {
+	position: absolute;
+	display: inline-block;
+}
+
+#subwayStationMapper-calculatedValues > section > h3 {
+	display: inline-block;
+	margin-bottom: 0;
+}
+
+#subwayStationMapper-calculatedArrivalBell,
+#subwayStationMapper-calculatedDepartureBell,
+#subwayStationMapper-calculatedValues > section > h3 > span {
+	cursor: pointer;
+}
+
+#subwayStationMapper-calculatedArrivalBell:hover,
+#subwayStationMapper-calculatedDepartureBell:hover,
+#subwayStationMapper-calculatedValues > section > h3 > span:hover {
+	color: var(--codekandis-color-orange);
+}
+
+#subwayStationMapper-calculatedArrivalBell,
+#subwayStationMapper-calculatedDepartureBell {
+	width: 420px !important;
+}
+
+#subwayStationMapper-calculatedArrivalBell:hover,
+#subwayStationMapper-calculatedDepartureBell:hover {
+	border-color: var(--codekandis-color-orange);
+}
+
+#subwayStationMapper-calculatedValues > fieldset > i,
+#subwayStationMapper-calculatedValues > section > h3 > i {
+	margin-left: 10px;
+}
+
+#subwayStationMapper-calculatedValues > section > fieldset > label {
+	width: 25px;
+}
+
+#subwayStationMapper-calculatedValues > fieldset > label {
+	width: 120px;
+}
+
+#subwayStationMapper-calculatedOffsetsHead1 {
+	top: var(--subway-station-mapper-calculated-values-base-top-position);
+}
+
+#subwayStationMapper-calculatedOffsetsHead2 {
+	top: var(--subway-station-mapper-calculated-values-base-top-position);
+	left: var(--subway-station-mapper-calculated-values-base-left-position);
+}
+
+#subwayStationMapper-calculatedOffsetsConcourse {
+	top: var(--subway-station-mapper-calculated-values-base-top-position);
+	left: calc(var(--subway-station-mapper-calculated-values-base-left-position) * 2);
+}
+
+#subwayStationMapper-calculatedOffsetsStairsPort {
+	top: var(--subway-station-mapper-calculated-values-base-top-position);
+	left: calc(var(--subway-station-mapper-calculated-values-base-left-position) * 3);
+}
+
+#subwayStationMapper-calculatedOffsetsStairs {
+	top: var(--subway-station-mapper-calculated-values-base-top-position);
+	left: calc(var(--subway-station-mapper-calculated-values-base-left-position) * 4);
+}
+
+#subwayStationMapper-calculatedOffsetsStairsEntrance {
+	top: var(--subway-station-mapper-calculated-values-base-top-position);
+	left: calc(var(--subway-station-mapper-calculated-values-base-left-position) * 5);
+}
+
+#subwayStationMapper-calculatedOffsetsStairwayLeft {
+	top: calc(var(--subway-station-mapper-calculated-values-base-top-position) + var(--subway-station-mapper-calculated-values-additional-top-offset));
+	left: calc(var(--subway-station-mapper-calculated-values-base-left-position) * 3);
+}
+
+#subwayStationMapper-calculatedOffsetsStairwayRight {
+	top: calc(var(--subway-station-mapper-calculated-values-base-top-position) - var(--subway-station-mapper-calculated-values-additional-top-offset));
+	left: calc(var(--subway-station-mapper-calculated-values-base-left-position) * 3);
+}
