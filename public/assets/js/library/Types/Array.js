@@ -1,15 +1,5 @@
 'use strict';
 
-Array.prototype.one = function ( predicate )
-{
-	return this.every(
-		( element ) =>
-		{
-			return predicate( element );
-		}
-	);
-};
-
 Array.prototype.remove = function ( element )
 {
 	const elementIndex = this.indexOf( element );
@@ -20,4 +10,27 @@ Array.prototype.remove = function ( element )
 	}
 
 	this.splice( elementIndex, 1 );
+};
+
+Array.prototype.findLastIndex = function ( predicate )
+{
+	return [ ...this ]
+		.reverse()
+		.findIndex( predicate );
+};
+
+Array.prototype.findFirstOrNull = function ( predicate )
+{
+	const foundElement = this.find( predicate );
+
+	return undefined === foundElement
+		? null
+		: foundElement;
+};
+
+Array.prototype.findLastOrNull = function ( predicate )
+{
+	return [ ...this ]
+		.reverse()
+		.findFirstOrNull( predicate );
 };
