@@ -1,0 +1,31 @@
+<?php declare( strict_types = 1 );
+namespace CodeKandis\MinecraftManager\Frontend\Templates\Plain;
+
+$additionalFollowingLinkedModularJavaScripts = [
+	'/assets/js/application/Pages/IndexPage.js'
+];
+
+$htmlTitle = 'Index';
+require_once __DIR__ . '/Common/htmlHeader.phtml';
+?>
+	<body>
+	<div id="page">
+		<nav class="header">
+			<?php
+			require_once __DIR__ . '/Common/navigation.phtml';
+			?>
+		</nav>
+		<h1><?php echo $htmlTitle; ?></h1>
+		<div id="applicationComponents">
+			<div data-control-type="TABCONTROL">
+				<nav data-control-type="TABCONTROL_HEADERS"></nav>
+				<div data-control-type="TABCONTROL_PAGES">
+					<?php require_once __DIR__ . '/Components/subwayRailsMapper.phtml'; ?>
+					<?php require_once __DIR__ . '/Components/subwayStationMapper.phtml'; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+	</body>
+	<?php
+require_once __DIR__ . '/Common/htmlFooter.phtml';

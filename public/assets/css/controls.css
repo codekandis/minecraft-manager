@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+[data-control-type='TABCONTROL'] > [data-control-type='TABCONTROL_HEADERS'] {
+	font-size: 0;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: var(--codekandis-color-gray);
+}
+
+[data-control-type='TABCONTROL'] > [data-control-type='TABCONTROL_HEADERS'] > [data-control-type='TABPAGE_HEADER'] {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: calc(var(--base-font-size) + 1.2pt);
+	border-top-style: solid;
+	border-top-width: 3px;
+	border-top-color: transparent;
+	cursor: pointer;
+}
+
+[data-control-type='TABCONTROL'] > [data-control-type='TABCONTROL_HEADERS'] > [data-control-type='TABPAGE_HEADER']:hover,
+[data-control-type='TABCONTROL'] > [data-control-type='TABCONTROL_HEADERS'] > [data-control-type='TABPAGE_HEADER'][data-is-activated='TRUE'] {
+	border-top-color: var(--codekandis-color-orange);
+}
+
+[data-control-type='TABCONTROL'] > [data-control-type='TABCONTROL_HEADERS'] > [data-control-type='TABPAGE_HEADER'][data-is-activated='TRUE'] {
+	font-weight: bold;
+}
+
+[data-control-type='TABCONTROL'] > [data-control-type='TABCONTROL_PAGES'] > [data-control-type='TABPAGE'] > [data-control-type='TABPAGE_ACTIVATOR'] {
+	display: none;
+}
+
+[data-control-type='TABCONTROL'] > [data-control-type='TABCONTROL_PAGES'] > [data-control-type='TABPAGE'] > [data-control-type='TABPAGE_CONTENT'] {
+	position: relative;
+	display: none;
+}
+
+[data-control-type='TABCONTROL'] > [data-control-type='TABCONTROL_PAGES'] > [data-control-type='TABPAGE'] > [data-control-type='TABPAGE_ACTIVATOR'] + [data-control-type='TABPAGE_CONTENT'] {
+	display: none;
+}
+
+[data-control-type='TABCONTROL'] > [data-control-type='TABCONTROL_PAGES'] > [data-control-type='TABPAGE'] > [data-control-type='TABPAGE_ACTIVATOR']:checked + [data-control-type='TABPAGE_CONTENT'] {
+	display: block;
+}
+
+[data-control-type='TABCONTROL'] > [data-control-type='TABCONTROL_PAGES'] > [data-control-type='TABPAGE'] > [data-control-type='TABPAGE_CONTENT'] {
+	padding: 20px;
+}
