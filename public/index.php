@@ -2,9 +2,10 @@
 namespace CodeKandis\MinecraftManager;
 
 use CodeKandis\MinecraftManager\Configurations\FrontendConfigurationRegistry;
+use CodeKandis\MinecraftManager\Frontend\Actions\PreDispatchments\AuthenticationPreDispatcher;
 use CodeKandis\SentryClient\SentryClient;
 use CodeKandis\Tiphy\Actions\ActionDispatcher;
-use CodeKandis\TiphySentryClientIntegration\Development\Throwables\Handlers\InternalServerErrorThrowableHandler;
+use CodeKandis\TiphySentryClientIntegration\Throwables\Handlers\InternalServerErrorThrowableHandler;
 use function dirname;
 use function error_reporting;
 use function ini_set;
@@ -28,7 +29,7 @@ $sentryClient->register();
 
 $actionDispatcher = new ActionDispatcher(
 	$configurationRegistry->getRoutesConfiguration(),
-	null,
+	new AuthenticationPreDispatcher(),
 	new InternalServerErrorThrowableHandler( $sentryClient )
 );
 $actionDispatcher->dispatch();
