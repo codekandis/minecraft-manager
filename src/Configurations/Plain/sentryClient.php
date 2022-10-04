@@ -7,7 +7,7 @@ return [
 	'dsn'           => '',
 	'displayErrors' => false,
 	'errorTypes'    => E_ALL,
-	'environment'   => 'development',
-	'release'       => 'dev-development',
+	'environment'   => 'production',
+	'release'       => '0.1.0',
 	'serverName'    => 'minecraft-manager.codekandis'
 ];
