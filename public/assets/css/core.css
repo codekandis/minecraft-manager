@@ -24,19 +24,19 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	color: inherit;
 	line-height: inherit;
 	font-family: inherit;
 	font-size: inherit;
+	color: inherit;
 	cursor: inherit;
 }
 
 body {
 	box-sizing: inherit;
-	color: var(--codekandis-color-darker-gray);
 	line-height: var(--base-line-height);
 	font-family: var(--base-font-family);
 	font-size: var(--base-font-size);
+	color: var(--codekandis-color-darker-gray);
 	cursor: default;
 }
 

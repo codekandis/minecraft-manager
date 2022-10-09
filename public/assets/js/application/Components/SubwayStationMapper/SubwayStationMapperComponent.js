@@ -130,10 +130,10 @@ class SubwayStationMapperComponent extends AbstractComponent
 	_addFormFieldsEventHandlers()
 	{
 		this._attachEventHandlers( FormFieldSelectors.DIRECTION, PropertyNames.DIRECTION );
-		this._attachEventHandlers( FormFieldSelectors.CALCULATED_ROTATION, PropertyNames.CALCULATED_ROTATION );
 		this._attachEventHandlers( FormFieldSelectors.CURRENT_POSITION_X, PropertyNames.CURRENT_POSITION_X );
 		this._attachEventHandlers( FormFieldSelectors.CURRENT_POSITION_Y, PropertyNames.CURRENT_POSITION_Y );
 		this._attachEventHandlers( FormFieldSelectors.CURRENT_POSITION_Z, PropertyNames.CURRENT_POSITION_Z );
+		this._attachEventHandlers( FormFieldSelectors.CALCULATED_ROTATION, PropertyNames.CALCULATED_ROTATION );
 
 		const eventHandlerAdder = ( formFieldSelector ) =>
 		{

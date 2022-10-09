@@ -6,52 +6,7 @@ class PropertyNames extends StaticAbstract
 {
 	static get SUBWAY_STATION_BASE_NAME()
 	{
-		return 'codekandis:subway-station';
-	}
-
-	static get HEAD_1_NAME()
-	{
-		return 'head1Name';
-	}
-
-	static get HEAD_2_NAME()
-	{
-		return 'head2Name';
-	}
-
-	static get CONCOURSE_NAME()
-	{
-		return 'concourseName';
-	}
-
-	static get STAIRS_PORT_NAME()
-	{
-		return 'stairsPortName';
-	}
-
-	static get STAIRS_NAME()
-	{
-		return 'stairsName';
-	}
-
-	static get STAIRS_ENTRANCE_NAME()
-	{
-		return 'stairsEntranceName';
-	}
-
-	static get STAIRWAY_NAME()
-	{
-		return 'stairwayName';
-	}
-
-	static get STAIRWAY_LEFT_NAME()
-	{
-		return 'stairwayLeftName';
-	}
-
-	static get STAIRWAY_RIGHT_NAME()
-	{
-		return 'stairwayRightName';
+		return 'subwayStationBaseName';
 	}
 
 	static get DIRECTION()
@@ -119,6 +74,11 @@ class PropertyNames extends StaticAbstract
 		return 'calculatedDepartureBellZ';
 	}
 
+	static get HEAD_1_NAME()
+	{
+		return 'head1Name';
+	}
+
 	static get CALCULATED_OFFSET_HEAD_1_X()
 	{
 		return 'calculatedOffsetHead1X';
@@ -132,6 +92,11 @@ class PropertyNames extends StaticAbstract
 	static get CALCULATED_OFFSET_HEAD_1_Z()
 	{
 		return 'calculatedOffsetHead1Z';
+	}
+
+	static get HEAD_2_NAME()
+	{
+		return 'head2Name';
 	}
 
 	static get CALCULATED_OFFSET_HEAD_2_X()
@@ -149,6 +114,11 @@ class PropertyNames extends StaticAbstract
 		return 'calculatedOffsetHead2Z';
 	}
 
+	static get CONCOURSE_NAME()
+	{
+		return 'concourseName';
+	}
+
 	static get CALCULATED_OFFSET_CONCOURSE_X()
 	{
 		return 'calculatedOffsetConcourseX';
@@ -162,6 +132,11 @@ class PropertyNames extends StaticAbstract
 	static get CALCULATED_OFFSET_CONCOURSE_Z()
 	{
 		return 'calculatedOffsetConcourseZ';
+	}
+
+	static get STAIRS_PORT_NAME()
+	{
+		return 'stairsPortName';
 	}
 
 	static get CALCULATED_OFFSET_STAIRS_PORT_X()
@@ -179,6 +154,11 @@ class PropertyNames extends StaticAbstract
 		return 'calculatedOffsetStairsPortZ';
 	}
 
+	static get STAIRS_NAME()
+	{
+		return 'stairsName';
+	}
+
 	static get CALCULATED_OFFSET_STAIRS_X()
 	{
 		return 'calculatedOffsetStairsX';
@@ -192,6 +172,11 @@ class PropertyNames extends StaticAbstract
 	static get CALCULATED_OFFSET_STAIRS_Z()
 	{
 		return 'calculatedOffsetStairsZ';
+	}
+
+	static get STAIRS_ENTRANCE_NAME()
+	{
+		return 'stairsEntranceName';
 	}
 
 	static get CALCULATED_OFFSET_STAIRS_ENTRANCE_X()
@@ -209,6 +194,16 @@ class PropertyNames extends StaticAbstract
 		return 'calculatedOffsetStairsEntranceZ';
 	}
 
+	static get STAIRWAY_NAME()
+	{
+		return 'stairwayName';
+	}
+
+	static get STAIRWAY_LEFT_NAME()
+	{
+		return 'stairwayLeftName';
+	}
+
 	static get CALCULATED_OFFSET_STAIRWAY_LEFT_X()
 	{
 		return 'calculatedOffsetStairwayLeftX';
@@ -222,6 +217,11 @@ class PropertyNames extends StaticAbstract
 	static get CALCULATED_OFFSET_STAIRWAY_LEFT_Z()
 	{
 		return 'calculatedOffsetStairwayLeftZ';
+	}
+
+	static get STAIRWAY_RIGHT_NAME()
+	{
+		return 'stairwayRightName';
 	}
 
 	static get CALCULATED_OFFSET_STAIRWAY_RIGHT_X()

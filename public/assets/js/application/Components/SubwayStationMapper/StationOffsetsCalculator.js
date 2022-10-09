@@ -14,7 +14,7 @@ class StationOffsetsCalculator extends Abstract
 			head1:          new Offset( -1, 2, 0 ),
 			head2:          new Offset( 3, 2, -15 ),
 			concourse:      new Offset( 2, 2, -18 ),
-			stairsPort:     new Offset( -3, -2, 1 ),
+			stairsPort:     new Offset( -3, -2, 2 ),
 			stairs:         new Offset( -1, 7, 1 ),
 			stairsEntrance: new Offset( -3, 21, -17 ),
 			stairwayLeft:   new Offset( 11, -2, 4 ),
