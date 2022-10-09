@@ -167,7 +167,11 @@ class StationPositions extends AbstractBindable
 
 	get [ PropertyNames.CALCULATED_ARRIVAL_BELL ]()
 	{
-		return String.format`playsound minecraft:block.bell.use block @a ${ 0 } ${ 1 } ${ 2 } 1.3 2`( this[ '#_' + PropertyNames.CALCULATED_ARRIVAL_BELL_X ], this[ '#_' + PropertyNames.CALCULATED_ARRIVAL_BELL_Y ], this[ '#_' + PropertyNames.CALCULATED_ARRIVAL_BELL_Z ] );
+		return String.format`playsound minecraft:block.bell.use block @a ${ 0 } ${ 1 } ${ 2 } 1.3 2`(
+			this[ '#_' + PropertyNames.CALCULATED_ARRIVAL_BELL_X ],
+			this[ '#_' + PropertyNames.CALCULATED_ARRIVAL_BELL_Y ],
+			this[ '#_' + PropertyNames.CALCULATED_ARRIVAL_BELL_Z ]
+		);
 	}
 
 	get [ PropertyNames.CALCULATED_ARRIVAL_BELL_X ]()
@@ -208,7 +212,11 @@ class StationPositions extends AbstractBindable
 
 	get [ PropertyNames.CALCULATED_DEPARTURE_BELL ]()
 	{
-		return String.format`playsound minecraft:block.bell.use block @a ${ 0 } ${ 1 } ${ 2 } 1.3 2`( this[ '#_' + PropertyNames.CALCULATED_DEPARTURE_BELL_X ], this[ '#_' + PropertyNames.CALCULATED_DEPARTURE_BELL_Y ], this[ '#_' + PropertyNames.CALCULATED_DEPARTURE_BELL_Z ] );
+		return String.format`playsound minecraft:block.bell.use block @a ${ 0 } ${ 1 } ${ 2 } 1.3 2`(
+			this[ '#_' + PropertyNames.CALCULATED_DEPARTURE_BELL_X ],
+			this[ '#_' + PropertyNames.CALCULATED_DEPARTURE_BELL_Y ],
+			this[ '#_' + PropertyNames.CALCULATED_DEPARTURE_BELL_Z ]
+		);
 	}
 
 	get [ PropertyNames.CALCULATED_DEPARTURE_BELL_X ]()

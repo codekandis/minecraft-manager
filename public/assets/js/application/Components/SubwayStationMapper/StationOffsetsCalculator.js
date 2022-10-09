@@ -11,6 +11,8 @@ class StationOffsetsCalculator extends Abstract
 	static get #_OFFSET_PRESETS()
 	{
 		return {
+			arrivalBell:    new Offset( 1, 6, -33 ),
+			departureBell:  new Offset( -10, 6, -52 ),
 			head1:          new Offset( -1, 2, 0 ),
 			head2:          new Offset( 3, 2, -15 ),
 			concourse:      new Offset( 2, 2, -18 ),
@@ -43,8 +45,16 @@ class StationOffsetsCalculator extends Abstract
 			case Directions.NORTH:
 			{
 				calculatedValues.rotation       = 180;
-				calculatedValues.arrivalBell    = new Position( stationPositions[ PropertyNames.CURRENT_POSITION_X ] + 1, stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + 6, stationPositions[ PropertyNames.CURRENT_POSITION_Z ] - 33 );
-				calculatedValues.departureBell  = new Position( stationPositions[ PropertyNames.CURRENT_POSITION_X ] - 10, stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + 6, stationPositions[ PropertyNames.CURRENT_POSITION_Z ] - 52 );
+				calculatedValues.arrivalBell    = new Position(
+					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.x,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.y,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.z
+				);
+				calculatedValues.departureBell  = new Position(
+					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.x,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.y,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.z
+				);
 				calculatedValues.head1          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head1.x, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.z );
 				calculatedValues.head2          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head2.x, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.z );
 				calculatedValues.concourse      = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.x, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.y, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.z );
@@ -59,8 +69,16 @@ class StationOffsetsCalculator extends Abstract
 			case Directions.EAST:
 			{
 				calculatedValues.rotation       = 270;
-				calculatedValues.arrivalBell    = new Position( stationPositions[ PropertyNames.CURRENT_POSITION_X ] + 33, stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + 6, stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + 1 );
-				calculatedValues.departureBell  = new Position( stationPositions[ PropertyNames.CURRENT_POSITION_X ] + 52, stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + 6, stationPositions[ PropertyNames.CURRENT_POSITION_Z ] - 10 );
+				calculatedValues.arrivalBell    = new Position(
+					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.z * -1,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.y,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.x
+				);
+				calculatedValues.departureBell  = new Position(
+					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.z * -1,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.y,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.x
+				);
 				calculatedValues.head1          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head1.z * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.x );
 				calculatedValues.head2          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head2.z * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.x );
 				calculatedValues.concourse      = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.z * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.y, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.x );
@@ -75,8 +93,16 @@ class StationOffsetsCalculator extends Abstract
 			case Directions.SOUTH:
 			{
 				calculatedValues.rotation       = 0;
-				calculatedValues.arrivalBell    = new Position( stationPositions[ PropertyNames.CURRENT_POSITION_X ] - 1, stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + 6, stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + 33 );
-				calculatedValues.departureBell  = new Position( stationPositions[ PropertyNames.CURRENT_POSITION_X ] + 10, stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + 6, stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + 52 );
+				calculatedValues.arrivalBell    = new Position(
+					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.x * -1,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.y,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.z * -1
+				);
+				calculatedValues.departureBell  = new Position(
+					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.x * -1,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.y,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.z * -1
+				);
 				calculatedValues.head1          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head1.x * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.z * -1 );
 				calculatedValues.head2          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head2.x * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.z * -1 );
 				calculatedValues.concourse      = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.x * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.y, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.z * -1 );
@@ -91,8 +117,16 @@ class StationOffsetsCalculator extends Abstract
 			case Directions.WEST:
 			{
 				calculatedValues.rotation       = 90;
-				calculatedValues.arrivalBell    = new Position( stationPositions[ PropertyNames.CURRENT_POSITION_X ] - 33, stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + 6, stationPositions[ PropertyNames.CURRENT_POSITION_Z ] - 1 );
-				calculatedValues.departureBell  = new Position( stationPositions[ PropertyNames.CURRENT_POSITION_X ] - 52, stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + 6, stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + 10 );
+				calculatedValues.arrivalBell    = new Position(
+					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.z,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.y,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.x * -1
+				);
+				calculatedValues.departureBell  = new Position(
+					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.z,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.y,
+					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.x * -1
+				);
 				calculatedValues.head1          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head1.z, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.x * -1 );
 				calculatedValues.head2          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head2.z, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.x * -1 );
 				calculatedValues.concourse      = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.z, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.y, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.x * -1 );
