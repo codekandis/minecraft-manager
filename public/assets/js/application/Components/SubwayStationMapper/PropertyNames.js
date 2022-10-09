@@ -34,6 +34,41 @@ class PropertyNames extends StaticAbstract
 		return 'calculatedRotation';
 	}
 
+	static get CALCULATED_HALL()
+	{
+		return 'calculatedHall';
+	}
+
+	static get CALCULATED_HALL_1_X()
+	{
+		return 'calculatedHall1X';
+	}
+
+	static get CALCULATED_HALL_1_Y()
+	{
+		return 'calculatedHall1Y';
+	}
+
+	static get CALCULATED_HALL_1_Z()
+	{
+		return 'calculatedHall1Z';
+	}
+
+	static get CALCULATED_HALL_2_X()
+	{
+		return 'calculatedHall2X';
+	}
+
+	static get CALCULATED_HALL_2_Y()
+	{
+		return 'calculatedHall2Y';
+	}
+
+	static get CALCULATED_HALL_2_Z()
+	{
+		return 'calculatedHall2Z';
+	}
+
 	static get CALCULATED_ARRIVAL_BELL()
 	{
 		return 'calculatedArrivalBell';
