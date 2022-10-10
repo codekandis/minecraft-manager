@@ -19,6 +19,11 @@ class SubwayStationMapperComponent extends AbstractComponent
 		this.#setPropertyAndDataDirectionAttribute( PropertyNames.DIRECTION, value, FormFieldSelectors.DIRECTION );
 	}
 
+	set [ PropertyNames.CALCULATED_HALL ]( value )
+	{
+		this.#setPropertyAndDataClipboardAttribute( PropertyNames.CALCULATED_HALL, value, FormFieldSelectors.CALCULATED_HALL );
+	}
+
 	set [ PropertyNames.CALCULATED_ARRIVAL_BELL ]( value )
 	{
 		this.#setPropertyAndDataClipboardAttribute( PropertyNames.CALCULATED_ARRIVAL_BELL, value, FormFieldSelectors.CALCULATED_ARRIVAL_BELL );
@@ -88,6 +93,7 @@ class SubwayStationMapperComponent extends AbstractComponent
 		this.#_stationPositions.dataBindings.add( PropertyNames.CURRENT_POSITION_Y, BindableFormFieldProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDABLE );
 		this.#_stationPositions.dataBindings.add( PropertyNames.CURRENT_POSITION_Z, BindableFormFieldProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDABLE );
 		this.#_stationPositions.dataBindings.add( PropertyNames.CALCULATED_ROTATION, BindableFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_ROTATION ), 'value', DataBindingInitializationDirection.BINDABLE );
+		this.#_stationPositions.dataBindings.add( PropertyNames.CALCULATED_HALL, BindableFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_HALL ), 'value', DataBindingInitializationDirection.BINDABLE );
 		this.#_stationPositions.dataBindings.add( PropertyNames.CALCULATED_ARRIVAL_BELL, BindableFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_ARRIVAL_BELL ), 'value', DataBindingInitializationDirection.BINDABLE );
 		this.#_stationPositions.dataBindings.add( PropertyNames.CALCULATED_DEPARTURE_BELL, BindableFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_DEPARTURE_BELL ), 'value', DataBindingInitializationDirection.BINDABLE );
 		this.#_stationPositions.dataBindings.add( PropertyNames.CALCULATED_OFFSET_HEAD_1_X, BindableFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_OFFSET_HEAD_1_X ), 'value', DataBindingInitializationDirection.BINDABLE );
@@ -115,6 +121,7 @@ class SubwayStationMapperComponent extends AbstractComponent
 		this.#_stationPositions.dataBindings.add( PropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Y, BindableFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_OFFSET_STAIRWAY_RIGHT_Y ), 'value', DataBindingInitializationDirection.BINDABLE );
 		this.#_stationPositions.dataBindings.add( PropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Z, BindableFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_OFFSET_STAIRWAY_RIGHT_Z ), 'value', DataBindingInitializationDirection.BINDABLE );
 		this.dataBindings.add( PropertyNames.DIRECTION, this.#_stationPositions, PropertyNames.DIRECTION );
+		this.dataBindings.add( PropertyNames.CALCULATED_HALL, this.#_stationPositions, PropertyNames.CALCULATED_HALL );
 		this.dataBindings.add( PropertyNames.CALCULATED_ARRIVAL_BELL, this.#_stationPositions, PropertyNames.CALCULATED_ARRIVAL_BELL );
 		this.dataBindings.add( PropertyNames.CALCULATED_DEPARTURE_BELL, this.#_stationPositions, PropertyNames.CALCULATED_DEPARTURE_BELL );
 		this.dataBindings.add( PropertyNames.HEAD_1_NAME, this.#_stationPositions, PropertyNames.HEAD_1_NAME );
@@ -130,10 +137,10 @@ class SubwayStationMapperComponent extends AbstractComponent
 	_addFormFieldsEventHandlers()
 	{
 		this._attachEventHandlers( FormFieldSelectors.DIRECTION, PropertyNames.DIRECTION );
-		this._attachEventHandlers( FormFieldSelectors.CALCULATED_ROTATION, PropertyNames.CALCULATED_ROTATION );
 		this._attachEventHandlers( FormFieldSelectors.CURRENT_POSITION_X, PropertyNames.CURRENT_POSITION_X );
 		this._attachEventHandlers( FormFieldSelectors.CURRENT_POSITION_Y, PropertyNames.CURRENT_POSITION_Y );
 		this._attachEventHandlers( FormFieldSelectors.CURRENT_POSITION_Z, PropertyNames.CURRENT_POSITION_Z );
+		this._attachEventHandlers( FormFieldSelectors.CALCULATED_ROTATION, PropertyNames.CALCULATED_ROTATION );
 
 		const eventHandlerAdder = ( formFieldSelector ) =>
 		{
@@ -149,6 +156,7 @@ class SubwayStationMapperComponent extends AbstractComponent
 			);
 		}
 
+		eventHandlerAdder( FormFieldSelectors.CALCULATED_HALL );
 		eventHandlerAdder( FormFieldSelectors.CALCULATED_ARRIVAL_BELL );
 		eventHandlerAdder( FormFieldSelectors.CALCULATED_DEPARTURE_BELL );
 		eventHandlerAdder( FormFieldSelectors.HEAD_1_NAME );

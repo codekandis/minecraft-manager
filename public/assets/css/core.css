@@ -24,14 +24,20 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	color: var(--codekandis-color-darker-gray);
-	line-height: var(--base-line-height);
-	font-family: var(--base-font-family);
-	cursor: default;
+	line-height: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	cursor: inherit;
 }
 
 body {
+	box-sizing: inherit;
+	line-height: var(--base-line-height);
+	font-family: var(--base-font-family);
 	font-size: var(--base-font-size);
+	color: var(--codekandis-color-darker-gray);
+	cursor: default;
 }
 
 a {
@@ -46,7 +52,7 @@ a:hover {
 }
 
 h1, h2, h3 {
-	margin: 1em 0;
+	margin: 1.3em 0;
 }
 
 h1 {

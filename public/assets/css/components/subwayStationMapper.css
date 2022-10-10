@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 :root {
-	--subway-station-mapper-calculated-values-base-top-position: 340px;
+	--subway-station-mapper-calculated-values-base-top-position: 380px;
 	--subway-station-mapper-calculated-values-additional-top-offset: 175px;
 	--subway-station-mapper-calculated-values-base-left-position: 220px;
 }
@@ -43,28 +43,33 @@
 #subwayStationMapper-calculatedValues > section > h3 {
 	display: inline-block;
 	margin-bottom: 0;
+	font-size: var(--base-font-size);
 }
 
+#subwayStationMapper-calculatedHall,
+#subwayStationMapper-calculatedArrivalBell,
+#subwayStationMapper-calculatedDepartureBell {
+	width: 420px !important;
+}
+
+#subwayStationMapper-calculatedHall:hover,
+#subwayStationMapper-calculatedArrivalBell:hover,
+#subwayStationMapper-calculatedDepartureBell:hover {
+	border-color: var(--codekandis-color-orange);
+}
+
+#subwayStationMapper-calculatedHall,
 #subwayStationMapper-calculatedArrivalBell,
 #subwayStationMapper-calculatedDepartureBell,
 #subwayStationMapper-calculatedValues > section > h3 > span {
 	cursor: pointer;
 }
 
+#subwayStationMapper-calculatedHall:hover,
 #subwayStationMapper-calculatedArrivalBell:hover,
 #subwayStationMapper-calculatedDepartureBell:hover,
 #subwayStationMapper-calculatedValues > section > h3 > span:hover {
 	color: var(--codekandis-color-orange);
-}
-
-#subwayStationMapper-calculatedArrivalBell,
-#subwayStationMapper-calculatedDepartureBell {
-	width: 420px !important;
-}
-
-#subwayStationMapper-calculatedArrivalBell:hover,
-#subwayStationMapper-calculatedDepartureBell:hover {
-	border-color: var(--codekandis-color-orange);
 }
 
 #subwayStationMapper-calculatedValues > fieldset > i,

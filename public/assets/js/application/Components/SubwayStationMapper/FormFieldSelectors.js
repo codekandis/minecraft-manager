@@ -45,6 +45,11 @@ class FormFieldSelectors extends StaticAbstract
 		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_ROTATION );
 	}
 
+	static get CALCULATED_HALL()
+	{
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_HALL );
+	}
+
 	static get CALCULATED_ARRIVAL_BELL()
 	{
 		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_ARRIVAL_BELL );
