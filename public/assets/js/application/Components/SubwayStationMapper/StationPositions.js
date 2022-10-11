@@ -22,6 +22,13 @@ class StationPositions extends AbstractBindable
 	[ '#_' + PropertyNames.CURRENT_POSITION_Y ]                  = 0;
 	[ '#_' + PropertyNames.CURRENT_POSITION_Z ]                  = 0;
 	[ '#_' + PropertyNames.CALCULATED_ROTATION ]                 = undefined;
+	[ '#_' + PropertyNames.CALCULATED_HALL ]                     = undefined;
+	[ '#_' + PropertyNames.CALCULATED_HALL_1_X ]                 = undefined;
+	[ '#_' + PropertyNames.CALCULATED_HALL_1_Y ]                 = undefined;
+	[ '#_' + PropertyNames.CALCULATED_HALL_1_Z ]                 = undefined;
+	[ '#_' + PropertyNames.CALCULATED_HALL_2_X ]                 = undefined;
+	[ '#_' + PropertyNames.CALCULATED_HALL_2_Y ]                 = undefined;
+	[ '#_' + PropertyNames.CALCULATED_HALL_2_Z ]                 = undefined;
 	[ '#_' + PropertyNames.CALCULATED_ARRIVAL_BELL ]             = undefined;
 	[ '#_' + PropertyNames.CALCULATED_ARRIVAL_BELL_X ]           = undefined;
 	[ '#_' + PropertyNames.CALCULATED_ARRIVAL_BELL_Y ]           = undefined;
@@ -30,12 +37,6 @@ class StationPositions extends AbstractBindable
 	[ '#_' + PropertyNames.CALCULATED_DEPARTURE_BELL_X ]         = undefined;
 	[ '#_' + PropertyNames.CALCULATED_DEPARTURE_BELL_Y ]         = undefined;
 	[ '#_' + PropertyNames.CALCULATED_DEPARTURE_BELL_Z ]         = undefined;
-	[ '#_' + PropertyNames.CALCULATED_HALL_1_X ]                 = undefined;
-	[ '#_' + PropertyNames.CALCULATED_HALL_1_Y ]                 = undefined;
-	[ '#_' + PropertyNames.CALCULATED_HALL_1_Z ]                 = undefined;
-	[ '#_' + PropertyNames.CALCULATED_HALL_2_X ]                 = undefined;
-	[ '#_' + PropertyNames.CALCULATED_HALL_2_Y ]                 = undefined;
-	[ '#_' + PropertyNames.CALCULATED_HALL_2_Z ]                 = undefined;
 	[ '#_' + PropertyNames.CALCULATED_OFFSET_HEAD_1_X ]          = undefined;
 	[ '#_' + PropertyNames.CALCULATED_OFFSET_HEAD_1_Y ]          = undefined;
 	[ '#_' + PropertyNames.CALCULATED_OFFSET_HEAD_1_Z ]          = undefined;
@@ -192,6 +193,7 @@ class StationPositions extends AbstractBindable
 	{
 		this[ '#_' + PropertyNames.CALCULATED_HALL_1_X ] = value;
 		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL_1_X );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL );
 	}
 
 	get [ PropertyNames.CALCULATED_HALL_1_Y ]()
@@ -203,6 +205,7 @@ class StationPositions extends AbstractBindable
 	{
 		this[ '#_' + PropertyNames.CALCULATED_HALL_1_Y ] = value;
 		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL_1_Y );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL );
 	}
 
 	get [ PropertyNames.CALCULATED_HALL_1_Z ]()
@@ -214,6 +217,7 @@ class StationPositions extends AbstractBindable
 	{
 		this[ '#_' + PropertyNames.CALCULATED_HALL_1_Z ] = value;
 		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL_1_Z );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL );
 	}
 
 	get [ PropertyNames.CALCULATED_HALL_2_X ]()
@@ -225,6 +229,7 @@ class StationPositions extends AbstractBindable
 	{
 		this[ '#_' + PropertyNames.CALCULATED_HALL_2_X ] = value;
 		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL_2_X );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL );
 	}
 
 	get [ PropertyNames.CALCULATED_HALL_2_Y ]()
@@ -236,6 +241,7 @@ class StationPositions extends AbstractBindable
 	{
 		this[ '#_' + PropertyNames.CALCULATED_HALL_2_Y ] = value;
 		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL_2_Y );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL );
 	}
 
 	get [ PropertyNames.CALCULATED_HALL_2_Z ]()
@@ -247,6 +253,7 @@ class StationPositions extends AbstractBindable
 	{
 		this[ '#_' + PropertyNames.CALCULATED_HALL_2_Z ] = value;
 		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL_2_Z );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL );
 	}
 
 	get [ PropertyNames.CALCULATED_ARRIVAL_BELL ]()
