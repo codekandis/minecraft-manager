@@ -40,14 +40,14 @@ class FormFieldSelectors extends StaticAbstract
 		return String.format`${ 0 }-calculatedValues`( FormFieldSelectors.MODULE_ROOT );
 	}
 
-	static get CALCULATED_ROTATION()
+	static get CALCULATED_HEAD_HALL()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_ROTATION );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_HEAD_HALL );
 	}
 
-	static get CALCULATED_HALL()
+	static get CALCULATED_CONCOURSE_HALL()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_HALL );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_CONCOURSE_HALL );
 	}
 
 	static get CALCULATED_ARRIVAL_BELL()
@@ -58,6 +58,11 @@ class FormFieldSelectors extends StaticAbstract
 	static get CALCULATED_DEPARTURE_BELL()
 	{
 		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_DEPARTURE_BELL );
+	}
+
+	static get CALCULATED_ROTATION()
+	{
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_ROTATION );
 	}
 
 	static get HEAD_1_NAME()

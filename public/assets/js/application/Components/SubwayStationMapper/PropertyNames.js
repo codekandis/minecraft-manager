@@ -29,44 +29,74 @@ class PropertyNames extends StaticAbstract
 		return 'currentPositionZ';
 	}
 
-	static get CALCULATED_ROTATION()
+	static get CALCULATED_HEAD_HALL()
 	{
-		return 'calculatedRotation';
+		return 'calculatedHeadHall';
 	}
 
-	static get CALCULATED_HALL()
+	static get CALCULATED_HEAD_HALL_1_X()
 	{
-		return 'calculatedHall';
+		return 'calculatedHeadHall1X';
 	}
 
-	static get CALCULATED_HALL_1_X()
+	static get CALCULATED_HEAD_HALL_1_Y()
 	{
-		return 'calculatedHall1X';
+		return 'calculatedHeadHall1Y';
 	}
 
-	static get CALCULATED_HALL_1_Y()
+	static get CALCULATED_HEAD_HALL_1_Z()
 	{
-		return 'calculatedHall1Y';
+		return 'calculatedHeadHall1Z';
 	}
 
-	static get CALCULATED_HALL_1_Z()
+	static get CALCULATED_HEAD_HALL_2_X()
 	{
-		return 'calculatedHall1Z';
+		return 'calculatedHeadHall2X';
 	}
 
-	static get CALCULATED_HALL_2_X()
+	static get CALCULATED_HEAD_HALL_2_Y()
 	{
-		return 'calculatedHall2X';
+		return 'calculatedHeadHall2Y';
 	}
 
-	static get CALCULATED_HALL_2_Y()
+	static get CALCULATED_HEAD_HALL_2_Z()
 	{
-		return 'calculatedHall2Y';
+		return 'calculatedHeadHall2Z';
 	}
 
-	static get CALCULATED_HALL_2_Z()
+	static get CALCULATED_CONCOURSE_HALL()
 	{
-		return 'calculatedHall2Z';
+		return 'calculatedConcourseHall';
+	}
+
+	static get CALCULATED_CONCOURSE_HALL_1_X()
+	{
+		return 'calculatedConcourseHall1X';
+	}
+
+	static get CALCULATED_CONCOURSE_HALL_1_Y()
+	{
+		return 'calculatedConcourseHall1Y';
+	}
+
+	static get CALCULATED_CONCOURSE_HALL_1_Z()
+	{
+		return 'calculatedConcourseHall1Z';
+	}
+
+	static get CALCULATED_CONCOURSE_HALL_2_X()
+	{
+		return 'calculatedConcourseHall2X';
+	}
+
+	static get CALCULATED_CONCOURSE_HALL_2_Y()
+	{
+		return 'calculatedConcourseHall2Y';
+	}
+
+	static get CALCULATED_CONCOURSE_HALL_2_Z()
+	{
+		return 'calculatedConcourseHall2Z';
 	}
 
 	static get CALCULATED_ARRIVAL_BELL()
@@ -107,6 +137,11 @@ class PropertyNames extends StaticAbstract
 	static get CALCULATED_DEPARTURE_BELL_Z()
 	{
 		return 'calculatedDepartureBellZ';
+	}
+
+	static get CALCULATED_ROTATION()
+	{
+		return 'calculatedRotation';
 	}
 
 	static get HEAD_1_NAME()
