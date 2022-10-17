@@ -7,28 +7,35 @@ import StationOffsetsCalculator from './StationOffsetsCalculator.js';
 
 class StationPositions extends AbstractBindable
 {
-	[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ]            = 'codekandis:subway-station';
-	[ '#_' + PropertyNames.HEAD_1_NAME ]                         = String.format`${ 0 }-head-1`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
-	[ '#_' + PropertyNames.HEAD_2_NAME ]                         = String.format`${ 0 }-head-2`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
-	[ '#_' + PropertyNames.CONCOURSE_NAME ]                      = String.format`${ 0 }-concourse`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
-	[ '#_' + PropertyNames.STAIRS_PORT_NAME ]                    = String.format`${ 0 }-stairs-port`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
-	[ '#_' + PropertyNames.STAIRS_NAME ]                         = String.format`${ 0 }-stairs`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
-	[ '#_' + PropertyNames.STAIRS_ENTRANCE_NAME ]                = String.format`${ 0 }-stairs-entrance`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
-	[ '#_' + PropertyNames.STAIRWAY_NAME ]                       = String.format`${ 0 }-stairway`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
-	[ '#_' + PropertyNames.STAIRWAY_LEFT_NAME ]                  = String.format`${ 0 }`( this[ '#_' + PropertyNames.STAIRWAY_NAME ] );
-	[ '#_' + PropertyNames.STAIRWAY_RIGHT_NAME ]                 = String.format`${ 0 }`( this[ '#_' + PropertyNames.STAIRWAY_NAME ] );
-	[ '#_' + PropertyNames.DIRECTION ]                           = Directions.NORTH;
-	[ '#_' + PropertyNames.CURRENT_POSITION_X ]                  = 0;
-	[ '#_' + PropertyNames.CURRENT_POSITION_Y ]                  = 0;
-	[ '#_' + PropertyNames.CURRENT_POSITION_Z ]                  = 0;
-	[ '#_' + PropertyNames.CALCULATED_ROTATION ]                 = undefined;
-	[ '#_' + PropertyNames.CALCULATED_HALL ]                     = undefined;
-	[ '#_' + PropertyNames.CALCULATED_HALL_1_X ]                 = undefined;
-	[ '#_' + PropertyNames.CALCULATED_HALL_1_Y ]                 = undefined;
-	[ '#_' + PropertyNames.CALCULATED_HALL_1_Z ]                 = undefined;
-	[ '#_' + PropertyNames.CALCULATED_HALL_2_X ]                 = undefined;
-	[ '#_' + PropertyNames.CALCULATED_HALL_2_Y ]                 = undefined;
-	[ '#_' + PropertyNames.CALCULATED_HALL_2_Z ]                 = undefined;
+	[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] = 'codekandis:subway-station';
+	[ '#_' + PropertyNames.HEAD_1_NAME ]              = String.format`${ 0 }-head-1`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
+	[ '#_' + PropertyNames.HEAD_2_NAME ]              = String.format`${ 0 }-head-2`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
+	[ '#_' + PropertyNames.CONCOURSE_NAME ]           = String.format`${ 0 }-concourse`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
+	[ '#_' + PropertyNames.STAIRS_PORT_NAME ]         = String.format`${ 0 }-stairs-port`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
+	[ '#_' + PropertyNames.STAIRS_NAME ]              = String.format`${ 0 }-stairs`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
+	[ '#_' + PropertyNames.STAIRS_ENTRANCE_NAME ]     = String.format`${ 0 }-stairs-entrance`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
+	[ '#_' + PropertyNames.STAIRWAY_NAME ]            = String.format`${ 0 }-stairway`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
+	[ '#_' + PropertyNames.STAIRWAY_LEFT_NAME ]       = String.format`${ 0 }`( this[ '#_' + PropertyNames.STAIRWAY_NAME ] );
+	[ '#_' + PropertyNames.STAIRWAY_RIGHT_NAME ]      = String.format`${ 0 }`( this[ '#_' + PropertyNames.STAIRWAY_NAME ] );
+	[ '#_' + PropertyNames.DIRECTION ]                = Directions.NORTH;
+	[ '#_' + PropertyNames.CURRENT_POSITION_X ]       = 0;
+	[ '#_' + PropertyNames.CURRENT_POSITION_Y ]       = 0;
+	[ '#_' + PropertyNames.CURRENT_POSITION_Z ]       = 0;
+	[ '#_' + PropertyNames.CALCULATED_HEAD_HALL ]     = undefined;
+	[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_1_X ] = undefined;
+	[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_1_Y ] = undefined;
+	[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_1_Z ] = undefined;
+	[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_2_X ] = undefined;
+	[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_2_Y ] = undefined;
+	[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_2_Z ] = undefined;
+
+	[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL ]           = undefined;
+	[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_X ]       = undefined;
+	[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_Y ]       = undefined;
+	[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_Z ]       = undefined;
+	[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_X ]       = undefined;
+	[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_Y ]       = undefined;
+	[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_Z ]       = undefined;
 	[ '#_' + PropertyNames.CALCULATED_ARRIVAL_BELL ]             = undefined;
 	[ '#_' + PropertyNames.CALCULATED_ARRIVAL_BELL_X ]           = undefined;
 	[ '#_' + PropertyNames.CALCULATED_ARRIVAL_BELL_Y ]           = undefined;
@@ -37,6 +44,7 @@ class StationPositions extends AbstractBindable
 	[ '#_' + PropertyNames.CALCULATED_DEPARTURE_BELL_X ]         = undefined;
 	[ '#_' + PropertyNames.CALCULATED_DEPARTURE_BELL_Y ]         = undefined;
 	[ '#_' + PropertyNames.CALCULATED_DEPARTURE_BELL_Z ]         = undefined;
+	[ '#_' + PropertyNames.CALCULATED_ROTATION ]                 = undefined;
 	[ '#_' + PropertyNames.CALCULATED_OFFSET_HEAD_1_X ]          = undefined;
 	[ '#_' + PropertyNames.CALCULATED_OFFSET_HEAD_1_Y ]          = undefined;
 	[ '#_' + PropertyNames.CALCULATED_OFFSET_HEAD_1_Z ]          = undefined;
@@ -161,99 +169,172 @@ class StationPositions extends AbstractBindable
 		this.calculate();
 	}
 
-	get [ PropertyNames.CALCULATED_ROTATION ]()
-	{
-		return this[ '#_' + PropertyNames.CALCULATED_ROTATION ];
-	}
-
-	set [ '#' + PropertyNames.CALCULATED_ROTATION ]( value )
-	{
-		this[ '#_' + PropertyNames.CALCULATED_ROTATION ] = value;
-		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_ROTATION );
-	}
-
-	get [ PropertyNames.CALCULATED_HALL ]()
+	get [ PropertyNames.CALCULATED_HEAD_HALL ]()
 	{
 		return String.format`/fill ${ 0 } ${ 1 } ${ 2 } ${ 3 } ${ 4 } ${ 5 } cave_air replace `(
-			this[ '#_' + PropertyNames.CALCULATED_HALL_1_X ],
-			this[ '#_' + PropertyNames.CALCULATED_HALL_1_Y ],
-			this[ '#_' + PropertyNames.CALCULATED_HALL_1_Z ],
-			this[ '#_' + PropertyNames.CALCULATED_HALL_2_X ],
-			this[ '#_' + PropertyNames.CALCULATED_HALL_2_Y ],
-			this[ '#_' + PropertyNames.CALCULATED_HALL_2_Z ]
+			this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_1_X ],
+			this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_1_Y ],
+			this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_1_Z ],
+			this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_2_X ],
+			this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_2_Y ],
+			this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_2_Z ]
 		);
 	}
 
-	get [ PropertyNames.CALCULATED_HALL_1_X ]()
+	get [ PropertyNames.CALCULATED_HEAD_HALL_1_X ]()
 	{
-		return this[ '#_' + PropertyNames.CALCULATED_HALL_1_X ];
+		return this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_1_X ];
 	}
 
-	set [ '#' + PropertyNames.CALCULATED_HALL_1_X ]( value )
+	set [ '#' + PropertyNames.CALCULATED_HEAD_HALL_1_X ]( value )
 	{
-		this[ '#_' + PropertyNames.CALCULATED_HALL_1_X ] = value;
-		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL_1_X );
-		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL );
+		this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_1_X ] = value;
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HEAD_HALL_1_X );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HEAD_HALL );
 	}
 
-	get [ PropertyNames.CALCULATED_HALL_1_Y ]()
+	get [ PropertyNames.CALCULATED_HEAD_HALL_1_Y ]()
 	{
-		return this[ '#_' + PropertyNames.CALCULATED_HALL_1_Y ];
+		return this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_1_Y ];
 	}
 
-	set [ '#' + PropertyNames.CALCULATED_HALL_1_Y ]( value )
+	set [ '#' + PropertyNames.CALCULATED_HEAD_HALL_1_Y ]( value )
 	{
-		this[ '#_' + PropertyNames.CALCULATED_HALL_1_Y ] = value;
-		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL_1_Y );
-		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL );
+		this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_1_Y ] = value;
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HEAD_HALL_1_Y );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HEAD_HALL );
 	}
 
-	get [ PropertyNames.CALCULATED_HALL_1_Z ]()
+	get [ PropertyNames.CALCULATED_HEAD_HALL_1_Z ]()
 	{
-		return this[ '#_' + PropertyNames.CALCULATED_HALL_1_Z ];
+		return this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_1_Z ];
 	}
 
-	set [ '#' + PropertyNames.CALCULATED_HALL_1_Z ]( value )
+	set [ '#' + PropertyNames.CALCULATED_HEAD_HALL_1_Z ]( value )
 	{
-		this[ '#_' + PropertyNames.CALCULATED_HALL_1_Z ] = value;
-		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL_1_Z );
-		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL );
+		this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_1_Z ] = value;
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HEAD_HALL_1_Z );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HEAD_HALL );
 	}
 
-	get [ PropertyNames.CALCULATED_HALL_2_X ]()
+	get [ PropertyNames.CALCULATED_HEAD_HALL_2_X ]()
 	{
-		return this[ '#_' + PropertyNames.CALCULATED_HALL_2_X ];
+		return this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_2_X ];
 	}
 
-	set [ '#' + PropertyNames.CALCULATED_HALL_2_X ]( value )
+	set [ '#' + PropertyNames.CALCULATED_HEAD_HALL_2_X ]( value )
 	{
-		this[ '#_' + PropertyNames.CALCULATED_HALL_2_X ] = value;
-		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL_2_X );
-		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL );
+		this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_2_X ] = value;
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HEAD_HALL_2_X );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HEAD_HALL );
 	}
 
-	get [ PropertyNames.CALCULATED_HALL_2_Y ]()
+	get [ PropertyNames.CALCULATED_HEAD_HALL_2_Y ]()
 	{
-		return this[ '#_' + PropertyNames.CALCULATED_HALL_2_Y ];
+		return this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_2_Y ];
 	}
 
-	set [ '#' + PropertyNames.CALCULATED_HALL_2_Y ]( value )
+	set [ '#' + PropertyNames.CALCULATED_HEAD_HALL_2_Y ]( value )
 	{
-		this[ '#_' + PropertyNames.CALCULATED_HALL_2_Y ] = value;
-		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL_2_Y );
-		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL );
+		this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_2_Y ] = value;
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HEAD_HALL_2_Y );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HEAD_HALL );
 	}
 
-	get [ PropertyNames.CALCULATED_HALL_2_Z ]()
+	get [ PropertyNames.CALCULATED_HEAD_HALL_2_Z ]()
 	{
-		return this[ '#_' + PropertyNames.CALCULATED_HALL_2_Z ];
+		return this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_2_Z ];
 	}
 
-	set [ '#' + PropertyNames.CALCULATED_HALL_2_Z ]( value )
+	set [ '#' + PropertyNames.CALCULATED_HEAD_HALL_2_Z ]( value )
 	{
-		this[ '#_' + PropertyNames.CALCULATED_HALL_2_Z ] = value;
-		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL_2_Z );
-		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HALL );
+		this[ '#_' + PropertyNames.CALCULATED_HEAD_HALL_2_Z ] = value;
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HEAD_HALL_2_Z );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_HEAD_HALL );
+	}
+
+	get [ PropertyNames.CALCULATED_CONCOURSE_HALL ]()
+	{
+		return String.format`/fill ${ 0 } ${ 1 } ${ 2 } ${ 3 } ${ 4 } ${ 5 } cave_air replace `(
+			this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_X ],
+			this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_Y ],
+			this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_Z ],
+			this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_X ],
+			this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_Y ],
+			this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_Z ]
+		);
+	}
+
+	get [ PropertyNames.CALCULATED_CONCOURSE_HALL_1_X ]()
+	{
+		return this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_X ];
+	}
+
+	set [ '#' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_X ]( value )
+	{
+		this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_X ] = value;
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_CONCOURSE_HALL_1_X );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_CONCOURSE_HALL );
+	}
+
+	get [ PropertyNames.CALCULATED_CONCOURSE_HALL_1_Y ]()
+	{
+		return this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_Y ];
+	}
+
+	set [ '#' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_Y ]( value )
+	{
+		this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_Y ] = value;
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_CONCOURSE_HALL_1_Y );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_CONCOURSE_HALL );
+	}
+
+	get [ PropertyNames.CALCULATED_CONCOURSE_HALL_1_Z ]()
+	{
+		return this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_Z ];
+	}
+
+	set [ '#' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_Z ]( value )
+	{
+		this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_Z ] = value;
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_CONCOURSE_HALL_1_Z );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_CONCOURSE_HALL );
+	}
+
+	get [ PropertyNames.CALCULATED_CONCOURSE_HALL_2_X ]()
+	{
+		return this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_X ];
+	}
+
+	set [ '#' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_X ]( value )
+	{
+		this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_X ] = value;
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_CONCOURSE_HALL_2_X );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_CONCOURSE_HALL );
+	}
+
+	get [ PropertyNames.CALCULATED_CONCOURSE_HALL_2_Y ]()
+	{
+		return this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_Y ];
+	}
+
+	set [ '#' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_Y ]( value )
+	{
+		this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_Y ] = value;
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_CONCOURSE_HALL_2_Y );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_CONCOURSE_HALL );
+	}
+
+	get [ PropertyNames.CALCULATED_CONCOURSE_HALL_2_Z ]()
+	{
+		return this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_Z ];
+	}
+
+	set [ '#' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_Z ]( value )
+	{
+		this[ '#_' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_Z ] = value;
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_CONCOURSE_HALL_2_Z );
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_CONCOURSE_HALL );
 	}
 
 	get [ PropertyNames.CALCULATED_ARRIVAL_BELL ]()
@@ -344,6 +425,17 @@ class StationPositions extends AbstractBindable
 		this[ '#_' + PropertyNames.CALCULATED_DEPARTURE_BELL_Z ] = value;
 		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_DEPARTURE_BELL_Z );
 		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_DEPARTURE_BELL );
+	}
+
+	get [ PropertyNames.CALCULATED_ROTATION ]()
+	{
+		return this[ '#_' + PropertyNames.CALCULATED_ROTATION ];
+	}
+
+	set [ '#' + PropertyNames.CALCULATED_ROTATION ]( value )
+	{
+		this[ '#_' + PropertyNames.CALCULATED_ROTATION ] = value;
+		this._raisePropertyChangedEvent( PropertyNames.CALCULATED_ROTATION );
 	}
 
 	get [ PropertyNames.CALCULATED_OFFSET_HEAD_1_X ]()
@@ -620,19 +712,25 @@ class StationPositions extends AbstractBindable
 		const calculatedOffsets = ( new StationOffsetsCalculator() )
 			.calculate( this );
 
-		this[ '#' + PropertyNames.CALCULATED_ROTATION ]                 = calculatedOffsets.rotation;
-		this[ '#' + PropertyNames.CALCULATED_HALL_1_X ]                 = calculatedOffsets.hall1.x;
-		this[ '#' + PropertyNames.CALCULATED_HALL_1_Y ]                 = calculatedOffsets.hall1.y;
-		this[ '#' + PropertyNames.CALCULATED_HALL_1_Z ]                 = calculatedOffsets.hall1.z;
-		this[ '#' + PropertyNames.CALCULATED_HALL_2_X ]                 = calculatedOffsets.hall2.x;
-		this[ '#' + PropertyNames.CALCULATED_HALL_2_Y ]                 = calculatedOffsets.hall2.y;
-		this[ '#' + PropertyNames.CALCULATED_HALL_2_Z ]                 = calculatedOffsets.hall2.z;
+		this[ '#' + PropertyNames.CALCULATED_HEAD_HALL_1_X ]            = calculatedOffsets.headHall1.x;
+		this[ '#' + PropertyNames.CALCULATED_HEAD_HALL_1_Y ]            = calculatedOffsets.headHall1.y;
+		this[ '#' + PropertyNames.CALCULATED_HEAD_HALL_1_Z ]            = calculatedOffsets.headHall1.z;
+		this[ '#' + PropertyNames.CALCULATED_HEAD_HALL_2_X ]            = calculatedOffsets.headHall2.x;
+		this[ '#' + PropertyNames.CALCULATED_HEAD_HALL_2_Y ]            = calculatedOffsets.headHall2.y;
+		this[ '#' + PropertyNames.CALCULATED_HEAD_HALL_2_Z ]            = calculatedOffsets.headHall2.z;
+		this[ '#' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_X ]       = calculatedOffsets.concourseHall1.x;
+		this[ '#' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_Y ]       = calculatedOffsets.concourseHall1.y;
+		this[ '#' + PropertyNames.CALCULATED_CONCOURSE_HALL_1_Z ]       = calculatedOffsets.concourseHall1.z;
+		this[ '#' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_X ]       = calculatedOffsets.concourseHall2.x;
+		this[ '#' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_Y ]       = calculatedOffsets.concourseHall2.y;
+		this[ '#' + PropertyNames.CALCULATED_CONCOURSE_HALL_2_Z ]       = calculatedOffsets.concourseHall2.z;
 		this[ '#' + PropertyNames.CALCULATED_ARRIVAL_BELL_X ]           = calculatedOffsets.arrivalBell.x;
 		this[ '#' + PropertyNames.CALCULATED_ARRIVAL_BELL_Y ]           = calculatedOffsets.arrivalBell.y;
 		this[ '#' + PropertyNames.CALCULATED_ARRIVAL_BELL_Z ]           = calculatedOffsets.arrivalBell.z;
 		this[ '#' + PropertyNames.CALCULATED_DEPARTURE_BELL_X ]         = calculatedOffsets.departureBell.x;
 		this[ '#' + PropertyNames.CALCULATED_DEPARTURE_BELL_Y ]         = calculatedOffsets.departureBell.y;
 		this[ '#' + PropertyNames.CALCULATED_DEPARTURE_BELL_Z ]         = calculatedOffsets.departureBell.z;
+		this[ '#' + PropertyNames.CALCULATED_ROTATION ]                 = calculatedOffsets.rotation;
 		this[ '#' + PropertyNames.CALCULATED_OFFSET_HEAD_1_X ]          = calculatedOffsets.head1.x;
 		this[ '#' + PropertyNames.CALCULATED_OFFSET_HEAD_1_Y ]          = calculatedOffsets.head1.y;
 		this[ '#' + PropertyNames.CALCULATED_OFFSET_HEAD_1_Z ]          = calculatedOffsets.head1.z;

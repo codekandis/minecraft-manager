@@ -46,26 +46,30 @@
 	font-size: var(--base-font-size);
 }
 
-#subwayStationMapper-calculatedHall,
+#subwayStationMapper-calculatedHeadHall,
+#subwayStationMapper-calculatedConcourseHall,
 #subwayStationMapper-calculatedArrivalBell,
 #subwayStationMapper-calculatedDepartureBell {
 	width: 420px !important;
 }
 
-#subwayStationMapper-calculatedHall:hover,
+#subwayStationMapper-calculatedHeadHall:hover,
+#subwayStationMapper-calculatedConcourseHall:hover,
 #subwayStationMapper-calculatedArrivalBell:hover,
 #subwayStationMapper-calculatedDepartureBell:hover {
 	border-color: var(--codekandis-color-orange);
 }
 
-#subwayStationMapper-calculatedHall,
+#subwayStationMapper-calculatedHeadHall,
+#subwayStationMapper-calculatedConcourseHall,
 #subwayStationMapper-calculatedArrivalBell,
 #subwayStationMapper-calculatedDepartureBell,
 #subwayStationMapper-calculatedValues > section > h3 > span {
 	cursor: pointer;
 }
 
-#subwayStationMapper-calculatedHall:hover,
+#subwayStationMapper-calculatedHeadHall:hover,
+#subwayStationMapper-calculatedConcourseHall:hover,
 #subwayStationMapper-calculatedArrivalBell:hover,
 #subwayStationMapper-calculatedDepartureBell:hover,
 #subwayStationMapper-calculatedValues > section > h3 > span:hover {
