@@ -1,7 +1,7 @@
 'use strict';
 
-import Abstract from '../../../library/Types/Abstract.js';
-import PropertyNames from './PropertyNames.js';
+import Abstract from '../../../../library/Types/Abstract.js';
+import PropertyNames from '../Enumerations/PropertyNames.js';
 
 class LanternPositionsCalculator extends Abstract
 {

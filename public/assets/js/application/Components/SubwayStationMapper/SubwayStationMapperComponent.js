@@ -6,9 +6,9 @@ import BindableFormFieldProxy from '../../../library/Types/DataBindings/Bindable
 import DataBindingInitializationDirection from '../../../library/Types/DataBindings/DataBindingInitializationDirection.js';
 import Clipboard from '../../../library/Utilities/Clipboard.js';
 import AbstractComponent from '../AbstractComponent.js';
-import FormFieldSelectors from './FormFieldSelectors.js';
-import PropertyNames from './PropertyNames.js';
-import StationPositions from './StationPositions.js';
+import StationPositions from './Entities/StationPositions.js';
+import PropertyNames from './Enumerations/PropertyNames.js';
+import FormFieldSelectors from './Html/FormFieldSelectors.js';
 
 class SubwayStationMapperComponent extends AbstractComponent
 {

@@ -1,10 +1,10 @@
 'use strict';
 
-import Abstract from '../../../library/Types/Abstract.js';
+import Abstract from '../../../../library/Types/Abstract.js';
+import PropertyNames from '../Enumerations/PropertyNames.js';
 import Directions from './Directions.js';
 import Offset from './Offset.js';
 import Position from './Position.js';
-import PropertyNames from './PropertyNames.js';
 
 class StationOffsetsCalculator extends Abstract
 {

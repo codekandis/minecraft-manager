@@ -1,8 +1,8 @@
 'use strict';
 
-import AbstractBindable from '../../../library/Types/DataBindings/AbstractBindable.js';
+import AbstractBindable from '../../../../library/Types/DataBindings/AbstractBindable.js';
+import PropertyNames from '../Enumerations/PropertyNames.js';
 import LanternPositionsCalculator from './LanternPositionsCalculator.js';
-import PropertyNames from './PropertyNames.js';
 
 class LanternPositions extends AbstractBindable
 {

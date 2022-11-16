@@ -1,6 +1,6 @@
 'use strict';
 
-import StaticAbstract from '../../../library/Types/StaticAbstract.js';
+import StaticAbstract from '../../../../library/Types/StaticAbstract.js';
 
 class PropertyNames extends StaticAbstract
 {

@@ -5,9 +5,9 @@ import BoolStrings from '../../../library/Types/BoolStrings.js';
 import BindableFormFieldProxy from '../../../library/Types/DataBindings/BindableFormFieldProxy.js';
 import DataBindingInitializationDirection from '../../../library/Types/DataBindings/DataBindingInitializationDirection.js';
 import AbstractComponent from '../AbstractComponent.js';
-import FormFieldSelectors from './FormFieldSelectors.js';
-import LanternPositions from './LanternPositions.js';
-import PropertyNames from './PropertyNames.js';
+import LanternPositions from './Entities/LanternPositions.js';
+import PropertyNames from './Enumerations/PropertyNames.js';
+import FormFieldSelectors from './Html/FormFieldSelectors.js';
 
 class SubwayRailsMapperComponent extends AbstractComponent
 {

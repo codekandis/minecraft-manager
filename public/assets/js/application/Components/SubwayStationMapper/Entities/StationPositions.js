@@ -1,8 +1,8 @@
 'use strict';
 
-import AbstractBindable from '../../../library/Types/DataBindings/AbstractBindable.js';
+import AbstractBindable from '../../../../library/Types/DataBindings/AbstractBindable.js';
+import PropertyNames from '../Enumerations/PropertyNames.js';
 import Directions from './Directions.js';
-import PropertyNames from './PropertyNames.js';
 import StationOffsetsCalculator from './StationOffsetsCalculator.js';
 
 class StationPositions extends AbstractBindable
