@@ -26,4 +26,4 @@ String.format = function ( template, ...placeholders )
 			return result.join( String.empty );
 		}
 	);
-}
+};

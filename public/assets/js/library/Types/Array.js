@@ -7,5 +7,5 @@ Array.prototype.one = function ( predicate )
 		{
 			return predicate( element );
 		}
-	)
-}
+	);
+};

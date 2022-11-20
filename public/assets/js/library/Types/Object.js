@@ -51,7 +51,7 @@ Object.prototype.bindToEventHandler = function ( method, ...args )
 		method.bind( this )( event, ...args );
 	}
 		.bind( this );
-}
+};
 
 Object.prototype.bindToEventHandlers = function ( methods, ...args )
 {
@@ -61,7 +61,7 @@ Object.prototype.bindToEventHandlers = function ( methods, ...args )
 			this.bindToEventHandler( method, ...args );
 		}
 	);
-}
+};
 
 Object.prototype.merge = function ( obj )
 {
@@ -69,4 +69,4 @@ Object.prototype.merge = function ( obj )
 	{
 		this[ propertyName ] = propertyValue;
 	}
-}
+};
