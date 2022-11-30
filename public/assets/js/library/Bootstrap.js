@@ -1,6 +1,7 @@
 'use strict';
 
 import '../library/Dom/Element.js';
+import '../library/Net/Url.js';
 import '../library/Types/Array.js';
 import '../library/Types/Generator.js';
 import '../library/Types/Object.js';
