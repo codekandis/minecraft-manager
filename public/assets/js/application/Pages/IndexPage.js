@@ -13,8 +13,8 @@ DomDocument.load(
 			.prepare();
 
 		( new ComponentsExecutor(
-			SubwayRailsMapperComponent,
-			SubwayStationMapperComponent
+			new SubwayRailsMapperComponent(),
+			new SubwayStationMapperComponent()
 		) )
 			.execute();
 	}
