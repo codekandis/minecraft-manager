@@ -4,11 +4,6 @@ import StaticAbstract from '../../../../library/Types/StaticAbstract.js';
 
 class PropertyNames extends StaticAbstract
 {
-	static get CHUNKSIZE()
-	{
-		return 'chunksize';
-	}
-
 	static get START_POSITION_X()
 	{
 		return 'startPositionX';

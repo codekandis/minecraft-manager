@@ -1,12 +1,15 @@
 'use strict';
 
+import DomHelper from '../../../../library/Dom/DomHelper.js';
 import AbstractBindable from '../../../../library/Types/DataBindings/AbstractBindable.js';
+import PropertyChangedEvent from '../../../../library/Types/DataBindings/PropertyChangedEvent.js';
+import SettingPropertyNames from '../../Setting/Enumerations/PropertyNames.js';
 import PropertyNames from '../Enumerations/PropertyNames.js';
 import LanternPositionsCalculator from './LanternPositionsCalculator.js';
 
 class LanternPositions extends AbstractBindable
 {
-	[ '#_' + PropertyNames.CHUNKSIZE ]                   = 16;
+	#_setting                                            = undefined;
 	[ '#_' + PropertyNames.START_POSITION_X ]            = 0;
 	[ '#_' + PropertyNames.START_POSITION_Y ]            = 0;
 	[ '#_' + PropertyNames.START_POSITION_Z ]            = 0;
@@ -23,24 +26,13 @@ class LanternPositions extends AbstractBindable
 	[ '#_' + PropertyNames.CALCULATED_POSITION_ZN ]      = undefined;
 	[ '#_' + PropertyNames.CALCULATED_POSITION_ZP ]      = undefined;
 
-	constructor()
+	constructor( setting )
 	{
 		super();
 
+		this.#_setting = setting;
+
 		this.#initialize();
-	}
-
-	get [ PropertyNames.CHUNKSIZE ]()
-	{
-		return this[ '#_' + PropertyNames.CHUNKSIZE ];
-	}
-
-	set [ PropertyNames.CHUNKSIZE ]( value )
-	{
-		this[ '#_' + PropertyNames.CHUNKSIZE ] = Number.parseInt( value );
-		this._raisePropertyChangedEvent( PropertyNames.CHUNKSIZE );
-
-		this.calculate();
 	}
 
 	get [ PropertyNames.START_POSITION_X ]()
@@ -222,12 +214,21 @@ class LanternPositions extends AbstractBindable
 
 	#initialize()
 	{
+		DomHelper.addEventHandler(
+			this.#_setting,
+			PropertyChangedEvent.EVENT_NAME,
+			( event ) =>
+			{
+				this.#setting_propertyChanged( event );
+			}
+		);
+
 		this.calculate();
 	}
 
 	calculate()
 	{
-		const calculatedPositions = ( new LanternPositionsCalculator() )
+		const calculatedPositions = ( new LanternPositionsCalculator( this.#_setting ) )
 			.calculate( this );
 
 		this[ '#' + PropertyNames.IS_CURRENT_POSITION_X_VALID ] = calculatedPositions[ PropertyNames.IS_CURRENT_POSITION_X_VALID ];
@@ -239,6 +240,19 @@ class LanternPositions extends AbstractBindable
 		this[ '#' + PropertyNames.CALCULATED_POSITION_YP ]      = calculatedPositions[ PropertyNames.CALCULATED_POSITION_YP ];
 		this[ '#' + PropertyNames.CALCULATED_POSITION_ZN ]      = calculatedPositions[ PropertyNames.CALCULATED_POSITION_ZN ];
 		this[ '#' + PropertyNames.CALCULATED_POSITION_ZP ]      = calculatedPositions[ PropertyNames.CALCULATED_POSITION_ZP ];
+	}
+
+	#setting_propertyChanged( event )
+	{
+		switch ( event.detail.eventArguments.propertyName )
+		{
+			case SettingPropertyNames.CHUNKSIZE:
+			{
+				this.calculate();
+
+				break;
+			}
+		}
 	}
 }
 

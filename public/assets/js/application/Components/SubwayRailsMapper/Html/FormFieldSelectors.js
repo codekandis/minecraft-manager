@@ -15,11 +15,6 @@ class FormFieldSelectors extends StaticAbstract
 		return String.format`${ 0 }-initialValues`( FormFieldSelectors.MODULE_ROOT );
 	}
 
-	static get CHUNKSIZE()
-	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CHUNKSIZE );
-	}
-
 	static get START_POSITION_X()
 	{
 		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.START_POSITION_X );

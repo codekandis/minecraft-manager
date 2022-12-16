@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+#setting > form fieldset {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#setting > form fieldset label {
+	display: inline-block;
+}
+
+#setting > form fieldset input {
+	width: 150px;
+	height: 27px;
+}
+
+#setting-defaultValues fieldset label {
+	width: 80px;
+}

@@ -20,8 +20,11 @@ require_once __DIR__ . '/Common/htmlHeader.phtml';
 			<div data-control-type="TABCONTROL">
 				<nav data-control-type="TABCONTROL_HEADERS"></nav>
 				<div data-control-type="TABCONTROL_PAGES">
-					<?php require_once __DIR__ . '/Components/subwayRailsMapper.phtml'; ?>
-					<?php require_once __DIR__ . '/Components/subwayStationMapper.phtml'; ?>
+					<?php
+					require_once __DIR__ . '/Components/subwayRailsMapper.phtml';
+					require_once __DIR__ . '/Components/subwayStationMapper.phtml';
+					require_once __DIR__ . '/Components/setting.phtml';
+					?>
 				</div>
 			</div>
 		</div>

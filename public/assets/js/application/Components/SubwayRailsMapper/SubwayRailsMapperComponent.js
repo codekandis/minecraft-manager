@@ -11,7 +11,14 @@ import FormFieldSelectors from './Html/FormFieldSelectors.js';
 
 class SubwayRailsMapperComponent extends AbstractComponent
 {
-	#_lanternPositions = new LanternPositions();
+	#_lanternPositions = undefined;
+
+	constructor( setting )
+	{
+		super( setting );
+
+		this.#initialize();
+	}
 
 	set [ PropertyNames.IS_CURRENT_POSITION_X_VALID ]( value )
 	{
@@ -47,9 +54,13 @@ class SubwayRailsMapperComponent extends AbstractComponent
 		}
 	}
 
+	#initialize()
+	{
+		this.#_lanternPositions = new LanternPositions( this.__setting )
+	}
+
 	_addDataBindings()
 	{
-		this.#_lanternPositions.dataBindings.add( PropertyNames.CHUNKSIZE, BindableFormFieldProxy.with_selector( FormFieldSelectors.CHUNKSIZE ), 'value', DataBindingInitializationDirection.BINDABLE );
 		this.#_lanternPositions.dataBindings.add( PropertyNames.START_POSITION_X, BindableFormFieldProxy.with_selector( FormFieldSelectors.START_POSITION_X ), 'value', DataBindingInitializationDirection.BINDABLE );
 		this.#_lanternPositions.dataBindings.add( PropertyNames.START_POSITION_Y, BindableFormFieldProxy.with_selector( FormFieldSelectors.START_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDABLE );
 		this.#_lanternPositions.dataBindings.add( PropertyNames.START_POSITION_Z, BindableFormFieldProxy.with_selector( FormFieldSelectors.START_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDABLE );
@@ -69,7 +80,6 @@ class SubwayRailsMapperComponent extends AbstractComponent
 
 	_addFormFieldsEventHandlers()
 	{
-		this._attachEventHandlers( FormFieldSelectors.CHUNKSIZE, PropertyNames.CHUNKSIZE );
 		this._attachEventHandlers( FormFieldSelectors.START_POSITION_X, PropertyNames.START_POSITION_X );
 		this._attachEventHandlers( FormFieldSelectors.START_POSITION_Y, PropertyNames.START_POSITION_Y );
 		this._attachEventHandlers( FormFieldSelectors.START_POSITION_Z, PropertyNames.START_POSITION_Z );
