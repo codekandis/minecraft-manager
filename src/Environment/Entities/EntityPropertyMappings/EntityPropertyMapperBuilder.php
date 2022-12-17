@@ -3,6 +3,7 @@ namespace CodeKandis\MinecraftManager\Environment\Entities\EntityPropertyMapping
 
 use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapper;
 use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapperInterface;
+use CodeKandis\MinecraftManager\Environment\Entities\SettingEntity;
 use CodeKandis\MinecraftManager\Environment\Entities\UserEntity;
 use ReflectionException;
 
@@ -20,5 +21,14 @@ class EntityPropertyMapperBuilder implements EntityPropertyMapperBuilderInterfac
 	public function buildUserEntityPropertyMapper(): EntityPropertyMapperInterface
 	{
 		return new EntityPropertyMapper( UserEntity::class, new UserEntityPropertyMappings() );
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @throws ReflectionException The setting entity class to reflect does not exist.
+	 */
+	public function buildSettingEntityPropertyMapper(): EntityPropertyMapperInterface
+	{
+		return new EntityPropertyMapper( SettingEntity::class, new SettingEntityPropertyMappings() );
 	}
 }
