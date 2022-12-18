@@ -14,15 +14,29 @@ interface SettingEntityRepositoryInterface extends RepositoryInterface
 {
 	/**
 	 * Reads a setting by a specific user ID.
-	 * @param UserEntityInterface $user The user with the ID.
+	 * @param SettingEntityInterface $settingWithRecordId The setting with the setting's record ID.
 	 * @return SettingEntityInterface The read setting.
 	 */
-	public function readSettingByUserId( UserEntityInterface $user ): ?SettingEntityInterface;
+	public function readByRecordId( SettingEntityInterface $settingWithRecordId ): ?SettingEntityInterface;
 
 	/**
-	 * Creates or updates a setting by a specific user ID.
-	 * @param SettingEntityInterface $setting The setting to create or update.
-	 * @param UserEntityInterface $user The user with the ID.
+	 * Reads a setting by a specific user ID.
+	 * @param UserEntityInterface $userWithUserId The user with the user's ID.
+	 * @return SettingEntityInterface The read setting.
 	 */
-	public function createOrUpdateByUserId( SettingEntityInterface $setting, UserEntityInterface $user ): void;
+	public function readByUserId( UserEntityInterface $userWithUserId ): ?SettingEntityInterface;
+
+	/**
+	 * Creates a setting by a specific user ID.
+	 * @param SettingEntityInterface $setting The setting to create.
+	 * @param UserEntityInterface $userWithUserId The user with the user's ID.
+	 */
+	public function createByUserId( SettingEntityInterface $setting, UserEntityInterface $userWithUserId ): SettingEntityInterface;
+
+	/**
+	 * Updates a setting by a specific record ID.
+	 * @param SettingEntityInterface $setting The setting to update.
+	 * @param SettingEntityInterface $settingWithRecordId The setting with the setting's record ID.
+	 */
+	public function updateByRecordId( SettingEntityInterface $setting, SettingEntityInterface $settingWithRecordId ): SettingEntityInterface;
 }
