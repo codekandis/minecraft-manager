@@ -1,7 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\MinecraftManager\Frontend\Http\UriBuilders;
 
-use CodeKandis\MinecraftManager\Environment\Enumerations\UriNames;
+use CodeKandis\MinecraftManager\Frontend\Http\FrontendUriNames;
 use CodeKandis\Tiphy\Http\UriBuilders\AbstractUriBuilder;
 
 /**
@@ -16,7 +16,7 @@ class FrontendUriBuilder extends AbstractUriBuilder implements FrontendUriBuilde
 	 */
 	public function buildIndexUri(): string
 	{
-		return $this->build( UriNames::INDEX );
+		return $this->build( FrontendUriNames::INDEX );
 	}
 
 	/**
@@ -24,6 +24,6 @@ class FrontendUriBuilder extends AbstractUriBuilder implements FrontendUriBuilde
 	 */
 	public function buildSignoutUri(): string
 	{
-		return $this->build( UriNames::SIGNOUT );
+		return $this->build( FrontendUriNames::SIGNOUT );
 	}
 }

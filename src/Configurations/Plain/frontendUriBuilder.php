@@ -1,14 +1,14 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\MinecraftManager\Configurations;
 
-use CodeKandis\MinecraftManager\Environment\Enumerations\UriNames;
+use CodeKandis\MinecraftManager\Frontend\Http\FrontendUriNames;
 
 return [
 	'schema'       => 'https',
 	'host'         => 'minecraft-manager.codekandis',
 	'baseUri'      => '/',
 	'relativeUris' => [
-		UriNames::INDEX   => '',
-		UriNames::SIGNOUT => 'signout'
+		FrontendUriNames::INDEX   => '',
+		FrontendUriNames::SIGNOUT => 'signout'
 	]
 ];

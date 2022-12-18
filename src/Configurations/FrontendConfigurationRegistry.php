@@ -80,8 +80,8 @@ class FrontendConfigurationRegistry extends AbstractConfigurationRegistry implem
 		);
 		$this->uriBuilderConfiguration           = new UriBuilderConfiguration(
 			( new PlainConfigurationLoader() )
-				->load( __DIR__ . '/Plain', 'uriBuilder' )
-				->load( dirname( __DIR__, 2 ) . '/config', 'uriBuilder' )
+				->load( __DIR__ . '/Plain', 'frontendUriBuilder' )
+				->load( dirname( __DIR__, 2 ) . '/config', 'frontendUriBuilder' )
 				->getPlainConfiguration()
 		);
 	}

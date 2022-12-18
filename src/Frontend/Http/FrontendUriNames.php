@@ -1,12 +1,12 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\MinecraftManager\Environment\Enumerations;
+namespace CodeKandis\MinecraftManager\Frontend\Http;
 
 /**
- * Represents an enumeration of URI names.
+ * Represents an enumeration of frontend URI names.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class UriNames
+abstract class FrontendUriNames
 {
 	/**
 	 * Represents the URI name of the index.
