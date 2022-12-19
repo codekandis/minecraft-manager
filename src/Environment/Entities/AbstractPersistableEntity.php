@@ -9,24 +9,35 @@ namespace CodeKandis\MinecraftManager\Environment\Entities;
 abstract class AbstractPersistableEntity extends AbstractEntity implements PersistableEntityInterface
 {
 	/**
-	 * Stores the ID of the entity.
-	 * @var string
+	 * Stores the record ID of the entity.
+	 * @var ?int
 	 */
-	public string $id = '';
+	public ?int $_id = null;
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getId(): string
+	public function get_Id(): ?int
 	{
-		return $this->id;
+		return $this->_id;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public function setId( string $id ): void
+	public function set_Id( ?int $_id ): void
 	{
-		$this->id = $id;
+		$this->_id = $_id;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function jsonSerialize(): array
+	{
+		$serializedJson = parent::jsonSerialize();
+		unset( $serializedJson[ '_id' ] );
+
+		return $serializedJson;
 	}
 }
