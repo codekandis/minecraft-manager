@@ -4,6 +4,7 @@ namespace CodeKandis\MinecraftManager\Environment\Entities\EntityPropertyMapping
 use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapper;
 use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapperInterface;
 use CodeKandis\MinecraftManager\Environment\Entities\SettingEntity;
+use CodeKandis\MinecraftManager\Environment\Entities\SubwayRailsMapperEntity;
 use CodeKandis\MinecraftManager\Environment\Entities\UserEntity;
 use ReflectionException;
 
@@ -30,5 +31,14 @@ class EntityPropertyMapperBuilder implements EntityPropertyMapperBuilderInterfac
 	public function buildSettingEntityPropertyMapper(): EntityPropertyMapperInterface
 	{
 		return new EntityPropertyMapper( SettingEntity::class, new SettingEntityPropertyMappings() );
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * @throws ReflectionException The subway rails mapper entity class to reflect does not exist.
+	 */
+	public function buildSubwayRailsMapperEntityPropertyMapper(): EntityPropertyMapperInterface
+	{
+		return new EntityPropertyMapper( SubwayRailsMapperEntity::class, new SubwayRailsMapperEntityPropertyMappings() );
 	}
 }
