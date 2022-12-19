@@ -37,6 +37,7 @@
 		"codekandis/tiphy-persistence-integration": "^0",
 		"codekandis/tiphy-sentry-client-integration": "^0",
 		"codekandis/tiphy-session-integration": "^0",
+		"codekandis/validators": "^0",
 		"fortawesome/font-awesome": "^5"
 	},
 	"require-dev": {

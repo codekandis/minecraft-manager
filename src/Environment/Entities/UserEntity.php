@@ -9,10 +9,10 @@ namespace CodeKandis\MinecraftManager\Environment\Entities;
 class UserEntity extends AbstractPersistableEntity implements UserEntityInterface
 {
 	/**
-	 * Stores whether the user is active or not.
-	 * @var string
+	 * Stores true if the user is active, otherwise false.
+	 * @var bool
 	 */
-	public string $isActive = '';
+	public bool $isActive = false;
 
 	/**
 	 * Stores the name.
@@ -35,7 +35,7 @@ class UserEntity extends AbstractPersistableEntity implements UserEntityInterfac
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getIsActive(): string
+	public function getIsActive(): bool
 	{
 		return $this->isActive;
 	}
@@ -43,7 +43,7 @@ class UserEntity extends AbstractPersistableEntity implements UserEntityInterfac
 	/**
 	 * {@inheritDoc}
 	 */
-	public function setIsActive( string $isActive ): void
+	public function setIsActive( bool $isActive ): void
 	{
 		$this->isActive = $isActive;
 	}

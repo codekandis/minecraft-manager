@@ -4,22 +4,21 @@ import Abstract from '../../library/Types/Abstract.js';
 
 class ComponentsExecutor extends Abstract
 {
-	#_componentsClasses = undefined;
+	#_components = undefined;
 
-	constructor( ...componentsClasses )
+	constructor( ...components )
 	{
 		super();
 
-		this.#_componentsClasses = componentsClasses;
+		this.#_components = components;
 	}
 
 	execute()
 	{
-		this.#_componentsClasses.forEach(
-			( componentClass ) =>
+		this.#_components.forEach(
+			( component ) =>
 			{
-				( new componentClass() )
-					.execute();
+				component.execute();
 			}
 		);
 	}

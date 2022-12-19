@@ -17,6 +17,12 @@ abstract class AbstractEntity extends OriginAbstractEntity implements EntityInte
 	public string $canonicalUri = '';
 
 	/**
+	 * Stores the ID of the entity.
+	 * @var ?string
+	 */
+	public ?string $id = null;
+
+	/**
 	 * {@inheritDoc}
 	 */
 	public function getCanonicalUri(): string
@@ -30,5 +36,21 @@ abstract class AbstractEntity extends OriginAbstractEntity implements EntityInte
 	public function setCanonicalUri( string $canonicalUri ): void
 	{
 		$this->canonicalUri = $canonicalUri;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function getId(): ?string
+	{
+		return $this->id;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function setId( ?string $id ): void
+	{
+		$this->id = $id;
 	}
 }

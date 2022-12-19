@@ -9,14 +9,14 @@ namespace CodeKandis\MinecraftManager\Environment\Entities;
 interface PersistableEntityInterface extends EntityInterface
 {
 	/**
-	 * Gets the ID of the entity.
-	 * @return string The ID of the entity.
+	 * Gets the record ID of the entity.
+	 * @return ?int The record ID of the entity.
 	 */
-	public function getId(): string;
+	public function get_Id(): ?int;
 
 	/**
-	 * Sets the ID of the entity.
-	 * @param string $id The ID of the entity.
+	 * Sets the record ID of the entity.
+	 * @param ?int $_id The record ID of the entity.
 	 */
-	public function setId( string $id ): void;
+	public function set_Id( ?int $_id ): void;
 }

@@ -16,17 +16,14 @@
 }
 
 #subwayRailsMapper-initialValues fieldset label,
-#subwayRailsMapper-currentValues fieldset label {
-	width: 80px;
+#subwayRailsMapper-currentValues fieldset label,
+#subwayRailsMapper-calculatedValues fieldset label {
+	width: 30px;
 }
 
 #subwayRailsMapper-currentValues fieldset input[data-value-is-valid='TRUE'] {
 	box-shadow: 0 0 3px var(--codekandis-color-green);
 	border-color: var(--codekandis-color-green);
-}
-
-#subwayRailsMapper-calculatedValues fieldset label {
-	width: 30px;
 }
 
 #subwayRailsMapper-calculatedValues fieldset label[for="subwayRailsMapper-calculatedPositionXN"] {

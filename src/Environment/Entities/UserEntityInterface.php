@@ -6,19 +6,19 @@ namespace CodeKandis\MinecraftManager\Environment\Entities;
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-interface UserEntityInterface extends EntityInterface
+interface UserEntityInterface extends PersistableEntityInterface
 {
 	/**
 	 * Gets whether the user is active or not.
-	 * @return string 1 if the user is active, otherwise 0.
+	 * @return bool True if the user is active, otherwise false.
 	 */
-	public function getIsActive(): string;
+	public function getIsActive(): bool;
 
 	/**
 	 * Sets whether the user is active or not.
-	 * @param string $isActive 1 if the user is active, otherwise 0.
+	 * @param bool $isActive True if the user is active, otherwise false.
 	 */
-	public function setIsActive( string $isActive ): void;
+	public function setIsActive( bool $isActive ): void;
 
 	/**
 	 * Gets the name.

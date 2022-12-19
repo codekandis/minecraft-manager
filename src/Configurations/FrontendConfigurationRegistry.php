@@ -6,6 +6,7 @@ use CodeKandis\Tiphy\Configurations\AbstractConfigurationRegistry;
 use CodeKandis\Tiphy\Configurations\RoutesConfiguration;
 use CodeKandis\Tiphy\Configurations\TemplateRendererConfiguration;
 use CodeKandis\Tiphy\Configurations\UriBuilderConfiguration;
+use CodeKandis\Tiphy\Configurations\UriBuilderConfigurationInterface;
 use CodeKandis\TiphyAuthenticationIntegration\Configurations\SessionAuthenticatorConfiguration;
 use CodeKandis\TiphyAuthenticationIntegration\Configurations\SessionAuthenticatorConfigurationRegistryTrait;
 use CodeKandis\TiphyPersistenceIntegration\Configurations\ConfigurationRegistryTrait as PersistenceConfigurationRegistryTrait;
@@ -29,12 +30,26 @@ class FrontendConfigurationRegistry extends AbstractConfigurationRegistry implem
 	use SessionsConfigurationRegistryTrait;
 
 	/**
+	 * Stores the API URI builder configuration.
+	 * @var ?UriBuilderConfigurationInterface
+	 */
+	private UriBuilderConfigurationInterface $apiUriBuilderConfiguration;
+
+	/**
 	 * Creates the singleton instance of the frontend configuration registry.
 	 * @return FrontendConfigurationRegistryInterface The singleton instance of the frontend configuration registry.
 	 */
 	public static function _(): FrontendConfigurationRegistryInterface
 	{
 		return parent::_();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function getApiUriBuilderConfiguration(): ?UriBuilderConfigurationInterface
+	{
+		return $this->apiUriBuilderConfiguration;
 	}
 
 	/**
@@ -80,8 +95,14 @@ class FrontendConfigurationRegistry extends AbstractConfigurationRegistry implem
 		);
 		$this->uriBuilderConfiguration           = new UriBuilderConfiguration(
 			( new PlainConfigurationLoader() )
-				->load( __DIR__ . '/Plain', 'uriBuilder' )
-				->load( dirname( __DIR__, 2 ) . '/config', 'uriBuilder' )
+				->load( __DIR__ . '/Plain', 'frontendUriBuilder' )
+				->load( dirname( __DIR__, 2 ) . '/config', 'frontendUriBuilder' )
+				->getPlainConfiguration()
+		);
+		$this->apiUriBuilderConfiguration        = new UriBuilderConfiguration(
+			( new PlainConfigurationLoader() )
+				->load( __DIR__ . '/Plain', 'apiUriBuilder' )
+				->load( dirname( __DIR__, 2 ) . '/config', 'apiUriBuilder' )
 				->getPlainConfiguration()
 		);
 	}
