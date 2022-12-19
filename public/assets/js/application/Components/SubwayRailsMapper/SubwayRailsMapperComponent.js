@@ -4,10 +4,12 @@ import DomHelper from '../../../library/Dom/DomHelper.js';
 import BoolStrings from '../../../library/Types/BoolStrings.js';
 import BindableFormFieldProxy from '../../../library/Types/DataBindings/BindableFormFieldProxy.js';
 import DataBindingInitializationDirection from '../../../library/Types/DataBindings/DataBindingInitializationDirection.js';
+import PropertyChangedEvent from '../../../library/Types/DataBindings/PropertyChangedEvent.js';
 import AbstractComponent from '../AbstractComponent.js';
 import LanternPositions from './Entities/LanternPositions.js';
 import PropertyNames from './Enumerations/PropertyNames.js';
 import FormFieldSelectors from './Html/FormFieldSelectors.js';
+import ApiAjaxController from './Net/Http/ApiAjaxController.js';
 
 class SubwayRailsMapperComponent extends AbstractComponent
 {
@@ -57,6 +59,46 @@ class SubwayRailsMapperComponent extends AbstractComponent
 	#initialize()
 	{
 		this.#_lanternPositions = new LanternPositions( this.__setting )
+
+		this.#readSubwayRailsMapperFromApi();
+	}
+
+	#readSubwayRailsMapperFromApi()
+	{
+		( new ApiAjaxController() )
+			.readSubwayRailsMapper()
+			.then(
+				( data ) =>
+				{
+					if ( null !== data )
+					{
+						this.#_lanternPositions[ PropertyNames.START_POSITION_X ] = data.subwayRailsMapper[ PropertyNames.START_POSITION_X ];
+						this.#_lanternPositions[ PropertyNames.START_POSITION_Y ] = data.subwayRailsMapper[ PropertyNames.START_POSITION_Y ];
+						this.#_lanternPositions[ PropertyNames.START_POSITION_Z ] = data.subwayRailsMapper[ PropertyNames.START_POSITION_Z ];
+
+						DomHelper.addEventHandler(
+							this.#_lanternPositions,
+							PropertyChangedEvent.EVENT_NAME,
+							( event ) =>
+							{
+								this.#lanternPositions_propertyChanged( event );
+							}
+						);
+					}
+				}
+			);
+	}
+
+	#writeSubwayRailsMapperToApi()
+	{
+		const writableSubwayRailsMapper = {
+			[ PropertyNames.START_POSITION_X ]: this.#_lanternPositions[ '#_' + PropertyNames.START_POSITION_X ],
+			[ PropertyNames.START_POSITION_Y ]: this.#_lanternPositions[ '#_' + PropertyNames.START_POSITION_Y ],
+			[ PropertyNames.START_POSITION_Z ]: this.#_lanternPositions[ '#_' + PropertyNames.START_POSITION_Z ]
+		};
+
+		( new ApiAjaxController() )
+			.writeSubwayRailsMapper( writableSubwayRailsMapper );
 	}
 
 	_addDataBindings()
@@ -86,6 +128,21 @@ class SubwayRailsMapperComponent extends AbstractComponent
 		this._attachEventHandlers( FormFieldSelectors.CURRENT_POSITION_X, PropertyNames.CURRENT_POSITION_X );
 		this._attachEventHandlers( FormFieldSelectors.CURRENT_POSITION_Y, PropertyNames.CURRENT_POSITION_Y );
 		this._attachEventHandlers( FormFieldSelectors.CURRENT_POSITION_Z, PropertyNames.CURRENT_POSITION_Z );
+	}
+
+	#lanternPositions_propertyChanged( event )
+	{
+		switch ( event.detail.eventArguments.propertyName )
+		{
+			case PropertyNames.START_POSITION_X:
+			case PropertyNames.START_POSITION_Y:
+			case PropertyNames.START_POSITION_Z:
+			{
+				this.#writeSubwayRailsMapperToApi();
+
+				break;
+			}
+		}
 	}
 }
 
