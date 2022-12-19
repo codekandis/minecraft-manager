@@ -26,16 +26,16 @@
 	border-color: var(--codekandis-color-green);
 }
 
-#subwayRailsMapper-calculatedValues fieldset label[for="subwayRailsMapper-calculatedPositionXN"] {
+#subwayRailsMapper-calculatedValues fieldset label[for="subwayRailsMapper-calculatedPositionXP"] {
 	margin-left: 100px
 }
 
-#subwayRailsMapper-calculatedValues fieldset label[for="subwayRailsMapper-calculatedPositionYP"] {
+#subwayRailsMapper-calculatedValues fieldset label[for="subwayRailsMapper-calculatedPositionZN"],
+#subwayRailsMapper-calculatedValues fieldset label[for="subwayRailsMapper-calculatedPositionZP"] {
 	margin-left: 200px;
 }
 
-#subwayRailsMapper-calculatedPositionXN,
-#subwayRailsMapper-calculatedPositionYP,
-#subwayRailsMapper-calculatedPositionZN {
+#subwayRailsMapper-calculatedPositionXP,
+#subwayRailsMapper-calculatedPositionYP {
 	margin-right: 20px;
 }
