@@ -17,4 +17,14 @@ abstract class ApiUriNames
 	 * Represents the URI name of the setting.
 	 */
 	public const SETTING = 'setting';
+
+	/**
+	 * Represents the URI name of the subwayRailsMappers.
+	 */
+	public const SUBWAY_RAILS_MAPPERS = 'subwayRailsMappers';
+
+	/**
+	 * Represents the URI name of the subwayRailsMapper.
+	 */
+	public const SUBWAY_RAILS_MAPPER = 'subwayRailsMapper';
 }

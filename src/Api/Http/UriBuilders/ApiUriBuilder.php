@@ -26,4 +26,20 @@ class ApiUriBuilder extends AbstractUriBuilder implements ApiUriBuilderInterface
 	{
 		return $this->build( ApiUriNames::SETTING );
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function buildSubwayRailsMappersUri(): string
+	{
+		return $this->build( ApiUriNames::SUBWAY_RAILS_MAPPERS );
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function buildSubwayRailsMapperUri(): string
+	{
+		return $this->build( ApiUriNames::SUBWAY_RAILS_MAPPER );
+	}
 }

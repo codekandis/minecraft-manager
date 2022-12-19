@@ -8,15 +8,19 @@ use CodeKandis\Tiphy\Http\Requests\Methods;
 return [
 	'baseRoute' => '',
 	'routes'    => [
-		'^/$'             => [
+		'^/$'                         => [
 			Methods::GET => Frontend\Get\IndexAction::class
 		],
-		'^/signout$'      => [
+		'^/signout$'                  => [
 			Methods::GET => Frontend\Get\SignoutAction::class
 		],
-		'^/api/settings$' => [
+		'^/api/settings$'             => [
 			Methods::GET  => Api\Get\SettingAction::class,
 			Methods::POST => Api\Post\SettingAction::class
+		],
+		'^/api/subway-rails-mappers$' => [
+			Methods::GET  => Api\Get\SubwayRailsMapperAction::class,
+			Methods::POST => Api\Post\SubwayRailsMapperAction::class
 		]
 	]
 ];

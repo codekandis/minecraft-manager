@@ -8,7 +8,9 @@ return [
 	'host'         => 'minecraft-manager.codekandis',
 	'baseUri'      => '/api/',
 	'relativeUris' => [
-		ApiUriNames::SETTINGS => 'settings',
-		ApiUriNames::SETTING  => 'settings'
+		ApiUriNames::SETTINGS             => 'settings',
+		ApiUriNames::SETTING              => 'settings',
+		ApiUriNames::SUBWAY_RAILS_MAPPERS => 'subwayRailsMappers',
+		ApiUriNames::SUBWAY_RAILS_MAPPER  => 'subwayRailsMappers'
 	]
 ];

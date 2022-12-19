@@ -19,4 +19,16 @@ interface ApiUriBuilderInterface
 	 * @return string The URI of the setting.
 	 */
 	public function buildSettingUri(): string;
+
+	/**
+	 * Builds the URI of the subwayRailsMappers.
+	 * @return string The URI of the subwayRailsMappers.
+	 */
+	public function buildSubwayRailsMappersUri(): string;
+
+	/**
+	 * Builds the URI of the subwayRailsMapper.
+	 * @return string The URI of the subwayRailsMapper.
+	 */
+	public function buildSubwayRailsMapperUri(): string;
 }
