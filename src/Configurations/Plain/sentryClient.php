@@ -8,6 +8,6 @@ return [
 	'displayErrors' => false,
 	'errorTypes'    => E_ALL,
 	'environment'   => 'production',
-	'release'       => '0.4.1',
+	'release'       => '0.4.2',
 	'serverName'    => 'minecraft-manager.codekandis'
 ];
