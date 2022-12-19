@@ -17,6 +17,15 @@ class AbstractComponent extends AbstractBindable
 		}
 	];
 
+	__setting = undefined;
+
+	constructor( setting )
+	{
+		super();
+
+		this.__setting = setting;
+	}
+
 	_setPropertyAndInputValue( propertyName, value, formFieldSelector )
 	{
 		this[ '__' + propertyName ] = value;

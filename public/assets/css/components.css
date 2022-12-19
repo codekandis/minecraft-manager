@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+@import './components/setting.css';
 @import './components/subwayRailsMapper.css';
 @import './components/subwayStationMapper.css';
 

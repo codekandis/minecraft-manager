@@ -21,4 +21,16 @@ interface EntityInterface extends OriginEntityInterface
 	 * @param string $canonicalUri The canonical URI of the entity.
 	 */
 	public function setCanonicalUri( string $canonicalUri ): void;
+
+	/**
+	 * Gets the ID of the entity.
+	 * @return ?string The ID of the entity.
+	 */
+	public function getId(): ?string;
+
+	/**
+	 * Sets the ID of the entity.
+	 * @param ?string $id The ID of the entity.
+	 */
+	public function setId( ?string $id ): void;
 }

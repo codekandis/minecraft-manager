@@ -15,4 +15,16 @@ interface EntityPropertyMapperBuilderInterface
 	 * @return EntityPropertyMapperInterface The entity property mapper of the user entity.
 	 */
 	public function buildUserEntityPropertyMapper(): EntityPropertyMapperInterface;
+
+	/**
+	 * Builds the entity property mapper of the setting entity.
+	 * @return EntityPropertyMapperInterface The entity property mapper of the setting entity.
+	 */
+	public function buildSettingEntityPropertyMapper(): EntityPropertyMapperInterface;
+
+	/**
+	 * Builds the entity property mapper of the subway rails mapper entity.
+	 * @return EntityPropertyMapperInterface The entity property mapper of the subway rails mapper entity.
+	 */
+	public function buildSubwayRailsMapperEntityPropertyMapper(): EntityPropertyMapperInterface;
 }

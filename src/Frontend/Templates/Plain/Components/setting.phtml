@@ -1,0 +1,17 @@
+<?php declare( strict_types = 1 );
+namespace CodeKandis\MinecraftManager\Frontend\Templates\Plain\Components;
+?>
+<div data-control-type="TABPAGE">
+	<label data-control-type="TABPAGE_HEADER" for="tabPageSetting">Settings</label>
+	<input data-control-type="TABPAGE_ACTIVATOR" id="tabPageSetting" name="applicationComponent" type="radio"/>
+	<div data-control-type="TABPAGE_CONTENT">
+		<div id="setting">
+			<form id="setting-defaultValues">
+				<h2>Default Values</h2>
+				<fieldset>
+					<label for="setting-chunksize">Chunksize</label><input id="setting-chunksize" name="setting-chunksize" type="text" required/>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
