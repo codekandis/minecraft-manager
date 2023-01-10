@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class AccessControlHttpRequestMethodHttpRequestHeader extends HttpRequestHeader
+export class AccessControlHttpRequestMethodHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class AccessControlHttpRequestMethodHttpRequestHeader extends HttpRequestHeader
 		return 'Access-Control-HttpRequest-Method';
 	}
 }
-
-export default AccessControlHttpRequestMethodHttpRequestHeader;

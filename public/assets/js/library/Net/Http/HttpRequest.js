@@ -1,24 +1,24 @@
 'use strict';
 
-import Abstract from '../../Types/Abstract.js';
-import UrlPartial from '../UrlPartial.js';
-import ContentType from './ContentType.js';
-import HeadersToHttpResponseHeaderCollectionConverter from './Headers/HeadersToHttpResponseHeaderCollectionConverter.js';
-import HttpRequestHeaderCollection from './Headers/HttpRequestHeaderCollection.js';
-import ContentTypeHttpRequestHeader from './Headers/RequestHeaders/ContentTypeHttpRequestHeader.js';
-import HttpPostDataContentType from './HttpPostDataContentType.js';
-import HttpRequestError from './HttpRequestError.js';
-import HttpRequestMethod from './HttpRequestMethod.js';
-import HttpRequestResult from './HttpRequestResult.js';
-import HttpResponse from './HttpResponse.js';
-import HttpResponseRedirectPersecutionMode from './HttpResponseRedirectPersecutionMode.js';
-import HttpResponseRedirectPersecutor from './HttpResponseRedirectPersecutor.js';
-import HttpGetArgument from './RequestArguments/HttpGetArgument.js';
-import HttpGetArgumentCollection from './RequestArguments/HttpGetArgumentCollection.js';
-import HttpPostArgumentCollection from './RequestArguments/HttpPostArgumentCollection.js';
-import HttpPostFileCollection from './RequestArguments/HttpPostFileCollection.js';
+import { Abstract } from '../../Types/Abstract.js';
+import { UrlPartial } from '../UrlPartial.js';
+import { ContentType } from './ContentType.js';
+import { HeadersToHttpResponseHeaderCollectionConverter } from './Headers/HeadersToHttpResponseHeaderCollectionConverter.js';
+import { HttpRequestHeaderCollection } from './Headers/HttpRequestHeaderCollection.js';
+import { ContentTypeHttpRequestHeader } from './Headers/RequestHeaders/ContentTypeHttpRequestHeader.js';
+import { HttpPostDataContentType } from './HttpPostDataContentType.js';
+import { HttpRequestError } from './HttpRequestError.js';
+import { HttpRequestMethod } from './HttpRequestMethod.js';
+import { HttpRequestResult } from './HttpRequestResult.js';
+import { HttpResponse } from './HttpResponse.js';
+import { HttpResponseRedirectPersecutionMode } from './HttpResponseRedirectPersecutionMode.js';
+import { HttpResponseRedirectPersecutor } from './HttpResponseRedirectPersecutor.js';
+import { HttpGetArgument } from './RequestArguments/HttpGetArgument.js';
+import { HttpGetArgumentCollection } from './RequestArguments/HttpGetArgumentCollection.js';
+import { HttpPostArgumentCollection } from './RequestArguments/HttpPostArgumentCollection.js';
+import { HttpPostFileCollection } from './RequestArguments/HttpPostFileCollection.js';
 
-class HttpRequest extends Abstract
+export class HttpRequest extends Abstract
 {
 	#_abortController         = new AbortController();
 	#_uri                     = undefined;
@@ -364,5 +364,3 @@ class HttpRequest extends Abstract
 			);
 	}
 }
-
-export default HttpRequest;

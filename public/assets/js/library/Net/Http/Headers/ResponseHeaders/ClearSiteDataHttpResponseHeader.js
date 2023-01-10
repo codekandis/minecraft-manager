@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ClearSiteDataHttpResponseHeader extends HttpResponseHeader
+export class ClearSiteDataHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class ClearSiteDataHttpResponseHeader extends HttpResponseHeader
 		return 'Clear-Site-Data';
 	}
 }
-
-export default ClearSiteDataHttpResponseHeader;

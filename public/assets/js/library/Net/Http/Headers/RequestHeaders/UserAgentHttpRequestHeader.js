@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class UserAgentHttpRequestHeader extends HttpRequestHeader
+export class UserAgentHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class UserAgentHttpRequestHeader extends HttpRequestHeader
 		return 'User-Agent';
 	}
 }
-
-export default UserAgentHttpRequestHeader;

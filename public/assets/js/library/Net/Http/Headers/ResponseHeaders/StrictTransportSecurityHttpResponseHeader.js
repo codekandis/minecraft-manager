@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class StrictTransportSecurityHttpResponseHeader extends HttpResponseHeader
+export class StrictTransportSecurityHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class StrictTransportSecurityHttpResponseHeader extends HttpResponseHeader
 		return 'Strict-Transport-Security';
 	}
 }
-
-export default StrictTransportSecurityHttpResponseHeader;

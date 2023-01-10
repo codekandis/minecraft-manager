@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from '../../Types/StaticAbstract.js';
+import { StaticAbstract } from '../../Types/StaticAbstract.js';
 
-class HttpResponseRedirectPersecutionMode extends StaticAbstract
+export class HttpResponseRedirectPersecutionMode extends StaticAbstract
 {
 	static get NONE()
 	{
@@ -19,5 +19,3 @@ class HttpResponseRedirectPersecutionMode extends StaticAbstract
 		return 'lax';
 	}
 }
-
-export default HttpResponseRedirectPersecutionMode;

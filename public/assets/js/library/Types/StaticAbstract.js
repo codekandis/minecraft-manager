@@ -1,13 +1,11 @@
 'use strict';
 
-import InvalidStaticClassInstantiationException from './InvalidStaticClassInstantiationException.js';
+import { InvalidStaticClassInstantiationException } from './InvalidStaticClassInstantiationException.js';
 
-class StaticAbstract
+export class StaticAbstract
 {
 	constructor()
 	{
 		throw InvalidStaticClassInstantiationException.with_object( this );
 	}
 }
-
-export default StaticAbstract;

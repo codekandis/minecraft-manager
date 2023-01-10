@@ -1,8 +1,8 @@
 'use strict';
 
-import AbstractEvent from '../Types/AbstractEvent.js';
+import { AbstractEvent } from '../Types/AbstractEvent.js';
 
-class ClickEvent extends AbstractEvent
+export class ClickEvent extends AbstractEvent
 {
 	constructor( sender, eventArguments )
 	{
@@ -14,5 +14,3 @@ class ClickEvent extends AbstractEvent
 		return 'click';
 	}
 }
-
-export default ClickEvent;

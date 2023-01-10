@@ -1,9 +1,9 @@
 'use strict';
 
-import StaticAbstract from '../Types/StaticAbstract.js';
-import DebugMode from './DebugMode.js';
+import { StaticAbstract } from '../Types/StaticAbstract.js';
+import { DebugMode } from './DebugMode.js';
 
-class Debugger extends StaticAbstract
+export class Debugger extends StaticAbstract
 {
 	static log( ...values )
 	{
@@ -25,5 +25,3 @@ class Debugger extends StaticAbstract
 		}
 	}
 }
-
-export default Debugger;

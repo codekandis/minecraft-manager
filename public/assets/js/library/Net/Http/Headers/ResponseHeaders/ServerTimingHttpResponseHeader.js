@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ServerTimingHttpResponseHeader extends HttpResponseHeader
+export class ServerTimingHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class ServerTimingHttpResponseHeader extends HttpResponseHeader
 		return 'Server-Timing';
 	}
 }
-
-export default ServerTimingHttpResponseHeader;

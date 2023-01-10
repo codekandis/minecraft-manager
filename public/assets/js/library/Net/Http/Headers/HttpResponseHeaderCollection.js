@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpHeaderCollection from './HttpHeaderCollection.js';
+import { HttpHeaderCollection } from './HttpHeaderCollection.js';
 
-class HttpResponseHeaderCollection extends HttpHeaderCollection
+export class HttpResponseHeaderCollection extends HttpHeaderCollection
 {
 	contains( httpResponseHeader )
 	{
@@ -49,5 +49,3 @@ class HttpResponseHeaderCollection extends HttpHeaderCollection
 		return super.findAll( httpResponseHeaderName );
 	}
 }
-
-export default HttpResponseHeaderCollection;

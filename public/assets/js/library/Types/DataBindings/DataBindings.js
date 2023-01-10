@@ -1,10 +1,10 @@
 'use strict';
 
-import Abstract from '../Abstract.js';
-import DataBinding from './DataBinding.js';
-import DataBindingInitializationDirection from './DataBindingInitializationDirection.js';
+import { Abstract } from '../Abstract.js';
+import { DataBinding } from './DataBinding.js';
+import { DataBindingInitializationDirection } from './DataBindingInitializationDirection.js';
 
-class DataBindings extends Abstract
+export class DataBindings extends Abstract
 {
 	#_binder   = undefined;
 	#_bindings = [];
@@ -23,5 +23,3 @@ class DataBindings extends Abstract
 		);
 	}
 }
-
-export default DataBindings;

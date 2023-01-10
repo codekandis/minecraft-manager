@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AccessControlMaxAgeHttpResponseHeader extends HttpResponseHeader
+export class AccessControlMaxAgeHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class AccessControlMaxAgeHttpResponseHeader extends HttpResponseHeader
 		return 'Access-Control-Max-Age';
 	}
 }
-
-export default AccessControlMaxAgeHttpResponseHeader;

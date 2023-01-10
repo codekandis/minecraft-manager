@@ -1,16 +1,16 @@
 'use strict';
 
-import ClickEvent from '../../../library/Dom/ClickEvent.js';
-import DomHelper from '../../../library/Dom/DomHelper.js';
-import BindableFormFieldProxy from '../../../library/Types/DataBindings/BindableFormFieldProxy.js';
-import DataBindingInitializationDirection from '../../../library/Types/DataBindings/DataBindingInitializationDirection.js';
-import Clipboard from '../../../library/Utilities/Clipboard.js';
-import AbstractComponent from '../AbstractComponent.js';
-import StationPositions from './Entities/StationPositions.js';
-import PropertyNames from './Enumerations/PropertyNames.js';
-import FormFieldSelectors from './Html/FormFieldSelectors.js';
+import { ClickEvent } from '../../../library/Dom/ClickEvent.js';
+import { DomHelper } from '../../../library/Dom/DomHelper.js';
+import { BindableFormFieldProxy } from '../../../library/Types/DataBindings/BindableFormFieldProxy.js';
+import { DataBindingInitializationDirection } from '../../../library/Types/DataBindings/DataBindingInitializationDirection.js';
+import { Clipboard } from '../../../library/Utilities/Clipboard.js';
+import { AbstractComponent } from '../AbstractComponent.js';
+import { StationPositions } from './Entities/StationPositions.js';
+import { PropertyNames } from './Enumerations/PropertyNames.js';
+import { FormFieldSelectors } from './Html/FormFieldSelectors.js';
 
-class SubwayStationMapperComponent extends AbstractComponent
+export class SubwayStationMapperComponent extends AbstractComponent
 {
 	#_stationPositions = new StationPositions();
 
@@ -177,5 +177,3 @@ class SubwayStationMapperComponent extends AbstractComponent
 		eventHandlerAdder( FormFieldSelectors.STAIRWAY_RIGHT_NAME );
 	}
 }
-
-export default SubwayStationMapperComponent;

@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class PragmaHttpRequestHeader extends HttpRequestHeader
+export class PragmaHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class PragmaHttpRequestHeader extends HttpRequestHeader
 		return 'Pragma';
 	}
 }
-
-export default PragmaHttpRequestHeader;

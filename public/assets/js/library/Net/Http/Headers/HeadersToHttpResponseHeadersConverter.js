@@ -1,9 +1,9 @@
 'use strict';
 
-import Abstract from '../../../Types/Abstract.js';
-import HttpResponseHeader from './HttpResponseHeader.js';
+import { Abstract } from '../../../Types/Abstract.js';
+import { HttpResponseHeader } from './HttpResponseHeader.js';
 
-class HeadersToHttpResponseHeadersConverter extends Abstract
+export class HeadersToHttpResponseHeadersConverter extends Abstract
 {
 	convert( headers )
 	{
@@ -15,5 +15,3 @@ class HeadersToHttpResponseHeadersConverter extends Abstract
 		);
 	}
 }
-
-export default HeadersToHttpResponseHeadersConverter;

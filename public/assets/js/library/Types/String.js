@@ -1,6 +1,6 @@
 'use strict';
 
-import InvalidIndexException from './InvalidIndexException.js';
+import { InvalidIndexException } from './InvalidIndexException.js';
 
 String.empty = '';
 

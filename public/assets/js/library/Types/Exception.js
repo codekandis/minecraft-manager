@@ -1,6 +1,6 @@
 'use strict';
 
-class Exception extends Error
+export class Exception extends Error
 {
 	#_message = undefined;
 
@@ -11,5 +11,3 @@ class Exception extends Error
 		this.#_message = message;
 	}
 }
-
-export default Exception;

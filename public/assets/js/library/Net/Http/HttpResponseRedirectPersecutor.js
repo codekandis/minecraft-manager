@@ -1,13 +1,13 @@
 'use strict';
 
-import Abstract from '../../Types/Abstract.js';
-import LocationHttpResponseHeader from './Headers/ResponseHeaders/LocationHttpResponseHeader.js';
-import HttpRequest from './HttpRequest.js';
-import HttpRequestMethod from './HttpRequestMethod.js';
-import HttpResponseRedirectPersecutionMode from './HttpResponseRedirectPersecutionMode.js';
-import HttpResponseStatusCode from './HttpResponseStatusCode.js';
+import { Abstract } from '../../Types/Abstract.js';
+import { LocationHttpResponseHeader } from './Headers/ResponseHeaders/LocationHttpResponseHeader.js';
+import { HttpRequest } from './HttpRequest.js';
+import { HttpRequestMethod } from './HttpRequestMethod.js';
+import { HttpResponseRedirectPersecutionMode } from './HttpResponseRedirectPersecutionMode.js';
+import { HttpResponseStatusCode } from './HttpResponseStatusCode.js';
 
-class HttpResponseRedirectPersecutor extends Abstract
+export class HttpResponseRedirectPersecutor extends Abstract
 {
 	#_request                                          = undefined;
 	#_requestResult                                    = undefined;
@@ -90,5 +90,3 @@ class HttpResponseRedirectPersecutor extends Abstract
 		return request.send();
 	}
 }
-
-export default HttpResponseRedirectPersecutor;

@@ -1,11 +1,11 @@
 'use strict';
 
-import DomHelper from '../../Dom/DomHelper.js';
-import InitializingEvent from '../InitializingEvent.js';
-import InitializingEventArguments from '../InitializingEventArguments.js';
-import AbstractBindable from './AbstractBindable.js';
+import { DomHelper } from '../../Dom/DomHelper.js';
+import { InitializingEvent } from '../InitializingEvent.js';
+import { InitializingEventArguments } from '../InitializingEventArguments.js';
+import { AbstractBindable } from './AbstractBindable.js';
 
-class BindableProxy extends AbstractBindable
+export class BindableProxy extends AbstractBindable
 {
 	#_delegatedObject = undefined;
 	#_proxy           = undefined;
@@ -83,5 +83,3 @@ class BindableProxy extends AbstractBindable
 		return true;
 	}
 }
-
-export default BindableProxy;

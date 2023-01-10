@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class EctHttpRequestHeader extends HttpRequestHeader
+export class EctHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class EctHttpRequestHeader extends HttpRequestHeader
 		return 'ECT';
 	}
 }
-
-export default EctHttpRequestHeader;

@@ -1,9 +1,9 @@
 'use strict';
 
-import Collection from '../../../Collections/Collection.js';
-import HttpPostFileNamePreparator from './HttpPostFileNamePreparator.js';
+import { Collection } from '../../../Collections/Collection.js';
+import { HttpPostFileNamePreparator } from './HttpPostFileNamePreparator.js';
 
-class HttpPostFileCollection extends Collection
+export class HttpPostFileCollection extends Collection
 {
 	constructor( ...httpPostFiles )
 	{
@@ -120,5 +120,3 @@ class HttpPostFileCollection extends Collection
 		);
 	}
 }
-
-export default HttpPostFileCollection;

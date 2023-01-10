@@ -1,10 +1,10 @@
 'use strict';
 
-import ChangeEvent from '../../library/Dom/ChangeEvent.js';
-import DomHelper from '../../library/Dom/DomHelper.js';
-import AbstractBindable from '../../library/Types/DataBindings/AbstractBindable.js';
+import { ChangeEvent } from '../../library/Dom/ChangeEvent.js';
+import { DomHelper } from '../../library/Dom/DomHelper.js';
+import { AbstractBindable } from '../../library/Types/DataBindings/AbstractBindable.js';
 
-class AbstractComponent extends AbstractBindable
+export class AbstractComponent extends AbstractBindable
 {
 	static _EVENT_DEFAULT_VALUE_MAPPINGS = [
 		{
@@ -72,5 +72,3 @@ class AbstractComponent extends AbstractBindable
 		this._addFormFieldsEventHandlers();
 	}
 }
-
-export default AbstractComponent;

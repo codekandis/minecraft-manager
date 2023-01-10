@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class DownlinkHttpRequestHeader extends HttpRequestHeader
+export class DownlinkHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class DownlinkHttpRequestHeader extends HttpRequestHeader
 		return 'Downlink';
 	}
 }
-
-export default DownlinkHttpRequestHeader;

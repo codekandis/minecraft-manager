@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from '../../Types/StaticAbstract.js';
+import { StaticAbstract } from '../../Types/StaticAbstract.js';
 
-class ContentType extends StaticAbstract
+export class ContentType extends StaticAbstract
 {
 	static get APPLICATION_JSON()
 	{
@@ -59,5 +59,3 @@ class ContentType extends StaticAbstract
 		return ContentType.APPLICATION_XML_UTF8;
 	}
 }
-
-export default ContentType;

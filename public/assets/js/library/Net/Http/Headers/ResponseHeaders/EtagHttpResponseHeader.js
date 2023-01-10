@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class EtagHttpResponseHeader extends HttpResponseHeader
+export class EtagHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class EtagHttpResponseHeader extends HttpResponseHeader
 		return 'ETag';
 	}
 }
-
-export default EtagHttpResponseHeader;

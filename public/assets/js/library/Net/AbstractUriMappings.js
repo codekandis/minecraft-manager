@@ -1,8 +1,8 @@
 'use strict';
 
-import Abstract from '../Types/Abstract.js';
+import { Abstract } from '../Types/Abstract.js';
 
-class AbstractUriMappings extends Abstract
+export class AbstractUriMappings extends Abstract
 {
 	__schema       = String.empty;
 	__host         = String.empty;
@@ -40,5 +40,3 @@ class AbstractUriMappings extends Abstract
 		return this.__relativeUris[ uriName ];
 	}
 }
-
-export default AbstractUriMappings;

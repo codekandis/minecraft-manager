@@ -1,8 +1,8 @@
 'use strict';
 
-import Abstract from '../Types/Abstract.js';
+import { Abstract } from '../Types/Abstract.js';
 
-class Collection extends Abstract
+export class Collection extends Abstract
 {
 	__items = [];
 
@@ -132,5 +132,3 @@ class Collection extends Abstract
 		}
 	}
 }
-
-export default Collection;

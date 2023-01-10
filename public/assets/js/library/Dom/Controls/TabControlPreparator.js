@@ -1,12 +1,12 @@
 'use strict';
 
-import Abstract from '../../Types/Abstract.js';
-import BoolStrings from '../../Types/BoolStrings.js';
-import ClickEvent from '../ClickEvent.js';
-import DomHelper from '../DomHelper.js';
-import TabControlSelectors from './TabControlSelectors.js';
+import { Abstract } from '../../Types/Abstract.js';
+import { BoolStrings } from '../../Types/BoolStrings.js';
+import { ClickEvent } from '../ClickEvent.js';
+import { DomHelper } from '../DomHelper.js';
+import { TabControlSelectors } from './TabControlSelectors.js';
 
-class TabControlPreparator extends Abstract
+export class TabControlPreparator extends Abstract
 {
 	#_tabControls = undefined;
 
@@ -108,5 +108,3 @@ class TabControlPreparator extends Abstract
 		this.#selectFirstTabPages();
 	}
 }
-
-export default TabControlPreparator;

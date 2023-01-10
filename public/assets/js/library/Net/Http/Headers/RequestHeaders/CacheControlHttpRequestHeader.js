@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class CacheControlHttpRequestHeader extends HttpRequestHeader
+export class CacheControlHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class CacheControlHttpRequestHeader extends HttpRequestHeader
 		return 'Cache-Control';
 	}
 }
-
-export default CacheControlHttpRequestHeader;

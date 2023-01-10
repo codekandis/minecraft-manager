@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class MaxForwardsHttpRequestHeader extends HttpRequestHeader
+export class MaxForwardsHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class MaxForwardsHttpRequestHeader extends HttpRequestHeader
 		return 'Max-Forwards';
 	}
 }
-
-export default MaxForwardsHttpRequestHeader;

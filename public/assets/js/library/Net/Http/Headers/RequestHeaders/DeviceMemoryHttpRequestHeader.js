@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class DeviceMemoryHttpRequestHeader extends HttpRequestHeader
+export class DeviceMemoryHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class DeviceMemoryHttpRequestHeader extends HttpRequestHeader
 		return 'Device-Memory';
 	}
 }
-
-export default DeviceMemoryHttpRequestHeader;

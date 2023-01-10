@@ -1,8 +1,8 @@
 'use strict';
 
-import Abstract from '../../Types/Abstract.js';
+import { Abstract } from '../../Types/Abstract.js';
 
-class HttpResponse extends Abstract
+export class HttpResponse extends Abstract
 {
 	#_uri        = undefined;
 	#_statusCode = undefined;
@@ -39,5 +39,3 @@ class HttpResponse extends Abstract
 		return this.#_payload;
 	}
 }
-
-export default HttpResponse;

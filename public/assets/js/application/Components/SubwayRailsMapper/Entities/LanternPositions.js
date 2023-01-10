@@ -1,13 +1,13 @@
 'use strict';
 
-import DomHelper from '../../../../library/Dom/DomHelper.js';
-import AbstractBindable from '../../../../library/Types/DataBindings/AbstractBindable.js';
-import PropertyChangedEvent from '../../../../library/Types/DataBindings/PropertyChangedEvent.js';
-import SettingPropertyNames from '../../Setting/Enumerations/PropertyNames.js';
-import PropertyNames from '../Enumerations/PropertyNames.js';
-import LanternPositionsCalculator from './LanternPositionsCalculator.js';
+import { DomHelper } from '../../../../library/Dom/DomHelper.js';
+import { AbstractBindable } from '../../../../library/Types/DataBindings/AbstractBindable.js';
+import { PropertyChangedEvent } from '../../../../library/Types/DataBindings/PropertyChangedEvent.js';
+import { PropertyNames as SettingPropertyNames } from '../../Setting/Enumerations/PropertyNames.js';
+import { PropertyNames } from '../Enumerations/PropertyNames.js';
+import { LanternPositionsCalculator } from './LanternPositionsCalculator.js';
 
-class LanternPositions extends AbstractBindable
+export class LanternPositions extends AbstractBindable
 {
 	#_setting                                            = undefined;
 	[ '#_' + PropertyNames.START_POSITION_X ]            = 0;
@@ -255,5 +255,3 @@ class LanternPositions extends AbstractBindable
 		}
 	}
 }
-
-export default LanternPositions;

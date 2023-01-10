@@ -1,12 +1,12 @@
 'use strict';
 
-import Abstract from '../../../../library/Types/Abstract.js';
-import PropertyNames from '../Enumerations/PropertyNames.js';
-import Directions from './Directions.js';
-import Offset from './Offset.js';
-import Position from './Position.js';
+import { Abstract } from '../../../../library/Types/Abstract.js';
+import { PropertyNames } from '../Enumerations/PropertyNames.js';
+import { Directions } from './Directions.js';
+import { Offset } from './Offset.js';
+import { Position } from './Position.js';
 
-class StationOffsetsCalculator extends Abstract
+export class StationOffsetsCalculator extends Abstract
 {
 	static get #_OFFSET_PRESETS()
 	{
@@ -231,5 +231,3 @@ class StationOffsetsCalculator extends Abstract
 		return calculatedValues;
 	}
 }
-
-export default StationOffsetsCalculator;

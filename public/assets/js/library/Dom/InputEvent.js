@@ -1,8 +1,8 @@
 'use strict';
 
-import AbstractEvent from '../Types/AbstractEvent.js';
+import { AbstractEvent } from '../Types/AbstractEvent.js';
 
-class InputEvent extends AbstractEvent
+export class InputEvent extends AbstractEvent
 {
 	constructor( sender, eventArguments )
 	{
@@ -14,5 +14,3 @@ class InputEvent extends AbstractEvent
 		return 'input';
 	}
 }
-
-export default InputEvent;

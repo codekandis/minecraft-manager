@@ -1,8 +1,8 @@
 'use strict';
 
-import Abstract from './Abstract.js';
+import { Abstract } from './Abstract.js';
 
-class EventDetail extends Abstract
+export class EventDetail extends Abstract
 {
 	#_sender         = undefined;
 	#_eventArguments = undefined;
@@ -25,5 +25,3 @@ class EventDetail extends Abstract
 		return this.#_eventArguments;
 	}
 }
-
-export default EventDetail;

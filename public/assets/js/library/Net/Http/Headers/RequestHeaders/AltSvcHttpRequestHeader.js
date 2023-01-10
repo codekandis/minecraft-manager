@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class AltSvcHttpRequestHeader extends HttpRequestHeader
+export class AltSvcHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class AltSvcHttpRequestHeader extends HttpRequestHeader
 		return 'Alt-Svc';
 	}
 }
-
-export default AltSvcHttpRequestHeader;

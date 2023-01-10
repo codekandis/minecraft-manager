@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class LastModifiedHttpResponseHeader extends HttpResponseHeader
+export class LastModifiedHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class LastModifiedHttpResponseHeader extends HttpResponseHeader
 		return 'Last-Modified';
 	}
 }
-
-export default LastModifiedHttpResponseHeader;

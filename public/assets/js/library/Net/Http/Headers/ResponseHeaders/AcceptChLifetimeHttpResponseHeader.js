@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AcceptChLifetimeHttpResponseHeader extends HttpResponseHeader
+export class AcceptChLifetimeHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class AcceptChLifetimeHttpResponseHeader extends HttpResponseHeader
 		return 'Accept-CH-Lifetime';
 	}
 }
-
-export default AcceptChLifetimeHttpResponseHeader;

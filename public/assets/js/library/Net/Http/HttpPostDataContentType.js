@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from '../../Types/StaticAbstract.js';
+import { StaticAbstract } from '../../Types/StaticAbstract.js';
 
-class HttpPostDataContentType extends StaticAbstract
+export class HttpPostDataContentType extends StaticAbstract
 {
 	static get APPLICATION_X_WWW_FORM_URL_ENCODED()
 	{
@@ -19,5 +19,3 @@ class HttpPostDataContentType extends StaticAbstract
 		return 'PREFER_APPLICATION_X_WWW_FORM_URL_ENCODED';
 	}
 }
-
-export default HttpPostDataContentType;

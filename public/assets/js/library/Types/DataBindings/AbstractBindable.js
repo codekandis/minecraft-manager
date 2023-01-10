@@ -1,13 +1,13 @@
 'use strict';
 
-import Abstract from '../Abstract.js';
-import DataBindings from './DataBindings.js';
-import PropertyChangedEvent from './PropertyChangedEvent.js';
-import PropertyChangedEventArguments from './PropertyChangedEventArguments.js';
-import PropertyChangingEvent from './PropertyChangingEvent.js';
-import PropertyChangingEventArguments from './PropertyChangingEventArguments.js';
+import { Abstract } from '../Abstract.js';
+import { DataBindings } from './DataBindings.js';
+import { PropertyChangedEvent } from './PropertyChangedEvent.js';
+import { PropertyChangedEventArguments } from './PropertyChangedEventArguments.js';
+import { PropertyChangingEvent } from './PropertyChangingEvent.js';
+import { PropertyChangingEventArguments } from './PropertyChangingEventArguments.js';
 
-class AbstractBindable extends Abstract
+export class AbstractBindable extends Abstract
 {
 	#_dataBindings = undefined;
 
@@ -47,5 +47,3 @@ class AbstractBindable extends Abstract
 			.raise();
 	}
 }
-
-export default AbstractBindable;

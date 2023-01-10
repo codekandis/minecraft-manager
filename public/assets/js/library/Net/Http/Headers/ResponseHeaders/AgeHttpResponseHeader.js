@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AgeHttpResponseHeader extends HttpResponseHeader
+export class AgeHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class AgeHttpResponseHeader extends HttpResponseHeader
 		return 'Age';
 	}
 }
-
-export default AgeHttpResponseHeader;

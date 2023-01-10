@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class SecChUaHttpRequestHeader extends HttpRequestHeader
+export class SecChUaHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class SecChUaHttpRequestHeader extends HttpRequestHeader
 		return 'Sec-CH-UA';
 	}
 }
-
-export default SecChUaHttpRequestHeader;

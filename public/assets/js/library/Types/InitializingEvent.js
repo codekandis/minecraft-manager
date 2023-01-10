@@ -1,8 +1,8 @@
 'use strict';
 
-import AbstractEvent from './AbstractEvent.js';
+import { AbstractEvent } from './AbstractEvent.js';
 
-class InitializingEvent extends AbstractEvent
+export class InitializingEvent extends AbstractEvent
 {
 	constructor( sender, eventArguments )
 	{
@@ -14,5 +14,3 @@ class InitializingEvent extends AbstractEvent
 		return 'initializing';
 	}
 }
-
-export default InitializingEvent;

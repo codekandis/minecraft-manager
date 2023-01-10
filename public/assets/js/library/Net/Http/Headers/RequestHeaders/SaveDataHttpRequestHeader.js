@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class SaveDataHttpRequestHeader extends HttpRequestHeader
+export class SaveDataHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class SaveDataHttpRequestHeader extends HttpRequestHeader
 		return 'Save-Data';
 	}
 }
-
-export default SaveDataHttpRequestHeader;

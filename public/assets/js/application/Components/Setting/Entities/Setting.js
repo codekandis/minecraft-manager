@@ -1,9 +1,9 @@
 'use strict';
 
-import AbstractBindable from '../../../../library/Types/DataBindings/AbstractBindable.js';
-import PropertyNames from '../Enumerations/PropertyNames.js';
+import { AbstractBindable } from '../../../../library/Types/DataBindings/AbstractBindable.js';
+import { PropertyNames } from '../Enumerations/PropertyNames.js';
 
-class Setting extends AbstractBindable
+export class Setting extends AbstractBindable
 {
 	[ '#_' + PropertyNames.CHUNKSIZE ] = 0;
 
@@ -23,5 +23,3 @@ class Setting extends AbstractBindable
 		this._raisePropertyChangedEvent( PropertyNames.CHUNKSIZE );
 	}
 }
-
-export default Setting;

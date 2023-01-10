@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ContentDispositionHttpResponseHeader extends HttpResponseHeader
+export class ContentDispositionHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class ContentDispositionHttpResponseHeader extends HttpResponseHeader
 		return 'Content-Disposition';
 	}
 }
-
-export default ContentDispositionHttpResponseHeader;

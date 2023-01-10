@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from '../../../../library/Types/StaticAbstract.js';
+import { StaticAbstract } from '../../../../library/Types/StaticAbstract.js';
 
-class ApiUriNames extends StaticAbstract
+export class ApiUriNames extends StaticAbstract
 {
 	static get SUBWAY_RAILS_MAPPERS()
 	{
@@ -14,5 +14,3 @@ class ApiUriNames extends StaticAbstract
 		return 'subway-rails-mappers';
 	}
 }
-
-export default ApiUriNames;

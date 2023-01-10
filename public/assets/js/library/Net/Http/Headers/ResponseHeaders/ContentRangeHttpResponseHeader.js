@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ContentRangeHttpResponseHeader extends HttpResponseHeader
+export class ContentRangeHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class ContentRangeHttpResponseHeader extends HttpResponseHeader
 		return 'Content-Range';
 	}
 }
-
-export default ContentRangeHttpResponseHeader;

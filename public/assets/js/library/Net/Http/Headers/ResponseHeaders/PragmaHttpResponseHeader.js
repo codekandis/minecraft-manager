@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class PragmaHttpResponseHeader extends HttpResponseHeader
+export class PragmaHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class PragmaHttpResponseHeader extends HttpResponseHeader
 		return 'Pragma';
 	}
 }
-
-export default PragmaHttpResponseHeader;

@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class RangeHttpRequestHeader extends HttpRequestHeader
+export class RangeHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class RangeHttpRequestHeader extends HttpRequestHeader
 		return 'Range';
 	}
 }
-
-export default RangeHttpRequestHeader;

@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class IfMatchHttpRequestHeader extends HttpRequestHeader
+export class IfMatchHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class IfMatchHttpRequestHeader extends HttpRequestHeader
 		return 'If-Match';
 	}
 }
-
-export default IfMatchHttpRequestHeader;

@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AccessControlExposeHeadersHttpResponseHeader extends HttpResponseHeader
+export class AccessControlExposeHeadersHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class AccessControlExposeHeadersHttpResponseHeader extends HttpResponseHeader
 		return 'Access-Control-Expose-Headers';
 	}
 }
-
-export default AccessControlExposeHeadersHttpResponseHeader;

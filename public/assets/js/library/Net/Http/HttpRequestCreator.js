@@ -1,8 +1,8 @@
 'use strict';
 
-import Abstract from '../../Types/Abstract.js';
+import { Abstract } from '../../Types/Abstract.js';
 
-class HttpRequestCreator extends Abstract
+export class HttpRequestCreator extends Abstract
 {
 	#_requestCreatorDelegate = undefined;
 
@@ -18,5 +18,3 @@ class HttpRequestCreator extends Abstract
 		return this.#_requestCreatorDelegate( uri );
 	}
 }
-
-export default HttpRequestCreator;

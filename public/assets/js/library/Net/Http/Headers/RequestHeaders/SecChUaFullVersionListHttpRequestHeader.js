@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class SecChUaFullVersionListHttpRequestHeader extends HttpRequestHeader
+export class SecChUaFullVersionListHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class SecChUaFullVersionListHttpRequestHeader extends HttpRequestHeader
 		return 'Sec-CH-UA-Full-Version-List';
 	}
 }
-
-export default SecChUaFullVersionListHttpRequestHeader;

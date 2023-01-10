@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AccessControlAllowCredentialsHttpResponseHeader extends HttpResponseHeader
+export class AccessControlAllowCredentialsHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class AccessControlAllowCredentialsHttpResponseHeader extends HttpResponseHeader
 		return 'Access-Control-Allow-Credentials';
 	}
 }
-
-export default AccessControlAllowCredentialsHttpResponseHeader;

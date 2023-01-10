@@ -1,9 +1,9 @@
 'use strict';
 
-import StaticAbstract from '../../../../library/Types/StaticAbstract.js';
-import PropertyNames from '../Enumerations/PropertyNames.js';
+import { StaticAbstract } from '../../../../library/Types/StaticAbstract.js';
+import { PropertyNames } from '../Enumerations/PropertyNames.js';
 
-class FormFieldSelectors extends StaticAbstract
+export class FormFieldSelectors extends StaticAbstract
 {
 	static get MODULE_ROOT()
 	{
@@ -85,5 +85,3 @@ class FormFieldSelectors extends StaticAbstract
 		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_POSITION_ZP );
 	}
 }
-
-export default FormFieldSelectors;

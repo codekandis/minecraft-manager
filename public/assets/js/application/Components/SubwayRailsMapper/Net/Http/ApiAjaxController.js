@@ -1,10 +1,10 @@
 'use strict';
 
-import AbstractApiAjaxController from '../../../../Net/Http/AbstractApiAjaxController.js';
-import ApiHttpRequest from '../../../../Net/Http/ApiHttpRequest.js';
-import ApiUriBuilder from '../ApiUriBuilder.js';
+import { AbstractApiAjaxController } from '../../../../Net/Http/AbstractApiAjaxController.js';
+import { ApiHttpRequest } from '../../../../Net/Http/ApiHttpRequest.js';
+import { ApiUriBuilder } from '../ApiUriBuilder.js';
 
-class ApiAjaxController extends AbstractApiAjaxController
+export class ApiAjaxController extends AbstractApiAjaxController
 {
 	constructor()
 	{
@@ -45,5 +45,3 @@ class ApiAjaxController extends AbstractApiAjaxController
 		await request.send();
 	}
 }
-
-export default ApiAjaxController;

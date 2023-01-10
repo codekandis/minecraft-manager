@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AccessControlAllowMethodsHttpResponseHeader extends HttpResponseHeader
+export class AccessControlAllowMethodsHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class AccessControlAllowMethodsHttpResponseHeader extends HttpResponseHeader
 		return 'Access-Control-Allow-Methods';
 	}
 }
-
-export default AccessControlAllowMethodsHttpResponseHeader;

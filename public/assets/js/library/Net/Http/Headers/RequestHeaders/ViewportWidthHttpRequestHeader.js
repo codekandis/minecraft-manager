@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class ViewportWidthHttpRequestHeader extends HttpRequestHeader
+export class ViewportWidthHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class ViewportWidthHttpRequestHeader extends HttpRequestHeader
 		return 'Viewport-Width';
 	}
 }
-
-export default ViewportWidthHttpRequestHeader;

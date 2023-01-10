@@ -1,8 +1,8 @@
 'use strict';
 
-import AbstractEvent from '../Types/AbstractEvent.js';
+import { AbstractEvent } from '../Types/AbstractEvent.js';
 
-class DomContentLoadedEvent extends AbstractEvent
+export class DomContentLoadedEvent extends AbstractEvent
 {
 	constructor( sender, eventArguments )
 	{
@@ -14,5 +14,3 @@ class DomContentLoadedEvent extends AbstractEvent
 		return 'DOMContentLoaded';
 	}
 }
-
-export default DomContentLoadedEvent;

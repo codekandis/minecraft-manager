@@ -1,10 +1,10 @@
 'use strict';
 
-import Abstract from '../../../Types/Abstract.js';
-import HttpPostFile from './HttpPostFile.js';
-import HttpPostFileCollection from './HttpPostFileCollection.js';
+import { Abstract } from '../../../Types/Abstract.js';
+import { HttpPostFile } from './HttpPostFile.js';
+import { HttpPostFileCollection } from './HttpPostFileCollection.js';
 
-class FileListToHttpPostFileCollection extends Abstract
+export class FileListToHttpPostFileCollection extends Abstract
 {
 	#_httpPostFileName = undefined;
 
@@ -27,5 +27,3 @@ class FileListToHttpPostFileCollection extends Abstract
 		);
 	}
 }
-
-export default FileListToHttpPostFileCollection;

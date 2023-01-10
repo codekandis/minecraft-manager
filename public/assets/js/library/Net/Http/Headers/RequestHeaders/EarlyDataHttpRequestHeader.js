@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class EarlyDataHttpRequestHeader extends HttpRequestHeader
+export class EarlyDataHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class EarlyDataHttpRequestHeader extends HttpRequestHeader
 		return 'Early-Data';
 	}
 }
-
-export default EarlyDataHttpRequestHeader;

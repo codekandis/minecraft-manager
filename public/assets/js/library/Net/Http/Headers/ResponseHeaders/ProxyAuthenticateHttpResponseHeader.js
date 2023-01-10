@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ProxyAuthenticateHttpResponseHeader extends HttpResponseHeader
+export class ProxyAuthenticateHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class ProxyAuthenticateHttpResponseHeader extends HttpResponseHeader
 		return 'Proxy-Authenticate';
 	}
 }
-
-export default ProxyAuthenticateHttpResponseHeader;

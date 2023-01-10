@@ -1,8 +1,8 @@
 'use strict';
 
-import AbstractEvent from '../AbstractEvent.js';
+import { AbstractEvent } from '../AbstractEvent.js';
 
-class PropertyChangedEvent extends AbstractEvent
+export class PropertyChangedEvent extends AbstractEvent
 {
 	constructor( sender, eventArguments )
 	{
@@ -14,5 +14,3 @@ class PropertyChangedEvent extends AbstractEvent
 		return 'propertyChanged';
 	}
 }
-
-export default PropertyChangedEvent;

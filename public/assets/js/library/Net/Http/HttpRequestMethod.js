@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from '../../Types/StaticAbstract.js';
+import { StaticAbstract } from '../../Types/StaticAbstract.js';
 
-class HttpRequestMethod extends StaticAbstract
+export class HttpRequestMethod extends StaticAbstract
 {
 	static get CONNECT()
 	{
@@ -89,5 +89,3 @@ class HttpRequestMethod extends StaticAbstract
 		return 'UNLOCK';
 	}
 }
-
-export default HttpRequestMethod;

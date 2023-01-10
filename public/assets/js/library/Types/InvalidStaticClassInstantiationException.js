@@ -1,8 +1,8 @@
 'use strict';
 
-import Exception from './Exception.js';
+import { Exception } from './Exception.js';
 
-class InvalidStaticClassInstantiationException extends Exception
+export class InvalidStaticClassInstantiationException extends Exception
 {
 	static with_className( className )
 	{
@@ -16,5 +16,3 @@ class InvalidStaticClassInstantiationException extends Exception
 		return InvalidStaticClassInstantiationException.with_className( obj.__proto__.constructor.name );
 	}
 }
-
-export default InvalidStaticClassInstantiationException;

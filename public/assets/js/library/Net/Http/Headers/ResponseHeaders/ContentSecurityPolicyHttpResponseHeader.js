@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ContentSecurityPolicyHttpResponseHeader extends HttpResponseHeader
+export class ContentSecurityPolicyHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class ContentSecurityPolicyHttpResponseHeader extends HttpResponseHeader
 		return 'Content-Security-Policy';
 	}
 }
-
-export default ContentSecurityPolicyHttpResponseHeader;

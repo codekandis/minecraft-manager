@@ -1,9 +1,9 @@
 'use strict';
 
-import Abstract from '../../../Types/Abstract.js';
-import HttpPostFileNamePreparator from './HttpPostFileNamePreparator.js';
+import { Abstract } from '../../../Types/Abstract.js';
+import { HttpPostFileNamePreparator } from './HttpPostFileNamePreparator.js';
 
-class HttpPostFile extends Abstract
+export class HttpPostFile extends Abstract
 {
 	#_name     = undefined;
 	#_filename = undefined;
@@ -39,5 +39,3 @@ class HttpPostFile extends Abstract
 		return this.#_file;
 	}
 }
-
-export default HttpPostFile;

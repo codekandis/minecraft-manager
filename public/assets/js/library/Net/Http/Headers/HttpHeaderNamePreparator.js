@@ -1,8 +1,8 @@
 'use strict';
 
-import Abstract from '../../../Types/Abstract.js';
+import { Abstract } from '../../../Types/Abstract.js';
 
-class HttpHeaderNamePreparator extends Abstract
+export class HttpHeaderNamePreparator extends Abstract
 {
 	prepare( httpHeaderName )
 	{
@@ -11,5 +11,3 @@ class HttpHeaderNamePreparator extends Abstract
 			.toLowerCase();
 	}
 }
-
-export default HttpHeaderNamePreparator;

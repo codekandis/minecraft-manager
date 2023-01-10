@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class VaryHttpResponseHeader extends HttpResponseHeader
+export class VaryHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class VaryHttpResponseHeader extends HttpResponseHeader
 		return 'Vary';
 	}
 }
-
-export default VaryHttpResponseHeader;

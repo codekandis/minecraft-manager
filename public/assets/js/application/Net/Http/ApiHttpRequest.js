@@ -1,11 +1,11 @@
 'use strict';
 
-import ContentType from '../../../library/Net/Http/ContentType.js';
-import ContentTypeHttpRequestHeader from '../../../library/Net/Http/Headers/RequestHeaders/ContentTypeHttpRequestHeader.js';
-import HttpRequest from '../../../library/Net/Http/HttpRequest.js';
-import HttpRequestMethod from '../../../library/Net/Http/HttpRequestMethod.js';
+import { ContentType } from '../../../library/Net/Http/ContentType.js';
+import { ContentTypeHttpRequestHeader } from '../../../library/Net/Http/Headers/RequestHeaders/ContentTypeHttpRequestHeader.js';
+import { HttpRequest } from '../../../library/Net/Http/HttpRequest.js';
+import { HttpRequestMethod } from '../../../library/Net/Http/HttpRequestMethod.js';
 
-class ApiHttpRequest extends HttpRequest
+export class ApiHttpRequest extends HttpRequest
 {
 	constructor( uri )
 	{
@@ -39,5 +39,3 @@ class ApiHttpRequest extends HttpRequest
 		return request;
 	}
 }
-
-export default ApiHttpRequest;

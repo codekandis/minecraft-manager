@@ -1,8 +1,8 @@
 'use strict';
 
-import Exception from '../Types/Exception.js';
+import { Exception } from '../Types/Exception.js';
 
-class InvalidDebugModeException extends Exception
+export class InvalidDebugModeException extends Exception
 {
 	static with_debugMode( debugMode )
 	{
@@ -11,5 +11,3 @@ class InvalidDebugModeException extends Exception
 		);
 	}
 }
-
-export default InvalidDebugModeException;

@@ -1,9 +1,9 @@
 'use strict';
 
-import StaticAbstract from '../Types/StaticAbstract.js';
-import InvalidDebugModeException from './InvalidDebugModeException.js';
+import { StaticAbstract } from '../Types/StaticAbstract.js';
+import { InvalidDebugModeException } from './InvalidDebugModeException.js';
 
-class DebugMode extends StaticAbstract
+export class DebugMode extends StaticAbstract
 {
 	static get DISABLED()
 	{
@@ -46,5 +46,3 @@ class DebugMode extends StaticAbstract
 		DebugMode.mode = DebugMode.DISABLED;
 	}
 }
-
-export default DebugMode;

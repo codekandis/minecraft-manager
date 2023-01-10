@@ -1,8 +1,8 @@
 'use strict';
 
-import Abstract from '../../../library/Types/Abstract.js';
+import { Abstract } from '../../../library/Types/Abstract.js';
 
-class AbstractApiAjaxController extends Abstract
+export class AbstractApiAjaxController extends Abstract
 {
 	__uriBuilder = undefined;
 
@@ -23,5 +23,3 @@ class AbstractApiAjaxController extends Abstract
 		return JSON.parse( payload );
 	}
 }
-
-export default AbstractApiAjaxController;

@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class ContentTypeHttpRequestHeader extends HttpRequestHeader
+export class ContentTypeHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class ContentTypeHttpRequestHeader extends HttpRequestHeader
 		return 'Content-Type';
 	}
 }
-
-export default ContentTypeHttpRequestHeader;

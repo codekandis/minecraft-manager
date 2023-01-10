@@ -1,9 +1,9 @@
 'use strict';
 
-import Abstract from '../../../Types/Abstract.js';
-import HttpPostFile from './HttpPostFile.js';
+import { Abstract } from '../../../Types/Abstract.js';
+import { HttpPostFile } from './HttpPostFile.js';
 
-class FileListToHttpPostFilesConverter extends Abstract
+export class FileListToHttpPostFilesConverter extends Abstract
 {
 	#_httpPostFileName = undefined;
 
@@ -24,5 +24,3 @@ class FileListToHttpPostFilesConverter extends Abstract
 		);
 	}
 }
-
-export default FileListToHttpPostFilesConverter;

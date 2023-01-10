@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class SecFetchUserHttpRequestHeader extends HttpRequestHeader
+export class SecFetchUserHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class SecFetchUserHttpRequestHeader extends HttpRequestHeader
 		return 'Sec-Fetch-User';
 	}
 }
-
-export default SecFetchUserHttpRequestHeader;

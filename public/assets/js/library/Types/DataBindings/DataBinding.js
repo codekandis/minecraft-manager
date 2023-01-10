@@ -1,11 +1,11 @@
 'use strict';
 
-import DomHelper from '../../Dom/DomHelper.js';
-import Abstract from '../Abstract.js';
-import DataBindingInitializationDirection from './DataBindingInitializationDirection.js';
-import PropertyChangedEvent from './PropertyChangedEvent.js';
+import { DomHelper } from '../../Dom/DomHelper.js';
+import { Abstract } from '../Abstract.js';
+import { DataBindingInitializationDirection } from './DataBindingInitializationDirection.js';
+import { PropertyChangedEvent } from './PropertyChangedEvent.js';
 
-class DataBinding extends Abstract
+export class DataBinding extends Abstract
 {
 	#_binder                         = undefined;
 	#_binderPropertyName             = undefined;
@@ -148,5 +148,3 @@ class DataBinding extends Abstract
 		this.#updateBinderProperty();
 	}
 }
-
-export default DataBinding;

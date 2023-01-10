@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class CacheControlHttpResponseHeader extends HttpResponseHeader
+export class CacheControlHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class CacheControlHttpResponseHeader extends HttpResponseHeader
 		return 'Cache-Control';
 	}
 }
-
-export default CacheControlHttpResponseHeader;

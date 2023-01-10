@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from '../../../../library/Types/StaticAbstract.js';
+import { StaticAbstract } from '../../../../library/Types/StaticAbstract.js';
 
-class Directions extends StaticAbstract
+export class Directions extends StaticAbstract
 {
 	static get NORTH()
 	{
@@ -24,5 +24,3 @@ class Directions extends StaticAbstract
 		return 'WEST';
 	}
 }
-
-export default Directions;

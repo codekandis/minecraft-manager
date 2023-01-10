@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class KeepAliveHttpResponseHeader extends HttpResponseHeader
+export class KeepAliveHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class KeepAliveHttpResponseHeader extends HttpResponseHeader
 		return 'Keep-Alive';
 	}
 }
-
-export default KeepAliveHttpResponseHeader;

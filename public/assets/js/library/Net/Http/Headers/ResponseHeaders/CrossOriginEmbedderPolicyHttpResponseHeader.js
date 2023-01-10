@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class CrossOriginEmbedderPolicyHttpResponseHeader extends HttpResponseHeader
+export class CrossOriginEmbedderPolicyHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class CrossOriginEmbedderPolicyHttpResponseHeader extends HttpResponseHeader
 		return 'Cross-Origin-Embedder-Policy';
 	}
 }
-
-export default CrossOriginEmbedderPolicyHttpResponseHeader;

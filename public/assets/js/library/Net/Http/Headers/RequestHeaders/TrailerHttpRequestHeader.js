@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class TrailerHttpRequestHeader extends HttpRequestHeader
+export class TrailerHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class TrailerHttpRequestHeader extends HttpRequestHeader
 		return 'Trailer';
 	}
 }
-
-export default TrailerHttpRequestHeader;

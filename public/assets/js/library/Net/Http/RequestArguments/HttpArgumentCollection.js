@@ -1,9 +1,9 @@
 'use strict';
 
-import Collection from '../../../Collections/Collection.js';
-import HttpArgumentNamePreparator from './HttpArgumentNamePreparator.js';
+import { Collection } from '../../../Collections/Collection.js';
+import { HttpArgumentNamePreparator } from './HttpArgumentNamePreparator.js';
 
-class HttpArgumentCollection extends Collection
+export class HttpArgumentCollection extends Collection
 {
 	get fullHttpArgumentsString()
 	{
@@ -123,5 +123,3 @@ class HttpArgumentCollection extends Collection
 		);
 	}
 }
-
-export default HttpArgumentCollection;

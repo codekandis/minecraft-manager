@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class SecChUaBitnessHttpRequestHeader extends HttpRequestHeader
+export class SecChUaBitnessHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class SecChUaBitnessHttpRequestHeader extends HttpRequestHeader
 		return 'Sec-CH-UA-Bitness';
 	}
 }
-
-export default SecChUaBitnessHttpRequestHeader;

@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class SecWebsocketAcceptHttpResponseHeader extends HttpResponseHeader
+export class SecWebsocketAcceptHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class SecWebsocketAcceptHttpResponseHeader extends HttpResponseHeader
 		return 'Sec-WebSocket-Accept';
 	}
 }
-
-export default SecWebsocketAcceptHttpResponseHeader;

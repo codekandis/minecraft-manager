@@ -1,7 +1,7 @@
 'use strict';
 
-import UnknownUrlPartialException from './UnknownUrlPartialException.js';
-import UrlPartial from './UrlPartial.js';
+import { UnknownUrlPartialException } from './UnknownUrlPartialException.js';
+import { UrlPartial } from './UrlPartial.js';
 
 URL.prototype.getLeftPart = function ( urlPartial )
 {

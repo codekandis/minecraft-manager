@@ -1,13 +1,11 @@
 'use strict';
 
-import Abstract from '../../../Types/Abstract.js';
+import { Abstract } from '../../../Types/Abstract.js';
 
-class HttpArgumentNamePreparator extends Abstract
+export class HttpArgumentNamePreparator extends Abstract
 {
 	prepare( httpArgumentName )
 	{
 		return httpArgumentName.trim();
 	}
 }
-
-export default HttpArgumentNamePreparator;

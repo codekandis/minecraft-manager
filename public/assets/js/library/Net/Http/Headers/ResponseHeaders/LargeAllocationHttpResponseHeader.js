@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class LargeAllocationHttpResponseHeader extends HttpResponseHeader
+export class LargeAllocationHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class LargeAllocationHttpResponseHeader extends HttpResponseHeader
 		return 'Large-Allocation';
 	}
 }
-
-export default LargeAllocationHttpResponseHeader;

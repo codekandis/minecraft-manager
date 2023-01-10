@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class AuthorizationHttpRequestHeader extends HttpRequestHeader
+export class AuthorizationHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class AuthorizationHttpRequestHeader extends HttpRequestHeader
 		return 'Authorization';
 	}
 }
-
-export default AuthorizationHttpRequestHeader;

@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from '../../Types/StaticAbstract.js';
+import { StaticAbstract } from '../../Types/StaticAbstract.js';
 
-class TabControlSelectors extends StaticAbstract
+export class TabControlSelectors extends StaticAbstract
 {
 	static get TABCONTROL()
 	{
@@ -59,5 +59,3 @@ class TabControlSelectors extends StaticAbstract
 		return String.format`${ 0 }:checked`( TabControlSelectors.TABPAGE_ACTIVATORS );
 	}
 }
-
-export default TabControlSelectors;

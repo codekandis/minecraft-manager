@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class SecChPrefersReducedMotionHttpRequestHeader extends HttpRequestHeader
+export class SecChPrefersReducedMotionHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class SecChPrefersReducedMotionHttpRequestHeader extends HttpRequestHeader
 		return 'Sec-CH-Prefers-Reduced-Motion';
 	}
 }
-
-export default SecChPrefersReducedMotionHttpRequestHeader;

@@ -1,14 +1,11 @@
 'use strict';
 
-import Abstract from '../../../Types/Abstract.js';
+import { Abstract } from '../../../Types/Abstract.js';
 
-class HttpHeaderValuePreparator extends Abstract
+export class HttpHeaderValuePreparator extends Abstract
 {
 	prepare( httpHeaderValue )
 	{
 		return httpHeaderValue.trimStart();
 	}
-
 }
-
-export default HttpHeaderValuePreparator;

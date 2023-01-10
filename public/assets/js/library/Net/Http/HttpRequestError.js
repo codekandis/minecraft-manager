@@ -1,8 +1,8 @@
 'use strict';
 
-import Abstract from '../../Types/Abstract.js';
+import { Abstract } from '../../Types/Abstract.js';
 
-class HttpRequestError extends Abstract
+export class HttpRequestError extends Abstract
 {
 	#_message = undefined;
 
@@ -18,5 +18,3 @@ class HttpRequestError extends Abstract
 		return this.#_message;
 	}
 }
-
-export default HttpRequestError;

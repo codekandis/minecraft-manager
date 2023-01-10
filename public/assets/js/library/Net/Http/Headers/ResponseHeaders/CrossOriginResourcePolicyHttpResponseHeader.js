@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class CrossOriginResourcePolicyHttpResponseHeader extends HttpResponseHeader
+export class CrossOriginResourcePolicyHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class CrossOriginResourcePolicyHttpResponseHeader extends HttpResponseHeader
 		return 'Cross-Origin-Resource-Policy';
 	}
 }
-
-export default CrossOriginResourcePolicyHttpResponseHeader;

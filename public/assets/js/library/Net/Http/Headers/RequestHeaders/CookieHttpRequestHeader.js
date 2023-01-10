@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class CookieHttpRequestHeader extends HttpRequestHeader
+export class CookieHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class CookieHttpRequestHeader extends HttpRequestHeader
 		return 'Cookie';
 	}
 }
-
-export default CookieHttpRequestHeader;

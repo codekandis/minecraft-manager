@@ -1,8 +1,8 @@
 'use strict';
 
-import Exception from '../Types/Exception.js';
+import { Exception } from '../Types/Exception.js';
 
-class DomElementNotFoundException extends Exception
+export class DomElementNotFoundException extends Exception
 {
 	static with_unresolvableSelector( selector )
 	{
@@ -11,5 +11,3 @@ class DomElementNotFoundException extends Exception
 		);
 	}
 }
-
-export default DomElementNotFoundException;

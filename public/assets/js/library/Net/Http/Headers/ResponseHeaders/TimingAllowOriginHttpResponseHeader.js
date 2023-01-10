@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class TimingAllowOriginHttpResponseHeader extends HttpResponseHeader
+export class TimingAllowOriginHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class TimingAllowOriginHttpResponseHeader extends HttpResponseHeader
 		return 'Timing-Allow-Origin';
 	}
 }
-
-export default TimingAllowOriginHttpResponseHeader;

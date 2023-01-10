@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class IfRangeHttpRequestHeader extends HttpRequestHeader
+export class IfRangeHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class IfRangeHttpRequestHeader extends HttpRequestHeader
 		return 'If-Range';
 	}
 }
-
-export default IfRangeHttpRequestHeader;

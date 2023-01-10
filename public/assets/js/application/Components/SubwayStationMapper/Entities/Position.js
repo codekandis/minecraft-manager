@@ -1,8 +1,8 @@
 'use strict';
 
-import Abstract from '../../../../library/Types/Abstract.js';
+import { Abstract } from '../../../../library/Types/Abstract.js';
 
-class Position extends Abstract
+export class Position extends Abstract
 {
 	#_x = undefined;
 	#_y = undefined;
@@ -32,5 +32,3 @@ class Position extends Abstract
 		return this.#_z;
 	}
 }
-
-export default Position;

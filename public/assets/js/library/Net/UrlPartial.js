@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from '../Types/StaticAbstract.js';
+import { StaticAbstract } from '../Types/StaticAbstract.js';
 
-class UrlPartial extends StaticAbstract
+export class UrlPartial extends StaticAbstract
 {
 	static get PROTOCOL()
 	{
@@ -44,5 +44,3 @@ class UrlPartial extends StaticAbstract
 		return 'HASH';
 	}
 }
-
-export default UrlPartial;

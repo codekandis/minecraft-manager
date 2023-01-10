@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AllowHttpResponseHeader extends HttpResponseHeader
+export class AllowHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class AllowHttpResponseHeader extends HttpResponseHeader
 		return 'Allow';
 	}
 }
-
-export default AllowHttpResponseHeader;

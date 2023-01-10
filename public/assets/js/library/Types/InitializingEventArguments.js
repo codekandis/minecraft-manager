@@ -1,8 +1,8 @@
 'use strict';
 
-import EventArguments from './EventArguments.js';
+import { EventArguments } from './EventArguments.js';
 
-class InitializingEventArguments extends EventArguments
+export class InitializingEventArguments extends EventArguments
 {
 	#_object = undefined;
 
@@ -18,5 +18,3 @@ class InitializingEventArguments extends EventArguments
 		return this.#_object;
 	}
 }
-
-export default InitializingEventArguments;

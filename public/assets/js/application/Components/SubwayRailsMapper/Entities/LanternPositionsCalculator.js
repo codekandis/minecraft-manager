@@ -1,10 +1,10 @@
 'use strict';
 
-import Abstract from '../../../../library/Types/Abstract.js';
-import SettingsPropertyNames from '../../Setting/Enumerations/PropertyNames.js';
-import PropertyNames from '../Enumerations/PropertyNames.js';
+import { Abstract } from '../../../../library/Types/Abstract.js';
+import { PropertyNames as SettingsPropertyNames } from '../../Setting/Enumerations/PropertyNames.js';
+import { PropertyNames } from '../Enumerations/PropertyNames.js';
 
-class LanternPositionsCalculator extends Abstract
+export class LanternPositionsCalculator extends Abstract
 {
 	#_setting = undefined;
 
@@ -60,5 +60,3 @@ class LanternPositionsCalculator extends Abstract
 		return calculatedValues;
 	}
 }
-
-export default LanternPositionsCalculator;

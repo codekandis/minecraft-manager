@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class XContentTypeOptionsHttpResponseHeader extends HttpResponseHeader
+export class XContentTypeOptionsHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class XContentTypeOptionsHttpResponseHeader extends HttpResponseHeader
 		return 'X-Content-Type-Options';
 	}
 }
-
-export default XContentTypeOptionsHttpResponseHeader;

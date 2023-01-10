@@ -1,15 +1,15 @@
 'use strict';
 
-import DomHelper from '../../../library/Dom/DomHelper.js';
-import BindableFormFieldProxy from '../../../library/Types/DataBindings/BindableFormFieldProxy.js';
-import DataBindingInitializationDirection from '../../../library/Types/DataBindings/DataBindingInitializationDirection.js';
-import PropertyChangedEvent from '../../../library/Types/DataBindings/PropertyChangedEvent.js';
-import AbstractComponent from '../AbstractComponent.js';
-import PropertyNames from './Enumerations/PropertyNames.js';
-import FormFieldSelectors from './Html/FormFieldSelectors.js';
-import ApiAjaxController from './Net/Http/ApiAjaxController.js';
+import { DomHelper } from '../../../library/Dom/DomHelper.js';
+import { BindableFormFieldProxy } from '../../../library/Types/DataBindings/BindableFormFieldProxy.js';
+import { DataBindingInitializationDirection } from '../../../library/Types/DataBindings/DataBindingInitializationDirection.js';
+import { PropertyChangedEvent } from '../../../library/Types/DataBindings/PropertyChangedEvent.js';
+import { AbstractComponent } from '../AbstractComponent.js';
+import { PropertyNames } from './Enumerations/PropertyNames.js';
+import { FormFieldSelectors } from './Html/FormFieldSelectors.js';
+import { ApiAjaxController } from './Net/Http/ApiAjaxController.js';
 
-class SettingComponent extends AbstractComponent
+export class SettingComponent extends AbstractComponent
 {
 	constructor( setting )
 	{
@@ -80,5 +80,3 @@ class SettingComponent extends AbstractComponent
 		}
 	}
 }
-
-export default SettingComponent;

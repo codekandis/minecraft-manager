@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class ViaHttpRequestHeader extends HttpRequestHeader
+export class ViaHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class ViaHttpRequestHeader extends HttpRequestHeader
 		return 'Via';
 	}
 }
-
-export default ViaHttpRequestHeader;

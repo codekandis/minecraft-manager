@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class IfNoneMatchHttpRequestHeader extends HttpRequestHeader
+export class IfNoneMatchHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class IfNoneMatchHttpRequestHeader extends HttpRequestHeader
 		return 'If-None-Match';
 	}
 }
-
-export default IfNoneMatchHttpRequestHeader;

@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class IfUnmodifiedSinceHttpRequestHeader extends HttpRequestHeader
+export class IfUnmodifiedSinceHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class IfUnmodifiedSinceHttpRequestHeader extends HttpRequestHeader
 		return 'If-Unmodified-Since';
 	}
 }
-
-export default IfUnmodifiedSinceHttpRequestHeader;

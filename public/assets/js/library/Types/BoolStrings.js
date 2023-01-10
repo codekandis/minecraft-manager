@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from './StaticAbstract.js';
+import { StaticAbstract } from './StaticAbstract.js';
 
-class BoolStrings extends StaticAbstract
+export class BoolStrings extends StaticAbstract
 {
 	static get FALSE()
 	{
@@ -14,5 +14,3 @@ class BoolStrings extends StaticAbstract
 		return 'TRUE';
 	}
 }
-
-export default BoolStrings;

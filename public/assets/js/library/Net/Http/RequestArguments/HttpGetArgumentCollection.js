@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpArgumentCollection from './HttpArgumentCollection.js';
+import { HttpArgumentCollection } from './HttpArgumentCollection.js';
 
-class HttpGetArgumentCollection extends HttpArgumentCollection
+export class HttpGetArgumentCollection extends HttpArgumentCollection
 {
 	contains( httpGetArgument )
 	{
@@ -49,5 +49,3 @@ class HttpGetArgumentCollection extends HttpArgumentCollection
 		return super.findAll( httpGetArgumentName );
 	}
 }
-
-export default HttpGetArgumentCollection;

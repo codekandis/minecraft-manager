@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class WidthHttpRequestHeader extends HttpRequestHeader
+export class WidthHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class WidthHttpRequestHeader extends HttpRequestHeader
 		return 'Width';
 	}
 }
-
-export default WidthHttpRequestHeader;

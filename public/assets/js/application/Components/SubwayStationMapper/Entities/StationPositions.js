@@ -1,11 +1,11 @@
 'use strict';
 
-import AbstractBindable from '../../../../library/Types/DataBindings/AbstractBindable.js';
-import PropertyNames from '../Enumerations/PropertyNames.js';
-import Directions from './Directions.js';
-import StationOffsetsCalculator from './StationOffsetsCalculator.js';
+import { AbstractBindable } from '../../../../library/Types/DataBindings/AbstractBindable.js';
+import { PropertyNames } from '../Enumerations/PropertyNames.js';
+import { Directions } from './Directions.js';
+import { StationOffsetsCalculator } from './StationOffsetsCalculator.js';
 
-class StationPositions extends AbstractBindable
+export class StationPositions extends AbstractBindable
 {
 	[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] = 'codekandis:subway-station';
 	[ '#_' + PropertyNames.HEAD_1_NAME ]              = String.format`${ 0 }-head-1`( this[ '#_' + PropertyNames.SUBWAY_STATION_BASE_NAME ] );
@@ -757,5 +757,3 @@ class StationPositions extends AbstractBindable
 		this[ '#' + PropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Z ]  = calculatedOffsets.stairwayRight.z;
 	}
 }
-
-export default StationPositions;

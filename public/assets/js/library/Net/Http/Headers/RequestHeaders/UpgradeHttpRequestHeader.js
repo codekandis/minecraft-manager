@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class UpgradeHttpRequestHeader extends HttpRequestHeader
+export class UpgradeHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class UpgradeHttpRequestHeader extends HttpRequestHeader
 		return 'Upgrade';
 	}
 }
-
-export default UpgradeHttpRequestHeader;

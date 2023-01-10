@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class SecFetchDestHttpRequestHeader extends HttpRequestHeader
+export class SecFetchDestHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class SecFetchDestHttpRequestHeader extends HttpRequestHeader
 		return 'Sec-Fetch-Dest';
 	}
 }
-
-export default SecFetchDestHttpRequestHeader;

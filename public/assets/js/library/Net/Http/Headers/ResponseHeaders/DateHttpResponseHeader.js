@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class DateHttpResponseHeader extends HttpResponseHeader
+export class DateHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class DateHttpResponseHeader extends HttpResponseHeader
 		return 'Date';
 	}
 }
-
-export default DateHttpResponseHeader;

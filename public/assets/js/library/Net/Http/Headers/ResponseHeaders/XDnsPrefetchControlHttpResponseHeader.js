@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class XDnsPrefetchControlHttpResponseHeader extends HttpResponseHeader
+export class XDnsPrefetchControlHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class XDnsPrefetchControlHttpResponseHeader extends HttpResponseHeader
 		return 'X-DNS-Prefetch-Control';
 	}
 }
-
-export default XDnsPrefetchControlHttpResponseHeader;

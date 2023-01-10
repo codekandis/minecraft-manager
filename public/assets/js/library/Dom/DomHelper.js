@@ -1,10 +1,10 @@
 'use strict';
 
-import StaticAbstract from '../Types/StaticAbstract.js';
-import DomElementNotFoundException from './DomElementNotFoundException.js';
-import DomInsertPositions from './DomInsertPositions.js';
+import { StaticAbstract } from '../Types/StaticAbstract.js';
+import { DomElementNotFoundException } from './DomElementNotFoundException.js';
+import { DomInsertPositions } from './DomInsertPositions.js';
 
-class DomHelper extends StaticAbstract
+export class DomHelper extends StaticAbstract
 {
 	static querySelector( selector, context = null, throwExceptions = true )
 	{
@@ -196,5 +196,3 @@ class DomHelper extends StaticAbstract
 		}
 	}
 }
-
-export default DomHelper;

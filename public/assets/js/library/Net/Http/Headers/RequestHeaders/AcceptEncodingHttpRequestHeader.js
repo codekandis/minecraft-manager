@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class AcceptEncodingHttpRequestHeader extends HttpRequestHeader
+export class AcceptEncodingHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class AcceptEncodingHttpRequestHeader extends HttpRequestHeader
 		return 'Accept-Encoding';
 	}
 }
-
-export default AcceptEncodingHttpRequestHeader;

@@ -1,10 +1,10 @@
 'use strict';
 
-import Abstract from '../../../Types/Abstract.js';
-import HttpHeaderNamePreparator from './HttpHeaderNamePreparator.js';
-import HttpHeaderValuePreparator from './HttpHeaderValuePreparator.js';
+import { Abstract } from '../../../Types/Abstract.js';
+import { HttpHeaderNamePreparator } from './HttpHeaderNamePreparator.js';
+import { HttpHeaderValuePreparator } from './HttpHeaderValuePreparator.js';
 
-class HttpHeader extends Abstract
+export class HttpHeader extends Abstract
 {
 	#_name  = undefined;
 	#_value = undefined;
@@ -46,5 +46,3 @@ class HttpHeader extends Abstract
 		return String.format`${ 0 }: ${ 1 }`( this.name, this.value );
 	}
 }
-
-export default HttpHeader;

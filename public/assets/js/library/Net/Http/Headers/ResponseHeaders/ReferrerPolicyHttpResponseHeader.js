@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ReferrerPolicyHttpResponseHeader extends HttpResponseHeader
+export class ReferrerPolicyHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class ReferrerPolicyHttpResponseHeader extends HttpResponseHeader
 		return 'Referrer-Policy';
 	}
 }
-
-export default ReferrerPolicyHttpResponseHeader;

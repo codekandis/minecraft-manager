@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class RetryAfterHttpResponseHeader extends HttpResponseHeader
+export class RetryAfterHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class RetryAfterHttpResponseHeader extends HttpResponseHeader
 		return 'Retry-After';
 	}
 }
-
-export default RetryAfterHttpResponseHeader;

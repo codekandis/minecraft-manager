@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class XXssProtectionHttpResponseHeader extends HttpResponseHeader
+export class XXssProtectionHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class XXssProtectionHttpResponseHeader extends HttpResponseHeader
 		return 'X-XSS-Protection';
 	}
 }
-
-export default XXssProtectionHttpResponseHeader;

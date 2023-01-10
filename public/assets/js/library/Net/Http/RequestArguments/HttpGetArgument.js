@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpArgument from './HttpArgument.js';
+import { HttpArgument } from './HttpArgument.js';
 
-class HttpGetArgument extends HttpArgument
+export class HttpGetArgument extends HttpArgument
 {
 	constructor( name, value )
 	{
@@ -14,5 +14,3 @@ class HttpGetArgument extends HttpArgument
 		return new HttpGetArgument( httpGetArgument.name, httpGetArgument.value );
 	}
 }
-
-export default HttpGetArgument;

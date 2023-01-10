@@ -1,8 +1,8 @@
 'use strict';
 
-import Abstract from '../Abstract.js';
+import { Abstract } from '../Abstract.js';
 
-class PropertyChangingEventArguments extends Abstract
+export class PropertyChangingEventArguments extends Abstract
 {
 	#_object       = undefined;
 	#_propertyName = undefined;
@@ -25,5 +25,3 @@ class PropertyChangingEventArguments extends Abstract
 		return this.#_propertyName;
 	}
 }
-
-export default PropertyChangingEventArguments;

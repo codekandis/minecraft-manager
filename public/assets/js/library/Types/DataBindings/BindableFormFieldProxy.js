@@ -1,11 +1,11 @@
 'use strict';
 
-import ChangeEvent from '../../Dom/ChangeEvent.js';
-import DomHelper from '../../Dom/DomHelper.js';
-import InputEvent from '../../Dom/InputEvent.js';
-import BindableProxy from './BindableProxy.js';
+import { ChangeEvent } from '../../Dom/ChangeEvent.js';
+import { DomHelper } from '../../Dom/DomHelper.js';
+import { InputEvent } from '../../Dom/InputEvent.js';
+import { BindableProxy } from './BindableProxy.js';
 
-class BindableFormFieldProxy extends BindableProxy
+export class BindableFormFieldProxy extends BindableProxy
 {
 	constructor( formField )
 	{
@@ -40,5 +40,3 @@ class BindableFormFieldProxy extends BindableProxy
 		);
 	}
 }
-
-export default BindableFormFieldProxy;

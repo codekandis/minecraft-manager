@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from '../../../../library/Types/StaticAbstract.js';
+import { StaticAbstract } from '../../../../library/Types/StaticAbstract.js';
 
-class ApiUriNames extends StaticAbstract
+export class ApiUriNames extends StaticAbstract
 {
 	static get SETTINGS()
 	{
@@ -14,5 +14,3 @@ class ApiUriNames extends StaticAbstract
 		return 'setting';
 	}
 }
-
-export default ApiUriNames;

@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class SetCookieHttpResponseHeader extends HttpResponseHeader
+export class SetCookieHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class SetCookieHttpResponseHeader extends HttpResponseHeader
 		return 'Set-Cookie';
 	}
 }
-
-export default SetCookieHttpResponseHeader;

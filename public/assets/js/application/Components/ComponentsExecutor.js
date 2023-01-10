@@ -1,8 +1,8 @@
 'use strict';
 
-import Abstract from '../../library/Types/Abstract.js';
+import { Abstract } from '../../library/Types/Abstract.js';
 
-class ComponentsExecutor extends Abstract
+export class ComponentsExecutor extends Abstract
 {
 	#_components = undefined;
 
@@ -23,5 +23,3 @@ class ComponentsExecutor extends Abstract
 		);
 	}
 }
-
-export default ComponentsExecutor;

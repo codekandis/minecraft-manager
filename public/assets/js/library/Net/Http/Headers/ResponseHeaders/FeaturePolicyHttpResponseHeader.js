@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class FeaturePolicyHttpResponseHeader extends HttpResponseHeader
+export class FeaturePolicyHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class FeaturePolicyHttpResponseHeader extends HttpResponseHeader
 		return 'Feature-Policy';
 	}
 }
-
-export default FeaturePolicyHttpResponseHeader;

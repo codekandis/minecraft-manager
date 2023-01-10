@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from '../Types/StaticAbstract.js';
+import { StaticAbstract } from '../Types/StaticAbstract.js';
 
-class DomInsertPositions extends StaticAbstract
+export class DomInsertPositions extends StaticAbstract
 {
 	static get BEFORE()
 	{
@@ -14,5 +14,3 @@ class DomInsertPositions extends StaticAbstract
 		return 'AFTER';
 	}
 }
-
-export default DomInsertPositions;

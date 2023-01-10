@@ -1,10 +1,10 @@
 'use strict';
 
-import StaticAbstract from '../Types/StaticAbstract.js';
-import DomContentLoadedEvent from './DomContentLoadedEvent.js';
-import DomHelper from './DomHelper.js';
+import { StaticAbstract } from '../Types/StaticAbstract.js';
+import { DomContentLoadedEvent } from './DomContentLoadedEvent.js';
+import { DomHelper } from './DomHelper.js';
 
-class DomDocument extends StaticAbstract
+export class DomDocument extends StaticAbstract
 {
 	static load( handler )
 	{
@@ -15,5 +15,3 @@ class DomDocument extends StaticAbstract
 		);
 	}
 }
-
-export default DomDocument;

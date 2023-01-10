@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class SourcemapHttpResponseHeader extends HttpResponseHeader
+export class SourcemapHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class SourcemapHttpResponseHeader extends HttpResponseHeader
 		return 'SourceMap';
 	}
 }
-
-export default SourcemapHttpResponseHeader;

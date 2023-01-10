@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class TransferEncodingHttpResponseHeader extends HttpResponseHeader
+export class TransferEncodingHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class TransferEncodingHttpResponseHeader extends HttpResponseHeader
 		return 'Transfer-Encoding';
 	}
 }
-
-export default TransferEncodingHttpResponseHeader;

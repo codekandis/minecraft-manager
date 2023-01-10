@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ExpectCtHttpResponseHeader extends HttpResponseHeader
+export class ExpectCtHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class ExpectCtHttpResponseHeader extends HttpResponseHeader
 		return 'Expect-CT';
 	}
 }
-
-export default ExpectCtHttpResponseHeader;

@@ -1,13 +1,11 @@
 'use strict';
 
-import StaticAbstract from '../../../../library/Types/StaticAbstract.js';
+import { StaticAbstract } from '../../../../library/Types/StaticAbstract.js';
 
-class PropertyNames extends StaticAbstract
+export class PropertyNames extends StaticAbstract
 {
 	static get CHUNKSIZE()
 	{
 		return 'chunksize';
 	}
 }
-
-export default PropertyNames;

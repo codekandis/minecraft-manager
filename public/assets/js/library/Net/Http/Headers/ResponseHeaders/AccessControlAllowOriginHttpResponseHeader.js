@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AccessControlAllowOriginHttpResponseHeader extends HttpResponseHeader
+export class AccessControlAllowOriginHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class AccessControlAllowOriginHttpResponseHeader extends HttpResponseHeader
 		return 'Access-Control-Allow-Origin';
 	}
 }
-
-export default AccessControlAllowOriginHttpResponseHeader;

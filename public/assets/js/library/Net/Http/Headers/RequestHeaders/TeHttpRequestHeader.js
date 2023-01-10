@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class TeHttpRequestHeader extends HttpRequestHeader
+export class TeHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class TeHttpRequestHeader extends HttpRequestHeader
 		return 'TE';
 	}
 }
-
-export default TeHttpRequestHeader;

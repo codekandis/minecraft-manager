@@ -1,8 +1,8 @@
 'use strict';
 
-import Exception from '../Types/Exception.js';
+import { Exception } from '../Types/Exception.js';
 
-class UnknownUrlPartialException extends Exception
+export class UnknownUrlPartialException extends Exception
 {
 	static with_urlPartial( urlPartial )
 	{
@@ -11,5 +11,3 @@ class UnknownUrlPartialException extends Exception
 		);
 	}
 }
-
-export default UnknownUrlPartialException;

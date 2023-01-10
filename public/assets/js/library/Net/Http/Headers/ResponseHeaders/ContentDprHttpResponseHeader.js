@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ContentDprHttpResponseHeader extends HttpResponseHeader
+export class ContentDprHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class ContentDprHttpResponseHeader extends HttpResponseHeader
 		return 'Content-DPR';
 	}
 }
-
-export default ContentDprHttpResponseHeader;

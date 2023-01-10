@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from '../../../../library/Types/StaticAbstract.js';
+import { StaticAbstract } from '../../../../library/Types/StaticAbstract.js';
 
-class PropertyNames extends StaticAbstract
+export class PropertyNames extends StaticAbstract
 {
 	static get SUBWAY_STATION_BASE_NAME()
 	{
@@ -309,5 +309,3 @@ class PropertyNames extends StaticAbstract
 		return 'calculatedOffsetStairwayRightZ';
 	}
 }
-
-export default PropertyNames;

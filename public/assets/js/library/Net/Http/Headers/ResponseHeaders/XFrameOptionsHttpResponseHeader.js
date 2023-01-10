@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class XFrameOptionsHttpResponseHeader extends HttpResponseHeader
+export class XFrameOptionsHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class XFrameOptionsHttpResponseHeader extends HttpResponseHeader
 		return 'X-Frame-Options';
 	}
 }
-
-export default XFrameOptionsHttpResponseHeader;

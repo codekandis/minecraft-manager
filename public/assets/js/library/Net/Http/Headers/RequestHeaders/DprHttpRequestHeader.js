@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class DprHttpRequestHeader extends HttpRequestHeader
+export class DprHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class DprHttpRequestHeader extends HttpRequestHeader
 		return 'DPR';
 	}
 }
-
-export default DprHttpRequestHeader;

@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class ForwardedHttpRequestHeader extends HttpRequestHeader
+export class ForwardedHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class ForwardedHttpRequestHeader extends HttpRequestHeader
 		return 'Forwarded';
 	}
 }
-
-export default ForwardedHttpRequestHeader;

@@ -1,8 +1,8 @@
 'use strict';
 
-import Abstract from '../Types/Abstract.js';
+import { Abstract } from '../Types/Abstract.js';
 
-class AbstractUriBuilder extends Abstract
+export class AbstractUriBuilder extends Abstract
 {
 	#_uriMappings = undefined;
 
@@ -26,5 +26,3 @@ class AbstractUriBuilder extends Abstract
 		);
 	}
 }
-
-export default AbstractUriBuilder;

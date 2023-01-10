@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class WwwAuthenticateHttpResponseHeader extends HttpResponseHeader
+export class WwwAuthenticateHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class WwwAuthenticateHttpResponseHeader extends HttpResponseHeader
 		return 'WWW-Authenticate';
 	}
 }
-
-export default WwwAuthenticateHttpResponseHeader;

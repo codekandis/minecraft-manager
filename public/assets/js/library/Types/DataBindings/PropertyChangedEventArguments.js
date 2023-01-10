@@ -1,8 +1,8 @@
 'use strict';
 
-import EventArguments from '../EventArguments.js';
+import { EventArguments } from '../EventArguments.js';
 
-class PropertyChangedEventArguments extends EventArguments
+export class PropertyChangedEventArguments extends EventArguments
 {
 	#_object       = undefined;
 	#_propertyName = undefined;
@@ -25,5 +25,3 @@ class PropertyChangedEventArguments extends EventArguments
 		return this.#_propertyName;
 	}
 }
-
-export default PropertyChangedEventArguments;

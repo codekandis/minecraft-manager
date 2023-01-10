@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from '../StaticAbstract.js';
+import { StaticAbstract } from '../StaticAbstract.js';
 
-class DataBindingInitializationDirection extends StaticAbstract
+export class DataBindingInitializationDirection extends StaticAbstract
 {
 	static get BINDER()
 	{
@@ -14,5 +14,3 @@ class DataBindingInitializationDirection extends StaticAbstract
 		return 'BINDABLE';
 	}
 }
-
-export default DataBindingInitializationDirection;

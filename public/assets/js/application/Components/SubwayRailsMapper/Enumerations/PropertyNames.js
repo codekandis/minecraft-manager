@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from '../../../../library/Types/StaticAbstract.js';
+import { StaticAbstract } from '../../../../library/Types/StaticAbstract.js';
 
-class PropertyNames extends StaticAbstract
+export class PropertyNames extends StaticAbstract
 {
 	static get START_POSITION_X()
 	{
@@ -79,5 +79,3 @@ class PropertyNames extends StaticAbstract
 		return 'calculatedPositionZP';
 	}
 }
-
-export default PropertyNames;

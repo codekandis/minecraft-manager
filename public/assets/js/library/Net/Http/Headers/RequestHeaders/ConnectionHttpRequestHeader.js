@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class ConnectionHttpRequestHeader extends HttpRequestHeader
+export class ConnectionHttpRequestHeader extends HttpRequestHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class ConnectionHttpRequestHeader extends HttpRequestHeader
 		return 'Connection';
 	}
 }
-
-export default ConnectionHttpRequestHeader;

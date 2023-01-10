@@ -1,8 +1,8 @@
 'use strict';
 
-import StaticAbstract from '../../Types/StaticAbstract.js';
+import { StaticAbstract } from '../../Types/StaticAbstract.js';
 
-class HttpResponseStatusCode extends StaticAbstract
+export class HttpResponseStatusCode extends StaticAbstract
 {
 	static get CONTINUE()
 	{
@@ -344,5 +344,3 @@ class HttpResponseStatusCode extends StaticAbstract
 		return 511;
 	}
 }
-
-export default HttpResponseStatusCode;

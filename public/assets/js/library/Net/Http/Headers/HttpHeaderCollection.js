@@ -1,7 +1,7 @@
 'use strict';
 
-import Collection from '../../../Collections/Collection.js';
-import HttpHeaderNamePreparator from './HttpHeaderNamePreparator.js';
+import { Collection } from '../../../Collections/Collection.js';
+import { HttpHeaderNamePreparator } from './HttpHeaderNamePreparator.js';
 
 export class HttpHeaderCollection extends Collection
 {
@@ -112,5 +112,3 @@ export class HttpHeaderCollection extends Collection
 		);
 	}
 }
-
-export default HttpHeaderCollection;

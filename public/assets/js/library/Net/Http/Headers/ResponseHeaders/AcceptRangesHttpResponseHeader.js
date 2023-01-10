@@ -1,8 +1,8 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AcceptRangesHttpResponseHeader extends HttpResponseHeader
+export class AcceptRangesHttpResponseHeader extends HttpResponseHeader
 {
 	constructor( value )
 	{
@@ -14,5 +14,3 @@ class AcceptRangesHttpResponseHeader extends HttpResponseHeader
 		return 'Accept-Ranges';
 	}
 }
-
-export default AcceptRangesHttpResponseHeader;
