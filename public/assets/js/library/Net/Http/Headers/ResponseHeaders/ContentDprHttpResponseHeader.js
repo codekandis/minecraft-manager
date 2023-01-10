@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ContentDprHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Content-DPR`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ContentDprHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( ContentDprHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Content-DPR';
 	}
-}
 
-export default ContentDprHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( ContentDprHttpResponseHeader.NAME, value );
+	}
+}

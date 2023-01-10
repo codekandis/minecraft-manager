@@ -1,18 +1,28 @@
 'use strict';
 
-import StaticAbstract from '../StaticAbstract.js';
+import { AbstractStatic } from '../AbstractStatic.js';
 
-class DataBindingInitializationDirection extends StaticAbstract
+/**
+ * Stores an enumeration of initial data binding directions.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class DataBindingInitializationDirection extends AbstractStatic
 {
+	/**
+	 * Specifies that the binder's property is the initial value.
+	 * @returns {String} The binder's property is the initial value.
+	 */
 	static get BINDER()
 	{
 		return 'BINDER';
 	}
 
+	/**
+	 * Specifies that the bindable's property is the initial value.
+	 * @returns {String} The bindable's property is the initial value.
+	 */
 	static get BINDABLE()
 	{
 		return 'BINDABLE';
 	}
 }
-
-export default DataBindingInitializationDirection;

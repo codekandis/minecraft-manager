@@ -1,12 +1,20 @@
 'use strict';
 
-import ContentType from '../../../library/Net/Http/ContentType.js';
-import ContentTypeHttpRequestHeader from '../../../library/Net/Http/Headers/RequestHeaders/ContentTypeHttpRequestHeader.js';
-import HttpRequest from '../../../library/Net/Http/HttpRequest.js';
-import HttpRequestMethod from '../../../library/Net/Http/HttpRequestMethod.js';
+import { ContentType } from '../../../library/Net/Http/ContentType.js';
+import { ContentTypeHttpRequestHeader } from '../../../library/Net/Http/Headers/RequestHeaders/ContentTypeHttpRequestHeader.js';
+import { HttpRequest } from '../../../library/Net/Http/HttpRequest.js';
+import { HttpRequestMethod } from '../../../library/Net/Http/HttpRequestMethod.js';
 
-class ApiHttpRequest extends HttpRequest
+/**
+ * Represents an API HTTP request.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ApiHttpRequest extends HttpRequest
 {
+	/**
+	 * Constructor method.
+	 * @param {URL} uri The URI of the request.
+	 */
 	constructor( uri )
 	{
 		super( uri );
@@ -14,23 +22,41 @@ class ApiHttpRequest extends HttpRequest
 		this.#initialize();
 	}
 
+	/**
+	 * Initializes the request.
+	 */
 	#initialize()
 	{
-		this.#applyRequestHeaders();
+		this.#addCommonRequestHeaders();
 	}
 
-	#applyRequestHeaders()
+	/**
+	 * Adds the common request headers.
+	 */
+	#addCommonRequestHeaders()
 	{
 		this.headers.add(
 			new ContentTypeHttpRequestHeader( ContentType.APPLICATION_JSON_UTF8 )
 		);
 	}
 
+	/**
+	 * Creates an HTTP GET request.
+	 * @param {URL} uri The URL of the request.
+	 * @returns {ApiHttpRequest}
+	 * @constructor
+	 */
 	static createGetRequest( uri )
 	{
 		return new ApiHttpRequest( uri );
 	}
 
+	/**
+	 * Creates an HTTP POST request.
+	 * @param {URL} uri The URL of the request.
+	 * @returns {ApiHttpRequest}
+	 * @constructor
+	 */
 	static createPostRequest( uri )
 	{
 		const request  = new ApiHttpRequest( uri );
@@ -39,5 +65,3 @@ class ApiHttpRequest extends HttpRequest
 		return request;
 	}
 }
-
-export default ApiHttpRequest;

@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class SecFetchUserHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `Sec-Fetch-User`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class SecFetchUserHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( SecFetchUserHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'Sec-Fetch-User';
 	}
-}
 
-export default SecFetchUserHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( SecFetchUserHttpRequestHeader.NAME, value );
+	}
+}

@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ExpectCtHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Expect-CT`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ExpectCtHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( ExpectCtHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Expect-CT';
 	}
-}
 
-export default ExpectCtHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( ExpectCtHttpResponseHeader.NAME, value );
+	}
+}

@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ContentSecurityPolicyHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Content-Security-Policy`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ContentSecurityPolicyHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( ContentSecurityPolicyHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Content-Security-Policy';
 	}
-}
 
-export default ContentSecurityPolicyHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( ContentSecurityPolicyHttpResponseHeader.NAME, value );
+	}
+}

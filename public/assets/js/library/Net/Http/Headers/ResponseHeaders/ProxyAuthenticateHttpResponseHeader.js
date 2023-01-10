@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ProxyAuthenticateHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Proxy-Authenticate`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ProxyAuthenticateHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( ProxyAuthenticateHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Proxy-Authenticate';
 	}
-}
 
-export default ProxyAuthenticateHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( ProxyAuthenticateHttpResponseHeader.NAME, value );
+	}
+}

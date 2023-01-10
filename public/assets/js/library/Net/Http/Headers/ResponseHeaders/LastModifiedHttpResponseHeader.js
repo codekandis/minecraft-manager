@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class LastModifiedHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Last-Modified`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class LastModifiedHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( LastModifiedHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Last-Modified';
 	}
-}
 
-export default LastModifiedHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( LastModifiedHttpResponseHeader.NAME, value );
+	}
+}

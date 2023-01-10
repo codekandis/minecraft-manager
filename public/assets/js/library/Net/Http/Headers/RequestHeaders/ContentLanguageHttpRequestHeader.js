@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class ContentLanguageHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `Content-Language`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ContentLanguageHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( ContentLanguageHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'Content-Language';
 	}
-}
 
-export default ContentLanguageHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( ContentLanguageHttpRequestHeader.NAME, value );
+	}
+}

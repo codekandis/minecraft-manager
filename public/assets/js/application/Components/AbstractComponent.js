@@ -1,76 +1,79 @@
 'use strict';
 
-import ChangeEvent from '../../library/Dom/ChangeEvent.js';
-import DomHelper from '../../library/Dom/DomHelper.js';
-import AbstractBindable from '../../library/Types/DataBindings/AbstractBindable.js';
+import { DomHelper } from '../../library/Dom/DomHelper.js';
+import { AbstractBindable } from '../../library/Types/DataBindings/AbstractBindable.js';
 
-class AbstractComponent extends AbstractBindable
+/**
+ * Represents the base class of any component.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class AbstractComponent extends AbstractBindable
 {
-	static _EVENT_DEFAULT_VALUE_MAPPINGS = [
-		{
-			eventName:    InputEvent.EVENT_NAME,
-			defaultValue: String.empty
-		},
-		{
-			eventName:    ChangeEvent.EVENT_NAME,
-			defaultValue: 0
-		}
-	];
+	/**
+	 * Stores the settings of the application.
+	 * @type {Settings}
+	 */
+	__settings;
 
-	__setting = undefined;
-
-	constructor( setting )
+	/**
+	 * Constructor method.
+	 * @param {Settings} settings The settings of the application.
+	 */
+	constructor( settings )
 	{
 		super();
 
-		this.__setting = setting;
+		this.__settings = settings;
 	}
 
-	_setPropertyAndInputValue( propertyName, value, formFieldSelector )
-	{
-		this[ '__' + propertyName ] = value;
-		this._raisePropertyChangedEvent( propertyName );
-
-		DomHelper.querySelector( formFieldSelector )
-			.value = value;
-	}
-
-	_attachEventHandlers( formFieldSelector, propertyName )
+	/**
+	 * Attaches the event input and change event handlers to a formfield specified by a selector.
+	 * @param {String} formFieldSelector The selector of the HTML form field.
+	 * @param {String} propertyName The name of the property.
+	 */
+	_attachEventDefaultValueMappings( formFieldSelector, propertyName )
 	{
 		const formField = DomHelper.querySelector( formFieldSelector );
-		AbstractComponent
-			._EVENT_DEFAULT_VALUE_MAPPINGS
-			.forEach(
-				( eventDefaultValueMapping ) =>
-				{
-					DomHelper.addEventHandler(
-						formField,
-						eventDefaultValueMapping.eventName,
-						( event ) =>
-						{
-							const value          = Number.parseInt( event.target.value );
-							this[ propertyName ] = true === Number.isNaN( value )
-								? eventDefaultValueMapping.defaultValue
-								: value
-						}
-					);
-				}
-			);
-	};
+		formField.inputEvent(
+			( event ) =>
+			{
+				const value          = Number.parseInt( event.target.value );
+				this[ propertyName ] = true === Number.isNaN( value )
+					? String.empty
+					: value
+			}
+		);
+		formField.changeEvent(
+			( event ) =>
+			{
+				const value          = Number.parseInt( event.target.value );
+				this[ propertyName ] = true === Number.isNaN( value )
+					? '0'
+					: value
+			}
+		);
+	}
 
+	/**
+	 * Adds all data bindings of the component.
+	 */
 	_addDataBindings()
 	{
 	}
 
+	/**
+	 * Adds all HTML form fields event handlers of the component.
+	 */
 	_addFormFieldsEventHandlers()
 	{
 	}
 
+	/**
+	 * Executes the component.
+	 */
 	execute()
 	{
 		this._addDataBindings();
 		this._addFormFieldsEventHandlers();
 	}
 }
-
-export default AbstractComponent;

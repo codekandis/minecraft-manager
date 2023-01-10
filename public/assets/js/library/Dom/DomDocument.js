@@ -1,19 +1,19 @@
 'use strict';
 
-import StaticAbstract from '../Types/StaticAbstract.js';
-import DomContentLoadedEvent from './DomContentLoadedEvent.js';
-import DomHelper from './DomHelper.js';
+import { AbstractStatic } from '../Types/AbstractStatic.js';
 
-class DomDocument extends StaticAbstract
+/**
+ * Represents a DOM document wrapper.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class DomDocument extends AbstractStatic
 {
-	static load( handler )
+	/**
+	 * Adds an event handler to the DOM content loaded event of the document.
+	 * @param {Event_EventHandler} eventHandler The event handler to add.
+	 */
+	static load( eventHandler )
 	{
-		DomHelper.addEventHandler(
-			document,
-			DomContentLoadedEvent.EVENT_NAME,
-			handler
-		);
+		document.domContentLoadedEvent( eventHandler );
 	}
 }
-
-export default DomDocument;

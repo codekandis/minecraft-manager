@@ -1,18 +1,19 @@
 'use strict';
 
-import StaticAbstract from '../../../../library/Types/StaticAbstract.js';
+import { AbstractStatic } from '../../../../library/Types/AbstractStatic.js';
 
-class ApiUriNames extends StaticAbstract
+/**
+ * Represents the API URI names of the subway rails mapper component.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ApiUriNames extends AbstractStatic
 {
-	static get SUBWAY_RAILS_MAPPERS()
+	/**
+	 * Represents the URI of the lantern positions.
+	 * @returns {String} The URI of the lantern positions.
+	 */
+	static get LANTERN_POSITIONS()
 	{
-		return 'subway-rails-mappers';
-	}
-
-	static get SUBWAY_RAILS_MAPPER()
-	{
-		return 'subway-rails-mappers';
+		return 'lantern-positions';
 	}
 }
-
-export default ApiUriNames;

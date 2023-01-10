@@ -1,89 +1,155 @@
 'use strict';
 
-import StaticAbstract from '../../../../library/Types/StaticAbstract.js';
-import PropertyNames from '../Enumerations/PropertyNames.js';
+import { AbstractStatic } from '../../../../library/Types/AbstractStatic.js';
+import { LanternPositionsPropertyNames } from '../Enumerations/LanternPositionsPropertyNames.js';
 
-class FormFieldSelectors extends StaticAbstract
+/**
+ * Represents an enumeration of HTML form field selectors of the subway rails mapper component.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class FormFieldSelectors extends AbstractStatic
 {
+	/**
+	 * Represents the module root.
+	 * @returns {String} The module root.
+	 */
 	static get MODULE_ROOT()
 	{
 		return '#subwayRailsMapper';
 	}
 
+	/**
+	 * Represents the initial values of the module.
+	 * @returns {String} The initial values of the module.
+	 */
 	static get INITIAL_VALUES()
 	{
 		return String.format`${ 0 }-initialValues`( FormFieldSelectors.MODULE_ROOT );
 	}
 
+	/**
+	 * Represents the start position X.
+	 * @returns {String} The start position X.
+	 */
 	static get START_POSITION_X()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.START_POSITION_X );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.START_POSITION_X );
 	}
 
+	/**
+	 * Represents the start position Y.
+	 * @returns {String} The start position Y.
+	 */
 	static get START_POSITION_Y()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.START_POSITION_Y );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.START_POSITION_Y );
 	}
 
+	/**
+	 * Represents the start position Z.
+	 * @returns {String} The start position Z.
+	 */
 	static get START_POSITION_Z()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.START_POSITION_Z );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.START_POSITION_Z );
 	}
 
+	/**
+	 * Represents the current values of the module.
+	 * @returns {String} The current values of the module.
+	 */
 	static get CURRENT_VALUES()
 	{
 		return String.format`${ 0 }-currentValues`( FormFieldSelectors.MODULE_ROOT );
 	}
 
+	/**
+	 * Represents the current position X.
+	 * @returns {String} The current position X.
+	 */
 	static get CURRENT_POSITION_X()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CURRENT_POSITION_X );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CURRENT_POSITION_X );
 	}
 
+	/**
+	 * Represents the current position Y.
+	 * @returns {String} The current position Y.
+	 */
 	static get CURRENT_POSITION_Y()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CURRENT_POSITION_Y );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CURRENT_POSITION_Y );
 	}
 
+	/**
+	 * Represents the current position Z.
+	 * @returns {String} The current position Z.
+	 */
 	static get CURRENT_POSITION_Z()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CURRENT_POSITION_Z );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CURRENT_POSITION_Z );
 	}
 
+	/**
+	 * Represents the calculated positions of the module.
+	 * @returns {String} The calculated positions of the module.
+	 */
 	static get CALCULATED_VALUES()
 	{
 		return String.format`${ 0 }-calculatedValues`( FormFieldSelectors.MODULE_ROOT );
 	}
 
-	static get CALCULATED_POSITION_XN()
+	/**
+	 * Represents the calculated position X negative.
+	 * @returns {String} The calculated position X negative.
+	 */
+	static get CALCULATED_POSITION_X_NEGATIVE()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_POSITION_XN );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE );
 	}
 
-	static get CALCULATED_POSITION_XP()
+	/**
+	 * Represents the calculated position X positive.
+	 * @returns {String} The calculated position X positive.
+	 */
+	static get CALCULATED_POSITION_X_POSITIVE()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_POSITION_XP );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE );
 	}
 
-	static get CALCULATED_POSITION_YN()
+	/**
+	 * Represents the calculated position Y negative.
+	 * @returns {String} The calculated position Y negative.
+	 */
+	static get CALCULATED_POSITION_Y_NEGATIVE()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_POSITION_YN );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE );
 	}
 
-	static get CALCULATED_POSITION_YP()
+	/**
+	 * Represents the calculated position X positive.
+	 * @returns {String} The calculated position X positive.
+	 */
+	static get CALCULATED_POSITION_Y_POSITIVE()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_POSITION_YP );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE );
 	}
 
-	static get CALCULATED_POSITION_ZN()
+	/**
+	 * Represents the calculated position Z negative.
+	 * @returns {String} The calculated position Z negative.
+	 */
+	static get CALCULATED_POSITION_Z_NEGATIVE()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_POSITION_ZN );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE );
 	}
 
-	static get CALCULATED_POSITION_ZP()
+	/**
+	 * Represents the calculated position Z positive.
+	 * @returns {String} The calculated position X positive.
+	 */
+	static get CALCULATED_POSITION_Z_POSITIVE()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CALCULATED_POSITION_ZP );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE );
 	}
 }
-
-export default FormFieldSelectors;

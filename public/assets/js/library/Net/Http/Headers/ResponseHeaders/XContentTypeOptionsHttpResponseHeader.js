@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class XContentTypeOptionsHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `X-Content-Type-Options`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class XContentTypeOptionsHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( XContentTypeOptionsHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'X-Content-Type-Options';
 	}
-}
 
-export default XContentTypeOptionsHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( XContentTypeOptionsHttpResponseHeader.NAME, value );
+	}
+}

@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class AcceptHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `Accept`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class AcceptHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( AcceptHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'Accept';
 	}
-}
 
-export default AcceptHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( AcceptHttpRequestHeader.NAME, value );
+	}
+}

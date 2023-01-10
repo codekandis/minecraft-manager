@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class RetryAfterHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Retry-After`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class RetryAfterHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( RetryAfterHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Retry-After';
 	}
-}
 
-export default RetryAfterHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( RetryAfterHttpResponseHeader.NAME, value );
+	}
+}

@@ -1,11 +1,23 @@
 'use strict';
 
-import Abstract from '../../library/Types/Abstract.js';
+import { Abstract } from '../../library/Types/Abstract.js';
 
-class ComponentsExecutor extends Abstract
+/**
+ * Represents a components executor.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ComponentsExecutor extends Abstract
 {
-	#_components = undefined;
+	/**
+	 * Stores the components to execute.
+	 * @type {AbstractComponent[]}
+	 */
+	#_components;
 
+	/**
+	 * Constructor method.
+	 * @param {...AbstractComponent} components The components to execute.
+	 */
 	constructor( ...components )
 	{
 		super();
@@ -13,6 +25,9 @@ class ComponentsExecutor extends Abstract
 		this.#_components = components;
 	}
 
+	/**
+	 * Executes the components.
+	 */
 	execute()
 	{
 		this.#_components.forEach(
@@ -23,5 +38,3 @@ class ComponentsExecutor extends Abstract
 		);
 	}
 }
-
-export default ComponentsExecutor;

@@ -1,11 +1,23 @@
 'use strict';
 
-import Abstract from '../../../library/Types/Abstract.js';
+import { Abstract } from '../../../library/Types/Abstract.js';
 
-class AbstractApiAjaxController extends Abstract
+/**
+ * Represents the base class of any API AJAX controller.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class AbstractApiAjaxController extends Abstract
 {
-	__uriBuilder = undefined;
+	/**
+	 * Stores the URI builder used to build the API URIs.
+	 * @type {ApiUriBuilder}
+	 */
+	__uriBuilder;
 
+	/**
+	 * Constructor method.
+	 * @param {ApiUriBuilder} uriBuilder The URI builder used to build the API URIs.
+	 */
 	constructor( uriBuilder )
 	{
 		super();
@@ -13,15 +25,23 @@ class AbstractApiAjaxController extends Abstract
 		this.__uriBuilder = uriBuilder;
 	}
 
-	_createRequestPayload( obj )
+	/**
+	 * Creates the request's payload.
+	 * @param {Object} payload The payload to create the payload of the request from.
+	 * @returns {String} The payload of the request.
+	 */
+	_createRequestPayload( payload )
 	{
-		return JSON.stringify( obj );
+		return JSON.stringify( payload );
 	}
 
+	/**
+	 * Creates the JSON response.
+	 * @param {String} payload The payload to create the JSON response from.
+	 * @returns {Object} The JSON response.
+	 */
 	_createJsonResponse( payload )
 	{
 		return JSON.parse( payload );
 	}
 }
-
-export default AbstractApiAjaxController;

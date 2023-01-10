@@ -1,18 +1,27 @@
 'use strict';
 
-import AbstractEvent from '../Types/AbstractEvent.js';
+import { AbstractEvent } from '../Types/AbstractEvent.js';
 
-class InputEvent extends AbstractEvent
+/**
+ * Represents an input event.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class InputEvent extends AbstractEvent
 {
-	constructor( sender, eventArguments )
-	{
-		super( InputEvent.EVENT_NAME, sender, eventArguments );
-	}
-
+	/**
+	 * @inheritdoc
+	 */
 	static get EVENT_NAME()
 	{
 		return 'input';
 	}
-}
 
-export default InputEvent;
+	/**
+	 * Constructor method.
+	 * @param {Object} sender The object dispatching this event.
+	 */
+	constructor( sender )
+	{
+		super( InputEvent.EVENT_NAME, sender );
+	}
+}

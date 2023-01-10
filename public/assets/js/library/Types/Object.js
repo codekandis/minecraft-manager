@@ -1,72 +1,162 @@
 'use strict';
 
-Object.prototype.keys = function ()
-{
-	return Object.keys( this );
-};
+/**
+ * Represents prototype extensions and JSDoc types of the class `Object`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
 
-Object.prototype.values = function ()
-{
-	return Object.values( this );
-};
+/**
+ * Represents the handler of any object property iteration.
+ * @callback Object_PropertyIterationHandler
+ * @param {*} propertyValue The value of the currently iterated property.
+ * @param {String} propertyName The name of the currently iterated property.
+ */
 
-Object.prototype.forEach = function ( iteratorHandler )
-{
-	for ( const [ propertyName, propertyValue ] of Object.entries( this ) )
+/**
+ * Represents the predicate of any object property determination.
+ * @callback Object_PropertyPredicate
+ * @param {*} propertyValue The value of the currently iterated property.
+ * @param {String} propertyName The name of the currently iterated property.
+ * @returns {Boolean} True if the currently iterated property matches the predicate, otherwise false.
+ */
+
+/**
+ * Gets the keys of the object.
+ * @method keys
+ * @memberOf {Object.prototype}
+ * @returns {String[]} The keys of the object.
+ */
+Object.defineProperty(
+	Object.prototype,
+	'keys',
 	{
-		iteratorHandler( propertyValue, propertyName );
+		value: function ()
+		       {
+			       return Object.keys( this );
+		       }
 	}
-};
+);
 
-Object.prototype.every = function ( iteratorHandler )
-{
-	for ( const [ propertyName, propertyValue ] of Object.entries( this ) )
+/**
+ * Gets the values of the object's properties.
+ * @method values
+ * @memberOf Object.prototype
+ * @returns {*[]} The values of the object's properties.
+ */
+Object.defineProperty(
+	Object.prototype,
+	'values',
 	{
-		if ( false === iteratorHandler( propertyValue, propertyName ) )
-		{
-			break;
-		}
+		value: function ()
+		       {
+			       return Object.values( this );
+		       }
 	}
-};
+);
 
-Object.prototype.bindTo = function ( method, ...args )
-{
-	return method.bind( this, ...args );
-};
-
-Object.prototype.bindToAll = function ( methods, ...args )
-{
-	return methods.map(
-		( method ) =>
-		{
-			return this.bindTo( method, ...args );
-		}
-	);
-};
-
-Object.prototype.bindToEventHandler = function ( method, ...args )
-{
-	return function ( event )
+/**
+ * Invokes a specific iteration handler on every object's property.
+ * @method forEach
+ * @memberOf Object.prototype
+ * @param {Object_PropertyIterationHandler} iterationHandler The iteration handler to invoke.
+ */
+Object.defineProperty(
+	Object.prototype,
+	'forEach',
 	{
-		method.bind( this )( event, ...args );
+		value: function ( iterationHandler )
+		       {
+			       for ( const [ fetchedPropertyName, fetchedPropertyValue ] of Object.entries( this ) )
+			       {
+				       iterationHandler( fetchedPropertyValue, fetchedPropertyName );
+			       }
+		       }
 	}
-		.bind( this );
-};
+);
 
-Object.prototype.bindToEventHandlers = function ( methods, ...args )
-{
-	return methods.map(
-		( method ) =>
-		{
-			this.bindToEventHandler( method, ...args );
-		}
-	);
-};
-
-Object.prototype.merge = function ( obj )
-{
-	for ( const [ propertyName, propertyValue ] of Object.entries( obj ) )
+/**
+ * Determines if a specific predicate returns true on every object's property.
+ * @method every
+ * @memberOf Object.prototype
+ * @param {Object_PropertyPredicate} predicate The predicate to invoke.
+ * @returns {Boolean} True if the predicate returns true on every object's property, otherwise false.
+ */
+Object.defineProperty(
+	Object.prototype,
+	'every',
 	{
-		this[ propertyName ] = propertyValue;
+		value: function ( predicate )
+		       {
+			       for ( const [ fetchedPropertyName, fetchedPropertyValue ] of Object.entries( this ) )
+			       {
+				       if ( false === predicate( fetchedPropertyValue, fetchedPropertyName ) )
+				       {
+					       return false;
+				       }
+			       }
+
+			       return true;
+		       }
 	}
-};
+);
+
+/**
+ * Binds the object to a specific function / method.
+ * @method bindTo
+ * @memberOf Object.prototype
+ * @param {Function} method The function / method to bind the object to.
+ * @returns {Function} The bound function / method.
+ */
+Object.defineProperty(
+	Object.prototype,
+	'bindTo',
+	{
+		value: function ( method )
+		       {
+			       return method.bind( this );
+		       }
+	}
+);
+
+/**
+ * Binds the object to a variadic amount of functions / methods.
+ * @method bindToAll
+ * @memberOf Object.prototype
+ * @param {Function[]} methods The functions / methods to bind the object to.
+ * @returns {Function[]}} The bound functions / methods.
+ */
+Object.defineProperty(
+	Object.prototype,
+	'bindToAll',
+	{
+		value: function ( methods )
+		       {
+			       return methods.map(
+				       ( fetchedMethod ) =>
+				       {
+					       return fetchedMethod.bind( this );
+				       }
+			       );
+		       }
+	}
+);
+
+/**
+ * Merges another object into the object.
+ * @method merge
+ * @memberOf Object.prototype
+ * @param {Object} object The object to merge.
+ */
+Object.defineProperty(
+	Object.prototype,
+	'merge',
+	{
+		value: function ( object )
+		       {
+			       for ( const [ fetchedPropertyName, fetchedPropertyValue ] of Object.entries( object ) )
+			       {
+				       this[ fetchedPropertyName ] = fetchedPropertyValue;
+			       }
+		       }
+	}
+);

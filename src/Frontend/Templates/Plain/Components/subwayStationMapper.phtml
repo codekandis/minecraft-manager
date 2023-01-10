@@ -1,145 +1,159 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\MinecraftManager\Frontend\Templates\Plain\Components;
 ?>
-<div data-control-type="TABPAGE">
-	<label data-control-type="TABPAGE_HEADER" for="tabPageSubwayStationMapper">Subway Station Mapper</label>
-	<input data-control-type="TABPAGE_ACTIVATOR" id="tabPageSubwayStationMapper" name="applicationComponent" type="radio"/>
-	<div data-control-type="TABPAGE_CONTENT">
-		<div id="subwayStationMapper">
-			<form id="subwayStationMapper-initialValues">
-				<h2>Initial Values</h2>
+<div data-control-type="TAB_CONTROL_PAGE">
+	<label data-control-type="TAB_CONTROL_PAGE_HEADER" for="tabPageSubwayStationMapper">Subway Station Mapper</label>
+	<input data-control-type="TAB_CONTROL_PAGE_ACTIVATOR" id="tabPageSubwayStationMapper" name="applicationComponent" type="radio"/>
+	<form data-control-type="TAB_CONTROL_PAGE_CONTENT" id="subwayStationMapper">
+		<section id="subwayStationMapper-initialValues">
+			<h2>Initial Values</h2>
+			<fieldset>
+				<label for="subwayStationMapper-stationOrientation">Orientation</label><select id="subwayStationMapper-stationOrientation" name="subwayStationMapper-stationOrientation" required>
+					<option value="NORTH">North</option>
+					<option value="EAST">East</option>
+					<option value="SOUTH">South</option>
+					<option value="WEST">West</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<label for="subwayStationMapper-currentPositionX">X</label><input id="subwayStationMapper-currentPositionX" name="subwayStationMapper-currentPositionX" type="text" required/>
+			</fieldset>
+			<fieldset>
+				<label for="subwayStationMapper-currentPositionY">Y</label><input id="subwayStationMapper-currentPositionY" name="subwayStationMapper-currentPositionY" type="text" required/>
+			</fieldset>
+			<fieldset>
+				<label for="subwayStationMapper-currentPositionZ">Z</label><input id="subwayStationMapper-currentPositionZ" name="subwayStationMapper-currentPositionZ" type="text" required/>
+			</fieldset>
+		</section>
+		<section id="subwayStationMapper-calculatedValues">
+			<h2>Calculated Values</h2>
+			<fieldset>
+				<label for="subwayStationMapper-calculatedCommandStationHeadMining">Head Hall</label><input id="subwayStationMapper-calculatedCommandStationHeadMining" name="subwayStationMapper-calculatedCommandStationHeadMining" type="text" readonly/><i class="far fa-clipboard"></i>
+			</fieldset>
+			<fieldset>
+				<label for="subwayStationMapper-calculatedCommandConcourseMining">Concourse</label><input id="subwayStationMapper-calculatedCommandConcourseMining" name="subwayStationMapper-calculatedCommandConcourseMining" type="text" readonly/><i class="far fa-clipboard"></i>
+			</fieldset>
+			<fieldset>
+				<label for="subwayStationMapper-calculatedCommandArrivalBell">Arrival Bell</label><input id="subwayStationMapper-calculatedCommandArrivalBell" name="subwayStationMapper-calculatedCommandArrivalBell" type="text" readonly/><i class="far fa-clipboard"></i>
+			</fieldset>
+			<fieldset>
+				<label for="subwayStationMapper-calculatedCommandDepartureBell">Departure Bell</label><input id="subwayStationMapper-calculatedCommandDepartureBell" name="subwayStationMapper-calculatedCommandDepartureBell" type="text" readonly/><i class="far fa-clipboard"></i>
+			</fieldset>
+			<fieldset>
+				<label for="subwayStationMapper-calculatedStationRotation">Rotation</label><input id="subwayStationMapper-calculatedStationRotation" name="subwayStationMapper-calculatedStationRotation" type="text" readonly/>
+			</fieldset>
+			<section id="subwayStationMapper-calculatedOffsetsStationHead1">
+				<h3>
+					<span id="subwayStationMapper-structureNameStationHead1">Head 1</span><i class="far fa-clipboard"></i>
+				</h3>
 				<fieldset>
-					<label for="subwayStationMapper-direction">Direction</label><select id="subwayStationMapper-direction" name="subwayStationMapper-direction" required>
-						<option value="NORTH">North</option>
-						<option value="EAST">East</option>
-						<option value="SOUTH">South</option>
-						<option value="WEST">West</option>
-					</select>
+					<label for="subwayStationMapper-calculatedOffsetStationHead1X">X</label><input id="subwayStationMapper-calculatedOffsetStationHead1X" name="subwayStationMapper-calculatedOffsetStationHead1X" type="text" readonly/>
 				</fieldset>
 				<fieldset>
-					<label for="subwayStationMapper-currentPositionX">X</label><input id="subwayStationMapper-currentPositionX" name="subwayStationMapper-currentPositionX" type="text" required/>
+					<label for="subwayStationMapper-calculatedOffsetStationHead1Y">Y</label><input id="subwayStationMapper-calculatedOffsetStationHead1Y" name="subwayStationMapper-calculatedOffsetStationHead1Y" type="text" readonly/>
 				</fieldset>
 				<fieldset>
-					<label for="subwayStationMapper-currentPositionY">Y</label><input id="subwayStationMapper-currentPositionY" name="subwayStationMapper-currentPositionY" type="text" required/>
+					<label for="subwayStationMapper-calculatedOffsetStationHead1Z">Z</label><input id="subwayStationMapper-calculatedOffsetStationHead1Z" name="subwayStationMapper-calculatedOffsetStationHead1Z" type="text" readonly/>
+				</fieldset>
+			</section>
+			<section id="subwayStationMapper-calculatedOffsetsStationHead2">
+				<h3>
+					<span id="subwayStationMapper-structureNameStationHead2">Head 2</span><i class="far fa-clipboard"></i>
+				</h3>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStationHead2X">X</label><input id="subwayStationMapper-calculatedOffsetStationHead2X" name="subwayStationMapper-calculatedOffsetStationHead2X" type="text" readonly/>
 				</fieldset>
 				<fieldset>
-					<label for="subwayStationMapper-currentPositionZ">Z</label><input id="subwayStationMapper-currentPositionZ" name="subwayStationMapper-currentPositionZ" type="text" required/>
-				</fieldset>
-			</form>
-			<form id="subwayStationMapper-calculatedValues">
-				<h2>Calculated Values</h2>
-				<fieldset>
-					<label for="subwayStationMapper-calculatedHeadHall">Head Hall</label><input id="subwayStationMapper-calculatedHeadHall" name="subwayStationMapper-calculatedHeadHall" type="text" readonly/><i class="far fa-clipboard"></i>
+					<label for="subwayStationMapper-calculatedOffsetStationHead2Y">Y</label><input id="subwayStationMapper-calculatedOffsetStationHead2Y" name="subwayStationMapper-calculatedOffsetStationHead2Y" type="text" readonly/>
 				</fieldset>
 				<fieldset>
-					<label for="subwayStationMapper-calculatedConcourseHall">Concourse Hall</label><input id="subwayStationMapper-calculatedConcourseHall" name="subwayStationMapper-calculatedConcourseHall" type="text" readonly/><i class="far fa-clipboard"></i>
+					<label for="subwayStationMapper-calculatedOffsetStationHead2Z">Z</label><input id="subwayStationMapper-calculatedOffsetStationHead2Z" name="subwayStationMapper-calculatedOffsetStationHead2Z" type="text" readonly/>
+				</fieldset>
+			</section>
+			<section id="subwayStationMapper-calculatedOffsetsConcourse">
+				<h3>
+					<span id="subwayStationMapper-structureNameConcourse">Concourse</span><i class="far fa-clipboard"></i>
+				</h3>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetConcourseX">X</label><input id="subwayStationMapper-calculatedOffsetConcourseX" name="subwayStationMapper-calculatedOffsetConcourseX" type="text" readonly/>
 				</fieldset>
 				<fieldset>
-					<label for="subwayStationMapper-calculatedArrivalBell">Arrival Bell</label><input id="subwayStationMapper-calculatedArrivalBell" name="subwayStationMapper-calculatedArrivalBell" type="text" readonly/><i class="far fa-clipboard"></i>
+					<label for="subwayStationMapper-calculatedOffsetConcourseY">Y</label><input id="subwayStationMapper-calculatedOffsetConcourseY" name="subwayStationMapper-calculatedOffsetConcourseY" type="text" readonly/>
 				</fieldset>
 				<fieldset>
-					<label for="subwayStationMapper-calculatedDepartureBell">Departure Bell</label><input id="subwayStationMapper-calculatedDepartureBell" name="subwayStationMapper-calculatedDepartureBell" type="text" readonly/><i class="far fa-clipboard"></i>
+					<label for="subwayStationMapper-calculatedOffsetConcourseZ">Z</label><input id="subwayStationMapper-calculatedOffsetConcourseZ" name="subwayStationMapper-calculatedOffsetConcourseZ" type="text" readonly/>
+				</fieldset>
+			</section>
+			<section id="subwayStationMapper-calculatedOffsetsStairsPort">
+				<h3>
+					<span id="subwayStationMapper-structureNameStairsPort">Stairs Port</span><i class="far fa-clipboard"></i>
+				</h3>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStairsPortX">X</label><input id="subwayStationMapper-calculatedOffsetStairsPortX" name="subwayStationMapper-calculatedOffsetStairsPortX" type="text" readonly/>
 				</fieldset>
 				<fieldset>
-					<label for="subwayStationMapper-calculatedRotation">Rotation</label><input id="subwayStationMapper-calculatedRotation" name="subwayStationMapper-calculatedRotation" type="text" readonly/>
+					<label for="subwayStationMapper-calculatedOffsetStairsPortY">Y</label><input id="subwayStationMapper-calculatedOffsetStairsPortY" name="subwayStationMapper-calculatedOffsetStairsPortY" type="text" readonly/>
 				</fieldset>
-				<section id="subwayStationMapper-calculatedOffsetsHead1">
-					<h3><span id="subwayStationMapper-head1Name">Head 1</span><i class="far fa-clipboard"></i></h3>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetHead1X">X</label><input id="subwayStationMapper-calculatedOffsetHead1X" name="subwayStationMapper-calculatedOffsetHead1X" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetHead1Y">Y</label><input id="subwayStationMapper-calculatedOffsetHead1Y" name="subwayStationMapper-calculatedOffsetHead1Y" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetHead1Z">Z</label><input id="subwayStationMapper-calculatedOffsetHead1Z" name="subwayStationMapper-calculatedOffsetHead1Z" type="text" readonly/>
-					</fieldset>
-				</section>
-				<section id="subwayStationMapper-calculatedOffsetsHead2">
-					<h3><span id="subwayStationMapper-head2Name">Head 2</span><i class="far fa-clipboard"></i></h3>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetHead2X">X</label><input id="subwayStationMapper-calculatedOffsetHead2X" name="subwayStationMapper-calculatedOffsetHead2X" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetHead2Y">Y</label><input id="subwayStationMapper-calculatedOffsetHead2Y" name="subwayStationMapper-calculatedOffsetHead2Y" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetHead2Z">Z</label><input id="subwayStationMapper-calculatedOffsetHead2Z" name="subwayStationMapper-calculatedOffsetHead2Z" type="text" readonly/>
-					</fieldset>
-				</section>
-				<section id="subwayStationMapper-calculatedOffsetsConcourse">
-					<h3><span id="subwayStationMapper-concourseName">Concourse</span><i class="far fa-clipboard"></i></h3>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetConcourseX">X</label><input id="subwayStationMapper-calculatedOffsetConcourseX" name="subwayStationMapper-calculatedOffsetConcourseX" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetConcourseY">Y</label><input id="subwayStationMapper-calculatedOffsetConcourseY" name="subwayStationMapper-calculatedOffsetConcourseY" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetConcourseZ">Z</label><input id="subwayStationMapper-calculatedOffsetConcourseZ" name="subwayStationMapper-calculatedOffsetConcourseZ" type="text" readonly/>
-					</fieldset>
-				</section>
-				<section id="subwayStationMapper-calculatedOffsetsStairsPort">
-					<h3><span id="subwayStationMapper-stairsPortName">Stairs Port</span><i class="far fa-clipboard"></i></h3>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairsPortX">X</label><input id="subwayStationMapper-calculatedOffsetStairsPortX" name="subwayStationMapper-calculatedOffsetStairsPortX" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairsPortY">Y</label><input id="subwayStationMapper-calculatedOffsetStairsPortY" name="subwayStationMapper-calculatedOffsetStairsPortY" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairsPortZ">Z</label><input id="subwayStationMapper-calculatedOffsetStairsPortZ" name="subwayStationMapper-calculatedOffsetStairsPortZ" type="text" readonly/>
-					</fieldset>
-				</section>
-				<section id="subwayStationMapper-calculatedOffsetsStairs">
-					<h3><span id="subwayStationMapper-stairsName">Stairs</span><i class="far fa-clipboard"></i></h3>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairsX">X</label><input id="subwayStationMapper-calculatedOffsetStairsX" name="subwayStationMapper-calculatedOffsetStairsX" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairsY">Y</label><input id="subwayStationMapper-calculatedOffsetStairsY" name="subwayStationMapper-calculatedOffsetStairsY" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairsZ">Z</label><input id="subwayStationMapper-calculatedOffsetStairsZ" name="subwayStationMapper-calculatedOffsetStairsZ" type="text" readonly/>
-					</fieldset>
-				</section>
-				<section id="subwayStationMapper-calculatedOffsetsStairsEntrance">
-					<h3><span id="subwayStationMapper-stairsEntranceName">Stairs Entrance</span><i class="far fa-clipboard"></i></h3>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairsEntranceX">X</label><input id="subwayStationMapper-calculatedOffsetStairsEntranceX" name="subwayStationMapper-calculatedOffsetStairsEntranceX" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairsEntranceY">Y</label><input id="subwayStationMapper-calculatedOffsetStairsEntranceY" name="subwayStationMapper-calculatedOffsetStairsEntranceY" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairsEntranceZ">Z</label><input id="subwayStationMapper-calculatedOffsetStairsEntranceZ" name="subwayStationMapper-calculatedOffsetStairsEntranceZ" type="text" readonly/>
-					</fieldset>
-				</section>
-				<section id="subwayStationMapper-calculatedOffsetsStairwayLeft">
-					<h3><span id="subwayStationMapper-stairwayLeftName">Stairway Left</span><i class="far fa-clipboard"></i></h3>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairwayLeftX">X</label><input id="subwayStationMapper-calculatedOffsetStairwayLeftX" name="subwayStationMapper-calculatedOffsetStairwayLeftX" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairwayLeftY">Y</label><input id="subwayStationMapper-calculatedOffsetStairwayLeftY" name="subwayStationMapper-calculatedOffsetStairwayLeftY" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairwayLeftZ">Z</label><input id="subwayStationMapper-calculatedOffsetStairwayLeftZ" name="subwayStationMapper-calculatedOffsetStairwayLeftZ" type="text" readonly/>
-					</fieldset>
-				</section>
-				<section id="subwayStationMapper-calculatedOffsetsStairwayRight">
-					<h3><span id="subwayStationMapper-stairwayRightName">Stairway Right</span><i class="far fa-clipboard"></i></h3>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairwayRightX">X</label><input id="subwayStationMapper-calculatedOffsetStairwayRightX" name="subwayStationMapper-calculatedOffsetStairwayRightX" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairwayRightY">Y</label><input id="subwayStationMapper-calculatedOffsetStairwayRightY" name="subwayStationMapper-calculatedOffsetStairwayRightY" type="text" readonly/>
-					</fieldset>
-					<fieldset>
-						<label for="subwayStationMapper-calculatedOffsetStairwayRightZ">Z</label><input id="subwayStationMapper-calculatedOffsetStairwayRightZ" name="subwayStationMapper-calculatedOffsetStairwayRightZ" type="text" readonly/>
-					</fieldset>
-				</section>
-			</form>
-		</div>
-	</div>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStairsPortZ">Z</label><input id="subwayStationMapper-calculatedOffsetStairsPortZ" name="subwayStationMapper-calculatedOffsetStairsPortZ" type="text" readonly/>
+				</fieldset>
+			</section>
+			<section id="subwayStationMapper-calculatedOffsetsStairs">
+				<h3>
+					<span id="subwayStationMapper-structureNameStairs">Stairs</span><i class="far fa-clipboard"></i>
+				</h3>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStairsX">X</label><input id="subwayStationMapper-calculatedOffsetStairsX" name="subwayStationMapper-calculatedOffsetStairsX" type="text" readonly/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStairsY">Y</label><input id="subwayStationMapper-calculatedOffsetStairsY" name="subwayStationMapper-calculatedOffsetStairsY" type="text" readonly/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStairsZ">Z</label><input id="subwayStationMapper-calculatedOffsetStairsZ" name="subwayStationMapper-calculatedOffsetStairsZ" type="text" readonly/>
+				</fieldset>
+			</section>
+			<section id="subwayStationMapper-calculatedOffsetsStairsEntrance">
+				<h3>
+					<span id="subwayStationMapper-structureNameStairsEntrance">Stairs Entrance</span><i class="far fa-clipboard"></i>
+				</h3>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStairsEntranceX">X</label><input id="subwayStationMapper-calculatedOffsetStairsEntranceX" name="subwayStationMapper-calculatedOffsetStairsEntranceX" type="text" readonly/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStairsEntranceY">Y</label><input id="subwayStationMapper-calculatedOffsetStairsEntranceY" name="subwayStationMapper-calculatedOffsetStairsEntranceY" type="text" readonly/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStairsEntranceZ">Z</label><input id="subwayStationMapper-calculatedOffsetStairsEntranceZ" name="subwayStationMapper-calculatedOffsetStairsEntranceZ" type="text" readonly/>
+				</fieldset>
+			</section>
+			<section id="subwayStationMapper-calculatedOffsetsStairwayLeft">
+				<h3>
+					<span id="subwayStationMapper-structureNameStairwayLeft">Stairway Left</span><i class="far fa-clipboard"></i>
+				</h3>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStairwayLeftX">X</label><input id="subwayStationMapper-calculatedOffsetStairwayLeftX" name="subwayStationMapper-calculatedOffsetStairwayLeftX" type="text" readonly/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStairwayLeftY">Y</label><input id="subwayStationMapper-calculatedOffsetStairwayLeftY" name="subwayStationMapper-calculatedOffsetStairwayLeftY" type="text" readonly/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStairwayLeftZ">Z</label><input id="subwayStationMapper-calculatedOffsetStairwayLeftZ" name="subwayStationMapper-calculatedOffsetStairwayLeftZ" type="text" readonly/>
+				</fieldset>
+			</section>
+			<section id="subwayStationMapper-calculatedOffsetsStairwayRight">
+				<h3>
+					<span id="subwayStationMapper-structureNameStairwayRight">Stairway Right</span><i class="far fa-clipboard"></i>
+				</h3>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStairwayRightX">X</label><input id="subwayStationMapper-calculatedOffsetStairwayRightX" name="subwayStationMapper-calculatedOffsetStairwayRightX" type="text" readonly/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStairwayRightY">Y</label><input id="subwayStationMapper-calculatedOffsetStairwayRightY" name="subwayStationMapper-calculatedOffsetStairwayRightY" type="text" readonly/>
+				</fieldset>
+				<fieldset>
+					<label for="subwayStationMapper-calculatedOffsetStairwayRightZ">Z</label><input id="subwayStationMapper-calculatedOffsetStairwayRightZ" name="subwayStationMapper-calculatedOffsetStairwayRightZ" type="text" readonly/>
+				</fieldset>
+			</section>
+		</section>
+	</form>
 </div>

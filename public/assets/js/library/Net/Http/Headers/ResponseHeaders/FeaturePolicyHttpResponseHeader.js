@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class FeaturePolicyHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Feature-Policy`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class FeaturePolicyHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( FeaturePolicyHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Feature-Policy';
 	}
-}
 
-export default FeaturePolicyHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( FeaturePolicyHttpResponseHeader.NAME, value );
+	}
+}

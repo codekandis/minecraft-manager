@@ -1,13 +1,30 @@
 'use strict';
 
-import AbstractUriMappings from '../../library/Net/AbstractUriMappings.js';
+import { AbstractUriMappings } from '../../library/Net/AbstractUriMappings.js';
 
-class AbstractApiUriMappings extends AbstractUriMappings
+/**
+ * Represents the base class of any API URI mappings of the application.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class AbstractApiUriMappings extends AbstractUriMappings
 {
-	__schema  = 'https';
-	__host    = 'minecraft-manager.codekandis';
-	__port    = 443;
+	/**
+	 * @inheritDoc
+	 */
+	__schema = 'https';
+
+	/**
+	 * @inheritDoc
+	 */
+	__host = 'minecraft-manager.codekandis';
+
+	/**
+	 * @inheritDoc
+	 */
+	__port = 443;
+
+	/**
+	 * @inheritDoc
+	 */
 	__baseUri = '/api/';
 }
-
-export default AbstractApiUriMappings;

@@ -1,11 +1,19 @@
 'use strict';
 
-import AbstractApiAjaxController from '../../../../Net/Http/AbstractApiAjaxController.js';
-import ApiHttpRequest from '../../../../Net/Http/ApiHttpRequest.js';
-import ApiUriBuilder from '../ApiUriBuilder.js';
+import { AbstractApiAjaxController } from '../../../../Net/Http/AbstractApiAjaxController.js';
+import { ApiHttpRequest } from '../../../../Net/Http/ApiHttpRequest.js';
+import { LanternPositionsPropertyNames } from '../../Enumerations/LanternPositionsPropertyNames.js';
+import { ApiUriBuilder } from '../ApiUriBuilder.js';
 
-class ApiAjaxController extends AbstractApiAjaxController
+/**
+ * Represents the API AJAX controller of the subway rails mapper component.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ApiAjaxController extends AbstractApiAjaxController
 {
+	/**
+	 * Constructor method.
+	 */
 	constructor()
 	{
 		super(
@@ -13,37 +21,46 @@ class ApiAjaxController extends AbstractApiAjaxController
 		);
 	}
 
-	async readSubwayRailsMapper()
+	/**
+	 * Reads the lantern positions.
+	 * @returns {Object} The read lantern positions.
+	 */
+	async readLanternPositions()
 	{
 		const request = ApiHttpRequest.createGetRequest(
-			this.__uriBuilder.buildSubwayRailsMapperUri()
+			this.__uriBuilder.buildLanternPositionsUri()
 		);
 
-		const requestResult = await request
+		return await request
 			.send()
 			.then(
 				( requestResult ) =>
 				{
-					return requestResult;
+					const jsonResponse = this._createJsonResponse( requestResult.response.payload );
+					return jsonResponse.data.lanternPositions;
 				}
 			);
-
-		return this._createJsonResponse( requestResult.response.payload ).data;
 	}
 
-	async writeSubwayRailsMapper( subwayRailsMapper )
+	/**
+	 * Writes the lantern positions.
+	 * @param {LanternPositions} lanternPositions The lantern positions to write.
+	 */
+	async writeLanternPositions( lanternPositions )
 	{
 		const request   = ApiHttpRequest.createPostRequest(
-			this.__uriBuilder.buildSubwayRailsMapperUri()
+			this.__uriBuilder.buildLanternPositionsUri()
 		);
 		request.payload = this._createRequestPayload(
 			{
-				subwayRailsMapper: subwayRailsMapper
+				lanternPositions: {
+					[ LanternPositionsPropertyNames.START_POSITION_X ]: lanternPositions[ LanternPositionsPropertyNames.START_POSITION_X ],
+					[ LanternPositionsPropertyNames.START_POSITION_Y ]: lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Y ],
+					[ LanternPositionsPropertyNames.START_POSITION_Z ]: lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Z ]
+				}
 			}
 		);
 
 		await request.send();
 	}
 }
-
-export default ApiAjaxController;

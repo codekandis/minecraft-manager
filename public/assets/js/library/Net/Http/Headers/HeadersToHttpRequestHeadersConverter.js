@@ -1,19 +1,26 @@
 'use strict';
 
-import Abstract from '../../../Types/Abstract.js';
-import HttpRequestHeader from './HttpRequestHeader.js';
+import { Abstract } from '../../../Types/Abstract.js';
+import { HttpRequestHeader } from './HttpRequestHeader.js';
 
-class HeadersToHttpRequestHeadersConverter extends Abstract
+/**
+ * Represents a converter converting headers into a collection of HTTP request headers.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class HeadersToHttpRequestHeadersConverter extends Abstract
 {
+	/**
+	 * Converts headers into an array of HTTP request headers.
+	 * @param {Headers} headers The headers to convert.
+	 * @returns {HttpRequestHeader[]} The array of HTTP request headers.
+	 */
 	convert( headers )
 	{
 		return headers.map(
-			( header ) =>
+			( fetchedHeaderName, fetchedHeaderValue, fetchedHeaderIndex ) =>
 			{
-				return new HttpRequestHeader( header[ 0 ], header[ 1 ] );
+				return new HttpRequestHeader( fetchedHeaderName, fetchedHeaderValue );
 			}
 		);
 	}
 }
-
-export default HeadersToHttpRequestHeadersConverter;

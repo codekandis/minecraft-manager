@@ -1,18 +1,28 @@
 'use strict';
 
-import AbstractEvent from '../AbstractEvent.js';
+import { AbstractCustomEvent } from '../AbstractCustomEvent.js';
 
-class PropertyChangingEvent extends AbstractEvent
+/**
+ * Represents a property changing event.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class PropertyChangingEvent extends AbstractCustomEvent
 {
-	constructor( sender, eventArguments )
-	{
-		super( PropertyChangingEvent.EVENT_NAME, sender, eventArguments );
-	}
-
+	/**
+	 * @inheritdoc
+	 */
 	static get EVENT_NAME()
 	{
 		return 'propertyChanging';
 	}
-}
 
-export default PropertyChangingEvent;
+	/**
+	 * Constructor method.
+	 * @param {Object} sender The object dispatching this event.
+	 * @param {PropertyEventArguments} eventArguments The arguments of the event.
+	 */
+	constructor( sender, eventArguments )
+	{
+		super( PropertyChangingEvent.EVENT_NAME, sender, eventArguments );
+	}
+}

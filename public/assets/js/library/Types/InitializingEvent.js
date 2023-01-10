@@ -1,18 +1,28 @@
 'use strict';
 
-import AbstractEvent from './AbstractEvent.js';
+import { AbstractCustomEvent } from './AbstractCustomEvent.js';
 
-class InitializingEvent extends AbstractEvent
+/**
+ * Represents an initializing event.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class InitializingEvent extends AbstractCustomEvent
 {
-	constructor( sender, eventArguments )
-	{
-		super( InitializingEvent.EVENT_NAME, sender, eventArguments );
-	}
-
+	/**
+	 * @inheritdoc
+	 */
 	static get EVENT_NAME()
 	{
 		return 'initializing';
 	}
-}
 
-export default InitializingEvent;
+	/**
+	 * Constructor method.
+	 * @param {Object} sender The object which dispatched the event.
+	 * @param {InitializingEventArguments} eventArguments The arguments of the event.
+	 */
+	constructor( sender, eventArguments )
+	{
+		super( InitializingEvent.EVENT_NAME, sender, eventArguments );
+	}
+}

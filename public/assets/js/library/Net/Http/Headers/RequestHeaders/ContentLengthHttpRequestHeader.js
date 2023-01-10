@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class ContentLengthHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `Content-Length`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ContentLengthHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( ContentLengthHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'Content-Length';
 	}
-}
 
-export default ContentLengthHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( ContentLengthHttpRequestHeader.NAME, value );
+	}
+}

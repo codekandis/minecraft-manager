@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class SetCookieHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Set-Cookie`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class SetCookieHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( SetCookieHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Set-Cookie';
 	}
-}
 
-export default SetCookieHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( SetCookieHttpResponseHeader.NAME, value );
+	}
+}
