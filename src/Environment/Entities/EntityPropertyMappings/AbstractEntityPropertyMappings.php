@@ -11,7 +11,7 @@ use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMappings as OriginE
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class EntityPropertyMappings extends OriginEntityPropertyMappings
+abstract class AbstractEntityPropertyMappings extends OriginEntityPropertyMappings
 {
 	/**
 	 * Constructor method.

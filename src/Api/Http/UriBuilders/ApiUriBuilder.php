@@ -14,32 +14,16 @@ class ApiUriBuilder extends AbstractUriBuilder implements ApiUriBuilderInterface
 	/**
 	 * {@inheritDoc}
 	 */
-	public function buildSettingsUri(): string
+	public function buildSettingsSettingsUri(): string
 	{
-		return $this->build( ApiUriNames::SETTINGS );
+		return $this->build( ApiUriNames::SETTINGS_SETTINGS );
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public function buildSettingUri(): string
+	public function buildSubwayRailsMapperLanternPositionsUri(): string
 	{
-		return $this->build( ApiUriNames::SETTING );
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function buildSubwayRailsMappersUri(): string
-	{
-		return $this->build( ApiUriNames::SUBWAY_RAILS_MAPPERS );
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function buildSubwayRailsMapperUri(): string
-	{
-		return $this->build( ApiUriNames::SUBWAY_RAILS_MAPPER );
+		return $this->build( ApiUriNames::SUBWAY_RAILS_MAPPER_LANTERN_POSITIONS );
 	}
 }

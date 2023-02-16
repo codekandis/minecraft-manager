@@ -9,26 +9,14 @@ namespace CodeKandis\MinecraftManager\Api\Http\UriBuilders;
 interface ApiUriBuilderInterface
 {
 	/**
-	 * Builds the URI of the settings.
-	 * @return string The URI of the settings.
+	 * Builds the URI of the settings settings.
+	 * @return string The URI of the settings settings.
 	 */
-	public function buildSettingsUri(): string;
+	public function buildSettingsSettingsUri(): string;
 
 	/**
-	 * Builds the URI of the setting.
-	 * @return string The URI of the setting.
+	 * Builds the URI of the subway rails mapper lantern positions.
+	 * @return string The URI of the subway rails mapper lantern positions.
 	 */
-	public function buildSettingUri(): string;
-
-	/**
-	 * Builds the URI of the subwayRailsMappers.
-	 * @return string The URI of the subwayRailsMappers.
-	 */
-	public function buildSubwayRailsMappersUri(): string;
-
-	/**
-	 * Builds the URI of the subwayRailsMapper.
-	 * @return string The URI of the subwayRailsMapper.
-	 */
-	public function buildSubwayRailsMapperUri(): string;
+	public function buildSubwayRailsMapperLanternPositionsUri(): string;
 }

@@ -9,7 +9,7 @@ use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapping;
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-class UserEntityPropertyMappings extends AbstractPersistableEntityPropertyMappings
+class UserPersistableEntityPropertyMappings extends AbstractPersistableEntityPropertyMappings
 {
 	/**
 	 * Constructor method.

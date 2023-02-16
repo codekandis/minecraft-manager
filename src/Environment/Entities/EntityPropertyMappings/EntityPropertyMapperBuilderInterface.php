@@ -17,14 +17,14 @@ interface EntityPropertyMapperBuilderInterface
 	public function buildUserEntityPropertyMapper(): EntityPropertyMapperInterface;
 
 	/**
-	 * Builds the entity property mapper of the setting entity.
-	 * @return EntityPropertyMapperInterface The entity property mapper of the setting entity.
+	 * Builds the entity property mapper of the settings settings entity.
+	 * @return EntityPropertyMapperInterface The entity property mapper of the settings settings entity.
 	 */
-	public function buildSettingEntityPropertyMapper(): EntityPropertyMapperInterface;
+	public function buildSettingsSettingsEntityPropertyMapper(): EntityPropertyMapperInterface;
 
 	/**
-	 * Builds the entity property mapper of the subway rails mapper entity.
-	 * @return EntityPropertyMapperInterface The entity property mapper of the subway rails mapper entity.
+	 * Builds the entity property mapper of the subway rails mapper lantern positions entity.
+	 * @return EntityPropertyMapperInterface The entity property mapper of the subway rails mapper lantern positions entity.
 	 */
-	public function buildSubwayRailsMapperEntityPropertyMapper(): EntityPropertyMapperInterface;
+	public function buildSubwayRailsMapperLanternPositionEntityPropertyMapper(): EntityPropertyMapperInterface;
 }

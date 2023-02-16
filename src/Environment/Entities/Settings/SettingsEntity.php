@@ -1,15 +1,17 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\MinecraftManager\Environment\Entities;
+namespace CodeKandis\MinecraftManager\Environment\Entities\Settings;
+
+use CodeKandis\MinecraftManager\Environment\Entities\AbstractPersistableEntity;
 
 /**
- * Represents a setting entity.
+ * Represents a settings entity.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-class SettingEntity extends AbstractPersistableEntity implements SettingEntityInterface
+class SettingsEntity extends AbstractPersistableEntity implements SettingsEntityInterface
 {
 	/**
-	 * Stores the user ID of the setting.
+	 * Stores the user ID of the settings.
 	 * @var string
 	 */
 	public string $userId = '';

@@ -1,5 +1,5 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\MinecraftManager\Configurations;
+namespace CodeKandis\MinecraftManager\Configurations\Plain;
 
 use CodeKandis\MinecraftManager\Api\Http\ApiUriNames;
 
@@ -8,9 +8,7 @@ return [
 	'host'         => 'minecraft-manager.codekandis',
 	'baseUri'      => '/api/',
 	'relativeUris' => [
-		ApiUriNames::SETTINGS             => 'settings',
-		ApiUriNames::SETTING              => 'settings',
-		ApiUriNames::SUBWAY_RAILS_MAPPERS => 'subwayRailsMappers',
-		ApiUriNames::SUBWAY_RAILS_MAPPER  => 'subwayRailsMappers'
+		ApiUriNames::SETTINGS_SETTINGS                     => 'settings/settings',
+		ApiUriNames::SUBWAY_RAILS_MAPPER_LANTERN_POSITIONS => 'subway-rails-mapper/lantern-positions'
 	]
 ];

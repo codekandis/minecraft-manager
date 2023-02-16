@@ -9,22 +9,12 @@ namespace CodeKandis\MinecraftManager\Api\Http;
 abstract class ApiUriNames
 {
 	/**
-	 * Represents the URI name of the settings.
+	 * Represents the URI name of the settings settings.
 	 */
-	public const SETTINGS = 'settings';
+	public const SETTINGS_SETTINGS = 'settings.settings';
 
 	/**
-	 * Represents the URI name of the setting.
+	 * Represents the URI name of the subway rails mapper lantern positions.
 	 */
-	public const SETTING = 'setting';
-
-	/**
-	 * Represents the URI name of the subwayRailsMappers.
-	 */
-	public const SUBWAY_RAILS_MAPPERS = 'subwayRailsMappers';
-
-	/**
-	 * Represents the URI name of the subwayRailsMapper.
-	 */
-	public const SUBWAY_RAILS_MAPPER = 'subwayRailsMapper';
+	public const SUBWAY_RAILS_MAPPER_LANTERN_POSITIONS = 'subwayRailsMapper.lanternPositions';
 }

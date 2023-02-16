@@ -1,15 +1,16 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\MinecraftManager\Environment\Entities\EntityPropertyMappings;
+namespace CodeKandis\MinecraftManager\Environment\Entities\SubwayRailsMapper\EntityPropertyMappings;
 
 use CodeKandis\Converters\BiDirectionalConverters\IntToStringBiDirectionalConverter;
 use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapping;
+use CodeKandis\MinecraftManager\Environment\Entities\EntityPropertyMappings\AbstractPersistableEntityPropertyMappings;
 
 /**
- * Represents the entity property mappings of the subway rails mapper entity.
+ * Represents the entity property mappings of the lantern positions entity.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-class SubwayRailsMapperEntityPropertyMappings extends AbstractPersistableEntityPropertyMappings
+class LanternPositionsPersistableEntityPropertyMappings extends AbstractPersistableEntityPropertyMappings
 {
 	/**
 	 * Constructor method.

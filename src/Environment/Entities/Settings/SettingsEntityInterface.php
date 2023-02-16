@@ -1,22 +1,24 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\MinecraftManager\Environment\Entities;
+namespace CodeKandis\MinecraftManager\Environment\Entities\Settings;
+
+use CodeKandis\MinecraftManager\Environment\Entities\PersistableEntityInterface;
 
 /**
- * Represents the interface of any setting entity.
+ * Represents the interface of any settings entity.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-interface SettingEntityInterface extends PersistableEntityInterface
+interface SettingsEntityInterface extends PersistableEntityInterface
 {
 	/**
-	 * Gets the user ID of the setting.
-	 * @return string The user ID of the setting.
+	 * Gets the user ID of the settings.
+	 * @return string The user ID of the settings.
 	 */
 	public function getUserId(): string;
 
 	/**
-	 * Sets the user ID of the setting.
-	 * @param string $userId The user ID of the setting.
+	 * Sets the user ID of the settings.
+	 * @param string $userId The user ID of the settings.
 	 */
 	public function setUserId( string $userId ): void;
 

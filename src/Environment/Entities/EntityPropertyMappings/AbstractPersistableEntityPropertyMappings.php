@@ -11,7 +11,7 @@ use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMappingInterface;
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class AbstractPersistableEntityPropertyMappings extends EntityPropertyMappings
+abstract class AbstractPersistableEntityPropertyMappings extends AbstractEntityPropertyMappings
 {
 	/**
 	 * Constructor method.

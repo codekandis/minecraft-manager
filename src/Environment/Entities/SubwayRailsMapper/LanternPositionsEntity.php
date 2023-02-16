@@ -1,15 +1,17 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\MinecraftManager\Environment\Entities;
+namespace CodeKandis\MinecraftManager\Environment\Entities\SubwayRailsMapper;
+
+use CodeKandis\MinecraftManager\Environment\Entities\AbstractPersistableEntity;
 
 /**
- * Represents a subway rails mapper entity.
+ * Represents a lantern positions entity.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-class SubwayRailsMapperEntity extends AbstractPersistableEntity implements SubwayRailsMapperEntityInterface
+class LanternPositionsEntity extends AbstractPersistableEntity implements LanternPositionsEntityInterface
 {
 	/**
-	 * Stores the user ID of the setting.
+	 * Stores the user ID of the lantern positions.
 	 * @var string
 	 */
 	public string $userId = '';
