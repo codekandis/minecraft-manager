@@ -142,21 +142,29 @@ Object.defineProperty(
 );
 
 /**
- * Merges another object into the object.
+ * Merges a variadic amount of objects into the object. The object itself will be mutated.
  * @method merge
  * @memberOf Object.prototype
- * @param {Object} object The object to merge.
+ * @param {...Object} objects The objects to merge.
+ * @returns {this} The merged object.
  */
 Object.defineProperty(
 	Object.prototype,
 	'merge',
 	{
-		value: function ( object )
+		value: function ( ...objects )
 		       {
-			       for ( const [ fetchedPropertyName, fetchedPropertyValue ] of Object.entries( object ) )
-			       {
-				       this[ fetchedPropertyName ] = fetchedPropertyValue;
-			       }
+			       objects.forEach(
+				       ( fetchedObject ) =>
+				       {
+					       for ( const [ fetchedPropertyName, fetchedPropertyValue ] of Object.entries( fetchedObject ) )
+					       {
+						       this[ fetchedPropertyName ] = fetchedPropertyValue;
+					       }
+				       }
+			       );
+
+			       return this;
 		       }
 	}
 );
