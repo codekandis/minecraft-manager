@@ -40,7 +40,12 @@ export class BindableHtmlFormFieldProxy extends BindableProxy
 	{
 		const eventHandler = ( event ) =>
 		{
-			bindableProxy._dispatchPropertyChangedEvent( 'value', bindableProxy.proxy );
+			bindableProxy._dispatchPropertyChangedEvent(
+				'checkbox' === bindableProxy.delegatedObject.type
+					? 'checked' :
+					'value',
+				bindableProxy.proxy
+			);
 		};
 
 		bindableProxy.delegatedObject.inputEvent( eventHandler );
