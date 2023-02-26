@@ -9,7 +9,8 @@ namespace CodeKandis\MinecraftManager\Frontend\Templates\Plain\Common;
 <html>
 <head>
 	<title><?php echo $htmlTitle; ?> - MinecraftManager</title>
-	<link rel="modulepreload" href="/assets/js/application/Application.js"/>
+	<link rel="icon" href="data:,"/>
+	<link rel="modulepreload" href="/assets/javascript/Application.js"/>
 	<link rel="preload" as="style" href="/assets/libraries/fontawesome/css/all.min.css"/>
 	<link rel="preload" as="style" href="/assets/css/core.css"/>
 
@@ -118,7 +119,7 @@ namespace CodeKandis\MinecraftManager\Frontend\Templates\Plain\Common;
 		}
 	}
 	?>
-	<script type="module" src="/assets/js/application/Application.js"></script>
+	<script type="module" src="/assets/javascript/Application.js"></script>
 	<?php
 	if ( true === isset( $additionalFollowingLinkedJavaScripts ) )
 	{
