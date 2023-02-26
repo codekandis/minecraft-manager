@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class RttHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `RTT`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class RttHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( RttHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'RTT';
 	}
-}
 
-export default RttHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( RttHttpRequestHeader.NAME, value );
+	}
+}

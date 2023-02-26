@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ViaHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Via`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ViaHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( ViaHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Via';
 	}
-}
 
-export default ViaHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( ViaHttpResponseHeader.NAME, value );
+	}
+}

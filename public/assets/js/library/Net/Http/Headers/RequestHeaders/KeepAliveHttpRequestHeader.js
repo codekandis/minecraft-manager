@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class KeepAliveHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `Keep-Alive`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class KeepAliveHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( KeepAliveHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'Keep-Alive';
 	}
-}
 
-export default KeepAliveHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( KeepAliveHttpRequestHeader.NAME, value );
+	}
+}

@@ -1,93 +1,111 @@
 'use strict';
 
-import UnknownUrlPartialException from './UnknownUrlPartialException.js';
-import UrlPartial from './UrlPartial.js';
+import { PartialUrlType } from './PartialUrlType.js';
+import { UnknownPartialUrlTypeException } from './UnknownPartialUrlTypeException.js';
 
-URL.prototype.getLeftPart = function ( urlPartial )
-{
-	switch ( urlPartial )
+/**
+ * Represents JSDoc types and prototype extensions of the class `URL`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+
+/**
+ * Gets a specified portion of the URL.
+ * @memberOf URL.prototype
+ * @param {String} partialUrlType The end of the URL portion to return.
+ * @returns {String} The extraced partial URL.
+ * @throws {UnknownPartialUrlTypeException} The partial URL is invalid.
+ */
+Object.defineProperty(
+	URL.prototype,
+	'getLeftPart',
 	{
-		case UrlPartial.PROTOCOL:
-		{
-			return String.format`${ 0 }`
-			( this.protocol );
-		}
-		case UrlPartial.USERNAME:
-		{
-			return String.format`${ 0 }//${ 1 }`
-			(
-				this.getLeftPart( UrlPartial.PROTOCOL ),
-				this.username
-			);
-		}
-		case UrlPartial.PASSWORD:
-		{
-			if ( String.empty === this.password )
-			{
-				return this.getLeftPart( UrlPartial.USERNAME );
-			}
+		value: function ( partialUrlType )
+		       {
+			       switch ( partialUrlType )
+			       {
+				       case PartialUrlType.PROTOCOL:
+				       {
+					       return String.format`${ 0 }`
+					       ( this.protocol );
+				       }
+				       case PartialUrlType.USERNAME:
+				       {
+					       return String.format`${ 0 }//${ 1 }`
+					       (
+						       this.getLeftPart( PartialUrlType.PROTOCOL ),
+						       this.username
+					       );
+				       }
+				       case PartialUrlType.PASSWORD:
+				       {
+					       if ( String.empty === this.password )
+					       {
+						       return this.getLeftPart( PartialUrlType.USERNAME );
+					       }
 
-			return String.format`${ 0 }:${ 1 }`
-			(
-				this.getLeftPart( UrlPartial.USERNAME ),
-				this.password
-			);
-		}
-		case UrlPartial.HOSTNAME:
-		{
-			if ( String.empty === this.username && String.empty === this.password )
-			{
-				return String.format`${ 0 }${ 1 }`
-				(
-					this.getLeftPart( UrlPartial.PASSWORD ),
-					this.hostname
-				);
-			}
+					       return String.format`${ 0 }:${ 1 }`
+					       (
+						       this.getLeftPart( PartialUrlType.USERNAME ),
+						       this.password
+					       );
+				       }
+				       case PartialUrlType.HOSTNAME:
+				       {
+					       if ( String.empty === this.username && String.empty === this.password )
+					       {
+						       return String.format`${ 0 }${ 1 }`
+						       (
+							       this.getLeftPart( PartialUrlType.PASSWORD ),
+							       this.hostname
+						       );
+					       }
 
-			return String.format`${ 0 }@${ 1 }`
-			(
-				this.getLeftPart( UrlPartial.PASSWORD ),
-				this.hostname
-			);
-		}
-		case UrlPartial.PORT:
-		{
-			if ( String.empty === this.port )
-			{
-				return this.getLeftPart( UrlPartial.HOSTNAME )
-			}
+					       return String.format`${ 0 }@${ 1 }`
+					       (
+						       this.getLeftPart( PartialUrlType.PASSWORD ),
+						       this.hostname
+					       );
+				       }
+				       case PartialUrlType.PORT:
+				       {
+					       if ( String.empty === this.port )
+					       {
+						       return this.getLeftPart( PartialUrlType.HOSTNAME );
+					       }
 
-			return String.format`${ 0 }:${ 1 }`
-			(
-				this.getLeftPart( UrlPartial.HOSTNAME ),
-				this.port
-			);
-		}
-		case UrlPartial.PATHNAME:
-		{
-			return String.format`${ 0 }${ 1 }`
-			(
-				this.getLeftPart( UrlPartial.PORT ),
-				this.pathname
-			);
-		}
-		case UrlPartial.SEARCH:
-		{
-			return String.format`${ 0 }${ 1 }`
-			(
-				this.getLeftPart( UrlPartial.PATHNAME ),
-				this.search
-			);
-		}
-		case UrlPartial.HASH:
-		{
-			return String.format`${ 0 }${ 1 }`
-			(
-				this.getLeftPart( UrlPartial.SEARCH ),
-				this.hash
-			);
-		}
+					       return String.format`${ 0 }:${ 1 }`
+					       (
+						       this.getLeftPart( PartialUrlType.HOSTNAME ),
+						       this.port
+					       );
+				       }
+				       case PartialUrlType.PATHNAME:
+				       {
+					       return String.format`${ 0 }${ 1 }`
+					       (
+						       this.getLeftPart( PartialUrlType.PORT ),
+						       this.pathname
+					       );
+				       }
+				       case PartialUrlType.SEARCH:
+				       {
+					       return String.format`${ 0 }${ 1 }`
+					       (
+						       this.getLeftPart( PartialUrlType.PATHNAME ),
+						       this.search
+					       );
+				       }
+				       case PartialUrlType.HASH:
+				       {
+					       return String.format`${ 0 }${ 1 }`
+					       (
+						       this.getLeftPart( PartialUrlType.SEARCH ),
+						       this.hash
+					       );
+				       }
+			       }
+
+			       throw UnknownPartialUrlTypeException.with_partialUrlType( partialUrlType );
+		       }
 	}
-
-	throw UnknownUrlPartialException.with_urlPartial( urlPartial );
-};
+);

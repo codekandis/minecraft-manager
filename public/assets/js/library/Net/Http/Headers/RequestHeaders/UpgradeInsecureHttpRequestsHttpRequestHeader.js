@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class UpgradeInsecureHttpRequestsHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `Upgrade-Insecure-HttpRequests`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class UpgradeInsecureHttpRequestsHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( UpgradeInsecureHttpRequestsHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'Upgrade-Insecure-HttpRequests';
 	}
-}
 
-export default UpgradeInsecureHttpRequestsHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( UpgradeInsecureHttpRequestsHttpRequestHeader.NAME, value );
+	}
+}

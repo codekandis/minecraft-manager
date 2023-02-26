@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class StrictTransportSecurityHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Strict-Transport-Security`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class StrictTransportSecurityHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( StrictTransportSecurityHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Strict-Transport-Security';
 	}
-}
 
-export default StrictTransportSecurityHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( StrictTransportSecurityHttpResponseHeader.NAME, value );
+	}
+}

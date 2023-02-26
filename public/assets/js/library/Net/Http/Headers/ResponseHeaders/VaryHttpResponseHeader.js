@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class VaryHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Vary`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class VaryHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( VaryHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Vary';
 	}
-}
 
-export default VaryHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( VaryHttpResponseHeader.NAME, value );
+	}
+}

@@ -1,13 +1,25 @@
 'use strict';
 
-import Abstract from '../../../Types/Abstract.js';
-import HttpPostFile from './HttpPostFile.js';
-import HttpPostFileCollection from './HttpPostFileCollection.js';
+import { Abstract } from '../../../Types/Abstract.js';
+import { HttpPostFile } from './HttpPostFile.js';
+import { HttpPostFileCollection } from './HttpPostFileCollection.js';
 
-class FileListToHttpPostFileCollection extends Abstract
+/**
+ * Represents a converter converting a file list into a collection of HTTP POST files.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class FileListToHttpPostFileCollectionConverter extends Abstract
 {
-	#_httpPostFileName = undefined;
+	/**
+	 * Stores the name of the HTTP POST files.
+	 * @type {String}
+	 */
+	#_httpPostFileName;
 
+	/**
+	 * Constructor method.
+	 * @param {String} httpPostFileName The name of the HTTP POST files.
+	 */
 	constructor( httpPostFileName )
 	{
 		super();
@@ -15,17 +27,20 @@ class FileListToHttpPostFileCollection extends Abstract
 		this.#_httpPostFileName = httpPostFileName;
 	}
 
+	/**
+	 * Converts a file list into a collection of HTTP POST files.
+	 * @param {FileList} fileList The file list to convert.
+	 * @returns {HttpPostFileCollection} The collection of HTTP POST files.
+	 */
 	convert( fileList )
 	{
 		return new HttpPostFileCollection(
 			...fileList.map(
-				( file ) =>
+				( fetchedFile, fetchedFileIndex ) =>
 				{
-					return new HttpPostFile( this.#_httpPostFileName, file.name, file );
+					return new HttpPostFile( this.#_httpPostFileName, fetchedFile.name, fetchedFile );
 				}
 			)
 		);
 	}
 }
-
-export default FileListToHttpPostFileCollection;

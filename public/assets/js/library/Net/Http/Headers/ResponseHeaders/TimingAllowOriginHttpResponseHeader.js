@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class TimingAllowOriginHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Timing-Allow-Origin`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class TimingAllowOriginHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( TimingAllowOriginHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Timing-Allow-Origin';
 	}
-}
 
-export default TimingAllowOriginHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( TimingAllowOriginHttpResponseHeader.NAME, value );
+	}
+}

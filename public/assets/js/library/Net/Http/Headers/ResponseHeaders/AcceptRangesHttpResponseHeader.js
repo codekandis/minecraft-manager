@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AcceptRangesHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Accept-Ranges`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class AcceptRangesHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( AcceptRangesHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Accept-Ranges';
 	}
-}
 
-export default AcceptRangesHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( AcceptRangesHttpResponseHeader.NAME, value );
+	}
+}

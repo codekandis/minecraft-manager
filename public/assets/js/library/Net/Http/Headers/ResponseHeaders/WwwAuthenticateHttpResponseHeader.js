@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class WwwAuthenticateHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `WWW-Authenticate`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class WwwAuthenticateHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( WwwAuthenticateHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'WWW-Authenticate';
 	}
-}
 
-export default WwwAuthenticateHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( WwwAuthenticateHttpResponseHeader.NAME, value );
+	}
+}

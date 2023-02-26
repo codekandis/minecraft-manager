@@ -1,11 +1,18 @@
 'use strict';
 
-import AbstractUriBuilder from '../../../../library/Net/AbstractUriBuilder.js';
-import ApiUriMappings from './ApiUriMappings.js';
-import ApiUriNames from './ApiUriNames.js';
+import { AbstractUriBuilder } from '../../../../library/Net/AbstractUriBuilder.js';
+import { ApiUriMappings } from './ApiUriMappings.js';
+import { ApiUriNames } from './ApiUriNames.js';
 
-class ApiUriBuilder extends AbstractUriBuilder
+/**
+ * Represents the API URI builder of the subway rails mapper component.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ApiUriBuilder extends AbstractUriBuilder
 {
+	/**
+	 * Constructor method.
+	 */
 	constructor()
 	{
 		super(
@@ -13,15 +20,12 @@ class ApiUriBuilder extends AbstractUriBuilder
 		);
 	}
 
-	buildSubwayRailsMappersUri()
+	/**
+	 * Builds the URI of the lantern positions.
+	 * @returns {URL} The URI of the lantern positions.
+	 */
+	buildLanternPositionsUri()
 	{
-		return this.build( ApiUriNames.SUBWAY_RAILS_MAPPERS );
-	}
-
-	buildSubwayRailsMapperUri()
-	{
-		return this.build( ApiUriNames.SUBWAY_RAILS_MAPPER );
+		return this.build( ApiUriNames.LANTERN_POSITIONS );
 	}
 }
-
-export default ApiUriBuilder;

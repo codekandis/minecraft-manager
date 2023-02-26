@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class TeHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `TE`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class TeHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( TeHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'TE';
 	}
-}
 
-export default TeHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( TeHttpRequestHeader.NAME, value );
+	}
+}

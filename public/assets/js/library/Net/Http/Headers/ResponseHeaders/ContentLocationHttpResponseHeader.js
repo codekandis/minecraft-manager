@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ContentLocationHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Content-Location`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ContentLocationHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( ContentLocationHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Content-Location';
 	}
-}
 
-export default ContentLocationHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( ContentLocationHttpResponseHeader.NAME, value );
+	}
+}

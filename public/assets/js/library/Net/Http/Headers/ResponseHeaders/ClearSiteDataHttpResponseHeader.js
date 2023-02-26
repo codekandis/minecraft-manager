@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ClearSiteDataHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Clear-Site-Data`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ClearSiteDataHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( ClearSiteDataHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Clear-Site-Data';
 	}
-}
 
-export default ClearSiteDataHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( ClearSiteDataHttpResponseHeader.NAME, value );
+	}
+}

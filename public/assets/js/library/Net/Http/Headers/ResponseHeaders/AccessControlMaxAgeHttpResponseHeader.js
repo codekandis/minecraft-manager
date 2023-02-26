@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AccessControlMaxAgeHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Access-Control-Max-Age`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class AccessControlMaxAgeHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( AccessControlMaxAgeHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Access-Control-Max-Age';
 	}
-}
 
-export default AccessControlMaxAgeHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( AccessControlMaxAgeHttpResponseHeader.NAME, value );
+	}
+}

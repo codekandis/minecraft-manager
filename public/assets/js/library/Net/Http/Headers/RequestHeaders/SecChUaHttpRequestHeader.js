@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class SecChUaHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `Sec-CH-UA`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class SecChUaHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( SecChUaHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'Sec-CH-UA';
 	}
-}
 
-export default SecChUaHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( SecChUaHttpRequestHeader.NAME, value );
+	}
+}

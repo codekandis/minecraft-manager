@@ -1,14 +1,18 @@
 'use strict';
 
-import AbstractApiUriMappings from '../../../Net/AbstractApiUriMappings.js';
-import ApiUriNames from './ApiUriNames.js';
+import { AbstractApiUriMappings } from '../../../Net/AbstractApiUriMappings.js';
+import { ApiUriNames } from './ApiUriNames.js';
 
-class ApiUriMappings extends AbstractApiUriMappings
+/**
+ * Represents the API URI mappings of the subway rails mapper component.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ApiUriMappings extends AbstractApiUriMappings
 {
+	/**
+	 * @inheritDoc
+	 */
 	__relativeUris = {
-		[ ApiUriNames.SUBWAY_RAILS_MAPPERS ]: 'subway-rails-mappers',
-		[ ApiUriNames.SUBWAY_RAILS_MAPPER ]:  'subway-rails-mappers'
+		[ ApiUriNames.LANTERN_POSITIONS ]: 'subway-rails-mapper/lantern-positions'
 	};
 }
-
-export default ApiUriMappings;

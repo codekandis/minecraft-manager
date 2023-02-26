@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class PragmaHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Pragma`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class PragmaHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( PragmaHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Pragma';
 	}
-}
 
-export default PragmaHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( PragmaHttpResponseHeader.NAME, value );
+	}
+}

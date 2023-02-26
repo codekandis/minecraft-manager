@@ -1,18 +1,27 @@
 'use strict';
 
-import AbstractEvent from '../Types/AbstractEvent.js';
+import { AbstractMouseEvent } from './AbstractMouseEvent.js';
 
-class ClickEvent extends AbstractEvent
+/**
+ * Represents a click event.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ClickEvent extends AbstractMouseEvent
 {
-	constructor( sender, eventArguments )
-	{
-		super( ClickEvent.EVENT_NAME, sender, eventArguments );
-	}
-
+	/**
+	 * @inheritdoc
+	 */
 	static get EVENT_NAME()
 	{
 		return 'click';
 	}
-}
 
-export default ClickEvent;
+	/**
+	 * Constructor method.
+	 * @param {Object} sender The object dispatching this event.
+	 */
+	constructor( sender )
+	{
+		super( ClickEvent.EVENT_NAME, sender );
+	}
+}

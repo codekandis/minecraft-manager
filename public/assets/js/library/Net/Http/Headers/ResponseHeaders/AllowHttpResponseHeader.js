@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AllowHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Allow`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class AllowHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( AllowHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Allow';
 	}
-}
 
-export default AllowHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( AllowHttpResponseHeader.NAME, value );
+	}
+}

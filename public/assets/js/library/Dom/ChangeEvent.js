@@ -1,18 +1,27 @@
 'use strict';
 
-import AbstractEvent from '../Types/AbstractEvent.js';
+import { AbstractEvent } from '../Types/AbstractEvent.js';
 
-class ChangeEvent extends AbstractEvent
+/**
+ * Represents a change event.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ChangeEvent extends AbstractEvent
 {
-	constructor( sender, eventArguments )
-	{
-		super( ChangeEvent.EVENT_NAME, sender, eventArguments );
-	}
-
+	/**
+	 * @inheritdoc
+	 */
 	static get EVENT_NAME()
 	{
 		return 'change';
 	}
-}
 
-export default ChangeEvent;
+	/**
+	 * Constructor method.
+	 * @param {Object} sender The object dispatching this event.
+	 */
+	constructor( sender )
+	{
+		super( ChangeEvent.EVENT_NAME, sender );
+	}
+}

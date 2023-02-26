@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class RangeHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `Range`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class RangeHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( RangeHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'Range';
 	}
-}
 
-export default RangeHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( RangeHttpRequestHeader.NAME, value );
+	}
+}

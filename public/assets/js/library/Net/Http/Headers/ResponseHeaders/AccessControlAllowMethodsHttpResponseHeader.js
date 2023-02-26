@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AccessControlAllowMethodsHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Access-Control-Allow-Methods`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class AccessControlAllowMethodsHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( AccessControlAllowMethodsHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Access-Control-Allow-Methods';
 	}
-}
 
-export default AccessControlAllowMethodsHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( AccessControlAllowMethodsHttpResponseHeader.NAME, value );
+	}
+}

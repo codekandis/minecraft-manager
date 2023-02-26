@@ -1,43 +1,83 @@
 'use strict';
 
-import DomHelper from '../../../library/Dom/DomHelper.js';
-import BoolStrings from '../../../library/Types/BoolStrings.js';
-import BindableFormFieldProxy from '../../../library/Types/DataBindings/BindableFormFieldProxy.js';
-import DataBindingInitializationDirection from '../../../library/Types/DataBindings/DataBindingInitializationDirection.js';
-import PropertyChangedEvent from '../../../library/Types/DataBindings/PropertyChangedEvent.js';
-import AbstractComponent from '../AbstractComponent.js';
-import LanternPositions from './Entities/LanternPositions.js';
-import PropertyNames from './Enumerations/PropertyNames.js';
-import FormFieldSelectors from './Html/FormFieldSelectors.js';
-import ApiAjaxController from './Net/Http/ApiAjaxController.js';
+import { DomHelper } from '../../../library/Dom/DomHelper.js';
+import { BooleanString } from '../../../library/Types/BooleanString.js';
+import { BindableHtmlFormFieldProxy } from '../../../library/Types/DataBindings/BindableHtmlFormFieldProxy.js';
+import { DataBindingInitializationDirection } from '../../../library/Types/DataBindings/DataBindingInitializationDirection.js';
+import { PropertyChangedEvent } from '../../../library/Types/DataBindings/PropertyChangedEvent.js';
+import { AbstractComponent } from '../AbstractComponent.js';
+import { LanternPositions } from './Entities/LanternPositions.js';
+import { LanternPositionsPropertyNames } from './Enumerations/LanternPositionsPropertyNames.js';
+import { FormFieldSelectors } from './Html/FormFieldSelectors.js';
+import { ApiAjaxController } from './Net/Http/ApiAjaxController.js';
 
-class SubwayRailsMapperComponent extends AbstractComponent
+/**
+ * Represents the subway rails mapper component.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class SubwayRailsMapperComponent extends AbstractComponent
 {
-	#_lanternPositions = undefined;
+	/**
+	 * Stores the lantern positions.
+	 * @type {LanternPositions}
+	 */
+	#_lanternPositions;
 
-	constructor( setting )
+	/**
+	 * Constructor method.
+	 * @param {Settings} settings The settings of the application.
+	 */
+	constructor( settings )
 	{
-		super( setting );
+		super( settings );
 
 		this.#initialize();
 	}
 
-	set [ PropertyNames.IS_CURRENT_POSITION_X_VALID ]( value )
+	/**
+	 * Sets if the current X position is valid.
+	 * @param {Boolean} value True if the current X position is valid, otherwise false.
+	 */
+	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ]( value )
 	{
-		this.#setPropertyAndDataAttribute( PropertyNames.IS_CURRENT_POSITION_X_VALID, value, FormFieldSelectors.CURRENT_POSITION_X );
+		this.#setPropertyValueAndDataIsValidAttribute( LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID, FormFieldSelectors.CURRENT_POSITION_X, value );
 	}
 
-	set [ PropertyNames.IS_CURRENT_POSITION_Y_VALID ]( value )
+	/**
+	 * Sets if the current Y position is valid.
+	 * @param {Boolean} value True if the current Y position is valid, otherwise false.
+	 */
+	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ]( value )
 	{
-		this.#setPropertyAndDataAttribute( PropertyNames.IS_CURRENT_POSITION_Y_VALID, value, FormFieldSelectors.CURRENT_POSITION_Y );
+		this.#setPropertyValueAndDataIsValidAttribute( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID, FormFieldSelectors.CURRENT_POSITION_Y, value );
 	}
 
-	set [ PropertyNames.IS_CURRENT_POSITION_Z_VALID ]( value )
+	/**
+	 * Sets if the current Z position is valid.
+	 * @param {Boolean} value True if the current Z position is valid, otherwise false.
+	 */
+	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ]( value )
 	{
-		this.#setPropertyAndDataAttribute( PropertyNames.IS_CURRENT_POSITION_Z_VALID, value, FormFieldSelectors.CURRENT_POSITION_Z );
+		this.#setPropertyValueAndDataIsValidAttribute( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID, FormFieldSelectors.CURRENT_POSITION_Z, value );
 	}
 
-	#setPropertyAndDataAttribute( propertyName, value, formFieldSelector )
+	/**
+	 * Initializes the component.
+	 */
+	#initialize()
+	{
+		this.#_lanternPositions = new LanternPositions( this.__settings )
+
+		this.#readSubwayRailsMapperFromApi();
+	}
+
+	/**
+	 * Sets the value of a property and its related HTML form field `data-is-valid` attribute.
+	 * @param {String} propertyName The name of the property.
+	 * @param {String} formFieldSelector The selector of the HTML form field.
+	 * @param {*} value The value to set.
+	 */
+	#setPropertyValueAndDataIsValidAttribute( propertyName, formFieldSelector, value )
 	{
 		const element = DomHelper.querySelector( formFieldSelector );
 
@@ -45,98 +85,92 @@ class SubwayRailsMapperComponent extends AbstractComponent
 		{
 			case false:
 			{
-				element.setAttribute( 'data-value-is-valid', BoolStrings.FALSE );
+				element.setAttribute( 'data-value-is-valid', BooleanString.FALSE );
 				break;
 			}
 			case true:
 			{
-				element.setAttribute( 'data-value-is-valid', BoolStrings.TRUE );
+				element.setAttribute( 'data-value-is-valid', BooleanString.TRUE );
 				break;
 			}
 		}
 	}
 
-	#initialize()
-	{
-		this.#_lanternPositions = new LanternPositions( this.__setting )
-
-		this.#readSubwayRailsMapperFromApi();
-	}
-
+	/**
+	 * Reads the lantern positions from the API.
+	 */
 	#readSubwayRailsMapperFromApi()
 	{
 		( new ApiAjaxController() )
-			.readSubwayRailsMapper()
+			.readLanternPositions()
 			.then(
-				( data ) =>
+				( lanternPositions ) =>
 				{
-					if ( null !== data )
-					{
-						this.#_lanternPositions[ PropertyNames.START_POSITION_X ] = data.subwayRailsMapper[ PropertyNames.START_POSITION_X ];
-						this.#_lanternPositions[ PropertyNames.START_POSITION_Y ] = data.subwayRailsMapper[ PropertyNames.START_POSITION_Y ];
-						this.#_lanternPositions[ PropertyNames.START_POSITION_Z ] = data.subwayRailsMapper[ PropertyNames.START_POSITION_Z ];
+					this.#_lanternPositions[ LanternPositionsPropertyNames.START_POSITION_X ] = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_X ];
+					this.#_lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Y ] = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Y ];
+					this.#_lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Z ] = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Z ];
 
-						DomHelper.addEventHandler(
-							this.#_lanternPositions,
-							PropertyChangedEvent.EVENT_NAME,
-							( event ) =>
-							{
-								this.#lanternPositions_propertyChanged( event );
-							}
-						);
-					}
+					this.#_lanternPositions.propertyChangedEvent( this.#lanternPositions_propertyChanged );
 				}
 			);
 	}
 
+	/**
+	 * Writes the lantern positions to the API.
+	 */
 	#writeSubwayRailsMapperToApi()
 	{
-		const writableSubwayRailsMapper = {
-			[ PropertyNames.START_POSITION_X ]: this.#_lanternPositions[ '#_' + PropertyNames.START_POSITION_X ],
-			[ PropertyNames.START_POSITION_Y ]: this.#_lanternPositions[ '#_' + PropertyNames.START_POSITION_Y ],
-			[ PropertyNames.START_POSITION_Z ]: this.#_lanternPositions[ '#_' + PropertyNames.START_POSITION_Z ]
-		};
-
 		( new ApiAjaxController() )
-			.writeSubwayRailsMapper( writableSubwayRailsMapper );
+			.writeLanternPositions( this.#_lanternPositions )
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	_addDataBindings()
 	{
-		this.#_lanternPositions.dataBindings.add( PropertyNames.START_POSITION_X, BindableFormFieldProxy.with_selector( FormFieldSelectors.START_POSITION_X ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( PropertyNames.START_POSITION_Y, BindableFormFieldProxy.with_selector( FormFieldSelectors.START_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( PropertyNames.START_POSITION_Z, BindableFormFieldProxy.with_selector( FormFieldSelectors.START_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( PropertyNames.CURRENT_POSITION_X, BindableFormFieldProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_X ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( PropertyNames.CURRENT_POSITION_Y, BindableFormFieldProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( PropertyNames.CURRENT_POSITION_Z, BindableFormFieldProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( PropertyNames.CALCULATED_POSITION_XN, BindableFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_XN ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( PropertyNames.CALCULATED_POSITION_XP, BindableFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_XP ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( PropertyNames.CALCULATED_POSITION_YN, BindableFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_YN ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( PropertyNames.CALCULATED_POSITION_YP, BindableFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_YP ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( PropertyNames.CALCULATED_POSITION_ZN, BindableFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_ZN ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( PropertyNames.CALCULATED_POSITION_ZP, BindableFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_ZP ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( PropertyNames.IS_CURRENT_POSITION_X_VALID, this.#_lanternPositions, PropertyNames.IS_CURRENT_POSITION_X_VALID );
-		this.dataBindings.add( PropertyNames.IS_CURRENT_POSITION_Y_VALID, this.#_lanternPositions, PropertyNames.IS_CURRENT_POSITION_Y_VALID );
-		this.dataBindings.add( PropertyNames.IS_CURRENT_POSITION_Z_VALID, this.#_lanternPositions, PropertyNames.IS_CURRENT_POSITION_Z_VALID );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.START_POSITION_X, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.START_POSITION_X ), 'value', DataBindingInitializationDirection.BINDABLE );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.START_POSITION_Y, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.START_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDABLE );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.START_POSITION_Z, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.START_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDABLE );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_X, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_X ), 'value', DataBindingInitializationDirection.BINDABLE );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_Y, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDABLE );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_Z, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDABLE );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_X_NEGATIVE ), 'value', DataBindingInitializationDirection.BINDABLE );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_X_POSITIVE ), 'value', DataBindingInitializationDirection.BINDABLE );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Y_NEGATIVE ), 'value', DataBindingInitializationDirection.BINDABLE );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Y_POSITIVE ), 'value', DataBindingInitializationDirection.BINDABLE );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Z_NEGATIVE ), 'value', DataBindingInitializationDirection.BINDABLE );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Z_POSITIVE ), 'value', DataBindingInitializationDirection.BINDABLE );
+
+		this.dataBindings.add( LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID, this.#_lanternPositions, LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID );
+		this.dataBindings.add( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID, this.#_lanternPositions, LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID );
+		this.dataBindings.add( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID, this.#_lanternPositions, LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID );
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	_addFormFieldsEventHandlers()
 	{
-		this._attachEventHandlers( FormFieldSelectors.START_POSITION_X, PropertyNames.START_POSITION_X );
-		this._attachEventHandlers( FormFieldSelectors.START_POSITION_Y, PropertyNames.START_POSITION_Y );
-		this._attachEventHandlers( FormFieldSelectors.START_POSITION_Z, PropertyNames.START_POSITION_Z );
-		this._attachEventHandlers( FormFieldSelectors.CURRENT_POSITION_X, PropertyNames.CURRENT_POSITION_X );
-		this._attachEventHandlers( FormFieldSelectors.CURRENT_POSITION_Y, PropertyNames.CURRENT_POSITION_Y );
-		this._attachEventHandlers( FormFieldSelectors.CURRENT_POSITION_Z, PropertyNames.CURRENT_POSITION_Z );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.START_POSITION_X, LanternPositionsPropertyNames.START_POSITION_X );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.START_POSITION_Y, LanternPositionsPropertyNames.START_POSITION_Y );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.START_POSITION_Z, LanternPositionsPropertyNames.START_POSITION_Z );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_X, LanternPositionsPropertyNames.CURRENT_POSITION_X );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_Y, LanternPositionsPropertyNames.CURRENT_POSITION_Y );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_Z, LanternPositionsPropertyNames.CURRENT_POSITION_Z );
 	}
 
-	#lanternPositions_propertyChanged( event )
+	/**
+	 * Handles the property changed event of the lantern positions.
+	 * @param {PropertyChangedEvent} event The property changed event which will be handled.
+	 */
+	#lanternPositions_propertyChanged = ( event ) =>
 	{
 		switch ( event.detail.eventArguments.propertyName )
 		{
-			case PropertyNames.START_POSITION_X:
-			case PropertyNames.START_POSITION_Y:
-			case PropertyNames.START_POSITION_Z:
+			case LanternPositionsPropertyNames.START_POSITION_X:
+			case LanternPositionsPropertyNames.START_POSITION_Y:
+			case LanternPositionsPropertyNames.START_POSITION_Z:
 			{
 				this.#writeSubwayRailsMapperToApi();
 
@@ -145,5 +179,3 @@ class SubwayRailsMapperComponent extends AbstractComponent
 		}
 	}
 }
-
-export default SubwayRailsMapperComponent;

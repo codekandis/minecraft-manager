@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class UserAgentHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `User-Agent`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class UserAgentHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( UserAgentHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'User-Agent';
 	}
-}
 
-export default UserAgentHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( UserAgentHttpRequestHeader.NAME, value );
+	}
+}

@@ -1,9 +1,11 @@
 'use strict';
 
-import Abstract from './Abstract.js';
+import { Abstract } from './Abstract.js';
 
-class EventArguments extends Abstract
+/**
+ * Represents the default event arguments.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class EventArguments extends Abstract
 {
 }
-
-export default EventArguments;

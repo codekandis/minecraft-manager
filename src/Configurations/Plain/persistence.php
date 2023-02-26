@@ -1,5 +1,5 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\MinecraftManager\Configurations;
+namespace CodeKandis\MinecraftManager\Configurations\Plain;
 
 use CodeKandis\Persistence\PersistenceDrivers;
 

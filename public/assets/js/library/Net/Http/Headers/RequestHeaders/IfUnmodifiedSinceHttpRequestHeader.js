@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class IfUnmodifiedSinceHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `If-Unmodified-Since`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class IfUnmodifiedSinceHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( IfUnmodifiedSinceHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'If-Unmodified-Since';
 	}
-}
 
-export default IfUnmodifiedSinceHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( IfUnmodifiedSinceHttpRequestHeader.NAME, value );
+	}
+}

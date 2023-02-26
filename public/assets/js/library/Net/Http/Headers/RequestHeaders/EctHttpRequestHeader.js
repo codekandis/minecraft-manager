@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class EctHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `ECT`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class EctHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( EctHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'ECT';
 	}
-}
 
-export default EctHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( EctHttpRequestHeader.NAME, value );
+	}
+}

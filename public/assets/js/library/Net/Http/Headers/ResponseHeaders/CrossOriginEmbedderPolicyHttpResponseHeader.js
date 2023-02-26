@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class CrossOriginEmbedderPolicyHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Cross-Origin-Embedder-Policy`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class CrossOriginEmbedderPolicyHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( CrossOriginEmbedderPolicyHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Cross-Origin-Embedder-Policy';
 	}
-}
 
-export default CrossOriginEmbedderPolicyHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( CrossOriginEmbedderPolicyHttpResponseHeader.NAME, value );
+	}
+}

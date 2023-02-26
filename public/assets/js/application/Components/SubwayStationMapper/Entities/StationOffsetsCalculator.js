@@ -1,235 +1,258 @@
 'use strict';
 
-import Abstract from '../../../../library/Types/Abstract.js';
-import PropertyNames from '../Enumerations/PropertyNames.js';
-import Directions from './Directions.js';
-import Offset from './Offset.js';
-import Position from './Position.js';
+import { Abstract } from '../../../../library/Types/Abstract.js';
+import { Orientation } from '../../../Entities/Orientation.js';
+import { Position } from '../../../Entities/Position.js';
+import { PositionOffset } from '../../../Entities/PositionOffset.js';
+import { StationPositionsPropertyNames } from '../Enumerations/StationPositionsPropertyNames.js';
+import { CalculatedStationPositions } from './CalculatedStationPositions.js';
+import { StationPositionsOffsetPresets } from './StationPositionsOffsetPresets.js';
 
-class StationOffsetsCalculator extends Abstract
+/**
+ * Represents a station positions calculator.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class StationOffsetsCalculator extends Abstract
 {
-	static get #_OFFSET_PRESETS()
+	/**
+	 * Calculates the station positions based on the northern orientation.
+	 * @param {StationPositions} stationPositions The current station positions.
+	 * @param {StationPositionsOffsetPresets} stationPositionsOffsetPresets The station positions offset presets.
+	 * @returns {CalculatedStationPositions} The calculated station positions.
+	 */
+	#calculateNorthernOrientation( stationPositions, stationPositionsOffsetPresets )
 	{
-		return {
-			headHall1:      new Offset( -9, 11, 0 ),
-			headHall2:      new Offset( 0, 0, -14 ),
-			concourseHall1: new Offset( -14, 15, -15 ),
-			concourseHall2: new Offset( 5, 0, -70 ),
-			arrivalBell:    new Offset( 1, 6, -33 ),
-			departureBell:  new Offset( -10, 6, -52 ),
-			head1:          new Offset( -1, 2, 0 ),
-			head2:          new Offset( 3, 2, -15 ),
-			concourse:      new Offset( 2, 2, -18 ),
-			stairsPort:     new Offset( -3, -2, 2 ),
-			stairs:         new Offset( -1, 7, 1 ),
-			stairsEntrance: new Offset( -3, 21, -17 ),
-			stairwayLeft:   new Offset( 11, -2, 4 ),
-			stairwayRight:  new Offset( -5, -2, 4 )
-		};
+		const calculatedStationPositions = new CalculatedStationPositions();
+
+		calculatedStationPositions.stationHeadMining1 = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining1.x,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining1.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining1.z
+		);
+		calculatedStationPositions.stationHeadMining2 = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining2.x,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining2.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining2.z
+		);
+		calculatedStationPositions.concourseMining1   = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining1.x,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining1.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining1.z
+		);
+		calculatedStationPositions.concourseMining2   = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining2.x,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining2.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining2.z
+		);
+		calculatedStationPositions.arrivalBell        = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.arrivalBell.x,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.arrivalBell.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.arrivalBell.z
+		);
+		calculatedStationPositions.departureBell      = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.departureBell.x,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.departureBell.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.departureBell.z
+		);
+		calculatedStationPositions.rotation           = 180;
+		calculatedStationPositions.stationHead1       = new PositionOffset( stationPositionsOffsetPresets.stationHead1.x, stationPositionsOffsetPresets.stationHead1.y, stationPositionsOffsetPresets.stationHead1.z );
+		calculatedStationPositions.stationHead2       = new PositionOffset( stationPositionsOffsetPresets.stationHead2.x, stationPositionsOffsetPresets.stationHead2.y, stationPositionsOffsetPresets.stationHead2.z );
+		calculatedStationPositions.concourse          = new PositionOffset( stationPositionsOffsetPresets.concourse.x, stationPositionsOffsetPresets.concourse.y, stationPositionsOffsetPresets.concourse.z );
+		calculatedStationPositions.stairsPort         = new PositionOffset( stationPositionsOffsetPresets.stairsPort.x, stationPositionsOffsetPresets.stairsPort.y, stationPositionsOffsetPresets.stairsPort.z );
+		calculatedStationPositions.stairs             = new PositionOffset( stationPositionsOffsetPresets.stairs.x, stationPositionsOffsetPresets.stairs.y, stationPositionsOffsetPresets.stairs.z );
+		calculatedStationPositions.stairsEntrance     = new PositionOffset( stationPositionsOffsetPresets.stairsEntrance.x, stationPositionsOffsetPresets.stairsEntrance.y, stationPositionsOffsetPresets.stairsEntrance.z );
+		calculatedStationPositions.stairwayLeft       = new PositionOffset( stationPositionsOffsetPresets.stairwayLeft.x, stationPositionsOffsetPresets.stairwayLeft.y, stationPositionsOffsetPresets.stairwayLeft.z );
+		calculatedStationPositions.stairwayRight      = new PositionOffset( stationPositionsOffsetPresets.stairwayRight.x, stationPositionsOffsetPresets.stairwayRight.y, stationPositionsOffsetPresets.stairwayRight.z );
+
+		return calculatedStationPositions;
 	}
 
+	/**
+	 * Calculates the station positions based on the eastern orientation.
+	 * @param {StationPositions} stationPositions The current station positions.
+	 * @param {StationPositionsOffsetPresets} stationPositionsOffsetPresets The station positions offset presets.
+	 * @returns {CalculatedStationPositions} The calculated station positions.
+	 */
+	#calculateEasternOrientation( stationPositions, stationPositionsOffsetPresets )
+	{
+		const calculatedStationPositions = new CalculatedStationPositions();
+
+		calculatedStationPositions.stationHeadMining1 = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining1.z * -1,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining1.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining1.x
+		);
+		calculatedStationPositions.stationHeadMining2 = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining2.z * -1,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining2.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining2.x
+		);
+		calculatedStationPositions.concourseMining1   = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining1.z * -1,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining1.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining1.x
+		);
+		calculatedStationPositions.concourseMining2   = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining2.z * -1,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining2.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining2.x
+		);
+		calculatedStationPositions.arrivalBell        = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.arrivalBell.z * -1,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.arrivalBell.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.arrivalBell.x
+		);
+		calculatedStationPositions.departureBell      = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.departureBell.z * -1,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.departureBell.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.departureBell.x
+		);
+		calculatedStationPositions.rotation           = 270;
+		calculatedStationPositions.stationHead1       = new PositionOffset( stationPositionsOffsetPresets.stationHead1.z * -1, stationPositionsOffsetPresets.stationHead1.y, stationPositionsOffsetPresets.stationHead1.x );
+		calculatedStationPositions.stationHead2       = new PositionOffset( stationPositionsOffsetPresets.stationHead2.z * -1, stationPositionsOffsetPresets.stationHead2.y, stationPositionsOffsetPresets.stationHead2.x );
+		calculatedStationPositions.concourse          = new PositionOffset( stationPositionsOffsetPresets.concourse.z * -1, stationPositionsOffsetPresets.concourse.y, stationPositionsOffsetPresets.concourse.x );
+		calculatedStationPositions.stairsPort         = new PositionOffset( stationPositionsOffsetPresets.stairsPort.z * -1, stationPositionsOffsetPresets.stairsPort.y, stationPositionsOffsetPresets.stairsPort.x );
+		calculatedStationPositions.stairs             = new PositionOffset( stationPositionsOffsetPresets.stairs.z * -1, stationPositionsOffsetPresets.stairs.y, stationPositionsOffsetPresets.stairs.x );
+		calculatedStationPositions.stairsEntrance     = new PositionOffset( stationPositionsOffsetPresets.stairsEntrance.z * -1, stationPositionsOffsetPresets.stairsEntrance.y, stationPositionsOffsetPresets.stairsEntrance.x );
+		calculatedStationPositions.stairwayLeft       = new PositionOffset( stationPositionsOffsetPresets.stairwayLeft.z * -1, stationPositionsOffsetPresets.stairwayLeft.y, stationPositionsOffsetPresets.stairwayLeft.x );
+		calculatedStationPositions.stairwayRight      = new PositionOffset( stationPositionsOffsetPresets.stairwayRight.z * -1, stationPositionsOffsetPresets.stairwayRight.y, stationPositionsOffsetPresets.stairwayRight.x );
+
+		return calculatedStationPositions;
+	}
+
+	/**
+	 * Calculates the station positions based on the southern orientation.
+	 * @param {StationPositions} stationPositions The current station positions.
+	 * @param {StationPositionsOffsetPresets} stationPositionsOffsetPresets The station positions offset presets.
+	 * @returns {CalculatedStationPositions} The calculated station positions.
+	 */
+	#calculateSouthernOrientation( stationPositions, stationPositionsOffsetPresets )
+	{
+		const calculatedStationPositions = new CalculatedStationPositions();
+
+		calculatedStationPositions.stationHeadMining1 = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining1.x * -1,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining1.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining1.z * -1
+		);
+		calculatedStationPositions.stationHeadMining2 = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining2.x * -1,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining2.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining2.z * -1
+		);
+		calculatedStationPositions.concourseMining1   = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining1.x * -1,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining1.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining1.z * -1
+		);
+		calculatedStationPositions.concourseMining2   = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining2.x * -1,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining2.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining2.z * -1
+		);
+		calculatedStationPositions.arrivalBell        = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.arrivalBell.x * -1,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.arrivalBell.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.arrivalBell.z * -1
+		);
+		calculatedStationPositions.departureBell      = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.departureBell.x * -1,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.departureBell.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.departureBell.z * -1
+		);
+		calculatedStationPositions.rotation           = 0;
+		calculatedStationPositions.stationHead1       = new PositionOffset( stationPositionsOffsetPresets.stationHead1.x * -1, stationPositionsOffsetPresets.stationHead1.y, stationPositionsOffsetPresets.stationHead1.z * -1 );
+		calculatedStationPositions.stationHead2       = new PositionOffset( stationPositionsOffsetPresets.stationHead2.x * -1, stationPositionsOffsetPresets.stationHead2.y, stationPositionsOffsetPresets.stationHead2.z * -1 );
+		calculatedStationPositions.concourse          = new PositionOffset( stationPositionsOffsetPresets.concourse.x * -1, stationPositionsOffsetPresets.concourse.y, stationPositionsOffsetPresets.concourse.z * -1 );
+		calculatedStationPositions.stairsPort         = new PositionOffset( stationPositionsOffsetPresets.stairsPort.x * -1, stationPositionsOffsetPresets.stairsPort.y, stationPositionsOffsetPresets.stairsPort.z * -1 );
+		calculatedStationPositions.stairs             = new PositionOffset( stationPositionsOffsetPresets.stairs.x * -1, stationPositionsOffsetPresets.stairs.y, stationPositionsOffsetPresets.stairs.z * -1 );
+		calculatedStationPositions.stairsEntrance     = new PositionOffset( stationPositionsOffsetPresets.stairsEntrance.x * -1, stationPositionsOffsetPresets.stairsEntrance.y, stationPositionsOffsetPresets.stairsEntrance.z * -1 );
+		calculatedStationPositions.stairwayLeft       = new PositionOffset( stationPositionsOffsetPresets.stairwayLeft.x * -1, stationPositionsOffsetPresets.stairwayLeft.y, stationPositionsOffsetPresets.stairwayLeft.z * -1 );
+		calculatedStationPositions.stairwayRight      = new PositionOffset( stationPositionsOffsetPresets.stairwayRight.x * -1, stationPositionsOffsetPresets.stairwayRight.y, stationPositionsOffsetPresets.stairwayRight.z * -1 );
+
+		return calculatedStationPositions;
+	}
+
+	/**
+	 * Calculates the station positions based on the western orientation.
+	 * @param {StationPositions} stationPositions The current station positions.
+	 * @param {StationPositionsOffsetPresets} stationPositionsOffsetPresets The station positions offset presets.
+	 * @returns {CalculatedStationPositions} The calculated station positions.
+	 */
+	#calculateWesternOrientation( stationPositions, stationPositionsOffsetPresets )
+	{
+		const calculatedStationPositions = new CalculatedStationPositions();
+
+		calculatedStationPositions.stationHeadMining1 = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining1.z,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining1.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining1.x * -1
+		);
+		calculatedStationPositions.stationHeadMining2 = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining2.z,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining2.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining2.x * -1
+		);
+		calculatedStationPositions.concourseMining1   = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining1.z,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining1.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining1.x * -1
+		);
+		calculatedStationPositions.concourseMining2   = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining2.z,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining2.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining2.x * -1
+		);
+		calculatedStationPositions.arrivalBell        = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.arrivalBell.z,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.arrivalBell.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.arrivalBell.x * -1
+		);
+		calculatedStationPositions.departureBell      = new Position(
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.departureBell.z,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.departureBell.y,
+			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.departureBell.x * -1
+		);
+		calculatedStationPositions.rotation           = 90;
+		calculatedStationPositions.stationHead1       = new PositionOffset( stationPositionsOffsetPresets.stationHead1.z, stationPositionsOffsetPresets.stationHead1.y, stationPositionsOffsetPresets.stationHead1.x * -1 );
+		calculatedStationPositions.stationHead2       = new PositionOffset( stationPositionsOffsetPresets.stationHead2.z, stationPositionsOffsetPresets.stationHead2.y, stationPositionsOffsetPresets.stationHead2.x * -1 );
+		calculatedStationPositions.concourse          = new PositionOffset( stationPositionsOffsetPresets.concourse.z, stationPositionsOffsetPresets.concourse.y, stationPositionsOffsetPresets.concourse.x * -1 );
+		calculatedStationPositions.stairsPort         = new PositionOffset( stationPositionsOffsetPresets.stairsPort.z, stationPositionsOffsetPresets.stairsPort.y, stationPositionsOffsetPresets.stairsPort.x * -1 );
+		calculatedStationPositions.stairs             = new PositionOffset( stationPositionsOffsetPresets.stairs.z, stationPositionsOffsetPresets.stairs.y, stationPositionsOffsetPresets.stairs.x * -1 );
+		calculatedStationPositions.stairsEntrance     = new PositionOffset( stationPositionsOffsetPresets.stairsEntrance.z, stationPositionsOffsetPresets.stairsEntrance.y, stationPositionsOffsetPresets.stairsEntrance.x * -1 );
+		calculatedStationPositions.stairwayLeft       = new PositionOffset( stationPositionsOffsetPresets.stairwayLeft.z, stationPositionsOffsetPresets.stairwayLeft.y, stationPositionsOffsetPresets.stairwayLeft.x * -1 );
+		calculatedStationPositions.stairwayRight      = new PositionOffset( stationPositionsOffsetPresets.stairwayRight.z, stationPositionsOffsetPresets.stairwayRight.y, stationPositionsOffsetPresets.stairwayRight.x * -1 );
+
+		return calculatedStationPositions;
+	}
+
+	/**
+	 * Calculates the station positions.
+	 * @param {StationPositions} stationPositions The current station positions.
+	 * @returns {CalculatedStationPositions} The calculated station positions.
+	 */
 	calculate( stationPositions )
 	{
-		const calculatedValues = {
-			headHall1:      undefined,
-			headHall2:      undefined,
-			concourseHall1: undefined,
-			concourseHall2: undefined,
-			arrivalBell:    undefined,
-			departureBell:  undefined,
-			rotation:       undefined,
-			head1:          undefined,
-			head2:          undefined,
-			concourse:      undefined,
-			stairsPort:     undefined,
-			stairs:         undefined,
-			stairsEntrance: undefined,
-			stairwayLeft:   undefined,
-			stairwayRight:  undefined
-		};
+		const stationPositionsOffsetPresets = new StationPositionsOffsetPresets();
 
-		switch ( stationPositions[ PropertyNames.DIRECTION ] )
+		switch ( stationPositions[ StationPositionsPropertyNames.STATION_ORIENTATION ] )
 		{
-			case Directions.NORTH:
+			case Orientation.NORTH:
 			{
-				calculatedValues.headHall1      = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall1.x,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall1.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall1.z
-				);
-				calculatedValues.headHall2      = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall2.x,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall2.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall2.z
-				);
-				calculatedValues.concourseHall1 = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall1.x,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall1.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall1.z
-				);
-				calculatedValues.concourseHall2 = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall2.x,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall2.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall2.z
-				);
-				calculatedValues.arrivalBell    = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.x,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.z
-				);
-				calculatedValues.departureBell  = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.x,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.z
-				);
-				calculatedValues.rotation       = 180;
-				calculatedValues.head1          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head1.x, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.z );
-				calculatedValues.head2          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head2.x, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.z );
-				calculatedValues.concourse      = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.x, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.y, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.z );
-				calculatedValues.stairsPort     = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairsPort.x, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsPort.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsPort.z );
-				calculatedValues.stairs         = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairs.x, StationOffsetsCalculator.#_OFFSET_PRESETS.stairs.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairs.z );
-				calculatedValues.stairsEntrance = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairsEntrance.x, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsEntrance.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsEntrance.z );
-				calculatedValues.stairwayLeft   = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayLeft.x, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayLeft.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayLeft.z );
-				calculatedValues.stairwayRight  = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayRight.x, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayRight.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayRight.z );
-
-				break;
+				return this.#calculateNorthernOrientation( stationPositions, stationPositionsOffsetPresets );
 			}
-			case Directions.EAST:
+			case Orientation.EAST:
 			{
-				calculatedValues.headHall1      = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall1.z * -1,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall1.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall1.x
-				);
-				calculatedValues.headHall2      = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall2.z * -1,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall2.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall2.x
-				);
-				calculatedValues.concourseHall1 = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall1.z * -1,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall1.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall1.x
-				);
-				calculatedValues.concourseHall2 = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall2.z * -1,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall2.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall2.x
-				);
-				calculatedValues.arrivalBell    = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.z * -1,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.x
-				);
-				calculatedValues.departureBell  = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.z * -1,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.x
-				);
-				calculatedValues.rotation       = 270;
-				calculatedValues.head1          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head1.z * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.x );
-				calculatedValues.head2          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head2.z * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.x );
-				calculatedValues.concourse      = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.z * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.y, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.x );
-				calculatedValues.stairsPort     = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairsPort.z * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsPort.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsPort.x );
-				calculatedValues.stairs         = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairs.z * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.stairs.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairs.x );
-				calculatedValues.stairsEntrance = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairsEntrance.z * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsEntrance.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsEntrance.x );
-				calculatedValues.stairwayLeft   = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayLeft.z * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayLeft.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayLeft.x );
-				calculatedValues.stairwayRight  = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayRight.z * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayRight.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayRight.x );
-
-				break;
+				return this.#calculateEasternOrientation( stationPositions, stationPositionsOffsetPresets );
 			}
-			case Directions.SOUTH:
+			case Orientation.SOUTH:
 			{
-				calculatedValues.headHall1      = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall1.x * -1,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall1.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall1.z * -1
-				);
-				calculatedValues.headHall2      = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall2.x * -1,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall2.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall2.z * -1
-				);
-				calculatedValues.concourseHall1 = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall1.x * -1,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall1.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall1.z * -1
-				);
-				calculatedValues.concourseHall2 = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall2.x * -1,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall2.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall2.z * -1
-				);
-				calculatedValues.arrivalBell    = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.x * -1,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.z * -1
-				);
-				calculatedValues.departureBell  = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.x * -1,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.z * -1
-				);
-				calculatedValues.rotation       = 0;
-				calculatedValues.head1          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head1.x * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.z * -1 );
-				calculatedValues.head2          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head2.x * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.z * -1 );
-				calculatedValues.concourse      = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.x * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.y, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.z * -1 );
-				calculatedValues.stairsPort     = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairsPort.x * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsPort.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsPort.z * -1 );
-				calculatedValues.stairs         = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairs.x * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.stairs.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairs.z * -1 );
-				calculatedValues.stairsEntrance = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairsEntrance.x * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsEntrance.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsEntrance.z * -1 );
-				calculatedValues.stairwayLeft   = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayLeft.x * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayLeft.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayLeft.z * -1 );
-				calculatedValues.stairwayRight  = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayRight.x * -1, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayRight.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayRight.z * -1 );
-
-				break;
+				return this.#calculateSouthernOrientation( stationPositions, stationPositionsOffsetPresets );
 			}
-			case Directions.WEST:
+			case Orientation.WEST:
 			{
-				calculatedValues.headHall1      = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall1.z,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall1.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall1.x * -1
-				);
-				calculatedValues.headHall2      = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall2.z,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall2.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.headHall2.x * -1
-				);
-				calculatedValues.concourseHall1 = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall1.z,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall1.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall1.x * -1
-				);
-				calculatedValues.concourseHall2 = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall2.z,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall2.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.concourseHall2.x * -1
-				);
-				calculatedValues.arrivalBell    = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.z,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.arrivalBell.x * -1
-				);
-				calculatedValues.departureBell  = new Position(
-					stationPositions[ PropertyNames.CURRENT_POSITION_X ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.z,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Y ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.y,
-					stationPositions[ PropertyNames.CURRENT_POSITION_Z ] + StationOffsetsCalculator.#_OFFSET_PRESETS.departureBell.x * -1
-				);
-				calculatedValues.rotation       = 90;
-				calculatedValues.head1          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head1.z, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head1.x * -1 );
-				calculatedValues.head2          = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.head2.z, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.y, StationOffsetsCalculator.#_OFFSET_PRESETS.head2.x * -1 );
-				calculatedValues.concourse      = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.z, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.y, StationOffsetsCalculator.#_OFFSET_PRESETS.concourse.x * -1 );
-				calculatedValues.stairsPort     = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairsPort.z, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsPort.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsPort.x * -1 );
-				calculatedValues.stairs         = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairs.z, StationOffsetsCalculator.#_OFFSET_PRESETS.stairs.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairs.x * -1 );
-				calculatedValues.stairsEntrance = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairsEntrance.z, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsEntrance.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairsEntrance.x * -1 );
-				calculatedValues.stairwayLeft   = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayLeft.z, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayLeft.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayLeft.x * -1 );
-				calculatedValues.stairwayRight  = new Offset( StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayRight.z, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayRight.y, StationOffsetsCalculator.#_OFFSET_PRESETS.stairwayRight.x * -1 );
-
-				break;
+				return this.#calculateWesternOrientation( stationPositions, stationPositionsOffsetPresets );
 			}
 		}
-
-		return calculatedValues;
 	}
 }
-
-export default StationOffsetsCalculator;

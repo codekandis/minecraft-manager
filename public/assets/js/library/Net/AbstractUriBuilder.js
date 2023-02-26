@@ -1,11 +1,23 @@
 'use strict';
 
-import Abstract from '../Types/Abstract.js';
+import { Abstract } from '../Types/Abstract.js';
 
-class AbstractUriBuilder extends Abstract
+/**
+ * Represents the base class of any URI builder.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class AbstractUriBuilder extends Abstract
 {
-	#_uriMappings = undefined;
+	/**
+	 * Stores the URI mappings used to build any URI.
+	 * @type {AbstractUriMappings}
+	 */
+	#_uriMappings;
 
+	/**
+	 * Constructor method.
+	 * @param {AbstractUriMappings} uriMappings The URI mappings used to build any URI.
+	 */
 	constructor( uriMappings )
 	{
 		super();
@@ -13,6 +25,11 @@ class AbstractUriBuilder extends Abstract
 		this.#_uriMappings = uriMappings;
 	}
 
+	/**
+	 * Builds an absolute URI specified by the name of a relative URI.
+	 * @param {String} uriName The name of the relative URI.
+	 * @returns {URL} The build absolute URI.
+	 */
 	build( uriName )
 	{
 		return new URL(
@@ -26,5 +43,3 @@ class AbstractUriBuilder extends Abstract
 		);
 	}
 }
-
-export default AbstractUriBuilder;

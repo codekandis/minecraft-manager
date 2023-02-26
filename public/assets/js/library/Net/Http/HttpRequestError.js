@@ -1,11 +1,23 @@
 'use strict';
 
-import Abstract from '../../Types/Abstract.js';
+import { Abstract } from '../../Types/Abstract.js';
 
-class HttpRequestError extends Abstract
+/**
+ * Represents an HTTP request error.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class HttpRequestError extends Abstract
 {
-	#_message = undefined;
+	/**
+	 * Stores the error message.
+	 * @type {String}
+	 */
+	#_message;
 
+	/**
+	 * Constructor method.
+	 * @param {String} message The error message.
+	 */
 	constructor( message )
 	{
 		super();
@@ -13,10 +25,12 @@ class HttpRequestError extends Abstract
 		this.#_message = message;
 	}
 
+	/**
+	 * Gets the error message.
+	 * @returns {String} The error message.
+	 */
 	get message()
 	{
 		return this.#_message;
 	}
 }
-
-export default HttpRequestError;

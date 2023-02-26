@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+#settings section fieldset
+{
+	margin-top:    1em;
+	margin-bottom: 1em;
+}
+
+#settings section fieldset label
+{
+	display: inline-block;
+}
+
+#settings section fieldset input
+{
+	width:  150px;
+	height: 27px;
+}
+
+#settings-defaultValues fieldset label
+{
+	width: 80px;
+}

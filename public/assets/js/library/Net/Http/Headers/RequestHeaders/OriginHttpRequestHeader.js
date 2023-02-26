@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class OriginHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `Origin`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class OriginHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( OriginHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'Origin';
 	}
-}
 
-export default OriginHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( OriginHttpRequestHeader.NAME, value );
+	}
+}

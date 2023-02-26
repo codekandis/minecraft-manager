@@ -1,9 +1,19 @@
 'use strict';
 
-import Exception from './Exception.js';
+import { LogicException } from './LogicException.js';
 
-class InvalidStaticClassInstantiationException extends Exception
+/**
+ * Represents the exception if an attempt to instanciate a static class has been made.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class InvalidStaticClassInstantiationException extends LogicException
 {
+	/**
+	 * Static constructor method.
+	 * @param {String} className The name of the class which has been tried to instantiate.
+	 * @returns {InvalidStaticClassInstantiationException}
+	 * @constructor
+	 */
 	static with_className( className )
 	{
 		return new InvalidStaticClassInstantiationException(
@@ -11,10 +21,14 @@ class InvalidStaticClassInstantiationException extends Exception
 		);
 	}
 
-	static with_object( obj )
+	/**
+	 * Static constructor method.
+	 * @param {Object} object The object which has been tried to instantiate.
+	 * @returns {InvalidStaticClassInstantiationException}
+	 * @constructor
+	 */
+	static with_object( object )
 	{
-		return InvalidStaticClassInstantiationException.with_className( obj.__proto__.constructor.name );
+		return InvalidStaticClassInstantiationException.with_className( object.__proto__.constructor.name );
 	}
 }
-
-export default InvalidStaticClassInstantiationException;

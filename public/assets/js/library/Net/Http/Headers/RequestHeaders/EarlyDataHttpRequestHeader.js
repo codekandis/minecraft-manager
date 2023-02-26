@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class EarlyDataHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `Early-Data`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class EarlyDataHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( EarlyDataHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'Early-Data';
 	}
-}
 
-export default EarlyDataHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( EarlyDataHttpRequestHeader.NAME, value );
+	}
+}

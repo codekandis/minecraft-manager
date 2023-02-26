@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AcceptChHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Accept-CH`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class AcceptChHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( AcceptChHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Accept-CH';
 	}
-}
 
-export default AcceptChHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( AcceptChHttpResponseHeader.NAME, value );
+	}
+}

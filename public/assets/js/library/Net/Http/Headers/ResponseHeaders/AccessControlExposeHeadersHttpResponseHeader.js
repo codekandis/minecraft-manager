@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AccessControlExposeHeadersHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Access-Control-Expose-Headers`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class AccessControlExposeHeadersHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( AccessControlExposeHeadersHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Access-Control-Expose-Headers';
 	}
-}
 
-export default AccessControlExposeHeadersHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( AccessControlExposeHeadersHttpResponseHeader.NAME, value );
+	}
+}

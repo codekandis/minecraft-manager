@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class AuthorizationHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `Authorization`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class AuthorizationHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( AuthorizationHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'Authorization';
 	}
-}
 
-export default AuthorizationHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( AuthorizationHttpRequestHeader.NAME, value );
+	}
+}

@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class LargeAllocationHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Large-Allocation`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class LargeAllocationHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( LargeAllocationHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Large-Allocation';
 	}
-}
 
-export default LargeAllocationHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( LargeAllocationHttpResponseHeader.NAME, value );
+	}
+}

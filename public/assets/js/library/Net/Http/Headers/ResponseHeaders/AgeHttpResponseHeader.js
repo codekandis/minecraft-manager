@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class AgeHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Age`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class AgeHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( AgeHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Age';
 	}
-}
 
-export default AgeHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( AgeHttpResponseHeader.NAME, value );
+	}
+}

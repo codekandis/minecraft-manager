@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class SaveDataHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `Save-Data`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class SaveDataHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( SaveDataHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'Save-Data';
 	}
-}
 
-export default SaveDataHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( SaveDataHttpRequestHeader.NAME, value );
+	}
+}

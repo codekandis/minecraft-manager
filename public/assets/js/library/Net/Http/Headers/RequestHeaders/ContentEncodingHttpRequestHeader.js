@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class ContentEncodingHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `Content-Encoding`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ContentEncodingHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( ContentEncodingHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'Content-Encoding';
 	}
-}
 
-export default ContentEncodingHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( ContentEncodingHttpRequestHeader.NAME, value );
+	}
+}

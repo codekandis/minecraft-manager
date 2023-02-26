@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ContentDispositionHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Content-Disposition`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ContentDispositionHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( ContentDispositionHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Content-Disposition';
 	}
-}
 
-export default ContentDispositionHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( ContentDispositionHttpResponseHeader.NAME, value );
+	}
+}

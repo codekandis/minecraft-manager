@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpRequestHeader from '../HttpRequestHeader.js';
+import { HttpRequestHeader } from '../HttpRequestHeader.js';
 
-class CacheControlHttpRequestHeader extends HttpRequestHeader
+/**
+ * Represents the HTTP request header `Cache-Control`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class CacheControlHttpRequestHeader extends HttpRequestHeader
 {
-	constructor( value )
-	{
-		super( CacheControlHttpRequestHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP request header.
+	 * @returns {String} The name of the HTTP request header.
+	 */
 	static get NAME()
 	{
 		return 'Cache-Control';
 	}
-}
 
-export default CacheControlHttpRequestHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP request header.
+	 */
+	constructor( value )
+	{
+		super( CacheControlHttpRequestHeader.NAME, value );
+	}
+}

@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class XDnsPrefetchControlHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `X-DNS-Prefetch-Control`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class XDnsPrefetchControlHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( XDnsPrefetchControlHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'X-DNS-Prefetch-Control';
 	}
-}
 
-export default XDnsPrefetchControlHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( XDnsPrefetchControlHttpResponseHeader.NAME, value );
+	}
+}

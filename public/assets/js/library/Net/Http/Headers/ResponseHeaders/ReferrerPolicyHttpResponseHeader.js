@@ -1,18 +1,28 @@
 'use strict';
 
-import HttpResponseHeader from '../HttpResponseHeader.js';
+import { HttpResponseHeader } from '../HttpResponseHeader.js';
 
-class ReferrerPolicyHttpResponseHeader extends HttpResponseHeader
+/**
+ * Represents the HTTP response header `Referrer-Policy`.
+ * @author Christian Ramelow <info@codekandis.net>
+ */
+export class ReferrerPolicyHttpResponseHeader extends HttpResponseHeader
 {
-	constructor( value )
-	{
-		super( ReferrerPolicyHttpResponseHeader.NAME, value );
-	}
-
+	/**
+	 * Gets the name of the HTTP response header.
+	 * @returns {String} The name of the HTTP response header.
+	 */
 	static get NAME()
 	{
 		return 'Referrer-Policy';
 	}
-}
 
-export default ReferrerPolicyHttpResponseHeader;
+	/**
+	 * Constructor method.
+	 * @param {String} value The value of the HTTP response header.
+	 */
+	constructor( value )
+	{
+		super( ReferrerPolicyHttpResponseHeader.NAME, value );
+	}
+}
