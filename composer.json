@@ -39,7 +39,8 @@
 		"codekandis/tiphy-sentry-client-integration": "^0",
 		"codekandis/tiphy-session-integration": "^0",
 		"codekandis/validators": "^0",
-		"fortawesome/font-awesome": "^5"
+		"fortawesome/font-awesome": "^5",
+		"php-http/message-factory": "^1.1"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-master",
