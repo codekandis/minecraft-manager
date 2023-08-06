@@ -2,8 +2,8 @@
 namespace CodeKandis\MinecraftManager\Frontend\Actions\Get;
 
 use CodeKandis\Authentication\CommonSessionAuthenticator;
-use CodeKandis\MinecraftManager\Configurations\FrontendConfigurationRegistry;
-use CodeKandis\MinecraftManager\Frontend\Http\UriBuilders\FrontendUriBuilder;
+use CodeKandis\MinecraftManager\Configurations\ConfigurationRegistry;
+use CodeKandis\MinecraftManager\Environment\Http\UriBuilders\UriBuilderBuilder;
 use CodeKandis\Session\SessionHandler;
 use CodeKandis\Tiphy\Actions\AbstractAction;
 use CodeKandis\Tiphy\Http\Responses\RedirectResponder;
@@ -21,7 +21,7 @@ class SignoutAction extends AbstractAction
 	 */
 	public function execute(): void
 	{
-		$configurationRegistry = FrontendConfigurationRegistry::_();
+		$configurationRegistry = ConfigurationRegistry::_();
 
 		$sessionsConfiguration = $configurationRegistry->getSessionsConfiguration();
 		$sessionHandler        = new SessionHandler( $sessionsConfiguration );
@@ -31,7 +31,8 @@ class SignoutAction extends AbstractAction
 			->revokePermission();
 
 		$uriBuilderConfiguration = $configurationRegistry->getUriBuilderConfiguration();
-		$uriBuilder              = new FrontendUriBuilder( $uriBuilderConfiguration );
+		$uriBuilder              = ( new UriBuilderBuilder( $uriBuilderConfiguration ) )
+			->buildFrontendUriBuilder();
 		$indexUri                = $uriBuilder->buildIndexUri();
 
 		( new RedirectResponder( $indexUri, StatusCodes::FOUND ) )

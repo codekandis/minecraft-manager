@@ -1,7 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\MinecraftManager\Frontend\Actions\Get;
 
-use CodeKandis\MinecraftManager\Configurations\FrontendConfigurationRegistry;
+use CodeKandis\MinecraftManager\Configurations\ConfigurationRegistry;
 use CodeKandis\MinecraftManager\Frontend\Actions\AbstractAction;
 use CodeKandis\Tiphy\Http\Responses\HtmlTemplateResponder;
 use CodeKandis\Tiphy\Http\Responses\StatusCodes;
@@ -19,7 +19,7 @@ class IndexAction extends AbstractAction
 	public function execute(): void
 	{
 		( new HtmlTemplateResponder(
-			FrontendConfigurationRegistry
+			ConfigurationRegistry
 				::_()
 				->getTemplateRendererConfiguration(),
 			StatusCodes::OK,

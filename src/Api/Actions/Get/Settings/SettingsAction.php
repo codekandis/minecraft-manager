@@ -4,12 +4,12 @@ namespace CodeKandis\MinecraftManager\Api\Actions\Get\Settings;
 use CodeKandis\Entities\EntityPropertyMappings\EntityDoesNotMatchClassNameException;
 use CodeKandis\Entities\EntityPropertyMappings\PublicPropertyNotFoundException;
 use CodeKandis\MinecraftManager\Api\Actions\AbstractAction;
-use CodeKandis\MinecraftManager\Api\Http\UriBuilders\ApiUriBuilder;
 use CodeKandis\MinecraftManager\Api\Http\UriExtenders\Settings\SettingsApiUriExtender;
-use CodeKandis\MinecraftManager\Configurations\FrontendConfigurationRegistry;
+use CodeKandis\MinecraftManager\Configurations\ConfigurationRegistry;
 use CodeKandis\MinecraftManager\Environment\Entities\Settings\SettingsEntity;
 use CodeKandis\MinecraftManager\Environment\Entities\Settings\SettingsEntityInterface;
 use CodeKandis\MinecraftManager\Environment\Entities\UserEntityInterface;
+use CodeKandis\MinecraftManager\Environment\Http\UriBuilders\UriBuilderBuilder;
 use CodeKandis\MinecraftManager\Environment\Persistence\Repositories\Settings\MariaDb\SettingsEntityRepository;
 use CodeKandis\Persistence\FetchingResultFailedException;
 use CodeKandis\Persistence\SettingFetchModeFailedException;
@@ -80,11 +80,12 @@ class SettingsAction extends AbstractAction
 	private function extendUris( SettingsEntityInterface $settings ): void
 	{
 		( new SettingsApiUriExtender(
-			new ApiUriBuilder(
-				FrontendConfigurationRegistry
+			( new UriBuilderBuilder(
+				ConfigurationRegistry
 					::_()
-					->getApiUriBuilderConfiguration()
-			),
+					->getUriBuilderConfiguration()
+			) )
+				->buildApiUriBuilder(),
 			$settings
 		) )
 			->extend();

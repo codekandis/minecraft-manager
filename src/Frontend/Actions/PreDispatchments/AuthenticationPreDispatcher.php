@@ -5,7 +5,7 @@ use CodeKandis\Authentication\CommonClientCredentials;
 use CodeKandis\Authentication\CommonSessionAuthenticator;
 use CodeKandis\Authentication\RegisteredCommonClient;
 use CodeKandis\Authentication\RegisteredCommonClientInterface;
-use CodeKandis\MinecraftManager\Configurations\FrontendConfigurationRegistry;
+use CodeKandis\MinecraftManager\Configurations\ConfigurationRegistry;
 use CodeKandis\MinecraftManager\Environment\Entities\UserEntity;
 use CodeKandis\MinecraftManager\Environment\Persistence\Repositories\MariaDb\UserEntityRepository;
 use CodeKandis\Persistence\Connector;
@@ -46,7 +46,7 @@ class AuthenticationPreDispatcher implements PreDispatcherInterface
 	private function getRegisteredClients( string $id ): array
 	{
 		$persistenceConnector = ( new Connector(
-			FrontendConfigurationRegistry
+			ConfigurationRegistry
 				::_()
 				->getPersistenceConfiguration()
 		) );
@@ -132,12 +132,12 @@ class AuthenticationPreDispatcher implements PreDispatcherInterface
 	public function preDispatch( string $requestedUri, PreDispatchmentStateInterface $dispatchmentState ): void
 	{
 		$sessionHandler = new SessionHandler(
-			FrontendConfigurationRegistry
+			ConfigurationRegistry
 				::_()
 				->getSessionsConfiguration()
 		);
 
-		$sessionAuthenticatorConfiguration = FrontendConfigurationRegistry
+		$sessionAuthenticatorConfiguration = ConfigurationRegistry
 			::_()
 			->getSessionAuthenticatorConfiguration();
 
