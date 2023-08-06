@@ -1,6 +1,6 @@
 'use strict';
 
-import { BindableHtmlFormFieldProxy } from '../../../libraries/jotunheim/Types/DataBindings/BindableHtmlFormFieldProxy.js';
+import { BindableHtmlElementProxy } from '../../../libraries/jotunheim/Types/DataBindings/BindableHtmlElementProxy.js';
 import { DataBindingInitializationDirection } from '../../../libraries/jotunheim/Types/DataBindings/DataBindingInitializationDirection.js';
 import { PropertyChangedEvent } from '../../../libraries/jotunheim/Types/DataBindings/PropertyChangedEvent.js';
 import { AbstractComponent } from '../AbstractComponent.js';
@@ -64,7 +64,7 @@ export class SettingsComponent extends AbstractComponent
 	 */
 	_addDataBindings()
 	{
-		this.__settings.dataBindings.add( PropertyNames.CHUNKSIZE, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CHUNKSIZE ), 'value', DataBindingInitializationDirection.BINDABLE );
+		this.__settings.dataBindings.add( PropertyNames.CHUNKSIZE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CHUNKSIZE ), 'value', DataBindingInitializationDirection.BINDER );
 	}
 
 	/**

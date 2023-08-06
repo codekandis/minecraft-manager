@@ -12,7 +12,7 @@ export class ApiUriMappings extends AbstractApiUriMappings
 	/**
 	 * @inheritDoc
 	 */
-	__relativeUris = {
-		[ ApiUriNames.SETTINGS ]: 'settings/settings'
+	__relativeUriTemplates = {
+		[ ApiUriNames.SETTINGS ]: String.format`settings/settings`
 	};
 }
