@@ -3,7 +3,7 @@ namespace CodeKandis\MinecraftManager\Api\Actions;
 
 use CodeKandis\Entities\EntityPropertyMappings\EntityDoesNotMatchClassNameException;
 use CodeKandis\Entities\EntityPropertyMappings\PublicPropertyNotFoundException;
-use CodeKandis\MinecraftManager\Configurations\FrontendConfigurationRegistry;
+use CodeKandis\MinecraftManager\Configurations\ConfigurationRegistry;
 use CodeKandis\MinecraftManager\Environment\Entities\UserEntity;
 use CodeKandis\MinecraftManager\Environment\Entities\UserEntityInterface;
 use CodeKandis\MinecraftManager\Environment\Persistence\Repositories\MariaDb\UserEntityRepository;
@@ -41,7 +41,7 @@ abstract class AbstractAction extends OriginAbstractAction
 	{
 		return $this->persistenceConnector ??
 			   $this->persistenceConnector = new Connector(
-				   FrontendConfigurationRegistry
+				   ConfigurationRegistry
 					   ::_()
 					   ->getPersistenceConfiguration()
 			   );
@@ -64,13 +64,13 @@ abstract class AbstractAction extends OriginAbstractAction
 	 */
 	protected function getAuthenticatedUser(): ?UserEntityInterface
 	{
-		$registeredClientSessionKey = FrontendConfigurationRegistry
+		$registeredClientSessionKey = ConfigurationRegistry
 			::_()
 			->getSessionAuthenticatorConfiguration()
 			->getRegisteredClientSessionKey();
 
 		$sessionHandler = new SessionHandler(
-			FrontendConfigurationRegistry::_()->getSessionsConfiguration()
+			ConfigurationRegistry::_()->getSessionsConfiguration()
 		);
 		$sessionHandler->start();
 		$registeredClient = $sessionHandler->get( $registeredClientSessionKey );

@@ -6,7 +6,6 @@ use CodeKandis\Tiphy\Configurations\AbstractConfigurationRegistry;
 use CodeKandis\Tiphy\Configurations\RoutesConfiguration;
 use CodeKandis\Tiphy\Configurations\TemplateRendererConfiguration;
 use CodeKandis\Tiphy\Configurations\UriBuilderConfiguration;
-use CodeKandis\Tiphy\Configurations\UriBuilderConfigurationInterface;
 use CodeKandis\TiphyAuthenticationIntegration\Configurations\SessionAuthenticatorConfiguration;
 use CodeKandis\TiphyAuthenticationIntegration\Configurations\SessionAuthenticatorConfigurationRegistryTrait;
 use CodeKandis\TiphyPersistenceIntegration\Configurations\ConfigurationRegistryTrait as PersistenceConfigurationRegistryTrait;
@@ -18,11 +17,11 @@ use CodeKandis\TiphySessionIntegration\Configurations\SessionsConfiguration;
 use function dirname;
 
 /**
- * Represents a frontend configuration registry.
+ * Represents a configuration registry.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-class FrontendConfigurationRegistry extends AbstractConfigurationRegistry implements FrontendConfigurationRegistryInterface
+class ConfigurationRegistry extends AbstractConfigurationRegistry implements ConfigurationRegistryInterface
 {
 	use PersistenceConfigurationRegistryTrait;
 	use SentryClientConfigurationRegistryTrait;
@@ -30,26 +29,12 @@ class FrontendConfigurationRegistry extends AbstractConfigurationRegistry implem
 	use SessionsConfigurationRegistryTrait;
 
 	/**
-	 * Stores the API URI builder configuration.
-	 * @var ?UriBuilderConfigurationInterface
+	 * Creates the singleton instance of the configuration registry.
+	 * @return ConfigurationRegistryInterface The singleton instance of the configuration registry.
 	 */
-	private UriBuilderConfigurationInterface $apiUriBuilderConfiguration;
-
-	/**
-	 * Creates the singleton instance of the frontend configuration registry.
-	 * @return FrontendConfigurationRegistryInterface The singleton instance of the frontend configuration registry.
-	 */
-	public static function _(): FrontendConfigurationRegistryInterface
+	public static function _(): ConfigurationRegistryInterface
 	{
 		return parent::_();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function getApiUriBuilderConfiguration(): ?UriBuilderConfigurationInterface
-	{
-		return $this->apiUriBuilderConfiguration;
 	}
 
 	/**
@@ -95,14 +80,8 @@ class FrontendConfigurationRegistry extends AbstractConfigurationRegistry implem
 		);
 		$this->uriBuilderConfiguration           = new UriBuilderConfiguration(
 			( new PlainConfigurationLoader() )
-				->load( __DIR__ . '/Plain', 'frontendUriBuilder' )
-				->load( dirname( __DIR__, 2 ) . '/config', 'frontendUriBuilder' )
-				->getPlainConfiguration()
-		);
-		$this->apiUriBuilderConfiguration        = new UriBuilderConfiguration(
-			( new PlainConfigurationLoader() )
-				->load( __DIR__ . '/Plain', 'apiUriBuilder' )
-				->load( dirname( __DIR__, 2 ) . '/config', 'apiUriBuilder' )
+				->load( __DIR__ . '/Plain', 'uriBuilder' )
+				->load( dirname( __DIR__, 2 ) . '/config', 'uriBuilder' )
 				->getPlainConfiguration()
 		);
 	}

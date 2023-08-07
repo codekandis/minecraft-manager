@@ -2,7 +2,7 @@
 
 import { DomHelper } from '../../../libraries/jotunheim/Dom/DomHelper.js';
 import { BooleanString } from '../../../libraries/jotunheim/Types/BooleanString.js';
-import { BindableHtmlFormFieldProxy } from '../../../libraries/jotunheim/Types/DataBindings/BindableHtmlFormFieldProxy.js';
+import { BindableHtmlElementProxy } from '../../../libraries/jotunheim/Types/DataBindings/BindableHtmlElementProxy.js';
 import { DataBindingInitializationDirection } from '../../../libraries/jotunheim/Types/DataBindings/DataBindingInitializationDirection.js';
 import { PropertyChangedEvent } from '../../../libraries/jotunheim/Types/DataBindings/PropertyChangedEvent.js';
 import { AbstractComponent } from '../AbstractComponent.js';
@@ -66,7 +66,7 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	 */
 	#initialize()
 	{
-		this.#_lanternPositions = new LanternPositions( this.__settings )
+		this.#_lanternPositions = new LanternPositions( this.__settings );
 
 		this.#readSubwayRailsMapperFromApi();
 	}
@@ -129,22 +129,22 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	 */
 	_addDataBindings()
 	{
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.START_POSITION_X, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.START_POSITION_X ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.START_POSITION_Y, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.START_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.START_POSITION_Z, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.START_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_X, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_X ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_Y, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_Z, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_X_NEGATIVE ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_X_POSITIVE ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Y_NEGATIVE ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Y_POSITIVE ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Z_NEGATIVE ), 'value', DataBindingInitializationDirection.BINDABLE );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE, BindableHtmlFormFieldProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Z_POSITIVE ), 'value', DataBindingInitializationDirection.BINDABLE );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.START_POSITION_X, BindableHtmlElementProxy.with_selector( FormFieldSelectors.START_POSITION_X ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.START_POSITION_Y, BindableHtmlElementProxy.with_selector( FormFieldSelectors.START_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.START_POSITION_Z, BindableHtmlElementProxy.with_selector( FormFieldSelectors.START_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_X, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_X ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_Y, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_Z, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_X_NEGATIVE ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_X_POSITIVE ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Y_NEGATIVE ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Y_POSITIVE ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Z_NEGATIVE ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Z_POSITIVE ), 'value', DataBindingInitializationDirection.BINDER );
 
-		this.dataBindings.add( LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID, this.#_lanternPositions, LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID );
-		this.dataBindings.add( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID, this.#_lanternPositions, LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID );
-		this.dataBindings.add( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID, this.#_lanternPositions, LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID );
+		this.dataBindings.add( LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID, this.#_lanternPositions, LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID, this.#_lanternPositions, LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID, this.#_lanternPositions, LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID, DataBindingInitializationDirection.BINDABLE );
 	}
 
 	/**

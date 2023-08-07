@@ -1,14 +1,15 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\MinecraftManager\Frontend\Templates\Plain\Common;
 
-use CodeKandis\MinecraftManager\Configurations\FrontendConfigurationRegistry;
-use CodeKandis\MinecraftManager\Frontend\Http\UriBuilders\FrontendUriBuilder;
+use CodeKandis\MinecraftManager\Configurations\ConfigurationRegistry;
+use CodeKandis\MinecraftManager\Environment\Http\UriBuilders\UriBuilderBuilder;
 
-$uriBuilder = new FrontendUriBuilder(
-	FrontendConfigurationRegistry
+$uriBuilder = ( new UriBuilderBuilder(
+	ConfigurationRegistry
 		::_()
 		->getUriBuilderConfiguration()
-);
+) )
+	->buildFrontendUriBuilder();
 ?>
 <ul>
 	<li><a href="<?php echo $uriBuilder->buildSignoutUri(); ?>">Sign Out</a></li>

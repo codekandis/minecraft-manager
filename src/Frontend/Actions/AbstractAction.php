@@ -1,7 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\MinecraftManager\Frontend\Actions;
 
-use CodeKandis\MinecraftManager\Configurations\FrontendConfigurationRegistry;
+use CodeKandis\MinecraftManager\Configurations\ConfigurationRegistry;
 use CodeKandis\Persistence\Connector;
 use CodeKandis\Persistence\ConnectorInterface;
 use CodeKandis\Tiphy\Actions\AbstractAction as OriginAbstractAction;
@@ -27,7 +27,7 @@ abstract class AbstractAction extends OriginAbstractAction
 	{
 		return $this->persistenceConnector ??
 			   $this->persistenceConnector = new Connector(
-				   FrontendConfigurationRegistry
+				   ConfigurationRegistry
 					   ::_()
 					   ->getPersistenceConfiguration()
 			   );

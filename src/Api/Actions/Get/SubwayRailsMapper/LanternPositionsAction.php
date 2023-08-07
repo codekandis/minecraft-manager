@@ -4,12 +4,12 @@ namespace CodeKandis\MinecraftManager\Api\Actions\Get\SubwayRailsMapper;
 use CodeKandis\Entities\EntityPropertyMappings\EntityDoesNotMatchClassNameException;
 use CodeKandis\Entities\EntityPropertyMappings\PublicPropertyNotFoundException;
 use CodeKandis\MinecraftManager\Api\Actions\AbstractAction;
-use CodeKandis\MinecraftManager\Api\Http\UriBuilders\ApiUriBuilder;
 use CodeKandis\MinecraftManager\Api\Http\UriExtenders\SubwayRailsMapper\LanternPositionsApiUriExtender;
-use CodeKandis\MinecraftManager\Configurations\FrontendConfigurationRegistry;
+use CodeKandis\MinecraftManager\Configurations\ConfigurationRegistry;
 use CodeKandis\MinecraftManager\Environment\Entities\SubwayRailsMapper\LanternPositionsEntity;
 use CodeKandis\MinecraftManager\Environment\Entities\SubwayRailsMapper\LanternPositionsEntityInterface;
 use CodeKandis\MinecraftManager\Environment\Entities\UserEntityInterface;
+use CodeKandis\MinecraftManager\Environment\Http\UriBuilders\UriBuilderBuilder;
 use CodeKandis\MinecraftManager\Environment\Persistence\Repositories\SubwayRailsMapper\MariaDb\LanternPositionsEntityRepository;
 use CodeKandis\Persistence\FetchingResultFailedException;
 use CodeKandis\Persistence\SettingFetchModeFailedException;
@@ -82,11 +82,12 @@ class LanternPositionsAction extends AbstractAction
 	private function extendUris( LanternPositionsEntityInterface $lanternPositions ): void
 	{
 		( new LanternPositionsApiUriExtender(
-			new ApiUriBuilder(
-				FrontendConfigurationRegistry
+			( new UriBuilderBuilder(
+				ConfigurationRegistry
 					::_()
-					->getApiUriBuilderConfiguration()
-			),
+					->getUriBuilderConfiguration()
+			) )
+				->buildApiUriBuilder(),
 			$lanternPositions
 		) )
 			->extend();

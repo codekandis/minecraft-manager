@@ -12,7 +12,7 @@ export class ApiUriMappings extends AbstractApiUriMappings
 	/**
 	 * @inheritDoc
 	 */
-	__relativeUris = {
-		[ ApiUriNames.LANTERN_POSITIONS ]: 'subway-rails-mapper/lantern-positions'
+	__relativeUriTemplates = {
+		[ ApiUriNames.LANTERN_POSITIONS ]: String.format`subway-rails-mapper/lantern-positions`
 	};
 }
