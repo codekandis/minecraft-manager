@@ -2,7 +2,7 @@
 namespace CodeKandis\MinecraftManager;
 
 use CodeKandis\MinecraftManager\Configurations\ConfigurationRegistry;
-use CodeKandis\MinecraftManager\Development\Frontend\Actions\PreDispatchments\AuthenticationPreDispatcher;
+use CodeKandis\MinecraftManager\Frontend\Actions\PreDispatchments\AuthenticationPreDispatcher;
 use CodeKandis\SentryClient\SentryClient;
 use CodeKandis\Tiphy\Actions\ActionDispatcher;
 use CodeKandis\TiphySentryClientIntegration\Throwables\Handlers\InternalServerErrorThrowableHandler;
