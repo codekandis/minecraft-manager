@@ -61,6 +61,9 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 			'_id' => $mappedSettingsWithRecordId[ '_id' ]
 		];
 
+		/**
+		 * @var SettingsEntityInterface
+		 */
 		return $this->persistenceConnector->queryFirst( $query, $arguments, $settingsEntityPropertyMapper );
 	}
 
@@ -104,6 +107,9 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 			'userId' => $mappedUserWithUserId[ 'id' ]
 		];
 
+		/**
+		 * @var SettingsEntityInterface
+		 */
 		return $this->persistenceConnector->queryFirst( $query, $arguments, $settingsEntityPropertyMapper );
 	}
 
@@ -147,6 +153,9 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 
 		$this->persistenceConnector->execute( $query, $arguments );
 
+		/**
+		 * @var SettingsEntityInterface
+		 */
 		return $settingsEntityPropertyMapper->mapFromArray(
 			[
 				'_id' => $this->persistenceConnector->getLastInsertId()
