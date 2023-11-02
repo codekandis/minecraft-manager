@@ -64,6 +64,9 @@ class UserEntityRepository extends AbstractRepository implements UserEntityRepos
 			'eMail' => $mappedUserWithEMail[ 'eMail' ]
 		];
 
+		/**
+		 * @var UserEntityInterface
+		 */
 		return $this->persistenceConnector->queryFirst( $query, $arguments, $userEntityPropertyMapper );
 	}
 }

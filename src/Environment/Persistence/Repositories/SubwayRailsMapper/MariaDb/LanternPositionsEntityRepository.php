@@ -63,6 +63,9 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 			'_id' => $mappedLanternPositionsWithRecordId[ '_id' ]
 		];
 
+		/**
+		 * @var LanternPositionsEntityInterface
+		 */
 		return $this->persistenceConnector->queryFirst( $query, $arguments, $lanternPositionsEntityPropertyMapper );
 	}
 
@@ -108,6 +111,9 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 			'userId' => $mappedUserWithUserId[ 'id' ]
 		];
 
+		/**
+		 * @var LanternPositionsEntityInterface
+		 */
 		return $this->persistenceConnector->queryFirst( $query, $arguments, $lanternPositionsEntityPropertyMapper );
 	}
 
@@ -153,6 +159,9 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 
 		$this->persistenceConnector->execute( $query, $arguments );
 
+		/**
+		 * @var LanternPositionsEntityInterface
+		 */
 		return $lanternPositionsEntityPropertyMapper->mapFromArray(
 			[
 				'_id' => $this->persistenceConnector->getLastInsertId()

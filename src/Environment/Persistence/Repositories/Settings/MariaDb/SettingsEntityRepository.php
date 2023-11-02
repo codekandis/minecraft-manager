@@ -61,6 +61,9 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 			'_id' => $mappedSettingsWithRecordId[ '_id' ]
 		];
 
+		/**
+		 * @var SettingsEntityInterface
+		 */
 		return $this->persistenceConnector->queryFirst( $query, $arguments, $settingsEntityPropertyMapper );
 	}
 
@@ -104,6 +107,9 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 			'userId' => $mappedUserWithUserId[ 'id' ]
 		];
 
+		/**
+		 * @var SettingsEntityInterface
+		 */
 		return $this->persistenceConnector->queryFirst( $query, $arguments, $settingsEntityPropertyMapper );
 	}
 
@@ -122,7 +128,7 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 	 * @throws StatementPreparationFailedException The preparation of the statement failed.
 	 * @throws StatementExecutionFailedException The execution of the statement failed.
 	 */
-	public function createByUserId( SettingsEntityInterface $setting, UserEntityInterface $userWithUserId ): SettingsEntityInterface
+	public function createByUserId( SettingsEntityInterface $settings, UserEntityInterface $userWithUserId ): SettingsEntityInterface
 	{
 		$query = <<< END
 			INSERT INTO
@@ -137,16 +143,19 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 		$userEntityPropertyMapper     = ( new EntityPropertyMapperBuilder() )
 			->buildUserEntityPropertyMapper();
 
-		$mappedSetting        = $settingsEntityPropertyMapper->mapToArray( $settings );
+		$mappedSettings       = $settingsEntityPropertyMapper->mapToArray( $settings );
 		$mappedUserWithUserId = $userEntityPropertyMapper->mapToArray( $userWithUserId );
 
 		$arguments = [
 			'userId'    => $mappedUserWithUserId[ 'id' ],
-			'chunksize' => $mappedSetting[ 'chunksize' ]
+			'chunksize' => $mappedSettings[ 'chunksize' ]
 		];
 
 		$this->persistenceConnector->execute( $query, $arguments );
 
+		/**
+		 * @var SettingsEntityInterface
+		 */
 		return $settingsEntityPropertyMapper->mapFromArray(
 			[
 				'_id' => $this->persistenceConnector->getLastInsertId()
