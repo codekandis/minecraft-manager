@@ -91,6 +91,33 @@ export class FormFieldSelectors extends AbstractStatic
 	}
 
 	/**
+	 * Represents the calculated command concourse mining R.
+	 * @returns {String} The calculated command concourse mining R.
+	 */
+	static get CALCULATED_COMMAND_CONCOURSE_MINING_R()
+	{
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R );
+	}
+
+	/**
+	 * Represents the calculated command concourse mining L.
+	 * @returns {String} The calculated command concourse mining L.
+	 */
+	static get CALCULATED_COMMAND_CONCOURSE_MINING_L()
+	{
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L );
+	}
+
+	/**
+	 * Represents the calculated command concourse mining RL.
+	 * @returns {String} The calculated command concourse mining RL.
+	 */
+	static get CALCULATED_COMMAND_CONCOURSE_MINING_RL()
+	{
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL );
+	}
+
+	/**
 	 * Represents the calculated command arrival bell.
 	 * @returns {String} The calculated command arrival bell.
 	 */

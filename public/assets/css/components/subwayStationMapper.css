@@ -2,7 +2,7 @@
 
 :root
 {
-	--subway-station-mapper-calculated-values-base-top-position:     380px;
+	--subway-station-mapper-calculated-values-base-top-position:     522px;
 	--subway-station-mapper-calculated-values-additional-top-offset: 175px;
 	--subway-station-mapper-calculated-values-base-left-position:    220px;
 }
@@ -57,6 +57,9 @@
 
 #subwayStationMapper-calculatedCommandStationHeadMining,
 #subwayStationMapper-calculatedCommandConcourseMining,
+#subwayStationMapper-calculatedCommandConcourseMiningR,
+#subwayStationMapper-calculatedCommandConcourseMiningL,
+#subwayStationMapper-calculatedCommandConcourseMiningRL,
 #subwayStationMapper-calculatedCommandArrivalBell,
 #subwayStationMapper-calculatedCommandDepartureBell
 {
@@ -66,10 +69,27 @@
 
 #subwayStationMapper-calculatedCommandStationHeadMining:hover,
 #subwayStationMapper-calculatedCommandConcourseMining:hover,
+#subwayStationMapper-calculatedCommandConcourseMiningR:hover,
+#subwayStationMapper-calculatedCommandConcourseMiningL:hover,
+#subwayStationMapper-calculatedCommandConcourseMiningRL:hover,
 #subwayStationMapper-calculatedCommandArrivalBell:hover,
 #subwayStationMapper-calculatedCommandDepartureBell:hover
 {
 	border-color: var(--codekandis-color-orange);
+}
+
+#subwayStationMapper-calculatedCommandConcourseMiningR,
+#subwayStationMapper-calculatedCommandConcourseMiningRL
+{
+	border-top-width: 2px;
+	border-top-color: var(--codekandis-color-dark-gray);
+}
+
+#subwayStationMapper-calculatedCommandConcourseMiningL,
+#subwayStationMapper-calculatedCommandConcourseMiningRL
+{
+	border-bottom-width: 2px;
+	border-bottom-color: var(--codekandis-color-dark-gray);
 }
 
 #subwayStationMapper-calculatedValues section h3 span

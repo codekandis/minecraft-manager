@@ -34,6 +34,42 @@ export class StationPositionsOffsetPresets extends Abstract
 	#_concourseMining2 = new PositionOffset( 5, 0, -70 );
 
 	/**
+	 * Stores the position offset concourse mining R 1.
+	 * @type {PositionOffset}
+	 */
+	#_concourseMiningR1 = new PositionOffset( -12, 15, -15 );
+
+	/**
+	 * Stores the position offset concourse mining R 2.
+	 * @type {PositionOffset}
+	 */
+	#_concourseMiningR2 = new PositionOffset( 5, 0, -70 );
+
+	/**
+	 * Stores the position offset concourse mining L 1.
+	 * @type {PositionOffset}
+	 */
+	#_concourseMiningL1 = new PositionOffset( -14, 15, -15 );
+
+	/**
+	 * Stores the position offset concourse mining L 2.
+	 * @type {PositionOffset}
+	 */
+	#_concourseMiningL2 = new PositionOffset( 3, 0, -70 );
+
+	/**
+	 * Stores the position offset concourse mining RL 1.
+	 * @type {PositionOffset}
+	 */
+	#_concourseMiningRL1 = new PositionOffset( -12, 15, -15 );
+
+	/**
+	 * Stores the position offset concourse mining RL 2.
+	 * @type {PositionOffset}
+	 */
+	#_concourseMiningRL2 = new PositionOffset( 3, 0, -70 );
+
+	/**
 	 * Stores the position offset arrival bell.
 	 * @type {PositionOffset}
 	 */
@@ -127,6 +163,60 @@ export class StationPositionsOffsetPresets extends Abstract
 	get concourseMining2()
 	{
 		return this.#_concourseMining2;
+	}
+
+	/**
+	 * Gets the position offset concourse mining R 1.
+	 * @returns {PositionOffset} The position offset concourse mining R 1.
+	 */
+	get concourseMiningR1()
+	{
+		return this.#_concourseMiningR1;
+	}
+
+	/**
+	 * Gets the position offset concourse mining R 1.
+	 * @returns {PositionOffset} The position offset concourse mining R 2.
+	 */
+	get concourseMiningR2()
+	{
+		return this.#_concourseMiningR2;
+	}
+
+	/**
+	 * Gets the position offset concourse mining L 1.
+	 * @returns {PositionOffset} The position offset concourse mining L 1.
+	 */
+	get concourseMiningL1()
+	{
+		return this.#_concourseMiningL1;
+	}
+
+	/**
+	 * Gets the position offset concourse mining L 1.
+	 * @returns {PositionOffset} The position offset concourse mining L 2.
+	 */
+	get concourseMiningL2()
+	{
+		return this.#_concourseMiningL2;
+	}
+
+	/**
+	 * Gets the position offset concourse mining 1.
+	 * @returns {PositionOffset} The position offset concourse mining 1.
+	 */
+	get concourseMiningRL1()
+	{
+		return this.#_concourseMiningRL1;
+	}
+
+	/**
+	 * Gets the position offset concourse mining RL 1.
+	 * @returns {PositionOffset} The position offset concourse mining RL 2.
+	 */
+	get concourseMiningRL2()
+	{
+		return this.#_concourseMiningRL2;
 	}
 
 	/**

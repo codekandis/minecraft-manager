@@ -180,6 +180,132 @@ export class StationPositions extends AbstractBindable
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_Z ];
 
 	/**
+	 * Stores the calculated command concourse mining R.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R ];
+
+	/**
+	 * Stores the calculated position concourse mining R 1 X.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_X ];
+
+	/**
+	 * Stores the calculated position concourse mining R 1 Y.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Y ];
+
+	/**
+	 * Stores the calculated position concourse mining R 1 Z.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Z ];
+
+	/**
+	 * Stores the calculated position concourse mining R 2 X.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_X ];
+
+	/**
+	 * Stores the calculated position concourse mining R 2 Y.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Y ];
+
+	/**
+	 * Stores the calculated position concourse mining R 2 Z.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Z ];
+
+	/**
+	 * Stores the calculated command concourse mining L.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L ];
+
+	/**
+	 * Stores the calculated position concourse mining L 1 X.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_X ];
+
+	/**
+	 * Stores the calculated position concourse mining L 1 Y.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Y ];
+
+	/**
+	 * Stores the calculated position concourse mining L 1 Z.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Z ];
+
+	/**
+	 * Stores the calculated position concourse mining L 2 X.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_X ];
+
+	/**
+	 * Stores the calculated position concourse mining L 2 Y.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Y ];
+
+	/**
+	 * Stores the calculated position concourse mining L 2 Z.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Z ];
+
+	/**
+	 * Stores the calculated command concourse mining RL.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL ];
+
+	/**
+	 * Stores the calculated position concourse mining RL 1 X.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_X ];
+
+	/**
+	 * Stores the calculated position concourse mining RL 1 Y.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Y ];
+
+	/**
+	 * Stores the calculated position concourse mining RL 1 Z.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Z ];
+
+	/**
+	 * Stores the calculated position concourse mining RL 2 X.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_X ];
+
+	/**
+	 * Stores the calculated position concourse mining RL 2 Y.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Y ];
+
+	/**
+	 * Stores the calculated position concourse mining RL 2 Z.
+	 * @type {String}
+	 */
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Z ];
+
+	/**
 	 * Stores the calculated command arrival bell.
 	 * @type {String}
 	 */
@@ -815,6 +941,417 @@ export class StationPositions extends AbstractBindable
 		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_Z ] = value;
 		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_Z );
 		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING );
+	}
+
+	/**
+	 * Gets the calculated command concourse mining R.
+	 * @returns {String} The calculated command concourse mining R.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R ]()
+	{
+		return String.format`/fill ${ 0 } ${ 1 } ${ 2 } ${ 3 } ${ 4 } ${ 5 } cave_air replace `
+		(
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_X ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Y ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Z ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_X ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Y ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Z ]
+		);
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 1 X.
+	 * @returns {String} The calculated position concourse mining 1 X.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_X ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_X ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 1 X.
+	 * @param {String} value The calculated position concourse mining 1 X.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_X ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_X ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_X );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 1 Y.
+	 * @returns {String} The calculated position concourse mining 1 Y.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Y ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Y ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 1 Y.
+	 * @param {String} value The calculated position concourse mining 1 Y.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Y ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Y ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Y );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 1 Z.
+	 * @returns {String} The calculated position concourse mining 1 Z.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Z ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Z ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 1 Z.
+	 * @param {String} value The calculated position concourse mining 1 Z.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Z ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Z ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Z );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 2 X.
+	 * @returns {String} The calculated position concourse mining 2 X.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_X ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_X ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 2 X.
+	 * @param {String} value The calculated position concourse mining 2 X.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_X ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_X ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_X );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 2 Y.
+	 * @returns {String} The calculated position concourse mining 2 Y.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Y ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Y ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 2 Y.
+	 * @param {String} value The calculated position concourse mining 2 Y.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Y ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Y ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Y );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 2 Z.
+	 * @returns {String} The calculated position concourse mining 2 Z.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Z ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Z ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 2 Z.
+	 * @param {String} value The calculated position concourse mining 2 Z.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Z ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Z ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Z );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R );
+	}
+
+	/**
+	 * Gets the calculated command concourse mining L.
+	 * @returns {String} The calculated command concourse mining L.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L ]()
+	{
+		return String.format`/fill ${ 0 } ${ 1 } ${ 2 } ${ 3 } ${ 4 } ${ 5 } cave_air replace `
+		(
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_X ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Y ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Z ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_X ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Y ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Z ]
+		);
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 1 X.
+	 * @returns {String} The calculated position concourse mining 1 X.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_X ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_X ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 1 X.
+	 * @param {String} value The calculated position concourse mining 1 X.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_X ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_X ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_X );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 1 Y.
+	 * @returns {String} The calculated position concourse mining 1 Y.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Y ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Y ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 1 Y.
+	 * @param {String} value The calculated position concourse mining 1 Y.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Y ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Y ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Y );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 1 Z.
+	 * @returns {String} The calculated position concourse mining 1 Z.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Z ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Z ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 1 Z.
+	 * @param {String} value The calculated position concourse mining 1 Z.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Z ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Z ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Z );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 2 X.
+	 * @returns {String} The calculated position concourse mining 2 X.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_X ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_X ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 2 X.
+	 * @param {String} value The calculated position concourse mining 2 X.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_X ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_X ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_X );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 2 Y.
+	 * @returns {String} The calculated position concourse mining 2 Y.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Y ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Y ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 2 Y.
+	 * @param {String} value The calculated position concourse mining 2 Y.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Y ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Y ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Y );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 2 Z.
+	 * @returns {String} The calculated position concourse mining 2 Z.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Z ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Z ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 2 Z.
+	 * @param {String} value The calculated position concourse mining 2 Z.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Z ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Z ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Z );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L );
+	}
+
+	/**
+	 * Gets the calculated command concourse mining RL.
+	 * @returns {String} The calculated command concourse mining RL.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL ]()
+	{
+		return String.format`/fill ${ 0 } ${ 1 } ${ 2 } ${ 3 } ${ 4 } ${ 5 } cave_air replace `
+		(
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_X ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Y ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Z ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_X ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Y ],
+			this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Z ]
+		);
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 1 X.
+	 * @returns {String} The calculated position concourse mining 1 X.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_X ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_X ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 1 X.
+	 * @param {String} value The calculated position concourse mining 1 X.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_X ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_X ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_X );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 1 Y.
+	 * @returns {String} The calculated position concourse mining 1 Y.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Y ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Y ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 1 Y.
+	 * @param {String} value The calculated position concourse mining 1 Y.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Y ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Y ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Y );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 1 Z.
+	 * @returns {String} The calculated position concourse mining 1 Z.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Z ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Z ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 1 Z.
+	 * @param {String} value The calculated position concourse mining 1 Z.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Z ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Z ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Z );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 2 X.
+	 * @returns {String} The calculated position concourse mining 2 X.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_X ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_X ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 2 X.
+	 * @param {String} value The calculated position concourse mining 2 X.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_X ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_X ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_X );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 2 Y.
+	 * @returns {String} The calculated position concourse mining 2 Y.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Y ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Y ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 2 Y.
+	 * @param {String} value The calculated position concourse mining 2 Y.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Y ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Y ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Y );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL );
+	}
+
+	/**
+	 * Gets the calculated position concourse mining 2 Z.
+	 * @returns {String} The calculated position concourse mining 2 Z.
+	 */
+	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Z ]()
+	{
+		return this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Z ];
+	}
+
+	/**
+	 * Sets the calculated position concourse mining 2 Z.
+	 * @param {String} value The calculated position concourse mining 2 Z.
+	 */
+	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Z ]( value )
+	{
+		this[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Z ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Z );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL );
 	}
 
 	/**
@@ -1468,6 +2005,24 @@ export class StationPositions extends AbstractBindable
 		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_X ]    = calculatedOffsets.concourseMining2.x;
 		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_Y ]    = calculatedOffsets.concourseMining2.y;
 		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_Z ]    = calculatedOffsets.concourseMining2.z;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_X ]  = calculatedOffsets.concourseMiningR1.x;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Y ]  = calculatedOffsets.concourseMiningR1.y;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Z ]  = calculatedOffsets.concourseMiningR1.z;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_X ]  = calculatedOffsets.concourseMiningR2.x;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Y ]  = calculatedOffsets.concourseMiningR2.y;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Z ]  = calculatedOffsets.concourseMiningR2.z;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_X ]  = calculatedOffsets.concourseMiningL1.x;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Y ]  = calculatedOffsets.concourseMiningL1.y;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Z ]  = calculatedOffsets.concourseMiningL1.z;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_X ]  = calculatedOffsets.concourseMiningL2.x;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Y ]  = calculatedOffsets.concourseMiningL2.y;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Z ]  = calculatedOffsets.concourseMiningL2.z;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_X ] = calculatedOffsets.concourseMiningRL1.x;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Y ] = calculatedOffsets.concourseMiningRL1.y;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Z ] = calculatedOffsets.concourseMiningRL1.z;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_X ] = calculatedOffsets.concourseMiningRL2.x;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Y ] = calculatedOffsets.concourseMiningRL2.y;
+		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Z ] = calculatedOffsets.concourseMiningRL2.z;
 		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_ARRIVAL_BELL_X ]          = calculatedOffsets.arrivalBell.x;
 		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_ARRIVAL_BELL_Y ]          = calculatedOffsets.arrivalBell.y;
 		this[ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_ARRIVAL_BELL_Z ]          = calculatedOffsets.arrivalBell.z;
