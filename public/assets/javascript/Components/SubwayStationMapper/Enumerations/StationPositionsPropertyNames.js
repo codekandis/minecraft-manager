@@ -180,6 +180,195 @@ export class StationPositionsPropertyNames extends AbstractStatic
 	}
 
 	/**
+	 * Represents the calculated command concourse mining R.
+	 * @returns {String} The calculated command concourse mining R.
+	 */
+	static get CALCULATED_COMMAND_CONCOURSE_MINING_R()
+	{
+		return 'calculatedCommandConcourseMiningR';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining R 1 X.
+	 * @returns {String} The calculated position concourse mining R 1 X.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_R_1_Y()
+	{
+		return 'calculatedPositionConcourseMiningR1Y';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining R 1 Y.
+	 * @returns {String} The calculated position concourse mining R 1 Y.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_R_1_X()
+	{
+		return 'calculatedPositionConcourseMiningR1X';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining R 1 Z.
+	 * @returns {String} The calculated position concourse mining R 1 Z.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_R_1_Z()
+	{
+		return 'calculatedPositionConcourseMiningR1Z';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining R 2 X.
+	 * @returns {String} The calculated position concourse mining R 2 X.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_R_2_X()
+	{
+		return 'calculatedPositionConcourseMiningR2X';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining R 2 Y.
+	 * @returns {String} The calculated position concourse mining R 2 Y.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_R_2_Y()
+	{
+		return 'calculatedPositionConcourseMiningR2Y';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining R 2 Z.
+	 * @returns {String} The calculated position concourse mining R 2 Z.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_R_2_Z()
+	{
+		return 'calculatedPositionConcourseMiningR2Z';
+	}
+
+	/**
+	 * Represents the calculated command concourse mining L.
+	 * @returns {String} The calculated command concourse mining L.
+	 */
+	static get CALCULATED_COMMAND_CONCOURSE_MINING_L()
+	{
+		return 'calculatedCommandConcourseMiningL';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining L 1 X.
+	 * @returns {String} The calculated position concourse mining L 1 X.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_L_1_Y()
+	{
+		return 'calculatedPositionConcourseMiningL1Y';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining L 1 Y.
+	 * @returns {String} The calculated position concourse mining L 1 Y.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_L_1_X()
+	{
+		return 'calculatedPositionConcourseMiningL1X';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining L 1 Z.
+	 * @returns {String} The calculated position concourse mining L 1 Z.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_L_1_Z()
+	{
+		return 'calculatedPositionConcourseMiningL1Z';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining L 2 X.
+	 * @returns {String} The calculated position concourse mining L 2 X.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_L_2_X()
+	{
+		return 'calculatedPositionConcourseMiningL2X';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining L 2 Y.
+	 * @returns {String} The calculated position concourse mining L 2 Y.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_L_2_Y()
+	{
+		return 'calculatedPositionConcourseMiningL2Y';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining L 2 Z.
+	 * @returns {String} The calculated position concourse mining L 2 Z.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_L_2_Z()
+	{
+		return 'calculatedPositionConcourseMiningL2Z';
+	}
+
+	/**
+	 * Represents the calculated command concourse mining RL.
+	 * @returns {String} The calculated command concourse mining RL.
+	 */
+	static get CALCULATED_COMMAND_CONCOURSE_MINING_RL()
+	{
+		return 'calculatedCommandConcourseMiningRL';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining RL 1 X.
+	 * @returns {String} The calculated position concourse mining RL 1 X.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Y()
+	{
+		return 'calculatedPositionConcourseMiningRL1Y';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining RL 1 Y.
+	 * @returns {String} The calculated position concourse mining RL 1 Y.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_RL_1_X()
+	{
+		return 'calculatedPositionConcourseMiningRL1X';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining RL 1 Z.
+	 * @returns {String} The calculated position concourse mining RL 1 Z.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Z()
+	{
+		return 'calculatedPositionConcourseMiningRL1Z';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining RL 2 X.
+	 * @returns {String} The calculated position concourse mining RL 2 X.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_RL_2_X()
+	{
+		return 'calculatedPositionConcourseMiningRL2X';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining RL 2 Y.
+	 * @returns {String} The calculated position concourse mining RL 2 Y.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Y()
+	{
+		return 'calculatedPositionConcourseMiningRL2Y';
+	}
+
+	/**
+	 * Represents the calculated position concourse mining RL 2 Z.
+	 * @returns {String} The calculated position concourse mining RL 2 Z.
+	 */
+	static get CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Z()
+	{
+		return 'calculatedPositionConcourseMiningRL2Z';
+	}
+
+	/**
 	 * Represents the calculated command arrival bell.
 	 * @returns {String} The calculated command arrival bell.
 	 */

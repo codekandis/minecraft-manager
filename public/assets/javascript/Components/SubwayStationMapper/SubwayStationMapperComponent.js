@@ -50,6 +50,33 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	}
 
 	/**
+	 * Sets the calculated concourse R command.
+	 * @param {String} value The calculated concourse R command.
+	 */
+	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R ]( value )
+	{
+		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R, value, FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_R );
+	}
+
+	/**
+	 * Sets the calculated concourse L command.
+	 * @param {String} value The calculated concourse L command.
+	 */
+	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L ]( value )
+	{
+		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L, value, FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_L );
+	}
+
+	/**
+	 * Sets the calculated concourse RL command.
+	 * @param {String} value The calculated concourse RL command.
+	 */
+	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL ]( value )
+	{
+		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL, value, FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_RL );
+	}
+
+	/**
 	 * Sets the calculated arrival bell command.
 	 * @param {String} value The calculated arrival bell command.
 	 */
@@ -174,6 +201,9 @@ export class SubwayStationMapperComponent extends AbstractComponent
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CURRENT_POSITION_Z, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_COMMAND_STATION_HEAD_MINING ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_R ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_L ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_RL ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_COMMAND_ARRIVAL_BELL ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_COMMAND_DEPARTURE_BELL ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_STATION_ROTATION, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_STATION_ROTATION ), 'value', DataBindingInitializationDirection.BINDER );
@@ -205,6 +235,9 @@ export class SubwayStationMapperComponent extends AbstractComponent
 		this.dataBindings.add( StationPositionsPropertyNames.STATION_ORIENTATION, this.#_stationPositions, StationPositionsPropertyNames.STATION_ORIENTATION, DataBindingInitializationDirection.BINDABLE );
 		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING, DataBindingInitializationDirection.BINDABLE );
 		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL, DataBindingInitializationDirection.BINDABLE );
 		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL, DataBindingInitializationDirection.BINDABLE );
 		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL, DataBindingInitializationDirection.BINDABLE );
 		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1, DataBindingInitializationDirection.BINDABLE );
@@ -230,6 +263,9 @@ export class SubwayStationMapperComponent extends AbstractComponent
 
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.CALCULATED_COMMAND_STATION_HEAD_MINING, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
+		DomHelper.addEventHandlerBySelector( FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_R, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
+		DomHelper.addEventHandlerBySelector( FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_L, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
+		DomHelper.addEventHandlerBySelector( FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_RL, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.CALCULATED_COMMAND_ARRIVAL_BELL, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.CALCULATED_COMMAND_DEPARTURE_BELL, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.STRUCTURE_NAME_STATION_HEAD_1, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
