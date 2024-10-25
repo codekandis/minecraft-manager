@@ -34,6 +34,42 @@ export class CalculatedStationPositions extends Abstract
 	#_concourseMining2;
 
 	/**
+	 * Stores the calculated position concourse mining R 1.
+	 * @type {Position}
+	 */
+	#_concourseMiningR1;
+
+	/**
+	 * Stores the calculated position concourse mining R 2.
+	 * @type {Position}
+	 */
+	#_concourseMiningR2;
+
+	/**
+	 * Stores the calculated position concourse mining L 1.
+	 * @type {Position}
+	 */
+	#_concourseMiningL1;
+
+	/**
+	 * Stores the calculated position concourse mining L 2.
+	 * @type {Position}
+	 */
+	#_concourseMiningL2;
+
+	/**
+	 * Stores the calculated position concourse mining RL 1.
+	 * @type {Position}
+	 */
+	#_concourseMiningRL1;
+
+	/**
+	 * Stores the calculated position concourse mining RL 2.
+	 * @type {Position}
+	 */
+	#_concourseMiningRL2;
+
+	/**
 	 * Stores the calculated position arrival bell.
 	 * @type {Position}
 	 */
@@ -169,6 +205,114 @@ export class CalculatedStationPositions extends Abstract
 	set concourseMining2( value )
 	{
 		this.#_concourseMining2 = value;
+	}
+
+	/**
+	 * Gets the calculated position concourse mining R 1.
+	 * @returns {Position} The calculated position concourse mining R 1.
+	 */
+	get concourseMiningR1()
+	{
+		return this.#_concourseMiningR1;
+	}
+
+	/**
+	 * Sets the calculated position concourse mining R 1.
+	 * @param {Position} value The calculated position concourse mining R 1.
+	 */
+	set concourseMiningR1( value )
+	{
+		this.#_concourseMiningR1 = value;
+	}
+
+	/**
+	 * Gets the calculated position concourse mining R 1.
+	 * @returns {Position} The calculated position concourse mining R 2.
+	 */
+	get concourseMiningR2()
+	{
+		return this.#_concourseMiningR2;
+	}
+
+	/**
+	 * Sets the calculated position concourse mining R 1.
+	 * @param {Position} value The calculated position concourse mining R 2.
+	 */
+	set concourseMiningR2( value )
+	{
+		this.#_concourseMiningR2 = value;
+	}
+
+	/**
+	 * Gets the calculated position concourse mining L 1.
+	 * @returns {Position} The calculated position concourse mining L 1.
+	 */
+	get concourseMiningL1()
+	{
+		return this.#_concourseMiningL1;
+	}
+
+	/**
+	 * Sets the calculated position concourse mining L 1.
+	 * @param {Position} value The calculated position concourse mining L 1.
+	 */
+	set concourseMiningL1( value )
+	{
+		this.#_concourseMiningL1 = value;
+	}
+
+	/**
+	 * Gets the calculated position concourse mining L 1.
+	 * @returns {Position} The calculated position concourse mining L 2.
+	 */
+	get concourseMiningL2()
+	{
+		return this.#_concourseMiningL2;
+	}
+
+	/**
+	 * Sets the calculated position concourse mining L 1.
+	 * @param {Position} value The calculated position concourse mining L 2.
+	 */
+	set concourseMiningL2( value )
+	{
+		this.#_concourseMiningL2 = value;
+	}
+
+	/**
+	 * Gets the calculated position concourse mining RL 1.
+	 * @returns {Position} The calculated position concourse mining RL 1.
+	 */
+	get concourseMiningRL1()
+	{
+		return this.#_concourseMiningRL1;
+	}
+
+	/**
+	 * Sets the calculated position concourse mining RL 1.
+	 * @param {Position} value The calculated position concourse mining RL 1.
+	 */
+	set concourseMiningRL1( value )
+	{
+		this.#_concourseMiningRL1 = value;
+	}
+
+	/**
+	 * Gets the calculated position concourse mining RL 1.
+	 * @returns {Position} The calculated position concourse mining RL 2.
+	 */
+	get concourseMiningRL2()
+	{
+		return this.#_concourseMiningRL2;
+	}
+
+	/**
+	 * Sets the calculated position concourse mining RL 1.
+	 * @param {Position} value The calculated position concourse mining RL 2.
+	 */
+	set concourseMiningRL2( value )
+	{
+		this.#_concourseMiningRL2 = value;
 	}
 
 	/**
