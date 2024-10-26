@@ -7,6 +7,6 @@ return [
 	'driver'       => PersistenceDrivers::MYSQL,
 	'host'         => 'localhost',
 	'databaseName' => 'minecraft-manager.codekandis',
-	'username'     => 'root',
-	'passphrase'   => 'root',
+	'username'     => 'minecraft-manager.codekandis',
+	'passphrase'   => 'minecraft-manager.codekandis',
 ];
