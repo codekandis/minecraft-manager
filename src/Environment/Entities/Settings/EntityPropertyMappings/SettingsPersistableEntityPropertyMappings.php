@@ -3,6 +3,7 @@ namespace CodeKandis\MinecraftManager\Environment\Entities\Settings\EntityProper
 
 use CodeKandis\Converters\BiDirectionalConverters\IntToStringBiDirectionalConverter;
 use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapping;
+use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMappingInterface;
 use CodeKandis\MinecraftManager\Environment\Entities\EntityPropertyMappings\AbstractPersistableEntityPropertyMappings;
 
 /**
@@ -15,11 +16,12 @@ class SettingsPersistableEntityPropertyMappings extends AbstractPersistableEntit
 	/**
 	 * Constructor method.
 	 */
-	public function __construct()
+	public function __construct( EntityPropertyMappingInterface ...$entityPropertyMappings )
 	{
 		parent::__construct(
 			new EntityPropertyMapping( 'userId', null ),
-			new EntityPropertyMapping( 'chunksize', new IntToStringBiDirectionalConverter() )
+			new EntityPropertyMapping( 'chunksize', new IntToStringBiDirectionalConverter() ),
+			...$entityPropertyMappings
 		);
 	}
 }
