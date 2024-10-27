@@ -2,7 +2,7 @@
 
 import { AbstractApiAjaxController } from '../../../../Net/Http/AbstractApiAjaxController.js';
 import { ApiHttpRequest } from '../../../../Net/Http/ApiHttpRequest.js';
-import { PropertyNames } from '../../Enumerations/PropertyNames.js';
+import { SettingsPropertyNames } from '../../Enumerations/SettingsPropertyNames.js';
 import { ApiUriBuilder } from '../ApiUriBuilder.js';
 
 /**
@@ -54,7 +54,7 @@ export class ApiAjaxController extends AbstractApiAjaxController
 		request.payload = this._createRequestPayload(
 			{
 				settings: {
-					[ PropertyNames.CHUNKSIZE ]: settings[ PropertyNames.CHUNKSIZE ]
+					[ SettingsPropertyNames.CHUNKSIZE ]: settings[ SettingsPropertyNames.CHUNKSIZE ]
 				}
 			}
 		);

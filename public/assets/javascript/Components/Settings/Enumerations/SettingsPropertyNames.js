@@ -6,7 +6,7 @@ import { AbstractStatic } from '../../../../libraries/jotunheim/Types/AbstractSt
  * Represents an enumeration of property names of the settings component.
  * @author Christian Ramelow <info@codekandis.net>
  */
-export class PropertyNames extends AbstractStatic
+export class SettingsPropertyNames extends AbstractStatic
 {
 	/**
 	 * Represents the property `chunksize`.

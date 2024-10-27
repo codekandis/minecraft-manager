@@ -4,7 +4,7 @@ import { BindableHtmlElementProxy } from '../../../libraries/jotunheim/Dom/DataB
 import { DataBindingInitializationDirection } from '../../../libraries/jotunheim/Types/DataBindings/DataBindingInitializationDirection.js';
 import { PropertyChangedEvent } from '../../../libraries/jotunheim/Types/DataBindings/PropertyChangedEvent.js';
 import { AbstractComponent } from '../AbstractComponent.js';
-import { PropertyNames } from './Enumerations/PropertyNames.js';
+import { SettingsPropertyNames } from './Enumerations/SettingsPropertyNames.js';
 import { FormFieldSelectors } from './Html/FormFieldSelectors.js';
 import { ApiAjaxController } from './Net/Http/ApiAjaxController.js';
 
@@ -43,7 +43,7 @@ export class SettingsComponent extends AbstractComponent
 			.then(
 				( settings ) =>
 				{
-					this.__settings[ PropertyNames.CHUNKSIZE ] = settings[ PropertyNames.CHUNKSIZE ];
+					this.__settings[ SettingsPropertyNames.CHUNKSIZE ] = settings[ SettingsPropertyNames.CHUNKSIZE ];
 
 					this.__settings.propertyChangedEvent( this.#setting_propertyChanged );
 				}
@@ -64,7 +64,7 @@ export class SettingsComponent extends AbstractComponent
 	 */
 	_addDataBindings()
 	{
-		this.__settings.dataBindings.add( PropertyNames.CHUNKSIZE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CHUNKSIZE ), 'value', DataBindingInitializationDirection.BINDER );
+		this.__settings.dataBindings.add( SettingsPropertyNames.CHUNKSIZE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CHUNKSIZE ), 'value', DataBindingInitializationDirection.BINDER );
 	}
 
 	/**
@@ -72,7 +72,7 @@ export class SettingsComponent extends AbstractComponent
 	 */
 	_addFormFieldsEventHandlers()
 	{
-		this._attachEventDefaultValueMappings( FormFieldSelectors.CHUNKSIZE, PropertyNames.CHUNKSIZE );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.CHUNKSIZE, SettingsPropertyNames.CHUNKSIZE );
 	}
 
 	/**
@@ -83,7 +83,7 @@ export class SettingsComponent extends AbstractComponent
 	{
 		switch ( event.detail.eventArguments.propertyName )
 		{
-			case PropertyNames.CHUNKSIZE:
+			case SettingsPropertyNames.CHUNKSIZE:
 			{
 				this.#writeSettingsToApi();
 

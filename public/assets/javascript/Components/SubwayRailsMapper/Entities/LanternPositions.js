@@ -2,7 +2,7 @@
 
 import { AbstractBindable } from '../../../../libraries/jotunheim/Types/DataBindings/AbstractBindable.js';
 import { PropertyChangedEvent } from '../../../../libraries/jotunheim/Types/DataBindings/PropertyChangedEvent.js';
-import { PropertyNames as SettingPropertyNames } from '../../Settings/Enumerations/PropertyNames.js';
+import { SettingsPropertyNames } from '../../Settings/Enumerations/SettingsPropertyNames.js';
 import { LanternPositionsPropertyNames } from '../Enumerations/LanternPositionsPropertyNames.js';
 import { LanternPositionsCalculator } from './LanternPositionsCalculator.js';
 
@@ -455,7 +455,7 @@ export class LanternPositions extends AbstractBindable
 	{
 		switch ( event.detail.eventArguments.propertyName )
 		{
-			case SettingPropertyNames.CHUNKSIZE:
+			case SettingsPropertyNames.CHUNKSIZE:
 			{
 				this.calculate();
 

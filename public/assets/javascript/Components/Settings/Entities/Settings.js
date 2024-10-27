@@ -1,7 +1,7 @@
 'use strict';
 
 import { AbstractBindable } from '../../../../libraries/jotunheim/Types/DataBindings/AbstractBindable.js';
-import { PropertyNames } from '../Enumerations/PropertyNames.js';
+import { SettingsPropertyNames } from '../Enumerations/SettingsPropertyNames.js';
 
 /**
  * Represents the settings of the javascript.
@@ -13,25 +13,25 @@ export class Settings extends AbstractBindable
 	 * Stores the chunk size.
 	 * @type {Number}
 	 */
-	[ '#_' + PropertyNames.CHUNKSIZE ] = 0;
+	[ '#_' + SettingsPropertyNames.CHUNKSIZE ] = 0;
 
 	/**
 	 * Gets the chunk size.
 	 * @returns {Number} The chunksize.
 	 */
-	get [ PropertyNames.CHUNKSIZE ]()
+	get [ SettingsPropertyNames.CHUNKSIZE ]()
 	{
-		return this[ '#_' + PropertyNames.CHUNKSIZE ];
+		return this[ '#_' + SettingsPropertyNames.CHUNKSIZE ];
 	}
 
 	/**
 	 * Sets the chunk size.
 	 * @param {Number} value The chunk size.
 	 */
-	set [ PropertyNames.CHUNKSIZE ]( value )
+	set [ SettingsPropertyNames.CHUNKSIZE ]( value )
 	{
-		this[ '#_' + PropertyNames.CHUNKSIZE ] = Number.parseInt( value );
+		this[ '#_' + SettingsPropertyNames.CHUNKSIZE ] = Number.parseInt( value );
 
-		this._dispatchPropertyChangedEvent( PropertyNames.CHUNKSIZE );
+		this._dispatchPropertyChangedEvent( SettingsPropertyNames.CHUNKSIZE );
 	}
 }

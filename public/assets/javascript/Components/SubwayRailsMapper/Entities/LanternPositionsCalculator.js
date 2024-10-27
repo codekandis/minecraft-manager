@@ -1,7 +1,7 @@
 'use strict';
 
 import { Abstract } from '../../../../libraries/jotunheim/Types/Abstract.js';
-import { PropertyNames as SettingsPropertyNames } from '../../Settings/Enumerations/PropertyNames.js';
+import { SettingsPropertyNames } from '../../Settings/Enumerations/SettingsPropertyNames.js';
 import { LanternPositionsPropertyNames } from '../Enumerations/LanternPositionsPropertyNames.js';
 import { CalculatedLanternPositions } from './CalculatedLanternPositions.js';
 
