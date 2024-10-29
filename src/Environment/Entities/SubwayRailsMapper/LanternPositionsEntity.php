@@ -35,7 +35,7 @@ class LanternPositionsEntity extends AbstractPersistableEntity implements Lanter
 	public int $startPositionZ = 0;
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getUserId(): string
 	{
@@ -43,7 +43,7 @@ class LanternPositionsEntity extends AbstractPersistableEntity implements Lanter
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setUserId( string $userId ): void
 	{
@@ -51,7 +51,7 @@ class LanternPositionsEntity extends AbstractPersistableEntity implements Lanter
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getStartPositionX(): int
 	{
@@ -59,7 +59,7 @@ class LanternPositionsEntity extends AbstractPersistableEntity implements Lanter
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setStartPositionX( int $startPositionX ): void
 	{
@@ -67,7 +67,7 @@ class LanternPositionsEntity extends AbstractPersistableEntity implements Lanter
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getStartPositionY(): int
 	{
@@ -75,7 +75,7 @@ class LanternPositionsEntity extends AbstractPersistableEntity implements Lanter
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setStartPositionY( int $startPositionY ): void
 	{
@@ -83,7 +83,7 @@ class LanternPositionsEntity extends AbstractPersistableEntity implements Lanter
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getStartPositionZ(): int
 	{
@@ -91,7 +91,7 @@ class LanternPositionsEntity extends AbstractPersistableEntity implements Lanter
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setStartPositionZ( int $startPositionZ ): void
 	{

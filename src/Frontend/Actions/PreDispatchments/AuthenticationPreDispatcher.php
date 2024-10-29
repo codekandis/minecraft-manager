@@ -119,7 +119,7 @@ class AuthenticationPreDispatcher implements PreDispatcherInterface
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The user entity class to reflect does not exist.
 	 * @throws TransactionStartFailedException The transaction failed to start.
 	 * @throws TransactionRollbackFailedException The transaction failed to roll back.

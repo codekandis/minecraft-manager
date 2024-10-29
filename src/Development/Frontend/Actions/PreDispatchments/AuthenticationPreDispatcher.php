@@ -56,7 +56,7 @@ class AuthenticationPreDispatcher implements PreDispatcherInterface
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function preDispatch( string $requestedUri, PreDispatchmentStateInterface $dispatchmentState ): void
 	{

@@ -12,7 +12,7 @@ use CodeKandis\Tiphy\Http\Responses\StatusCodes;
 class AuthorizedAction extends AbstractAuthorizationAction
 {
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function execute(): void
 	{

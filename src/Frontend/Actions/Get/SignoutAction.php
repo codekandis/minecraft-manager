@@ -17,7 +17,7 @@ use CodeKandis\Tiphy\Http\Responses\StatusCodes;
 class SignoutAction extends AbstractAction
 {
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function execute(): void
 	{

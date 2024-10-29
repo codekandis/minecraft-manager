@@ -33,7 +33,7 @@ class UserEntity extends AbstractPersistableEntity implements UserEntityInterfac
 	public string $password = '';
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getIsActive(): bool
 	{
@@ -41,7 +41,7 @@ class UserEntity extends AbstractPersistableEntity implements UserEntityInterfac
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setIsActive( bool $isActive ): void
 	{
@@ -49,7 +49,7 @@ class UserEntity extends AbstractPersistableEntity implements UserEntityInterfac
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getName(): string
 	{
@@ -57,7 +57,7 @@ class UserEntity extends AbstractPersistableEntity implements UserEntityInterfac
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setName( string $name ): void
 	{
@@ -65,7 +65,7 @@ class UserEntity extends AbstractPersistableEntity implements UserEntityInterfac
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getEMail(): string
 	{
@@ -73,7 +73,7 @@ class UserEntity extends AbstractPersistableEntity implements UserEntityInterfac
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setEMail( string $eMail ): void
 	{
@@ -81,7 +81,7 @@ class UserEntity extends AbstractPersistableEntity implements UserEntityInterfac
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getPassword(): string
 	{
@@ -89,7 +89,7 @@ class UserEntity extends AbstractPersistableEntity implements UserEntityInterfac
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setPassword( string $password ): void
 	{

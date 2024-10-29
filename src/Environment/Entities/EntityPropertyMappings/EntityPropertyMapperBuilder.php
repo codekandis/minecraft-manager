@@ -18,7 +18,7 @@ use ReflectionException;
 class EntityPropertyMapperBuilder implements EntityPropertyMapperBuilderInterface
 {
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The user entity class to reflect does not exist.
 	 */
 	public function buildUserEntityPropertyMapper(): EntityPropertyMapperInterface
@@ -27,7 +27,7 @@ class EntityPropertyMapperBuilder implements EntityPropertyMapperBuilderInterfac
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The settings settings entity class to reflect does not exist.
 	 */
 	public function buildSettingsSettingsEntityPropertyMapper(): EntityPropertyMapperInterface
@@ -36,7 +36,7 @@ class EntityPropertyMapperBuilder implements EntityPropertyMapperBuilderInterfac
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The subway rails mapper lantern positions entity class to reflect does not exist.
 	 */
 	public function buildSubwayRailsMapperLanternPositionEntityPropertyMapper(): EntityPropertyMapperInterface

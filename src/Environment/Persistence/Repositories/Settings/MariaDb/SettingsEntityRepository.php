@@ -26,7 +26,7 @@ use ReflectionException;
 class SettingsEntityRepository extends AbstractRepository implements SettingsEntityRepositoryInterface
 {
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The settings entity class to reflect does not exist.
 	 * @throws TransactionStartFailedException The transaction failed to start.
 	 * @throws TransactionRollbackFailedException The transaction failed to roll back.
@@ -68,7 +68,7 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The settings entity class to reflect does not exist.
 	 * @throws EntityDoesNotMatchClassNameException The settings entity does not match the entity class name of the entity property mapper.
 	 * @throws PublicPropertyNotFoundException A public property does not exist in the settings entity class.
@@ -114,7 +114,7 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The settings entity class to reflect does not exist.
 	 * @throws ReflectionException An error occurred during the creation of the settings entity.
 	 * @throws EntityDoesNotMatchClassNameException The settings entity does not match the entity class name of the entity property mapper.
@@ -164,7 +164,7 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The settings entity class to reflect does not exist.
 	 * @throws ReflectionException An error occurred during the creation of the settings entity.
 	 * @throws EntityDoesNotMatchClassNameException The settings entity does not match the entity class name of the entity property mapper.

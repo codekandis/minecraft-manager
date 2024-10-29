@@ -23,7 +23,7 @@ abstract class AbstractEntity extends OriginAbstractEntity implements EntityInte
 	public ?string $id = null;
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getCanonicalUri(): string
 	{
@@ -31,7 +31,7 @@ abstract class AbstractEntity extends OriginAbstractEntity implements EntityInte
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setCanonicalUri( string $canonicalUri ): void
 	{
@@ -39,7 +39,7 @@ abstract class AbstractEntity extends OriginAbstractEntity implements EntityInte
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getId(): ?string
 	{
@@ -47,7 +47,7 @@ abstract class AbstractEntity extends OriginAbstractEntity implements EntityInte
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setId( ?string $id ): void
 	{

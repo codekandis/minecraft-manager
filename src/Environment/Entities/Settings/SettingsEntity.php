@@ -23,7 +23,7 @@ class SettingsEntity extends AbstractPersistableEntity implements SettingsEntity
 	public int $chunksize = 0;
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getUserId(): string
 	{
@@ -31,7 +31,7 @@ class SettingsEntity extends AbstractPersistableEntity implements SettingsEntity
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setUserId( string $userId ): void
 	{
@@ -39,7 +39,7 @@ class SettingsEntity extends AbstractPersistableEntity implements SettingsEntity
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getChunkSize(): int
 	{
@@ -47,7 +47,7 @@ class SettingsEntity extends AbstractPersistableEntity implements SettingsEntity
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setChunkSize( int $chunksize ): void
 	{

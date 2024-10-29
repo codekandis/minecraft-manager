@@ -16,7 +16,7 @@ use CodeKandis\Tiphy\Http\UriBuilders\AbstractUriBuilderBuilder;
 class UriBuilderBuilder extends AbstractUriBuilderBuilder implements UriBuilderBuilderInterface
 {
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function buildApiUriBuilder(): ApiUriBuilderInterface
 	{
@@ -26,7 +26,7 @@ class UriBuilderBuilder extends AbstractUriBuilderBuilder implements UriBuilderB
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function buildFrontendUriBuilder(): FrontendUriBuilderInterface
 	{
