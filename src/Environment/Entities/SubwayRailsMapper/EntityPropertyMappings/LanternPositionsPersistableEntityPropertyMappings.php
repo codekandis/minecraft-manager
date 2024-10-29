@@ -3,7 +3,7 @@ namespace CodeKandis\MinecraftManager\Environment\Entities\SubwayRailsMapper\Ent
 
 use CodeKandis\Converters\BiDirectionalConverters\IntToStringBiDirectionalConverter;
 use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapping;
-use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMappingInterface;
+use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMappingExistsException;
 use CodeKandis\MinecraftManager\Environment\Entities\EntityPropertyMappings\AbstractPersistableEntityPropertyMappings;
 
 /**
@@ -15,15 +15,15 @@ class LanternPositionsPersistableEntityPropertyMappings extends AbstractPersista
 {
 	/**
 	 * Constructor method.
+	 * @throws EntityPropertyMappingExistsException An entity property mapping with a specific property name already exists.
 	 */
-	public function __construct( EntityPropertyMappingInterface ...$entityPropertyMappings )
+	public function __construct()
 	{
 		parent::__construct(
 			new EntityPropertyMapping( 'userId', null ),
 			new EntityPropertyMapping( 'startPositionX', new IntToStringBiDirectionalConverter() ),
 			new EntityPropertyMapping( 'startPositionY', new IntToStringBiDirectionalConverter() ),
-			new EntityPropertyMapping( 'startPositionZ', new IntToStringBiDirectionalConverter() ),
-			...$entityPropertyMappings
+			new EntityPropertyMapping( 'startPositionZ', new IntToStringBiDirectionalConverter() )
 		);
 	}
 }

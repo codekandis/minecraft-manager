@@ -3,6 +3,7 @@ namespace CodeKandis\MinecraftManager\Environment\Entities\EntityPropertyMapping
 
 use CodeKandis\Converters\BiDirectionalConverters\BoolToIntStringBiDirectionalConverter;
 use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapping;
+use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMappingExistsException;
 
 /**
  * Represents the entity property mappings of the user entity.
@@ -13,6 +14,7 @@ class UserPersistableEntityPropertyMappings extends AbstractPersistableEntityPro
 {
 	/**
 	 * Constructor method.
+	 * @throws EntityPropertyMappingExistsException An entity property mapping with a specific property name already exists.
 	 */
 	public function __construct()
 	{

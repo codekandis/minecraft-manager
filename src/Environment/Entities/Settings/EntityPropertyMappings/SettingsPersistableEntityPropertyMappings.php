@@ -3,7 +3,7 @@ namespace CodeKandis\MinecraftManager\Environment\Entities\Settings\EntityProper
 
 use CodeKandis\Converters\BiDirectionalConverters\IntToStringBiDirectionalConverter;
 use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapping;
-use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMappingInterface;
+use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMappingExistsException;
 use CodeKandis\MinecraftManager\Environment\Entities\EntityPropertyMappings\AbstractPersistableEntityPropertyMappings;
 
 /**
@@ -15,13 +15,13 @@ class SettingsPersistableEntityPropertyMappings extends AbstractPersistableEntit
 {
 	/**
 	 * Constructor method.
+	 * @throws EntityPropertyMappingExistsException An entity property mapping with a specific property name already exists.
 	 */
-	public function __construct( EntityPropertyMappingInterface ...$entityPropertyMappings )
+	public function __construct()
 	{
 		parent::__construct(
 			new EntityPropertyMapping( 'userId', null ),
-			new EntityPropertyMapping( 'chunksize', new IntToStringBiDirectionalConverter() ),
-			...$entityPropertyMappings
+			new EntityPropertyMapping( 'chunksize', new IntToStringBiDirectionalConverter() )
 		);
 	}
 }
