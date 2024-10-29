@@ -4,14 +4,14 @@ namespace CodeKandis\MinecraftManager\Environment\Entities\SubwayRailsMapper\Ent
 use CodeKandis\Converters\BiDirectionalConverters\IntToStringBiDirectionalConverter;
 use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapping;
 use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMappingExistsException;
-use CodeKandis\MinecraftManager\Environment\Entities\EntityPropertyMappings\AbstractPersistableEntityPropertyMappings;
+use CodeKandis\MinecraftManager\Environment\Entities\EntityPropertyMappings\AbstractUserBasedEntityPropertyMappings;
 
 /**
  * Represents the entity property mappings of the lantern positions entity.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-class LanternPositionsPersistableEntityPropertyMappings extends AbstractPersistableEntityPropertyMappings
+class LanternPositionsPersistableEntityPropertyMappings extends AbstractUserBasedEntityPropertyMappings
 {
 	/**
 	 * Constructor method.
@@ -20,7 +20,6 @@ class LanternPositionsPersistableEntityPropertyMappings extends AbstractPersista
 	public function __construct()
 	{
 		parent::__construct(
-			new EntityPropertyMapping( 'userId', null ),
 			new EntityPropertyMapping( 'startPositionX', new IntToStringBiDirectionalConverter() ),
 			new EntityPropertyMapping( 'startPositionY', new IntToStringBiDirectionalConverter() ),
 			new EntityPropertyMapping( 'startPositionZ', new IntToStringBiDirectionalConverter() )

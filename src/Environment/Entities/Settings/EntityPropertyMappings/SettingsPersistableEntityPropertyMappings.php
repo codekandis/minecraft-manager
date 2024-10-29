@@ -4,14 +4,14 @@ namespace CodeKandis\MinecraftManager\Environment\Entities\Settings\EntityProper
 use CodeKandis\Converters\BiDirectionalConverters\IntToStringBiDirectionalConverter;
 use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapping;
 use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMappingExistsException;
-use CodeKandis\MinecraftManager\Environment\Entities\EntityPropertyMappings\AbstractPersistableEntityPropertyMappings;
+use CodeKandis\MinecraftManager\Environment\Entities\EntityPropertyMappings\AbstractUserBasedEntityPropertyMappings;
 
 /**
  * Represents the entity property mappings of the settings entity.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-class SettingsPersistableEntityPropertyMappings extends AbstractPersistableEntityPropertyMappings
+class SettingsPersistableEntityPropertyMappings extends AbstractUserBasedEntityPropertyMappings
 {
 	/**
 	 * Constructor method.
@@ -20,7 +20,6 @@ class SettingsPersistableEntityPropertyMappings extends AbstractPersistableEntit
 	public function __construct()
 	{
 		parent::__construct(
-			new EntityPropertyMapping( 'userId', null ),
 			new EntityPropertyMapping( 'chunksize', new IntToStringBiDirectionalConverter() )
 		);
 	}
