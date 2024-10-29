@@ -2,11 +2,11 @@
 namespace CodeKandis\MinecraftManager\Environment\Entities;
 
 /**
- * Represents the base class of any persistable entity.
+ * Represents the base class of any persistable user based entity.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-abstract class AbstractPersistableEntity extends AbstractEntity implements PersistableEntityInterface
+abstract class AbstractPersistableUserBasedEntity extends AbstractUserBasedEntity implements PersistableUserBasedEntityInterface
 {
 	/**
 	 * Stores the record ID of the entity.

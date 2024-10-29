@@ -1,27 +1,15 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\MinecraftManager\Environment\Entities\SubwayRailsMapper;
 
-use CodeKandis\MinecraftManager\Environment\Entities\PersistableEntityInterface;
+use CodeKandis\MinecraftManager\Environment\Entities\PersistableUserBasedEntityInterface;
 
 /**
  * Represents the interface of any lantern positions entity.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-interface LanternPositionsEntityInterface extends PersistableEntityInterface
+interface LanternPositionsEntityInterface extends PersistableUserBasedEntityInterface
 {
-	/**
-	 * Gets the user ID of the lantern positions.
-	 * @return string The user ID of the lantern positions.
-	 */
-	public function getUserId(): string;
-
-	/**
-	 * Sets the user ID of the lantern positions.
-	 * @param string $userId The user ID of the lantern positions.
-	 */
-	public function setUserId( string $userId ): void;
-
 	/**
 	 * Gets the chunk start position X.
 	 * @return int The chunk start position X.
