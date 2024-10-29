@@ -39,7 +39,7 @@ class EntityPropertyMapperBuilder implements EntityPropertyMapperBuilderInterfac
 	 * @inheritDoc
 	 * @throws ReflectionException The subway rails mapper lantern positions entity class to reflect does not exist.
 	 */
-	public function buildSubwayRailsMapperLanternPositionEntityPropertyMapper(): EntityPropertyMapperInterface
+	public function buildSubwayRailsMapperLanternPositionsEntityPropertyMapper(): EntityPropertyMapperInterface
 	{
 		return new EntityPropertyMapper( LanternPositionsEntity::class, new LanternPositionsPersistableEntityPropertyMappings() );
 	}

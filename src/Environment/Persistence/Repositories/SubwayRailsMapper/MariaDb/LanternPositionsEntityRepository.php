@@ -55,7 +55,7 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 		END;
 
 		$lanternPositionsEntityPropertyMapper = ( new EntityPropertyMapperBuilder() )
-			->buildSubwayRailsMapperLanternPositionEntityPropertyMapper();
+			->buildSubwayRailsMapperLanternPositionsEntityPropertyMapper();
 
 		$mappedLanternPositionsWithRecordId = $lanternPositionsEntityPropertyMapper->mapToArray( $lanternPositionsWithRecordId );
 
@@ -103,7 +103,7 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 		$userEntityPropertyMapper             = ( new EntityPropertyMapperBuilder() )
 			->buildUserEntityPropertyMapper();
 		$lanternPositionsEntityPropertyMapper = ( new EntityPropertyMapperBuilder() )
-			->buildSubwayRailsMapperLanternPositionEntityPropertyMapper();
+			->buildSubwayRailsMapperLanternPositionsEntityPropertyMapper();
 
 		$mappedUserWithUserId = $userEntityPropertyMapper->mapToArray( $userWithUserId );
 
@@ -143,7 +143,7 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 		END;
 
 		$lanternPositionsEntityPropertyMapper = ( new EntityPropertyMapperBuilder() )
-			->buildSubwayRailsMapperLanternPositionEntityPropertyMapper();
+			->buildSubwayRailsMapperLanternPositionsEntityPropertyMapper();
 		$userEntityPropertyMapper             = ( new EntityPropertyMapperBuilder() )
 			->buildUserEntityPropertyMapper();
 
@@ -198,7 +198,7 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 		END;
 
 		$lanternPositionsEntityPropertyMapper = ( new EntityPropertyMapperBuilder() )
-			->buildSubwayRailsMapperLanternPositionEntityPropertyMapper();
+			->buildSubwayRailsMapperLanternPositionsEntityPropertyMapper();
 
 		$mappedLanternPositions             = $lanternPositionsEntityPropertyMapper->mapToArray( $lanternPositions );
 		$mappedLanternPositionsWithRecordId = $lanternPositionsEntityPropertyMapper->mapToArray( $lanternPositionsWithRecordId );
