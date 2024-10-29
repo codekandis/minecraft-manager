@@ -25,64 +25,64 @@ export class StationOffsetsCalculator extends Abstract
 		const calculatedStationPositions = new CalculatedStationPositions();
 
 		calculatedStationPositions.stationHeadMining1 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining1.x,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining1.z
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining1.x,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining1.z
 		);
 		calculatedStationPositions.stationHeadMining2 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining2.x,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining2.z
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining2.x,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining2.z
 		);
 		calculatedStationPositions.concourseMining1   = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining1.x,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining1.z
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMining1.x,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining1.z
 		);
 		calculatedStationPositions.concourseMining2   = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining2.x,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining2.z
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMining2.x,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining2.z
 		);
 		calculatedStationPositions.concourseMiningR1  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR1.x,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR1.z
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR1.x,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR1.z
 		);
 		calculatedStationPositions.concourseMiningR2  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR2.x,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR2.z
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR2.x,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR2.z
 		);
 		calculatedStationPositions.concourseMiningL1  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL1.x,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL1.z
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL1.x,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL1.z
 		);
 		calculatedStationPositions.concourseMiningL2  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL2.x,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL2.z
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL2.x,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL2.z
 		);
 		calculatedStationPositions.concourseMiningRL1 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL1.x,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL1.z
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL1.x,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL1.z
 		);
 		calculatedStationPositions.concourseMiningRL2 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL2.x,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL2.z
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL2.x,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL2.z
 		);
 		calculatedStationPositions.arrivalBell        = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.arrivalBell.x,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.arrivalBell.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.arrivalBell.z
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.arrivalBell.x,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.arrivalBell.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.arrivalBell.z
 		);
 		calculatedStationPositions.departureBell      = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.departureBell.x,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.departureBell.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.departureBell.z
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.departureBell.x,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.departureBell.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.departureBell.z
 		);
 		calculatedStationPositions.rotation           = 180;
 		calculatedStationPositions.stationHead1       = new PositionOffset( stationPositionsOffsetPresets.stationHead1.x, stationPositionsOffsetPresets.stationHead1.y, stationPositionsOffsetPresets.stationHead1.z );
@@ -108,64 +108,64 @@ export class StationOffsetsCalculator extends Abstract
 		const calculatedStationPositions = new CalculatedStationPositions();
 
 		calculatedStationPositions.stationHeadMining1 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining1.z * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining1.x
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining1.z * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining1.x
 		);
 		calculatedStationPositions.stationHeadMining2 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining2.z * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining2.x
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining2.z * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining2.x
 		);
 		calculatedStationPositions.concourseMining1   = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining1.z * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining1.x
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMining1.z * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining1.x
 		);
 		calculatedStationPositions.concourseMining2   = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining2.z * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining2.x
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMining2.z * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining2.x
 		);
 		calculatedStationPositions.concourseMiningR1  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR1.z * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR1.x
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR1.z * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR1.x
 		);
 		calculatedStationPositions.concourseMiningR2  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR2.z * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR2.x
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR2.z * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR2.x
 		);
 		calculatedStationPositions.concourseMiningL1  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL1.z * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL1.x
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL1.z * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL1.x
 		);
 		calculatedStationPositions.concourseMiningL2  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL2.z * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL2.x
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL2.z * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL2.x
 		);
 		calculatedStationPositions.concourseMiningRL1 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL1.z * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL1.x
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL1.z * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL1.x
 		);
 		calculatedStationPositions.concourseMiningRL2 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL2.z * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL2.x
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL2.z * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL2.x
 		);
 		calculatedStationPositions.arrivalBell        = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.arrivalBell.z * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.arrivalBell.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.arrivalBell.x
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.arrivalBell.z * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.arrivalBell.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.arrivalBell.x
 		);
 		calculatedStationPositions.departureBell      = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.departureBell.z * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.departureBell.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.departureBell.x
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.departureBell.z * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.departureBell.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.departureBell.x
 		);
 		calculatedStationPositions.rotation           = 270;
 		calculatedStationPositions.stationHead1       = new PositionOffset( stationPositionsOffsetPresets.stationHead1.z * -1, stationPositionsOffsetPresets.stationHead1.y, stationPositionsOffsetPresets.stationHead1.x );
@@ -191,64 +191,64 @@ export class StationOffsetsCalculator extends Abstract
 		const calculatedStationPositions = new CalculatedStationPositions();
 
 		calculatedStationPositions.stationHeadMining1 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining1.x * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining1.z * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining1.x * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining1.z * -1
 		);
 		calculatedStationPositions.stationHeadMining2 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining2.x * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining2.z * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining2.x * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining2.z * -1
 		);
 		calculatedStationPositions.concourseMining1   = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining1.x * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining1.z * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMining1.x * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining1.z * -1
 		);
 		calculatedStationPositions.concourseMining2   = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining2.x * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining2.z * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMining2.x * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining2.z * -1
 		);
 		calculatedStationPositions.concourseMiningR1  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR1.x * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR1.z * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR1.x * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR1.z * -1
 		);
 		calculatedStationPositions.concourseMiningR2  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR2.x * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR2.z * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR2.x * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR2.z * -1
 		);
 		calculatedStationPositions.concourseMiningL1  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL1.x * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL1.z * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL1.x * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL1.z * -1
 		);
 		calculatedStationPositions.concourseMiningL2  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL2.x * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL2.z * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL2.x * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL2.z * -1
 		);
 		calculatedStationPositions.concourseMiningRL1 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL1.x * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL1.z * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL1.x * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL1.z * -1
 		);
 		calculatedStationPositions.concourseMiningRL2 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL2.x * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL2.z * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL2.x * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL2.z * -1
 		);
 		calculatedStationPositions.arrivalBell        = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.arrivalBell.x * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.arrivalBell.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.arrivalBell.z * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.arrivalBell.x * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.arrivalBell.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.arrivalBell.z * -1
 		);
 		calculatedStationPositions.departureBell      = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.departureBell.x * -1,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.departureBell.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.departureBell.z * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.departureBell.x * -1,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.departureBell.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.departureBell.z * -1
 		);
 		calculatedStationPositions.rotation           = 0;
 		calculatedStationPositions.stationHead1       = new PositionOffset( stationPositionsOffsetPresets.stationHead1.x * -1, stationPositionsOffsetPresets.stationHead1.y, stationPositionsOffsetPresets.stationHead1.z * -1 );
@@ -274,64 +274,64 @@ export class StationOffsetsCalculator extends Abstract
 		const calculatedStationPositions = new CalculatedStationPositions();
 
 		calculatedStationPositions.stationHeadMining1 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining1.z,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining1.x * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining1.z,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining1.x * -1
 		);
 		calculatedStationPositions.stationHeadMining2 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining2.z,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining2.x * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.stationHeadMining2.z,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.stationHeadMining2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.stationHeadMining2.x * -1
 		);
 		calculatedStationPositions.concourseMining1   = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining1.z,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining1.x * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMining1.z,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining1.x * -1
 		);
 		calculatedStationPositions.concourseMining2   = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMining2.z,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining2.x * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMining2.z,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMining2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMining2.x * -1
 		);
 		calculatedStationPositions.concourseMiningR1  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR1.z,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR1.x * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR1.z,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR1.x * -1
 		);
 		calculatedStationPositions.concourseMiningR2  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR2.z,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR2.x * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningR2.z,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningR2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningR2.x * -1
 		);
 		calculatedStationPositions.concourseMiningL1  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL1.z,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL1.x * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL1.z,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL1.x * -1
 		);
 		calculatedStationPositions.concourseMiningL2  = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL2.z,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL2.x * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningL2.z,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningL2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningL2.x * -1
 		);
 		calculatedStationPositions.concourseMiningRL1 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL1.z,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL1.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL1.x * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL1.z,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL1.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL1.x * -1
 		);
 		calculatedStationPositions.concourseMiningRL2 = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL2.z,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL2.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL2.x * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.concourseMiningRL2.z,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.concourseMiningRL2.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.concourseMiningRL2.x * -1
 		);
 		calculatedStationPositions.arrivalBell        = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.arrivalBell.z,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.arrivalBell.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.arrivalBell.x * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.arrivalBell.z,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.arrivalBell.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.arrivalBell.x * -1
 		);
 		calculatedStationPositions.departureBell      = new Position(
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_X ] + stationPositionsOffsetPresets.departureBell.z,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Y ] + stationPositionsOffsetPresets.departureBell.y,
-			stationPositions[ StationPositionsPropertyNames.CURRENT_POSITION_Z ] + stationPositionsOffsetPresets.departureBell.x * -1
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] + stationPositionsOffsetPresets.departureBell.z,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] + stationPositionsOffsetPresets.departureBell.y,
+			stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] + stationPositionsOffsetPresets.departureBell.x * -1
 		);
 		calculatedStationPositions.rotation           = 90;
 		calculatedStationPositions.stationHead1       = new PositionOffset( stationPositionsOffsetPresets.stationHead1.z, stationPositionsOffsetPresets.stationHead1.y, stationPositionsOffsetPresets.stationHead1.x * -1 );
@@ -355,7 +355,7 @@ export class StationOffsetsCalculator extends Abstract
 	{
 		const stationPositionsOffsetPresets = new StationPositionsOffsetPresets();
 
-		switch ( stationPositions[ StationPositionsPropertyNames.STATION_ORIENTATION ] )
+		switch ( stationPositions[ StationPositionsPropertyNames.ORIENTATION ] )
 		{
 			case Orientation.NORTH:
 			{

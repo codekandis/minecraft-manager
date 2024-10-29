@@ -72,28 +72,28 @@ export class StationPositions extends AbstractBindable
 	[ '#_' + StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_RIGHT ] = String.format`${ 0 }`( this[ '#_' + StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY ] );
 
 	/**
-	 * Stores the station orientation.
+	 * Stores the orientation.
 	 * @type {String}
 	 */
-	[ '#_' + StationPositionsPropertyNames.STATION_ORIENTATION ] = Orientation.NORTH;
+	[ '#_' + StationPositionsPropertyNames.ORIENTATION ] = Orientation.NORTH;
 
 	/**
-	 * Stores the current position X.
+	 * Stores the structure block position X.
 	 * @type {Number}
 	 */
-	[ '#_' + StationPositionsPropertyNames.CURRENT_POSITION_X ] = 0;
+	[ '#_' + StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] = 0;
 
 	/**
-	 * Stores the current position Y.
+	 * Stores the structure block position Y.
 	 * @type {Number}
 	 */
-	[ '#_' + StationPositionsPropertyNames.CURRENT_POSITION_Y ] = 0;
+	[ '#_' + StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] = 0;
 
 	/**
-	 * Stores the current position Z.
+	 * Stores the structure block position Z.
 	 * @type {Number}
 	 */
-	[ '#_' + StationPositionsPropertyNames.CURRENT_POSITION_Z ] = 0;
+	[ '#_' + StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] = 0;
 
 	/**
 	 * Stores the calculated command station head mining.
@@ -586,85 +586,85 @@ export class StationPositions extends AbstractBindable
 	}
 
 	/**
-	 * Gets the station orientation.
-	 * @returns {String} The station orientation.
+	 * Gets the orientation.
+	 * @returns {String} The orientation.
 	 */
-	get [ StationPositionsPropertyNames.STATION_ORIENTATION ]()
+	get [ StationPositionsPropertyNames.ORIENTATION ]()
 	{
-		return this[ '#_' + StationPositionsPropertyNames.STATION_ORIENTATION ];
+		return this[ '#_' + StationPositionsPropertyNames.ORIENTATION ];
 	}
 
 	/**
-	 * Sets the station orientation.
-	 * @param {String} value The station orientation.
+	 * Sets the orientation.
+	 * @param {String} value The orientation.
 	 */
-	set [ StationPositionsPropertyNames.STATION_ORIENTATION ]( value )
+	set [ StationPositionsPropertyNames.ORIENTATION ]( value )
 	{
-		this[ '#_' + StationPositionsPropertyNames.STATION_ORIENTATION ] = value;
-		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.STATION_ORIENTATION );
+		this[ '#_' + StationPositionsPropertyNames.ORIENTATION ] = value;
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.ORIENTATION );
 
 		this.calculate();
 	}
 
 	/**
-	 * Gets the current position X.
-	 * @returns {Number} The current position X.
+	 * Gets the structure block position X.
+	 * @returns {Number} The structure block position X.
 	 */
-	get [ StationPositionsPropertyNames.CURRENT_POSITION_X ]()
+	get [ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ]()
 	{
-		return this[ '#_' + StationPositionsPropertyNames.CURRENT_POSITION_X ];
+		return this[ '#_' + StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ];
 	}
 
 	/**
-	 * Sets the current position X.
-	 * @param {Number} value The current position X.
+	 * Sets the structure block position X.
+	 * @param {Number} value The structure block position X.
 	 */
-	set [ StationPositionsPropertyNames.CURRENT_POSITION_X ]( value )
+	set [ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ]( value )
 	{
-		this[ '#_' + StationPositionsPropertyNames.CURRENT_POSITION_X ] = Number.parseInt( value );
-		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CURRENT_POSITION_X );
+		this[ '#_' + StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ] = Number.parseInt( value );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X );
 
 		this.calculate();
 	}
 
 	/**
-	 * Gets the current position Y.
-	 * @returns {Number} The current position Y.
+	 * Gets the structure block position Y.
+	 * @returns {Number} The structure block position Y.
 	 */
-	get [ StationPositionsPropertyNames.CURRENT_POSITION_Y ]()
+	get [ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ]()
 	{
-		return this[ '#_' + StationPositionsPropertyNames.CURRENT_POSITION_Y ];
+		return this[ '#_' + StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ];
 	}
 
 	/**
-	 * Sets the current position Y.
-	 * @param {Number} value The current position Y.
+	 * Sets the structure block position Y.
+	 * @param {Number} value The structure block position Y.
 	 */
-	set [ StationPositionsPropertyNames.CURRENT_POSITION_Y ]( value )
+	set [ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ]( value )
 	{
-		this[ '#_' + StationPositionsPropertyNames.CURRENT_POSITION_Y ] = Number.parseInt( value );
-		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CURRENT_POSITION_Y );
+		this[ '#_' + StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ] = Number.parseInt( value );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y );
 
 		this.calculate();
 	}
 
 	/**
-	 * Gets the current position Z.
-	 * @returns {Number} The current position Z.
+	 * Gets the structure block position Z.
+	 * @returns {Number} The structure block position Z.
 	 */
-	get [ StationPositionsPropertyNames.CURRENT_POSITION_Z ]()
+	get [ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ]()
 	{
-		return this[ '#_' + StationPositionsPropertyNames.CURRENT_POSITION_Z ];
+		return this[ '#_' + StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ];
 	}
 
 	/**
-	 * Sets the current position Z.
-	 * @param {Number} value The current position Z.
+	 * Sets the structure block position Z.
+	 * @param {Number} value The structure block position Z.
 	 */
-	set [ StationPositionsPropertyNames.CURRENT_POSITION_Z ]( value )
+	set [ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ]( value )
 	{
-		this[ '#_' + StationPositionsPropertyNames.CURRENT_POSITION_Z ] = Number.parseInt( value );
-		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.CURRENT_POSITION_Z );
+		this[ '#_' + StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ] = Number.parseInt( value );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z );
 
 		this.calculate();
 	}
