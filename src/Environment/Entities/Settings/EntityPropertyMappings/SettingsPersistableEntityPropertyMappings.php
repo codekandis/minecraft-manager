@@ -20,7 +20,7 @@ class SettingsPersistableEntityPropertyMappings extends AbstractUserBasedEntityP
 	public function __construct()
 	{
 		parent::__construct(
-			new EntityPropertyMapping( 'chunksize', new IntToStringBiDirectionalConverter() )
+			new EntityPropertyMapping( 'chunkSize', new IntToStringBiDirectionalConverter() )
 		);
 	}
 }

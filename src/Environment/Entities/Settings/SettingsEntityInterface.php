@@ -18,7 +18,7 @@ interface SettingsEntityInterface extends PersistableUserBasedEntityInterface
 
 	/**
 	 * Sets the chunk size.
-	 * @param int $chunksize The chunk size.
+	 * @param int $chunkSize The chunk size.
 	 */
-	public function setChunkSize( int $chunksize ): void;
+	public function setChunkSize( int $chunkSize ): void;
 }

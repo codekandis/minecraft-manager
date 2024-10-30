@@ -9,11 +9,11 @@ import { AbstractStatic } from '../../../../libraries/jotunheim/Types/AbstractSt
 export class SettingsPropertyNames extends AbstractStatic
 {
 	/**
-	 * Represents the property `chunksize`.
-	 * @returns {String} The property `chunksize`.
+	 * Represents the property `chunkSize`.
+	 * @returns {String} The property `chunkSize`.
 	 */
 	static get CHUNKSIZE()
 	{
-		return 'chunksize';
+		return 'chunkSize';
 	}
 }

@@ -57,7 +57,7 @@ class SettingsAction extends AbstractAction
 			$settings = SettingsEntity::fromArray(
 				[
 					'userId'    => $user->getId(),
-					'chunksize' => 16
+					'chunkSize' => 16
 				]
 			);
 		}

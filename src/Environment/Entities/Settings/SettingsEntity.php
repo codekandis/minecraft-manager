@@ -14,21 +14,21 @@ class SettingsEntity extends AbstractPersistableUserBasedEntity implements Setti
 	 * Stores the chunk size.
 	 * @var int
 	 */
-	public int $chunksize = 0;
+	public int $chunkSize = 0;
 
 	/**
 	 * @inheritDoc
 	 */
 	public function getChunkSize(): int
 	{
-		return $this->chunksize;
+		return $this->chunkSize;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function setChunkSize( int $chunksize ): void
+	public function setChunkSize( int $chunkSize ): void
 	{
-		$this->chunksize = $chunksize;
+		$this->chunkSize = $chunkSize;
 	}
 }
