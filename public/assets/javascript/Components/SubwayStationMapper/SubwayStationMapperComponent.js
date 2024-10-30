@@ -26,7 +26,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the orientation of the station.
 	 * @param {String} value The orientation of the station.
 	 */
-	set [ StationPositionsPropertyNames.ORIENTATION ]( value )
+	set orientation( value )
 	{
 		this.#setPropertyValueAndDataDirectionAttribute( StationPositionsPropertyNames.ORIENTATION, value, FormFieldSelectors.ORIENTATION );
 	}
@@ -35,7 +35,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the calculated station head command.
 	 * @param {String} value The calculated station head command.
 	 */
-	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING ]( value )
+	set calculatedCommandStationHeadMining( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING, value, FormFieldSelectors.CALCULATED_COMMAND_STATION_HEAD_MINING );
 	}
@@ -44,7 +44,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the calculated concourse command.
 	 * @param {String} value The calculated concourse command.
 	 */
-	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING ]( value )
+	set calculatedCommandConcourseMining( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING, value, FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING );
 	}
@@ -53,7 +53,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the calculated concourse R command.
 	 * @param {String} value The calculated concourse R command.
 	 */
-	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R ]( value )
+	set calculatedCommandConcourseMiningR( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R, value, FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_R );
 	}
@@ -62,7 +62,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the calculated concourse L command.
 	 * @param {String} value The calculated concourse L command.
 	 */
-	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L ]( value )
+	set calculatedCommandConcourseMiningL( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L, value, FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_L );
 	}
@@ -71,7 +71,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the calculated concourse RL command.
 	 * @param {String} value The calculated concourse RL command.
 	 */
-	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL ]( value )
+	set calculatedCommandConcourseMiningRL( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL, value, FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_RL );
 	}
@@ -80,7 +80,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the calculated arrival bell command.
 	 * @param {String} value The calculated arrival bell command.
 	 */
-	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL ]( value )
+	set calculatedCommandArrivalBell( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL, value, FormFieldSelectors.CALCULATED_COMMAND_ARRIVAL_BELL );
 	}
@@ -89,7 +89,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the calculated departure bell command.
 	 * @param {String} value The calculated departure bell command.
 	 */
-	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL ]( value )
+	set calculatedCommandDepartureBell( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL, value, FormFieldSelectors.CALCULATED_COMMAND_DEPARTURE_BELL );
 	}
@@ -98,7 +98,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the station head 1 structure name.
 	 * @param {String} value The station head 1 structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1 ]( value )
+	set structureNameStationHead1( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1, value, FormFieldSelectors.STRUCTURE_NAME_STATION_HEAD_1 );
 	}
@@ -107,7 +107,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the station head 2 structure name.
 	 * @param {String} value The station head 2 structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_2 ]( value )
+	set structureNameStationHead2( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_2, value, FormFieldSelectors.STRUCTURE_NAME_STATION_HEAD_2 );
 	}
@@ -116,7 +116,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the concourse structure name.
 	 * @param {String} value The concourse structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_CONCOURSE ]( value )
+	set structureNameConcourse( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_CONCOURSE, value, FormFieldSelectors.STRUCTURE_NAME_CONCOURSE );
 	}
@@ -125,7 +125,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the stairs port structure name.
 	 * @param {String} value The stairs port structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_PORT ]( value )
+	set structureNameStairsPort( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_PORT, value, FormFieldSelectors.STRUCTURE_NAME_STAIRS_PORT );
 	}
@@ -134,7 +134,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the stairs structure name.
 	 * @param {String} value The calculated stairs structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS ]( value )
+	set structureNameStairs( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS, value, FormFieldSelectors.STRUCTURE_NAME_STAIRS );
 	}
@@ -143,7 +143,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the stairs entrance structure name.
 	 * @param {String} value The stairs entrance structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_ENTRANCE ]( value )
+	set structureNameStairsEntrance( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_ENTRANCE, value, FormFieldSelectors.STRUCTURE_NAME_STAIRS_ENTRANCE );
 	}
@@ -152,7 +152,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the stairway left structure name.
 	 * @param {String} value The stairway left structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_LEFT ]( value )
+	set structureNameStairwayLeft( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_LEFT, value, FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_LEFT );
 	}
@@ -161,7 +161,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the stairway right structure name.
 	 * @param {String} value The stairway right structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_RIGHT ]( value )
+	set structureNameStairwayRight( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_RIGHT, value, FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_RIGHT );
 	}

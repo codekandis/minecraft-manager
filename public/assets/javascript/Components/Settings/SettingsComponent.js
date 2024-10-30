@@ -43,7 +43,7 @@ export class SettingsComponent extends AbstractComponent
 			.then(
 				( settings ) =>
 				{
-					this.__settings[ SettingsPropertyNames.CHUNKSIZE ] = settings[ SettingsPropertyNames.CHUNKSIZE ];
+					this.__settings.chunksize = settings[ SettingsPropertyNames.CHUNKSIZE ];
 
 					this.__settings.propertyChangedEvent( this.#setting_propertyChanged );
 				}

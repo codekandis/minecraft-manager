@@ -1,8 +1,6 @@
 'use strict';
 
 import { Abstract } from '../../../../libraries/jotunheim/Types/Abstract.js';
-import { SettingsPropertyNames } from '../../Settings/Enumerations/SettingsPropertyNames.js';
-import { LanternPositionsPropertyNames } from '../Enumerations/LanternPositionsPropertyNames.js';
 import { CalculatedLanternPositions } from './CalculatedLanternPositions.js';
 
 /**
@@ -39,39 +37,39 @@ export class LanternPositionsCalculator extends Abstract
 	{
 		const calculatedValues = new CalculatedLanternPositions();
 
-		const differenceX = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_X ] - lanternPositions[ LanternPositionsPropertyNames.START_POSITION_X ];
-		const differenceY = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_Y ] - lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Y ];
-		const differenceZ = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_Z ] - lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Z ];
+		const differenceX = lanternPositions.currentPositionX - lanternPositions.startPositionX;
+		const differenceY = lanternPositions.currentPositionY - lanternPositions.startPositionY;
+		const differenceZ = lanternPositions.currentPositionZ - lanternPositions.startPositionZ;
 
-		calculatedValues[ LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ] = 0 === differenceX % this.#_settings[ SettingsPropertyNames.CHUNKSIZE ];
-		calculatedValues[ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ] = 0 === differenceY % this.#_settings[ SettingsPropertyNames.CHUNKSIZE ];
-		calculatedValues[ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ] = 0 === differenceZ % this.#_settings[ SettingsPropertyNames.CHUNKSIZE ];
+		calculatedValues.isCurrentPositionXValid = 0 === differenceX % this.#_settings.chunksize;
+		calculatedValues.isCurrentPositionYValid = 0 === differenceY % this.#_settings.chunksize;
+		calculatedValues.isCurrentPositionZValid = 0 === differenceZ % this.#_settings.chunksize;
 
-		for ( let n = 1; n <= this.#_settings[ SettingsPropertyNames.CHUNKSIZE ]; n++ )
+		for ( let n = 1; n <= this.#_settings.chunksize; n++ )
 		{
-			if ( 0 === ( ( differenceX - n ) % this.#_settings[ SettingsPropertyNames.CHUNKSIZE ] ) )
+			if ( 0 === ( ( differenceX - n ) % this.#_settings.chunksize ) )
 			{
-				calculatedValues[ LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE ] = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_X ] - n;
+				calculatedValues.calculatedPositionXNegative = lanternPositions.currentPositionX - n;
 			}
-			if ( 0 === ( ( differenceX + n ) % this.#_settings[ SettingsPropertyNames.CHUNKSIZE ] ) )
+			if ( 0 === ( ( differenceX + n ) % this.#_settings.chunksize ) )
 			{
-				calculatedValues[ LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE ] = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_X ] + n;
+				calculatedValues.calculatedPositionXPositive = lanternPositions.currentPositionX + n;
 			}
-			if ( 0 === ( ( differenceY - n ) % this.#_settings[ SettingsPropertyNames.CHUNKSIZE ] ) )
+			if ( 0 === ( ( differenceY - n ) % this.#_settings.chunksize ) )
 			{
-				calculatedValues[ LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE ] = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_Y ] - n;
+				calculatedValues.calculatedPositionYNegative = lanternPositions.currentPositionY - n;
 			}
-			if ( 0 === ( ( differenceY + n ) % this.#_settings[ SettingsPropertyNames.CHUNKSIZE ] ) )
+			if ( 0 === ( ( differenceY + n ) % this.#_settings.chunksize ) )
 			{
-				calculatedValues[ LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE ] = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_Y ] + n;
+				calculatedValues.calculatedPositionYPositive = lanternPositions.currentPositionY + n;
 			}
-			if ( 0 === ( ( differenceZ - n ) % this.#_settings[ SettingsPropertyNames.CHUNKSIZE ] ) )
+			if ( 0 === ( ( differenceZ - n ) % this.#_settings.chunksize ) )
 			{
-				calculatedValues[ LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE ] = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_Z ] - n;
+				calculatedValues.calculatedPositionZNegative = lanternPositions.currentPositionZ - n;
 			}
-			if ( 0 === ( ( differenceZ + n ) % this.#_settings[ SettingsPropertyNames.CHUNKSIZE ] ) )
+			if ( 0 === ( ( differenceZ + n ) % this.#_settings.chunksize ) )
 			{
-				calculatedValues[ LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE ] = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_Z ] + n;
+				calculatedValues.calculatedPositionZPositive = lanternPositions.currentPositionZ + n;
 			}
 		}
 

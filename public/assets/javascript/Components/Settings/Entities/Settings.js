@@ -13,24 +13,24 @@ export class Settings extends AbstractBindable
 	 * Stores the chunk size.
 	 * @type {Number}
 	 */
-	[ '#_' + SettingsPropertyNames.CHUNKSIZE ] = 0;
+	#_chunksize = 0;
 
 	/**
 	 * Gets the chunk size.
 	 * @returns {Number} The chunk size.
 	 */
-	get [ SettingsPropertyNames.CHUNKSIZE ]()
+	get chunksize()
 	{
-		return this[ '#_' + SettingsPropertyNames.CHUNKSIZE ];
+		return this.#_chunksize;
 	}
 
 	/**
 	 * Sets the chunk size.
 	 * @param {Number} value The chunk size.
 	 */
-	set [ SettingsPropertyNames.CHUNKSIZE ]( value )
+	set chunksize( value )
 	{
-		this[ '#_' + SettingsPropertyNames.CHUNKSIZE ] = Number.parseInt( value );
+		this.#_chunksize = Number.parseInt( value );
 
 		this._dispatchPropertyChangedEvent( SettingsPropertyNames.CHUNKSIZE );
 	}

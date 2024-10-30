@@ -22,91 +22,91 @@ export class LanternPositions extends AbstractBindable
 	 * Stores the start position X.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.START_POSITION_X ] = 0;
+	#_startPositionX = 0;
 
 	/**
 	 * Stores the start position Y.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.START_POSITION_Y ] = 0;
+	#_startPositionY = 0;
 
 	/**
 	 * Stores the start position Z.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.START_POSITION_Z ] = 0;
+	#_startPositionZ = 0;
 
 	/**
 	 * Stores the current position X.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CURRENT_POSITION_X ] = 0;
+	#_currentPositionX = 0;
 
 	/**
 	 * Stores the current position Y.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CURRENT_POSITION_Y ] = 0;
+	#_currentPositionY = 0;
 
 	/**
 	 * Stores the current position Z.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CURRENT_POSITION_Z ] = 0;
+	#_currentPositionZ = 0;
 
 	/**
 	 * Stores true if the current position X is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ];
+	#_isCurrentPositionXValid;
 
 	/**
 	 * Stores true if the current position Y is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ];
+	#_isCurrentPositionYValid;
 
 	/**
 	 * Stores true if the current position Z is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ];
+	#_isCurrentPositionZValid;
 
 	/**
 	 * Stores the calculated position X negative.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE ];
+	#_calculatedPositionXNegative;
 
 	/**
 	 * Stores the calculated position X positive.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE ];
+	#_calculatedPositionXPositive;
 
 	/**
 	 * Stores the calculated position Y negative.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE ];
+	#_calculatedPositionYNegative;
 
 	/**
 	 * Stores the calculated position Y positive.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE ];
+	#_calculatedPositionYPositive;
 
 	/**
 	 * Stores the calculated position Z negative.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE ];
+	#_calculatedPositionZNegative;
 
 	/**
 	 * Stores the calculated position Z positive.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE ];
+	#_calculatedPositionZPositive;
 
 	/**
 	 * Constructor method.
@@ -125,18 +125,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets the start position X.
 	 * @returns {Number} The start position X.
 	 */
-	get [ LanternPositionsPropertyNames.START_POSITION_X ]()
+	get startPositionX()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.START_POSITION_X ];
+		return this.#_startPositionX;
 	}
 
 	/**
 	 * Sets the start position X.
 	 * @param {Number} value The start position X.
 	 */
-	set [ LanternPositionsPropertyNames.START_POSITION_X ]( value )
+	set startPositionX( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.START_POSITION_X ] = Number.parseInt( value );
+		this.#_startPositionX = Number.parseInt( value );
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.START_POSITION_X );
 
 		this.calculate();
@@ -146,18 +146,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets the start position Y.
 	 * @returns {Number} The start position Y.
 	 */
-	get [ LanternPositionsPropertyNames.START_POSITION_Y ]()
+	get startPositionY()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.START_POSITION_Y ];
+		return this.#_startPositionY;
 	}
 
 	/**
 	 * Sets the start position Y.
 	 * @param {Number} value The start position Y.
 	 */
-	set [ LanternPositionsPropertyNames.START_POSITION_Y ]( value )
+	set startPositionY( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.START_POSITION_Y ] = Number.parseInt( value );
+		this.#_startPositionY = Number.parseInt( value );
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.START_POSITION_Y );
 
 		this.calculate();
@@ -167,18 +167,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets the start position Z.
 	 * @returns {Number} The start position Z.
 	 */
-	get [ LanternPositionsPropertyNames.START_POSITION_Z ]()
+	get startPositionZ()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.START_POSITION_Z ];
+		return this.#_startPositionZ;
 	}
 
 	/**
 	 * Sets the start position Z.
 	 * @param {Number} value The start position Z.
 	 */
-	set [ LanternPositionsPropertyNames.START_POSITION_Z ]( value )
+	set startPositionZ( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.START_POSITION_Z ] = Number.parseInt( value );
+		this.#_startPositionZ = Number.parseInt( value );
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.START_POSITION_Z );
 
 		this.calculate();
@@ -188,18 +188,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets the current position X.
 	 * @returns {Number} The current position X.
 	 */
-	get [ LanternPositionsPropertyNames.CURRENT_POSITION_X ]()
+	get currentPositionX()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CURRENT_POSITION_X ];
+		return this.#_currentPositionX;
 	}
 
 	/**
 	 * Sets the current position X.
 	 * @param {Number} value The current position X.
 	 */
-	set [ LanternPositionsPropertyNames.CURRENT_POSITION_X ]( value )
+	set currentPositionX( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CURRENT_POSITION_X ] = Number.parseInt( value );
+		this.#_currentPositionX = Number.parseInt( value );
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CURRENT_POSITION_X );
 
 		this.calculate();
@@ -209,18 +209,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets the current position Y.
 	 * @returns {Number} The current position Y.
 	 */
-	get [ LanternPositionsPropertyNames.CURRENT_POSITION_Y ]()
+	get currentPositionY()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CURRENT_POSITION_Y ];
+		return this.#_currentPositionY;
 	}
 
 	/**
 	 * Sets the current position Y.
 	 * @param {Number} value The current position Y.
 	 */
-	set [ LanternPositionsPropertyNames.CURRENT_POSITION_Y ]( value )
+	set currentPositionY( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CURRENT_POSITION_Y ] = Number.parseInt( value );
+		this.#_currentPositionY = Number.parseInt( value );
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CURRENT_POSITION_Y );
 
 		this.calculate();
@@ -230,18 +230,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets the current position Z.
 	 * @returns {Number} The current position Z.
 	 */
-	get [ LanternPositionsPropertyNames.CURRENT_POSITION_Z ]()
+	get currentPositionZ()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CURRENT_POSITION_Z ];
+		return this.#_currentPositionZ;
 	}
 
 	/**
 	 * Sets the current position Z.
 	 * @param {Number} value The current position Z.
 	 */
-	set [ LanternPositionsPropertyNames.CURRENT_POSITION_Z ]( value )
+	set currentPositionZ( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CURRENT_POSITION_Z ] = Number.parseInt( value );
+		this.#_currentPositionZ = Number.parseInt( value );
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CURRENT_POSITION_Z );
 
 		this.calculate();
@@ -251,18 +251,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets if the current position X is valid.
 	 * @returns {Boolean} `true` if the current position X is valid, otherwise `false`.
 	 */
-	get [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ]()
+	get isCurrentPositionXValid()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ];
+		return this.#_isCurrentPositionXValid;
 	}
 
 	/**
 	 * Sets if the current position X is valid.
 	 * @param {Boolean} value `true` if the current position X is valid, otherwise `false`.
 	 */
-	set [ '#' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ]( value )
+	set #isCurrentPositionXValid( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ] = value;
+		this.#_isCurrentPositionXValid = value;
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID );
 	}
 
@@ -270,18 +270,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets if the current position Y is valid.
 	 * @returns {Boolean} `true` if the current position Y is valid, otherwise `false`.
 	 */
-	get [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ]()
+	get isCurrentPositionYValid()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ];
+		return this.#_isCurrentPositionYValid;
 	}
 
 	/**
 	 * Sets if the current position Y is valid.
 	 * @param {Boolean} value `true` if the current position Y is valid, otherwise `false`.
 	 */
-	set [ '#' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ]( value )
+	set #isCurrentPositionYValid( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ] = value;
+		this.#_isCurrentPositionYValid = value;
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID );
 	}
 
@@ -289,18 +289,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets if the current position Z is valid.
 	 * @returns {Boolean} `true` if the current position Z is valid, otherwise `false`.
 	 */
-	get [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ]()
+	get isCurrentPositionZValid()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ];
+		return this.#_isCurrentPositionZValid;
 	}
 
 	/**
 	 * Sets if the current position Z is valid.
 	 * @param {Boolean} value `true` if the current position Z is valid, otherwise `false`.
 	 */
-	set [ '#' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ]( value )
+	set #isCurrentPositionZValid( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ] = value;
+		this.#_isCurrentPositionZValid = value;
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID );
 	}
 
@@ -308,18 +308,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets the calculated position X negative.
 	 * @returns {Number} The calculated position X negative.
 	 */
-	get [ LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE ]()
+	get calculatedPositionXNegative()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE ];
+		return this.#_calculatedPositionXNegative;
 	}
 
 	/**
 	 * Sets the calculated position X negative.
 	 * @param {Number} value The calculated position X negative.
 	 */
-	set [ '#' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE ]( value )
+	set #calculatedPositionXNegative( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE ] = value;
+		this.#_calculatedPositionXNegative = value;
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE );
 	}
 
@@ -327,18 +327,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets the calculated position X positive.
 	 * @returns {Number} The calculated position X positive.
 	 */
-	get [ LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE ]()
+	get calculatedPositionXPositive()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE ];
+		return this.#_calculatedPositionXPositive;
 	}
 
 	/**
 	 * Sets the calculated position X positive.
 	 * @param {Number} value The calculated position X positive.
 	 */
-	set [ '#' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE ]( value )
+	set #calculatedPositionXPositive( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE ] = value;
+		this.#_calculatedPositionXPositive = value;
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE );
 	}
 
@@ -346,18 +346,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets the calculated position Y negative.
 	 * @returns {Number} The calculated position Y negative.
 	 */
-	get [ LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE ]()
+	get calculatedPositionYNegative()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE ];
+		return this.#_calculatedPositionYNegative;
 	}
 
 	/**
 	 * Sets the calculated position Y negative.
 	 * @param {Number} value The calculated position Y negative.
 	 */
-	set [ '#' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE ]( value )
+	set #calculatedPositionYNegative( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE ] = value;
+		this.#_calculatedPositionYNegative = value;
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE );
 	}
 
@@ -365,18 +365,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets the calculated position Y positive.
 	 * @returns {Number} The calculated position Y positive.
 	 */
-	get [ LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE ]()
+	get calculatedPositionYPositive()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE ];
+		return this.#_calculatedPositionYPositive;
 	}
 
 	/**
 	 * Sets the calculated position Y positive.
 	 * @param {Number} value The calculated position Y positive.
 	 */
-	set [ '#' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE ]( value )
+	set #calculatedPositionYPositive( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE ] = value;
+		this.#_calculatedPositionYPositive = value;
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE );
 	}
 
@@ -384,18 +384,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets the calculated position Z negative.
 	 * @returns {Number} The calculated position Z negative.
 	 */
-	get [ LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE ]()
+	get calculatedPositionZNegative()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE ];
+		return this.#_calculatedPositionZNegative;
 	}
 
 	/**
 	 * Sets the calculated position Z negative.
 	 * @param {Number} value The calculated position Z negative.
 	 */
-	set [ '#' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE ]( value )
+	set #calculatedPositionZNegative( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE ] = value;
+		this.#_calculatedPositionZNegative = value;
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE );
 	}
 
@@ -403,18 +403,18 @@ export class LanternPositions extends AbstractBindable
 	 * Gets the calculated position Z positive.
 	 * @returns {Number} The calculated position Z positive.
 	 */
-	get [ LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE ]()
+	get calculatedPositionZPositive()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE ];
+		return this.#_calculatedPositionZPositive;
 	}
 
 	/**
 	 * Sets the calculated position Z positive.
 	 * @param {Number} value The calculated position Z positive.
 	 */
-	set [ '#' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE ]( value )
+	set #calculatedPositionZPositive( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE ] = value;
+		this.#_calculatedPositionZPositive = value;
 		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE );
 	}
 
@@ -436,15 +436,15 @@ export class LanternPositions extends AbstractBindable
 		const calculatedPositions = ( new LanternPositionsCalculator( this.#_settings ) )
 			.calculate( this );
 
-		this[ '#' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ]    = calculatedPositions[ LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ];
-		this[ '#' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ]    = calculatedPositions[ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ];
-		this[ '#' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ]    = calculatedPositions[ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ];
-		this[ '#' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE ] = calculatedPositions[ LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE ];
-		this[ '#' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE ] = calculatedPositions[ LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE ];
-		this[ '#' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE ] = calculatedPositions[ LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE ];
-		this[ '#' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE ] = calculatedPositions[ LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE ];
-		this[ '#' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE ] = calculatedPositions[ LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE ];
-		this[ '#' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE ] = calculatedPositions[ LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE ];
+		this.#isCurrentPositionXValid     = calculatedPositions.isCurrentPositionXValid;
+		this.#isCurrentPositionYValid     = calculatedPositions.isCurrentPositionYValid;
+		this.#isCurrentPositionZValid     = calculatedPositions.isCurrentPositionZValid;
+		this.#calculatedPositionXNegative = calculatedPositions.calculatedPositionXNegative;
+		this.#calculatedPositionXPositive = calculatedPositions.calculatedPositionXPositive;
+		this.#calculatedPositionYNegative = calculatedPositions.calculatedPositionYNegative;
+		this.#calculatedPositionYPositive = calculatedPositions.calculatedPositionYPositive;
+		this.#calculatedPositionZNegative = calculatedPositions.calculatedPositionZNegative;
+		this.#calculatedPositionZPositive = calculatedPositions.calculatedPositionZPositive;
 	}
 
 	/**

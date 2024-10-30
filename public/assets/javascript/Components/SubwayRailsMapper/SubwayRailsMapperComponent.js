@@ -38,7 +38,7 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	 * Sets if the current X position is valid.
 	 * @param {Boolean} value `true` if the current X position is valid, otherwise `false`.
 	 */
-	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ]( value )
+	set isCurrentPositionXValid( value )
 	{
 		this.#setPropertyValueAndDataIsValidAttribute( LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID, FormFieldSelectors.CURRENT_POSITION_X, value );
 	}
@@ -47,7 +47,7 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	 * Sets if the current Y position is valid.
 	 * @param {Boolean} value `true` if the current Y position is valid, otherwise `false`.
 	 */
-	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ]( value )
+	set isCurrentPositionYValid( value )
 	{
 		this.#setPropertyValueAndDataIsValidAttribute( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID, FormFieldSelectors.CURRENT_POSITION_Y, value );
 	}
@@ -56,7 +56,7 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	 * Sets if the current Z position is valid.
 	 * @param {Boolean} value `true` if the current Z position is valid, otherwise `false`.
 	 */
-	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ]( value )
+	set isCurrentPositionZValid( value )
 	{
 		this.#setPropertyValueAndDataIsValidAttribute( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID, FormFieldSelectors.CURRENT_POSITION_Z, value );
 	}
@@ -106,9 +106,9 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 			.then(
 				( lanternPositions ) =>
 				{
-					this.#_lanternPositions[ LanternPositionsPropertyNames.START_POSITION_X ] = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_X ];
-					this.#_lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Y ] = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Y ];
-					this.#_lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Z ] = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Z ];
+					this.#_lanternPositions.startPositionX = lanternPositions.startPositionX;
+					this.#_lanternPositions.startPositionY = lanternPositions.startPositionY;
+					this.#_lanternPositions.startPositionZ = lanternPositions.startPositionZ;
 
 					this.#_lanternPositions.propertyChangedEvent( this.#lanternPositions_propertyChanged );
 				}
