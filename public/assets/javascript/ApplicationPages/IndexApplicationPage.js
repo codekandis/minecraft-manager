@@ -8,7 +8,7 @@ import { SubwayStationMapperComponent } from '../Components/SubwayStationMapper/
 import { AbstractApplicationPage } from './AbstractApplicationPage.js';
 
 /**
- * Represents the index javascript page.
+ * Represents the index application page.
  * @author Christian Ramelow <info@codekandis.net>
  */
 export class IndexApplicationPage extends AbstractApplicationPage

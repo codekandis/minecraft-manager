@@ -10,19 +10,19 @@ import { LanternPositionsPropertyNames } from '../Enumerations/LanternPositionsP
 export class CalculatedLanternPositions extends Abstract
 {
 	/**
-	 * Stores true if the current position X is valid, otherwise false.
+	 * Stores true if the current position X is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
 	[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ];
 
 	/**
-	 * Stores true if the current position Y is valid, otherwise false.
+	 * Stores true if the current position Y is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
 	[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ];
 
 	/**
-	 * Stores true if the current position Z is valid, otherwise false.
+	 * Stores true if the current position Z is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
 	[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ];
@@ -65,7 +65,7 @@ export class CalculatedLanternPositions extends Abstract
 
 	/**
 	 * Gets if the current position X is valid.
-	 * @returns {Boolean} True if the current position X is valid, otherwise false.
+	 * @returns {Boolean} `true` if the current position X is valid, otherwise `false`.
 	 */
 	get [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ]()
 	{
@@ -74,7 +74,7 @@ export class CalculatedLanternPositions extends Abstract
 
 	/**
 	 * Sets if the current position X is valid.
-	 * @param {Boolean} value True if the current position X is valid, otherwise false.
+	 * @param {Boolean} value `true` if the current position X is valid, otherwise `false`.
 	 */
 	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ]( value )
 	{
@@ -83,7 +83,7 @@ export class CalculatedLanternPositions extends Abstract
 
 	/**
 	 * Gets if the current position Y is valid.
-	 * @returns {Boolean} True if the current position Y is valid, otherwise false.
+	 * @returns {Boolean} `true` if the current position Y is valid, otherwise `false`.
 	 */
 	get [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ]()
 	{
@@ -92,7 +92,7 @@ export class CalculatedLanternPositions extends Abstract
 
 	/**
 	 * Sets if the current position Y is valid.
-	 * @param {Boolean} value True if the current position Y is valid, otherwise false.
+	 * @param {Boolean} value `true` if the current position Y is valid, otherwise `false`.
 	 */
 	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ]( value )
 	{
@@ -101,7 +101,7 @@ export class CalculatedLanternPositions extends Abstract
 
 	/**
 	 * Gets if the current position Z is valid.
-	 * @returns {Boolean} True if the current position Z is valid, otherwise false.
+	 * @returns {Boolean} `true` if the current position Z is valid, otherwise `false`.
 	 */
 	get [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ]()
 	{
@@ -110,7 +110,7 @@ export class CalculatedLanternPositions extends Abstract
 
 	/**
 	 * Sets if the current position Z is valid.
-	 * @param {Boolean} value True if the current position Z is valid, otherwise false.
+	 * @param {Boolean} value `true` if the current position Z is valid, otherwise `false`.
 	 */
 	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ]( value )
 	{

@@ -12,14 +12,14 @@ import { CalculatedLanternPositions } from './CalculatedLanternPositions.js';
 export class LanternPositionsCalculator extends Abstract
 {
 	/**
-	 * Stores the settings of the javascript.
+	 * Stores the application's settings.
 	 * @type {Settings}
 	 */
 	#_settings;
 
 	/**
 	 * Constructor method.
-	 * @param {Settings} settings The settings of the javascript.
+	 * @param {Settings} settings The application's settings.
 	 */
 	constructor( settings )
 	{

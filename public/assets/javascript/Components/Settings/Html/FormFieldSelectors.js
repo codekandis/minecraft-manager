@@ -19,8 +19,8 @@ export class FormFieldSelectors extends AbstractStatic
 	}
 
 	/**
-	 * Represents the chunksize.
-	 * @returns {String} The chunksize.
+	 * Represents the chunk size.
+	 * @returns {String} The chunk size.
 	 */
 	static get CHUNKSIZE()
 	{

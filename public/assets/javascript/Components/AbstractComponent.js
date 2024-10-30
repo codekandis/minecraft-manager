@@ -10,14 +10,14 @@ import { AbstractBindable } from '../../libraries/jotunheim/Types/DataBindings/A
 export class AbstractComponent extends AbstractBindable
 {
 	/**
-	 * Stores the settings of the javascript.
+	 * Stores the application's settings.
 	 * @type {Settings}
 	 */
 	__settings;
 
 	/**
 	 * Constructor method.
-	 * @param {Settings} settings The settings of the javascript.
+	 * @param {Settings} settings The application's settings.
 	 */
 	constructor( settings )
 	{
@@ -27,7 +27,7 @@ export class AbstractComponent extends AbstractBindable
 	}
 
 	/**
-	 * Attaches the event input and change event handlers to a formfield specified by a selector.
+	 * Attaches the event input and change event handlers to a form field specified by a selector.
 	 * @param {String} formFieldSelector The selector of the HTML form field.
 	 * @param {String} propertyName The name of the property.
 	 */

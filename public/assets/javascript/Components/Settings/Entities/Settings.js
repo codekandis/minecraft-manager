@@ -4,7 +4,7 @@ import { AbstractBindable } from '../../../../libraries/jotunheim/Types/DataBind
 import { SettingsPropertyNames } from '../Enumerations/SettingsPropertyNames.js';
 
 /**
- * Represents the settings of the javascript.
+ * Represents the application's settings.
  * @author Christian Ramelow <info@codekandis.net>
  */
 export class Settings extends AbstractBindable
@@ -17,7 +17,7 @@ export class Settings extends AbstractBindable
 
 	/**
 	 * Gets the chunk size.
-	 * @returns {Number} The chunksize.
+	 * @returns {Number} The chunk size.
 	 */
 	get [ SettingsPropertyNames.CHUNKSIZE ]()
 	{

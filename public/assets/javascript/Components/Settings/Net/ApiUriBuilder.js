@@ -21,8 +21,8 @@ export class ApiUriBuilder extends AbstractUriBuilder
 	}
 
 	/**
-	 * Builds the URI of the settings of the javascript.
-	 * @returns {URL} The URI of the settings of the javascript.
+	 * Builds the URI of the application's settings.
+	 * @returns {URL} The URI of the application's settings.
 	 */
 	buildSettingsUri()
 	{

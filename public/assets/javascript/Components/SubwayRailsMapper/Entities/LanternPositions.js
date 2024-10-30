@@ -13,7 +13,7 @@ import { LanternPositionsCalculator } from './LanternPositionsCalculator.js';
 export class LanternPositions extends AbstractBindable
 {
 	/**
-	 * Stores the settings of the javascript.
+	 * Stores the application's settings.
 	 * @type {Settings}
 	 */
 	#_settings;
@@ -55,19 +55,19 @@ export class LanternPositions extends AbstractBindable
 	[ '#_' + LanternPositionsPropertyNames.CURRENT_POSITION_Z ] = 0;
 
 	/**
-	 * Stores true if the current position X is valid, otherwise false.
+	 * Stores true if the current position X is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
 	[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ];
 
 	/**
-	 * Stores true if the current position Y is valid, otherwise false.
+	 * Stores true if the current position Y is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
 	[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ];
 
 	/**
-	 * Stores true if the current position Z is valid, otherwise false.
+	 * Stores true if the current position Z is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
 	[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ];
@@ -110,7 +110,7 @@ export class LanternPositions extends AbstractBindable
 
 	/**
 	 * Constructor method.
-	 * @param {Settings} settings The settings of the javascript.
+	 * @param {Settings} settings The application's settings.
 	 */
 	constructor( settings )
 	{
@@ -249,7 +249,7 @@ export class LanternPositions extends AbstractBindable
 
 	/**
 	 * Gets if the current position X is valid.
-	 * @returns {Boolean} True if the current position X is valid, otherwise false.
+	 * @returns {Boolean} `true` if the current position X is valid, otherwise `false`.
 	 */
 	get [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ]()
 	{
@@ -258,7 +258,7 @@ export class LanternPositions extends AbstractBindable
 
 	/**
 	 * Sets if the current position X is valid.
-	 * @param {Boolean} value True if the current position X is valid, otherwise false.
+	 * @param {Boolean} value `true` if the current position X is valid, otherwise `false`.
 	 */
 	set [ '#' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ]( value )
 	{
@@ -268,7 +268,7 @@ export class LanternPositions extends AbstractBindable
 
 	/**
 	 * Gets if the current position Y is valid.
-	 * @returns {Boolean} True if the current position Y is valid, otherwise false.
+	 * @returns {Boolean} `true` if the current position Y is valid, otherwise `false`.
 	 */
 	get [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ]()
 	{
@@ -277,7 +277,7 @@ export class LanternPositions extends AbstractBindable
 
 	/**
 	 * Sets if the current position Y is valid.
-	 * @param {Boolean} value True if the current position Y is valid, otherwise false.
+	 * @param {Boolean} value `true` if the current position Y is valid, otherwise `false`.
 	 */
 	set [ '#' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ]( value )
 	{
@@ -287,7 +287,7 @@ export class LanternPositions extends AbstractBindable
 
 	/**
 	 * Gets if the current position Z is valid.
-	 * @returns {Boolean} True if the current position Z is valid, otherwise false.
+	 * @returns {Boolean} `true` if the current position Z is valid, otherwise `false`.
 	 */
 	get [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ]()
 	{
@@ -296,7 +296,7 @@ export class LanternPositions extends AbstractBindable
 
 	/**
 	 * Sets if the current position Z is valid.
-	 * @param {Boolean} value True if the current position Z is valid, otherwise false.
+	 * @param {Boolean} value `true` if the current position Z is valid, otherwise `false`.
 	 */
 	set [ '#' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ]( value )
 	{
@@ -448,7 +448,7 @@ export class LanternPositions extends AbstractBindable
 	}
 
 	/**
-	 * Handles the property changed event of the settings of the javascript.
+	 * Handles the property changed event of the application's settings.
 	 * @param {PropertyChangedEvent} event The property changed event which will be handled.
 	 */
 	#settings_propertyChanged = ( event ) =>

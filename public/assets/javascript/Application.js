@@ -7,7 +7,7 @@ import { Jotunheim } from '../libraries/jotunheim/Jotunheim.js';
 import { RoutesConfiguration } from './Configurations/RoutesConfiguration.js';
 
 /**
- * Represents the bootstrap script of the javascript.
+ * Represents the bootstrap script of the application.
  * @author Christian Ramelow <info@codekandis.net>
  */
 

@@ -25,7 +25,7 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 
 	/**
 	 * Constructor method.
-	 * @param {Settings} settings The settings of the javascript.
+	 * @param {Settings} settings The application's settings.
 	 */
 	constructor( settings )
 	{
@@ -36,7 +36,7 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 
 	/**
 	 * Sets if the current X position is valid.
-	 * @param {Boolean} value True if the current X position is valid, otherwise false.
+	 * @param {Boolean} value `true` if the current X position is valid, otherwise `false`.
 	 */
 	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ]( value )
 	{
@@ -45,7 +45,7 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 
 	/**
 	 * Sets if the current Y position is valid.
-	 * @param {Boolean} value True if the current Y position is valid, otherwise false.
+	 * @param {Boolean} value `true` if the current Y position is valid, otherwise `false`.
 	 */
 	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ]( value )
 	{
@@ -54,7 +54,7 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 
 	/**
 	 * Sets if the current Z position is valid.
-	 * @param {Boolean} value True if the current Z position is valid, otherwise false.
+	 * @param {Boolean} value `true` if the current Z position is valid, otherwise `false`.
 	 */
 	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ]( value )
 	{

@@ -103,37 +103,37 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Stores the calculated position station head mining 1 X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_1_X ];
 
 	/**
 	 * Stores the calculated position station head mining 1 Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_1_Y ];
 
 	/**
 	 * Stores the calculated position station head mining 1 Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_1_Z ];
 
 	/**
 	 * Stores the calculated position station head mining 2 X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_2_X ];
 
 	/**
 	 * Stores the calculated position station head mining 2 Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_2_Y ];
 
 	/**
 	 * Stores the calculated position station head mining 2 Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_2_Z ];
 
@@ -145,37 +145,37 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Stores the calculated position concourse mining 1 X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_1_X ];
 
 	/**
 	 * Stores the calculated position concourse mining 1 Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_1_Y ];
 
 	/**
 	 * Stores the calculated position concourse mining 1 Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_1_Z ];
 
 	/**
 	 * Stores the calculated position concourse mining 2 X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_X ];
 
 	/**
 	 * Stores the calculated position concourse mining 2 Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_Y ];
 
 	/**
 	 * Stores the calculated position concourse mining 2 Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_Z ];
 
@@ -187,37 +187,37 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Stores the calculated position concourse mining R 1 X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_X ];
 
 	/**
 	 * Stores the calculated position concourse mining R 1 Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Y ];
 
 	/**
 	 * Stores the calculated position concourse mining R 1 Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Z ];
 
 	/**
 	 * Stores the calculated position concourse mining R 2 X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_X ];
 
 	/**
 	 * Stores the calculated position concourse mining R 2 Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Y ];
 
 	/**
 	 * Stores the calculated position concourse mining R 2 Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Z ];
 
@@ -229,37 +229,37 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Stores the calculated position concourse mining L 1 X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_X ];
 
 	/**
 	 * Stores the calculated position concourse mining L 1 Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Y ];
 
 	/**
 	 * Stores the calculated position concourse mining L 1 Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Z ];
 
 	/**
 	 * Stores the calculated position concourse mining L 2 X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_X ];
 
 	/**
 	 * Stores the calculated position concourse mining L 2 Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Y ];
 
 	/**
 	 * Stores the calculated position concourse mining L 2 Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Z ];
 
@@ -271,37 +271,37 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Stores the calculated position concourse mining RL 1 X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_X ];
 
 	/**
 	 * Stores the calculated position concourse mining RL 1 Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Y ];
 
 	/**
 	 * Stores the calculated position concourse mining RL 1 Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Z ];
 
 	/**
 	 * Stores the calculated position concourse mining RL 2 X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_X ];
 
 	/**
 	 * Stores the calculated position concourse mining RL 2 Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Y ];
 
 	/**
 	 * Stores the calculated position concourse mining RL 2 Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Z ];
 
@@ -313,19 +313,19 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Stores the calculated position arrival bell X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_ARRIVAL_BELL_X ];
 
 	/**
 	 * Stores the calculated position arrival bell Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_ARRIVAL_BELL_Y ];
 
 	/**
 	 * Stores the calculated position arrival bell Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_ARRIVAL_BELL_Z ];
 
@@ -337,19 +337,19 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Stores the calculated position departure bell X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_DEPARTURE_BELL_X ];
 
 	/**
 	 * Stores the calculated position departure bell Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_DEPARTURE_BELL_Y ];
 
 	/**
 	 * Stores the calculated position departure bell Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_POSITION_DEPARTURE_BELL_Z ];
 
@@ -357,149 +357,149 @@ export class StationPositions extends AbstractBindable
 	 * Stores the calculated station rotation.
 	 * @type {Number}
 	 */
-	[ '#_' + StationPositionsPropertyNames.CALCULATED_STATION_ROTATION ];
+	[ '#_' + StationPositionsPropertyNames.CALCULATED_STATION_ROTATION ] = 0;
 
 	/**
 	 * Stores the calculated offset station head 1 X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_1_X ];
 
 	/**
 	 * Stores the calculated offset station head 1 Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_1_Y ];
 
 	/**
 	 * Stores the calculated offset station head 1 Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_1_Z ];
 
 	/**
 	 * Stores the calculated offset station head 2 X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_2_X ];
 
 	/**
 	 * Stores the calculated offset station head 2 Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_2_Y ];
 
 	/**
 	 * Stores the calculated offset station head 2 Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_2_Z ];
 
 	/**
 	 * Stores the calculated offset concourse X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_CONCOURSE_X ];
 
 	/**
 	 * Stores the calculated offset concourse Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_CONCOURSE_Y ];
 
 	/**
 	 * Stores the calculated offset concourse Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_CONCOURSE_Z ];
 
 	/**
 	 * Stores the calculated offset stairs port X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_PORT_X ];
 
 	/**
 	 * Stores the calculated offset stairs port Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_PORT_Y ];
 
 	/**
 	 * Stores the calculated offset stairs port Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_PORT_Z ];
 
 	/**
 	 * Stores the calculated offset stairs X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_X ];
 
 	/**
 	 * Stores the calculated offset stairs Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_Y ];
 
 	/**
 	 * Stores the calculated offset stairs Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_Z ];
 
 	/**
 	 * Stores the calculated offset stairs entrance X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_ENTRANCE_X ];
 
 	/**
 	 * Stores the calculated offset stairs entrance Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_ENTRANCE_Y ];
 
 	/**
 	 * Stores the calculated offset stairs entrance Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_ENTRANCE_Z ];
 
 	/**
 	 * Stores the calculated offset stairway left X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_LEFT_X ];
 
 	/**
 	 * Stores the calculated offset stairway left Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_LEFT_Y ];
 
 	/**
 	 * Stores the calculated offset stairway left Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_LEFT_Z ];
 
 	/**
 	 * Stores the calculated offset stairway right X.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_X ];
 
 	/**
 	 * Stores the calculated offset stairway right Y.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Y ];
 
 	/**
 	 * Stores the calculated offset stairway right Z.
-	 * @type {String}
+	 * @type {Number}
 	 */
 	[ '#_' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Z ];
 
@@ -688,7 +688,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position station head mining 1 X.
-	 * @returns {String} The calculated position station head mining 1 X.
+	 * @returns {Number} The calculated position station head mining 1 X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_1_X ]()
 	{
@@ -697,7 +697,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position station head mining 1 X.
-	 * @param {String} value The calculated position station head mining 1 X.
+	 * @param {Number} value The calculated position station head mining 1 X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_1_X ]( value )
 	{
@@ -708,7 +708,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position station head mining 1 Y.
-	 * @returns {String} The calculated position station head mining 1 Y.
+	 * @returns {Number} The calculated position station head mining 1 Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_1_Y ]()
 	{
@@ -717,7 +717,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position station head mining 1 Y.
-	 * @param {String} value The calculated position station head mining 1 Y.
+	 * @param {Number} value The calculated position station head mining 1 Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_1_Y ]( value )
 	{
@@ -728,7 +728,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position station head mining 1 Z.
-	 * @returns {String} The calculated position station head mining 1 Z.
+	 * @returns {Number} The calculated position station head mining 1 Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_1_Z ]()
 	{
@@ -737,7 +737,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position station head mining 1 Z.
-	 * @param {String} value The calculated position station head mining 1 Z.
+	 * @param {Number} value The calculated position station head mining 1 Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_1_Z ]( value )
 	{
@@ -748,7 +748,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position station head mining 2 X.
-	 * @returns {String} The calculated position station head mining 2 X.
+	 * @returns {Number} The calculated position station head mining 2 X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_2_X ]()
 	{
@@ -757,7 +757,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position station head mining 2 X.
-	 * @param {String} value The calculated position station head mining 2 X.
+	 * @param {Number} value The calculated position station head mining 2 X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_2_X ]( value )
 	{
@@ -768,7 +768,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position station head mining 2 Y.
-	 * @returns {String} The calculated position station head mining 2 Y.
+	 * @returns {Number} The calculated position station head mining 2 Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_2_Y ]()
 	{
@@ -777,7 +777,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position station head mining 2 Y.
-	 * @param {String} value The calculated position station head mining 2 Y.
+	 * @param {Number} value The calculated position station head mining 2 Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_2_Y ]( value )
 	{
@@ -788,7 +788,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position station head mining 2 Z.
-	 * @returns {String} The calculated position station head mining 2 Z.
+	 * @returns {Number} The calculated position station head mining 2 Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_2_Z ]()
 	{
@@ -797,7 +797,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position station head mining 2 Z.
-	 * @param {String} value The calculated position station head mining 2 Z.
+	 * @param {Number} value The calculated position station head mining 2 Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_STATION_HEAD_MINING_2_Z ]( value )
 	{
@@ -825,7 +825,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 1 X.
-	 * @returns {String} The calculated position concourse mining 1 X.
+	 * @returns {Number} The calculated position concourse mining 1 X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_1_X ]()
 	{
@@ -834,7 +834,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 1 X.
-	 * @param {String} value The calculated position concourse mining 1 X.
+	 * @param {Number} value The calculated position concourse mining 1 X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_1_X ]( value )
 	{
@@ -845,7 +845,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 1 Y.
-	 * @returns {String} The calculated position concourse mining 1 Y.
+	 * @returns {Number} The calculated position concourse mining 1 Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_1_Y ]()
 	{
@@ -854,7 +854,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 1 Y.
-	 * @param {String} value The calculated position concourse mining 1 Y.
+	 * @param {Number} value The calculated position concourse mining 1 Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_1_Y ]( value )
 	{
@@ -865,7 +865,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 1 Z.
-	 * @returns {String} The calculated position concourse mining 1 Z.
+	 * @returns {Number} The calculated position concourse mining 1 Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_1_Z ]()
 	{
@@ -874,7 +874,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 1 Z.
-	 * @param {String} value The calculated position concourse mining 1 Z.
+	 * @param {Number} value The calculated position concourse mining 1 Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_1_Z ]( value )
 	{
@@ -885,7 +885,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 2 X.
-	 * @returns {String} The calculated position concourse mining 2 X.
+	 * @returns {Number} The calculated position concourse mining 2 X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_X ]()
 	{
@@ -894,7 +894,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 2 X.
-	 * @param {String} value The calculated position concourse mining 2 X.
+	 * @param {Number} value The calculated position concourse mining 2 X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_X ]( value )
 	{
@@ -905,7 +905,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 2 Y.
-	 * @returns {String} The calculated position concourse mining 2 Y.
+	 * @returns {Number} The calculated position concourse mining 2 Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_Y ]()
 	{
@@ -914,7 +914,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 2 Y.
-	 * @param {String} value The calculated position concourse mining 2 Y.
+	 * @param {Number} value The calculated position concourse mining 2 Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_Y ]( value )
 	{
@@ -925,7 +925,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 2 Z.
-	 * @returns {String} The calculated position concourse mining 2 Z.
+	 * @returns {Number} The calculated position concourse mining 2 Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_Z ]()
 	{
@@ -934,7 +934,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 2 Z.
-	 * @param {String} value The calculated position concourse mining 2 Z.
+	 * @param {Number} value The calculated position concourse mining 2 Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_2_Z ]( value )
 	{
@@ -962,7 +962,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 1 X.
-	 * @returns {String} The calculated position concourse mining 1 X.
+	 * @returns {Number} The calculated position concourse mining 1 X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_X ]()
 	{
@@ -971,7 +971,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 1 X.
-	 * @param {String} value The calculated position concourse mining 1 X.
+	 * @param {Number} value The calculated position concourse mining 1 X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_X ]( value )
 	{
@@ -982,7 +982,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 1 Y.
-	 * @returns {String} The calculated position concourse mining 1 Y.
+	 * @returns {Number} The calculated position concourse mining 1 Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Y ]()
 	{
@@ -991,7 +991,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 1 Y.
-	 * @param {String} value The calculated position concourse mining 1 Y.
+	 * @param {Number} value The calculated position concourse mining 1 Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Y ]( value )
 	{
@@ -1002,7 +1002,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 1 Z.
-	 * @returns {String} The calculated position concourse mining 1 Z.
+	 * @returns {Number} The calculated position concourse mining 1 Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Z ]()
 	{
@@ -1011,7 +1011,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 1 Z.
-	 * @param {String} value The calculated position concourse mining 1 Z.
+	 * @param {Number} value The calculated position concourse mining 1 Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_1_Z ]( value )
 	{
@@ -1022,7 +1022,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 2 X.
-	 * @returns {String} The calculated position concourse mining 2 X.
+	 * @returns {Number} The calculated position concourse mining 2 X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_X ]()
 	{
@@ -1031,7 +1031,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 2 X.
-	 * @param {String} value The calculated position concourse mining 2 X.
+	 * @param {Number} value The calculated position concourse mining 2 X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_X ]( value )
 	{
@@ -1042,7 +1042,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 2 Y.
-	 * @returns {String} The calculated position concourse mining 2 Y.
+	 * @returns {Number} The calculated position concourse mining 2 Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Y ]()
 	{
@@ -1051,7 +1051,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 2 Y.
-	 * @param {String} value The calculated position concourse mining 2 Y.
+	 * @param {Number} value The calculated position concourse mining 2 Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Y ]( value )
 	{
@@ -1062,7 +1062,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 2 Z.
-	 * @returns {String} The calculated position concourse mining 2 Z.
+	 * @returns {Number} The calculated position concourse mining 2 Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Z ]()
 	{
@@ -1071,7 +1071,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 2 Z.
-	 * @param {String} value The calculated position concourse mining 2 Z.
+	 * @param {Number} value The calculated position concourse mining 2 Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_R_2_Z ]( value )
 	{
@@ -1099,7 +1099,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 1 X.
-	 * @returns {String} The calculated position concourse mining 1 X.
+	 * @returns {Number} The calculated position concourse mining 1 X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_X ]()
 	{
@@ -1108,7 +1108,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 1 X.
-	 * @param {String} value The calculated position concourse mining 1 X.
+	 * @param {Number} value The calculated position concourse mining 1 X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_X ]( value )
 	{
@@ -1119,7 +1119,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 1 Y.
-	 * @returns {String} The calculated position concourse mining 1 Y.
+	 * @returns {Number} The calculated position concourse mining 1 Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Y ]()
 	{
@@ -1128,7 +1128,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 1 Y.
-	 * @param {String} value The calculated position concourse mining 1 Y.
+	 * @param {Number} value The calculated position concourse mining 1 Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Y ]( value )
 	{
@@ -1139,7 +1139,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 1 Z.
-	 * @returns {String} The calculated position concourse mining 1 Z.
+	 * @returns {Number} The calculated position concourse mining 1 Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Z ]()
 	{
@@ -1148,7 +1148,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 1 Z.
-	 * @param {String} value The calculated position concourse mining 1 Z.
+	 * @param {Number} value The calculated position concourse mining 1 Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_1_Z ]( value )
 	{
@@ -1159,7 +1159,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 2 X.
-	 * @returns {String} The calculated position concourse mining 2 X.
+	 * @returns {Number} The calculated position concourse mining 2 X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_X ]()
 	{
@@ -1168,7 +1168,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 2 X.
-	 * @param {String} value The calculated position concourse mining 2 X.
+	 * @param {Number} value The calculated position concourse mining 2 X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_X ]( value )
 	{
@@ -1179,7 +1179,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 2 Y.
-	 * @returns {String} The calculated position concourse mining 2 Y.
+	 * @returns {Number} The calculated position concourse mining 2 Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Y ]()
 	{
@@ -1188,7 +1188,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 2 Y.
-	 * @param {String} value The calculated position concourse mining 2 Y.
+	 * @param {Number} value The calculated position concourse mining 2 Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Y ]( value )
 	{
@@ -1199,7 +1199,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 2 Z.
-	 * @returns {String} The calculated position concourse mining 2 Z.
+	 * @returns {Number} The calculated position concourse mining 2 Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Z ]()
 	{
@@ -1208,7 +1208,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 2 Z.
-	 * @param {String} value The calculated position concourse mining 2 Z.
+	 * @param {Number} value The calculated position concourse mining 2 Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_L_2_Z ]( value )
 	{
@@ -1236,7 +1236,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 1 X.
-	 * @returns {String} The calculated position concourse mining 1 X.
+	 * @returns {Number} The calculated position concourse mining 1 X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_X ]()
 	{
@@ -1245,7 +1245,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 1 X.
-	 * @param {String} value The calculated position concourse mining 1 X.
+	 * @param {Number} value The calculated position concourse mining 1 X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_X ]( value )
 	{
@@ -1256,7 +1256,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 1 Y.
-	 * @returns {String} The calculated position concourse mining 1 Y.
+	 * @returns {Number} The calculated position concourse mining 1 Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Y ]()
 	{
@@ -1265,7 +1265,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 1 Y.
-	 * @param {String} value The calculated position concourse mining 1 Y.
+	 * @param {Number} value The calculated position concourse mining 1 Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Y ]( value )
 	{
@@ -1276,7 +1276,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 1 Z.
-	 * @returns {String} The calculated position concourse mining 1 Z.
+	 * @returns {Number} The calculated position concourse mining 1 Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Z ]()
 	{
@@ -1285,7 +1285,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 1 Z.
-	 * @param {String} value The calculated position concourse mining 1 Z.
+	 * @param {Number} value The calculated position concourse mining 1 Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_1_Z ]( value )
 	{
@@ -1296,7 +1296,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 2 X.
-	 * @returns {String} The calculated position concourse mining 2 X.
+	 * @returns {Number} The calculated position concourse mining 2 X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_X ]()
 	{
@@ -1305,7 +1305,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 2 X.
-	 * @param {String} value The calculated position concourse mining 2 X.
+	 * @param {Number} value The calculated position concourse mining 2 X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_X ]( value )
 	{
@@ -1316,7 +1316,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 2 Y.
-	 * @returns {String} The calculated position concourse mining 2 Y.
+	 * @returns {Number} The calculated position concourse mining 2 Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Y ]()
 	{
@@ -1325,7 +1325,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 2 Y.
-	 * @param {String} value The calculated position concourse mining 2 Y.
+	 * @param {Number} value The calculated position concourse mining 2 Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Y ]( value )
 	{
@@ -1336,7 +1336,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position concourse mining 2 Z.
-	 * @returns {String} The calculated position concourse mining 2 Z.
+	 * @returns {Number} The calculated position concourse mining 2 Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Z ]()
 	{
@@ -1345,7 +1345,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position concourse mining 2 Z.
-	 * @param {String} value The calculated position concourse mining 2 Z.
+	 * @param {Number} value The calculated position concourse mining 2 Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_CONCOURSE_MINING_RL_2_Z ]( value )
 	{
@@ -1370,7 +1370,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position arrival bell X.
-	 * @returns {String} The calculated position arrival bell X.
+	 * @returns {Number} The calculated position arrival bell X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_ARRIVAL_BELL_X ]()
 	{
@@ -1379,7 +1379,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position arrival bell X.
-	 * @param {String} value The calculated position arrival bell X.
+	 * @param {Number} value The calculated position arrival bell X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_ARRIVAL_BELL_X ]( value )
 	{
@@ -1390,7 +1390,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position arrival bell Y.
-	 * @returns {String} The calculated position arrival bell Y.
+	 * @returns {Number} The calculated position arrival bell Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_ARRIVAL_BELL_Y ]()
 	{
@@ -1399,7 +1399,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position arrival bell Y.
-	 * @param {String} value The calculated position arrival bell Y.
+	 * @param {Number} value The calculated position arrival bell Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_ARRIVAL_BELL_Y ]( value )
 	{
@@ -1410,7 +1410,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position arrival bell Z.
-	 * @returns {String} The calculated position arrival bell Z.
+	 * @returns {Number} The calculated position arrival bell Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_ARRIVAL_BELL_Z ]()
 	{
@@ -1419,7 +1419,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position arrival bell Z.
-	 * @param {String} value The calculated position arrival bell Z.
+	 * @param {Number} value The calculated position arrival bell Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_ARRIVAL_BELL_Z ]( value )
 	{
@@ -1444,7 +1444,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position departure bell X.
-	 * @returns {String} The calculated position departure bell X.
+	 * @returns {Number} The calculated position departure bell X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_DEPARTURE_BELL_X ]()
 	{
@@ -1453,7 +1453,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position departure bell X.
-	 * @param {String} value The calculated position departure bell X.
+	 * @param {Number} value The calculated position departure bell X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_DEPARTURE_BELL_X ]( value )
 	{
@@ -1464,7 +1464,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position departure bell Y.
-	 * @returns {String} The calculated position departure bell Y.
+	 * @returns {Number} The calculated position departure bell Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_DEPARTURE_BELL_Y ]()
 	{
@@ -1473,7 +1473,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position departure bell Y.
-	 * @param {String} value The calculated position departure bell Y.
+	 * @param {Number} value The calculated position departure bell Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_DEPARTURE_BELL_Y ]( value )
 	{
@@ -1484,7 +1484,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated position departure bell Z.
-	 * @returns {String} The calculated position departure bell Z.
+	 * @returns {Number} The calculated position departure bell Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_POSITION_DEPARTURE_BELL_Z ]()
 	{
@@ -1493,7 +1493,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated position departure bell Z.
-	 * @param {String} value The calculated position departure bell Z.
+	 * @param {Number} value The calculated position departure bell Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_POSITION_DEPARTURE_BELL_Z ]( value )
 	{
@@ -1523,7 +1523,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset station head 1 X.
-	 * @returns {String} The calculated offset station head 1 X.
+	 * @returns {Number} The calculated offset station head 1 X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_1_X ]()
 	{
@@ -1532,7 +1532,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset station head 1 X.
-	 * @param {String} value The calculated offset station head 1 X.
+	 * @param {Number} value The calculated offset station head 1 X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_1_X ]( value )
 	{
@@ -1542,7 +1542,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset station head 1 Y.
-	 * @returns {String} The calculated offset station head 1 Y.
+	 * @returns {Number} The calculated offset station head 1 Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_1_Y ]()
 	{
@@ -1551,7 +1551,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset station head 1 Y.
-	 * @param {String} value The calculated offset station head 1 Y.
+	 * @param {Number} value The calculated offset station head 1 Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_1_Y ]( value )
 	{
@@ -1561,7 +1561,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset station head 1 Z.
-	 * @returns {String} The calculated offset station head 1 Z.
+	 * @returns {Number} The calculated offset station head 1 Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_1_Z ]()
 	{
@@ -1570,7 +1570,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset station head 1 Z.
-	 * @param {String} value The calculated offset station head 1 Z.
+	 * @param {Number} value The calculated offset station head 1 Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_1_Z ]( value )
 	{
@@ -1580,7 +1580,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset station head 2 X.
-	 * @returns {String} The calculated offset station head 2 X.
+	 * @returns {Number} The calculated offset station head 2 X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_2_X ]()
 	{
@@ -1589,7 +1589,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset station head 2 X.
-	 * @param {String} value The calculated offset station head 2 X.
+	 * @param {Number} value The calculated offset station head 2 X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_2_X ]( value )
 	{
@@ -1599,7 +1599,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset station head 2 Y.
-	 * @returns {String} The calculated offset station head 2 Y.
+	 * @returns {Number} The calculated offset station head 2 Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_2_Y ]()
 	{
@@ -1608,7 +1608,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset station head 2 Y.
-	 * @param {String} value The calculated offset station head 2 Y.
+	 * @param {Number} value The calculated offset station head 2 Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_2_Y ]( value )
 	{
@@ -1618,7 +1618,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset station head 2 Z.
-	 * @returns {String} The calculated offset station head 2 Z.
+	 * @returns {Number} The calculated offset station head 2 Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_2_Z ]()
 	{
@@ -1627,7 +1627,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset station head 2 Z.
-	 * @param {String} value The calculated offset station head 2 Z.
+	 * @param {Number} value The calculated offset station head 2 Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STATION_HEAD_2_Z ]( value )
 	{
@@ -1637,7 +1637,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset concourse X.
-	 * @returns {String} The calculated offset concourse X.
+	 * @returns {Number} The calculated offset concourse X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_CONCOURSE_X ]()
 	{
@@ -1646,7 +1646,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset concourse X.
-	 * @param {String} value The calculated offset concourse X.
+	 * @param {Number} value The calculated offset concourse X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_CONCOURSE_X ]( value )
 	{
@@ -1656,7 +1656,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset concourse Y.
-	 * @returns {String} The calculated offset concourse Y.
+	 * @returns {Number} The calculated offset concourse Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_CONCOURSE_Y ]()
 	{
@@ -1665,7 +1665,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset concourse Y.
-	 * @param {String} value The calculated offset concourse Y.
+	 * @param {Number} value The calculated offset concourse Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_CONCOURSE_Y ]( value )
 	{
@@ -1675,7 +1675,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset concourse Z.
-	 * @returns {String} The calculated offset concourse Z.
+	 * @returns {Number} The calculated offset concourse Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_CONCOURSE_Z ]()
 	{
@@ -1684,7 +1684,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset concourse Z.
-	 * @param {String} value The calculated offset concourse Z.
+	 * @param {Number} value The calculated offset concourse Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_CONCOURSE_Z ]( value )
 	{
@@ -1694,7 +1694,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairs port X.
-	 * @returns {String} The calculated offset stairs port X.
+	 * @returns {Number} The calculated offset stairs port X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_PORT_X ]()
 	{
@@ -1703,7 +1703,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairs port X.
-	 * @param {String} value The calculated offset stairs port X.
+	 * @param {Number} value The calculated offset stairs port X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_PORT_X ]( value )
 	{
@@ -1713,7 +1713,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairs port Y.
-	 * @returns {String} The calculated offset stairs port Y.
+	 * @returns {Number} The calculated offset stairs port Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_PORT_Y ]()
 	{
@@ -1722,7 +1722,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairs port Y.
-	 * @param {String} value The calculated offset stairs port Y.
+	 * @param {Number} value The calculated offset stairs port Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_PORT_Y ]( value )
 	{
@@ -1732,7 +1732,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairs port Z.
-	 * @returns {String} The calculated offset stairs port Z.
+	 * @returns {Number} The calculated offset stairs port Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_PORT_Z ]()
 	{
@@ -1741,7 +1741,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairs port Z.
-	 * @param {String} value The calculated offset stairs port Z.
+	 * @param {Number} value The calculated offset stairs port Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_PORT_Z ]( value )
 	{
@@ -1751,7 +1751,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairs X.
-	 * @returns {String} The calculated offset stairs X.
+	 * @returns {Number} The calculated offset stairs X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_X ]()
 	{
@@ -1760,7 +1760,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairs X.
-	 * @param {String} value The calculated offset stairs X.
+	 * @param {Number} value The calculated offset stairs X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_X ]( value )
 	{
@@ -1770,7 +1770,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairs Y.
-	 * @returns {String} The calculated offset stairs Y.
+	 * @returns {Number} The calculated offset stairs Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_Y ]()
 	{
@@ -1779,7 +1779,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairs Y.
-	 * @param {String} value The calculated offset stairs Y.
+	 * @param {Number} value The calculated offset stairs Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_Y ]( value )
 	{
@@ -1789,7 +1789,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairs Z.
-	 * @returns {String} The calculated offset stairs Z.
+	 * @returns {Number} The calculated offset stairs Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_Z ]()
 	{
@@ -1798,7 +1798,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairs Z.
-	 * @param {String} value The calculated offset stairs Z.
+	 * @param {Number} value The calculated offset stairs Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_Z ]( value )
 	{
@@ -1808,7 +1808,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairs entrance X.
-	 * @returns {String} The calculated offset stairs entrance X.
+	 * @returns {Number} The calculated offset stairs entrance X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_ENTRANCE_X ]()
 	{
@@ -1817,7 +1817,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairs entrance X.
-	 * @param {String} value The calculated offset stairs entrance X.
+	 * @param {Number} value The calculated offset stairs entrance X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_ENTRANCE_X ]( value )
 	{
@@ -1827,7 +1827,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairs entrance Y.
-	 * @returns {String} The calculated offset stairs entrance Y.
+	 * @returns {Number} The calculated offset stairs entrance Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_ENTRANCE_Y ]()
 	{
@@ -1836,7 +1836,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairs entrance Y.
-	 * @param {String} value The calculated offset stairs entrance Y.
+	 * @param {Number} value The calculated offset stairs entrance Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_ENTRANCE_Y ]( value )
 	{
@@ -1846,7 +1846,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairs entrance Z.
-	 * @returns {String} The calculated offset stairs entrance Z.
+	 * @returns {Number} The calculated offset stairs entrance Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_ENTRANCE_Z ]()
 	{
@@ -1855,7 +1855,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairs entrance Z.
-	 * @param {String} value The calculated offset stairs entrance Z.
+	 * @param {Number} value The calculated offset stairs entrance Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRS_ENTRANCE_Z ]( value )
 	{
@@ -1865,7 +1865,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairway left X.
-	 * @returns {String} The calculated offset stairway left X.
+	 * @returns {Number} The calculated offset stairway left X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_LEFT_X ]()
 	{
@@ -1874,7 +1874,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairway left X.
-	 * @param {String} value The calculated offset stairway left X.
+	 * @param {Number} value The calculated offset stairway left X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_LEFT_X ]( value )
 	{
@@ -1884,7 +1884,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairway left Y.
-	 * @returns {String} The calculated offset stairway left Y.
+	 * @returns {Number} The calculated offset stairway left Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_LEFT_Y ]()
 	{
@@ -1893,7 +1893,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairway left Y.
-	 * @param {String} value The calculated offset stairway left Y.
+	 * @param {Number} value The calculated offset stairway left Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_LEFT_Y ]( value )
 	{
@@ -1903,7 +1903,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairway left Z.
-	 * @returns {String} The calculated offset stairway left Z.
+	 * @returns {Number} The calculated offset stairway left Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_LEFT_Z ]()
 	{
@@ -1912,7 +1912,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairway left Z.
-	 * @param {String} value The calculated offset stairway left Z.
+	 * @param {Number} value The calculated offset stairway left Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_LEFT_Z ]( value )
 	{
@@ -1922,7 +1922,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairway right X.
-	 * @returns {String} The calculated offset stairway right X.
+	 * @returns {Number} The calculated offset stairway right X.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_X ]()
 	{
@@ -1931,7 +1931,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairway right X.
-	 * @param {String} value The calculated offset stairway right X.
+	 * @param {Number} value The calculated offset stairway right X.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_X ]( value )
 	{
@@ -1941,7 +1941,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairway right Y.
-	 * @returns {String} The calculated offset stairway right Y.
+	 * @returns {Number} The calculated offset stairway right Y.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Y ]()
 	{
@@ -1950,7 +1950,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairway right Y.
-	 * @param {String} value The calculated offset stairway right Y.
+	 * @param {Number} value The calculated offset stairway right Y.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Y ]( value )
 	{
@@ -1960,7 +1960,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Gets the calculated offset stairway right Z.
-	 * @returns {String} The calculated offset stairway right Z.
+	 * @returns {Number} The calculated offset stairway right Z.
 	 */
 	get [ StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Z ]()
 	{
@@ -1969,7 +1969,7 @@ export class StationPositions extends AbstractBindable
 
 	/**
 	 * Sets the calculated offset stairway right Z.
-	 * @param {String} value The calculated offset stairway right Z.
+	 * @param {Number} value The calculated offset stairway right Z.
 	 */
 	set [ '#' + StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Z ]( value )
 	{
