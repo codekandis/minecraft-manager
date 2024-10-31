@@ -58,55 +58,55 @@ export class LanternPositions extends AbstractBindable
 	 * Stores true if the current position X is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	#_isCurrentPositionXValid;
+	#_isCurrentPositionXValid = false;
 
 	/**
 	 * Stores true if the current position Y is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	#_isCurrentPositionYValid;
+	#_isCurrentPositionYValid = false;
 
 	/**
 	 * Stores true if the current position Z is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	#_isCurrentPositionZValid;
+	#_isCurrentPositionZValid = false;
 
 	/**
 	 * Stores the calculated position X negative.
 	 * @type {Number}
 	 */
-	#_calculatedPositionXNegative;
+	#_calculatedPositionXNegative = 0;
 
 	/**
 	 * Stores the calculated position X positive.
 	 * @type {Number}
 	 */
-	#_calculatedPositionXPositive;
+	#_calculatedPositionXPositive = 0;
 
 	/**
 	 * Stores the calculated position Y negative.
 	 * @type {Number}
 	 */
-	#_calculatedPositionYNegative;
+	#_calculatedPositionYNegative = 0;
 
 	/**
 	 * Stores the calculated position Y positive.
 	 * @type {Number}
 	 */
-	#_calculatedPositionYPositive;
+	#_calculatedPositionYPositive = 0;
 
 	/**
 	 * Stores the calculated position Z negative.
 	 * @type {Number}
 	 */
-	#_calculatedPositionZNegative;
+	#_calculatedPositionZNegative = 0;
 
 	/**
 	 * Stores the calculated position Z positive.
 	 * @type {Number}
 	 */
-	#_calculatedPositionZPositive;
+	#_calculatedPositionZPositive = 0;
 
 	/**
 	 * Constructor method.
