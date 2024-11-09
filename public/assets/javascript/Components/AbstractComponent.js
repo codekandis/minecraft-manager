@@ -10,14 +10,14 @@ import { AbstractBindable } from '../../libraries/jotunheim/Types/DataBindings/A
 export class AbstractComponent extends AbstractBindable
 {
 	/**
-	 * Stores the application's settings.
+	 * Stores the applications' settings.
 	 * @type {Settings}
 	 */
 	__settings;
 
 	/**
 	 * Constructor method.
-	 * @param {Settings} settings The application's settings.
+	 * @param {Settings} settings The applications' settings.
 	 */
 	constructor( settings )
 	{

@@ -10,7 +10,7 @@ import { Settings } from '../Components/Settings/Entities/Settings.js';
 export class AbstractApplicationPage extends AbstractApplicationPage_Library
 {
 	/**
-	 * Stores the application's settings.
+	 * Stores the applications' settings.
 	 * @type {Settings}
 	 */
 	__settings;

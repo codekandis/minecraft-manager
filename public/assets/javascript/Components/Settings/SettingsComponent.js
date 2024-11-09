@@ -16,7 +16,7 @@ export class SettingsComponent extends AbstractComponent
 {
 	/**
 	 * Constructor method.
-	 * @param {Settings} settings The application's settings.
+	 * @param {Settings} settings The applications' settings.
 	 */
 	constructor( settings )
 	{
@@ -34,7 +34,7 @@ export class SettingsComponent extends AbstractComponent
 	}
 
 	/**
-	 * Reads the application's settings from the API.
+	 * Reads the applications' settings from the API.
 	 */
 	#readSettingsFromApi()
 	{
@@ -51,7 +51,7 @@ export class SettingsComponent extends AbstractComponent
 	}
 
 	/**
-	 * Write the application's settings to the API.
+	 * Write the applications' settings to the API.
 	 */
 	#writeSettingsToApi()
 	{
@@ -76,7 +76,7 @@ export class SettingsComponent extends AbstractComponent
 	}
 
 	/**
-	 * Handles the property changed event of the application's settings.
+	 * Handles the property changed event of the applications' settings.
 	 * @param {PropertyChangedEvent} event The property changed event which will be handled.
 	 */
 	#setting_propertyChanged = ( event ) =>

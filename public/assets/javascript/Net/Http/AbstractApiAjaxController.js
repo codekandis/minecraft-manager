@@ -26,7 +26,7 @@ export class AbstractApiAjaxController extends Abstract
 	}
 
 	/**
-	 * Creates the request's payload.
+	 * Creates the requestusers' payload.
 	 * @param {Object} payload The payload to create the payload of the request from.
 	 * @returns {String} The payload of the request.
 	 */

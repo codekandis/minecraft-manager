@@ -28,7 +28,7 @@ use JsonException;
 use ReflectionException;
 
 /**
- * Represents the action to create or update a user's lantern positions.
+ * Represents the action to create or update a users' lantern positions.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -173,7 +173,7 @@ class LanternPositionsAction extends AbstractWriteAction
 	/**
 	 * Creates or updates a lantern positions by a specific user ID.
 	 * @param LanternPositionsEntityInterface $lanternPositions The lantern positions to create or update.
-	 * @param UserEntityInterface $userWithUserId The user with the user's ID.
+	 * @param UserEntityInterface $userWithUserId The user with the users' ID.
 	 * @return LanternPositionsEntityInterface The lantern positions with the record ID of the created lantern positions.
 	 * @throws ReflectionException The lantern positions entity class to reflect does not exist.
 	 * @throws EntityDoesNotMatchClassNameException The lantern positions entity does not match the entity class name of the entity property mapper.

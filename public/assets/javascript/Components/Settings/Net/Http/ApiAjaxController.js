@@ -22,8 +22,8 @@ export class ApiAjaxController extends AbstractApiAjaxController
 	}
 
 	/**
-	 * Reads the application's settings.
-	 * @returns {Object} The read application's settings.
+	 * Reads the applications' settings.
+	 * @returns {Object} The read applications' settings.
 	 */
 	async readSettings()
 	{
@@ -43,8 +43,8 @@ export class ApiAjaxController extends AbstractApiAjaxController
 	}
 
 	/**
-	 * Writes the application's settings.
-	 * @param {Settings} settings The application's settings to write.
+	 * Writes the applications' settings.
+	 * @param {Settings} settings The applications' settings to write.
 	 */
 	async writeSettings( settings )
 	{

@@ -4,7 +4,7 @@ import { AbstractBindable } from '../../../../libraries/jotunheim/Types/DataBind
 import { SettingsPropertyNames } from '../Enumerations/SettingsPropertyNames.js';
 
 /**
- * Represents the application's settings.
+ * Represents the applications' settings.
  * @author Christian Ramelow <info@codekandis.net>
  */
 export class Settings extends AbstractBindable

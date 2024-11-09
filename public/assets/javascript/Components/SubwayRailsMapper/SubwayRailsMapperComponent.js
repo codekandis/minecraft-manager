@@ -45,7 +45,7 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 
 	/**
 	 * Constructor method.
-	 * @param {Settings} settings The application's settings.
+	 * @param {Settings} settings The applications' settings.
 	 */
 	constructor( settings )
 	{

@@ -24,7 +24,7 @@ use JsonException;
 use ReflectionException;
 
 /**
- * Represents the action to get a user's settings.
+ * Represents the action to get a users' settings.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */

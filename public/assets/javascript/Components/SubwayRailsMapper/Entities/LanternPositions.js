@@ -13,7 +13,7 @@ import { LanternPositionsCalculator } from './LanternPositionsCalculator.js';
 export class LanternPositions extends AbstractBindable
 {
 	/**
-	 * Stores the application's settings.
+	 * Stores the applications' settings.
 	 * @type {Settings}
 	 */
 	#_settings;
@@ -110,7 +110,7 @@ export class LanternPositions extends AbstractBindable
 
 	/**
 	 * Constructor method.
-	 * @param {Settings} settings The application's settings.
+	 * @param {Settings} settings The applications' settings.
 	 */
 	constructor( settings )
 	{
@@ -448,7 +448,7 @@ export class LanternPositions extends AbstractBindable
 	}
 
 	/**
-	 * Handles the property changed event of the application's settings.
+	 * Handles the property changed event of the applications' settings.
 	 * @param {PropertyChangedEvent} event The property changed event which will be handled.
 	 */
 	#settings_propertyChanged = ( event ) =>
