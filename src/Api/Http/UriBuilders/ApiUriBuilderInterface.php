@@ -19,4 +19,10 @@ interface ApiUriBuilderInterface
 	 * @return string The URI of the subway rails mapper lantern positions.
 	 */
 	public function buildSubwayRailsMapperLanternPositionsUri(): string;
+
+	/**
+	 * Builds the URI of the subway station mapper station positions.
+	 * @return string The URI of the subway station mapper station positions.
+	 */
+	public function buildSubwayStationMapperStationPositionsUri(): string;
 }

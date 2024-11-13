@@ -17,4 +17,9 @@ abstract class ApiUriNames
 	 * Represents the URI name of the subway rails mapper lantern positions.
 	 */
 	public const SUBWAY_RAILS_MAPPER_LANTERN_POSITIONS = 'subwayRailsMapper.lanternPositions';
+
+	/**
+	 * Represents the URI name of the subway station mapper station positions.
+	 */
+	public const SUBWAY_STATION_MAPPER_STATION_POSITIONS = 'subwayStationMapper.stationPositions';
 }
