@@ -7,6 +7,8 @@ use CodeKandis\MinecraftManager\Environment\Entities\Settings\EntityPropertyMapp
 use CodeKandis\MinecraftManager\Environment\Entities\Settings\SettingsEntity;
 use CodeKandis\MinecraftManager\Environment\Entities\SubwayRailsMapper\EntityPropertyMappings\LanternPositionsPersistableEntityPropertyMappings;
 use CodeKandis\MinecraftManager\Environment\Entities\SubwayRailsMapper\LanternPositionsEntity;
+use CodeKandis\MinecraftManager\Environment\Entities\SubwayStationMapper\EntityPropertyMappings\StationPositionsPersistableEntityPropertyMappings;
+use CodeKandis\MinecraftManager\Environment\Entities\SubwayStationMapper\StationPositionsEntity;
 use CodeKandis\MinecraftManager\Environment\Entities\UserEntity;
 use ReflectionException;
 
@@ -42,5 +44,14 @@ class EntityPropertyMapperBuilder implements EntityPropertyMapperBuilderInterfac
 	public function buildSubwayRailsMapperLanternPositionsEntityPropertyMapper(): EntityPropertyMapperInterface
 	{
 		return new EntityPropertyMapper( LanternPositionsEntity::class, new LanternPositionsPersistableEntityPropertyMappings() );
+	}
+
+	/**
+	 * @inheritDoc
+	 * @throws ReflectionException The subway station mapper station positions entity class to reflect does not exist.
+	 */
+	public function buildSubwayStationMapperStationPositionsEntityPropertyMapper(): EntityPropertyMapperInterface
+	{
+		return new EntityPropertyMapper( StationPositionsEntity::class, new StationPositionsPersistableEntityPropertyMappings() );
 	}
 }

@@ -27,4 +27,10 @@ interface EntityPropertyMapperBuilderInterface
 	 * @return EntityPropertyMapperInterface The entity property mapper of the subway rails mapper lantern positions entity.
 	 */
 	public function buildSubwayRailsMapperLanternPositionsEntityPropertyMapper(): EntityPropertyMapperInterface;
+
+	/**
+	 * Builds the entity property mapper of the subway station mapper station positions entity.
+	 * @return EntityPropertyMapperInterface The entity property mapper of the subway station mapper station positions entity.
+	 */
+	public function buildSubwayStationMapperStationPositionsEntityPropertyMapper(): EntityPropertyMapperInterface;
 }
