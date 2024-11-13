@@ -1,5 +1,6 @@
 'use strict';
 
+import { Collection } from '../../../libraries/jotunheim/Collections/Collection.js';
 import { ClickEvent } from '../../../libraries/jotunheim/Dom/ClickEvent.js';
 import { BindableHtmlElementProxy } from '../../../libraries/jotunheim/Dom/DataBindings/BindableHtmlElementProxy.js';
 import { DomHelper } from '../../../libraries/jotunheim/Dom/DomHelper.js';
@@ -9,6 +10,7 @@ import { AbstractComponent } from '../AbstractComponent.js';
 import { StationPositions } from './Entities/StationPositions.js';
 import { StationPositionsPropertyNames } from './Enumerations/StationPositionsPropertyNames.js';
 import { FormFieldSelectors } from './Html/FormFieldSelectors.js';
+import { ApiAjaxController } from './Net/Http/ApiAjaxController.js';
 
 /**
  * Represents the subway station mapper component.
@@ -17,10 +19,98 @@ import { FormFieldSelectors } from './Html/FormFieldSelectors.js';
 export class SubwayStationMapperComponent extends AbstractComponent
 {
 	/**
+	 * Stores the lantern positions property names to form field selector mappings.
+	 * @type {Collection}
+	 */
+	#_stationPositionsPropertyNameFormFieldSelectorMappings = new Collection(
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING,
+			formFieldSelector:            FormFieldSelectors.CALCULATED_COMMAND_STATION_HEAD_MINING
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING,
+			formFieldSelector:            FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R,
+			formFieldSelector:            FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_R
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L,
+			formFieldSelector:            FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_L
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL,
+			formFieldSelector:            FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_RL
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL,
+			formFieldSelector:            FormFieldSelectors.CALCULATED_COMMAND_ARRIVAL_BELL
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL,
+			formFieldSelector:            FormFieldSelectors.CALCULATED_COMMAND_DEPARTURE_BELL
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_STATION_HEAD_1
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_2,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_STATION_HEAD_2
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_CONCOURSE,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_CONCOURSE
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_PORT,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_STAIRS_PORT
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_STAIRS
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_ENTRANCE,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_STAIRS_ENTRANCE
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_LEFT,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_LEFT
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_RIGHT,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_RIGHT
+		}
+	);
+
+	/**
 	 * Stores the station positions.
 	 * @type {StationPositions}
 	 */
-	#_stationPositions = new StationPositions();
+	#_stationPositions;
+
+	/**
+	 * Constructor method.
+	 * @param {Settings} settings The application's settings.
+	 */
+	constructor( settings )
+	{
+		super( settings );
+
+		this.#initialize();
+	}
+
+	/**
+	 * Initializes the component.
+	 */
+	#initialize()
+	{
+		this.#_stationPositions = new StationPositions( this.__settings );
+
+		this.#readStationPositionsFromApi();
+	}
 
 	/**
 	 * Sets the orientation of the station.
@@ -191,6 +281,35 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	}
 
 	/**
+	 * Reads the lantern positions from the API.
+	 */
+	#readStationPositionsFromApi()
+	{
+		( new ApiAjaxController() )
+			.readStationPositions()
+			.then(
+				( stationPositions ) =>
+				{
+					this.#_stationPositions.orientation             = stationPositions[ StationPositionsPropertyNames.ORIENTATION ];
+					this.#_stationPositions.structureBlockPositionX = stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ];
+					this.#_stationPositions.structureBlockPositionY = stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ];
+					this.#_stationPositions.structureBlockPositionZ = stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ];
+
+					this.#_stationPositions.propertyChangedEvent( this.#stationPositions_propertyChanged );
+				}
+			);
+	}
+
+	/**
+	 * Writes the lantern positions to the API.
+	 */
+	async #writeStationPositionsToApi()
+	{
+		await ( new ApiAjaxController() )
+			.writeStationPositions( this.#_stationPositions )
+	}
+
+	/**
 	 * @inheritDoc
 	 */
 	_addDataBindings()
@@ -231,23 +350,6 @@ export class SubwayStationMapperComponent extends AbstractComponent
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_X, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_OFFSET_STAIRWAY_RIGHT_X ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Y, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_OFFSET_STAIRWAY_RIGHT_Y ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Z, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_OFFSET_STAIRWAY_RIGHT_Z ), 'value', DataBindingInitializationDirection.BINDER );
-
-		this.dataBindings.add( StationPositionsPropertyNames.ORIENTATION, this.#_stationPositions, StationPositionsPropertyNames.ORIENTATION, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_2, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_2, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_CONCOURSE, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_CONCOURSE, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_PORT, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_PORT, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_ENTRANCE, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_ENTRANCE, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_LEFT, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_LEFT, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_RIGHT, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_RIGHT, DataBindingInitializationDirection.BINDABLE );
 	}
 
 	/**
@@ -276,6 +378,28 @@ export class SubwayStationMapperComponent extends AbstractComponent
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.STRUCTURE_NAME_STAIRS_ENTRANCE, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_LEFT, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_RIGHT, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
+	}
+
+	/**
+	 * Handles the property changed event of the station positions.
+	 * @param {PropertyChangedEvent} event The property changed event which will be handled.
+	 */
+	#stationPositions_propertyChanged = async ( event ) =>
+	{
+		const propertyName = event.detail.eventArguments.propertyName;
+
+		switch ( propertyName )
+		{
+			case StationPositionsPropertyNames.ORIENTATION:
+			case StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X:
+			case StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y:
+			case StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z:
+			{
+				await this.#writeStationPositionsToApi();
+
+				break;
+			}
+		}
 	}
 
 	/**
