@@ -99,259 +99,259 @@ export class StationPositions extends AbstractBindable
 	 * Stores the calculated command station head mining.
 	 * @type {String}
 	 */
-	#_calculatedCommandStationHeadMining;
+	#_calculatedCommandStationHeadMining = String.empty;
 
 	/**
 	 * Stores the calculated position station head mining 1 X.
 	 * @type {Number}
 	 */
-	#_calculatedPositionStationHeadMining1X;
+	#_calculatedPositionStationHeadMining1X = 0;
 
 	/**
 	 * Stores the calculated position station head mining 1 Y.
 	 * @type {Number}
 	 */
-	#_calculatedPositionStationHeadMining1Y;
+	#_calculatedPositionStationHeadMining1Y = 0;
 
 	/**
 	 * Stores the calculated position station head mining 1 Z.
 	 * @type {Number}
 	 */
-	#_calculatedPositionStationHeadMining1Z;
+	#_calculatedPositionStationHeadMining1Z = 0;
 
 	/**
 	 * Stores the calculated position station head mining 2 X.
 	 * @type {Number}
 	 */
-	#_calculatedPositionStationHeadMining2X;
+	#_calculatedPositionStationHeadMining2X = 0;
 
 	/**
 	 * Stores the calculated position station head mining 2 Y.
 	 * @type {Number}
 	 */
-	#_calculatedPositionStationHeadMining2Y;
+	#_calculatedPositionStationHeadMining2Y = 0;
 
 	/**
 	 * Stores the calculated position station head mining 2 Z.
 	 * @type {Number}
 	 */
-	#_calculatedPositionStationHeadMining2Z;
+	#_calculatedPositionStationHeadMining2Z = 0;
 
 	/**
 	 * Stores the calculated command concourse mining.
 	 * @type {String}
 	 */
-	#_calculatedCommandConcourseMining;
+	#_calculatedCommandConcourseMining = String.empty;
 
 	/**
 	 * Stores the calculated position concourse mining 1 X.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMining1X;
+	#_calculatedPositionConcourseMining1X = 0;
 
 	/**
 	 * Stores the calculated position concourse mining 1 Y.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMining1Y;
+	#_calculatedPositionConcourseMining1Y = 0;
 
 	/**
 	 * Stores the calculated position concourse mining 1 Z.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMining1Z;
+	#_calculatedPositionConcourseMining1Z = 0;
 
 	/**
 	 * Stores the calculated position concourse mining 2 X.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMining2X;
+	#_calculatedPositionConcourseMining2X = 0;
 
 	/**
 	 * Stores the calculated position concourse mining 2 Y.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMining2Y;
+	#_calculatedPositionConcourseMining2Y = 0;
 
 	/**
 	 * Stores the calculated position concourse mining 2 Z.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMining2Z;
+	#_calculatedPositionConcourseMining2Z = 0;
 
 	/**
 	 * Stores the calculated command concourse mining R.
 	 * @type {String}
 	 */
-	#_calculatedCommandConcourseMiningR;
+	#_calculatedCommandConcourseMiningR = String.empty;
 
 	/**
 	 * Stores the calculated position concourse mining R 1 X.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningR1X;
+	#_calculatedPositionConcourseMiningR1X = 0;
 
 	/**
 	 * Stores the calculated position concourse mining R 1 Y.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningR1Y;
+	#_calculatedPositionConcourseMiningR1Y = 0;
 
 	/**
 	 * Stores the calculated position concourse mining R 1 Z.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningR1Z;
+	#_calculatedPositionConcourseMiningR1Z = 0;
 
 	/**
 	 * Stores the calculated position concourse mining R 2 X.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningR2X;
+	#_calculatedPositionConcourseMiningR2X = 0;
 
 	/**
 	 * Stores the calculated position concourse mining R 2 Y.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningR2Y;
+	#_calculatedPositionConcourseMiningR2Y = 0;
 
 	/**
 	 * Stores the calculated position concourse mining R 2 Z.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningR2Z;
+	#_calculatedPositionConcourseMiningR2Z = 0;
 
 	/**
 	 * Stores the calculated command concourse mining L.
 	 * @type {String}
 	 */
-	#_calculatedCommandConcourseMiningL;
+	#_calculatedCommandConcourseMiningL = String.empty;
 
 	/**
 	 * Stores the calculated position concourse mining L 1 X.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningL1X;
+	#_calculatedPositionConcourseMiningL1X = 0;
 
 	/**
 	 * Stores the calculated position concourse mining L 1 Y.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningL1Y;
+	#_calculatedPositionConcourseMiningL1Y = 0;
 
 	/**
 	 * Stores the calculated position concourse mining L 1 Z.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningL1Z;
+	#_calculatedPositionConcourseMiningL1Z = 0;
 
 	/**
 	 * Stores the calculated position concourse mining L 2 X.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningL2X;
+	#_calculatedPositionConcourseMiningL2X = 0;
 
 	/**
 	 * Stores the calculated position concourse mining L 2 Y.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningL2Y;
+	#_calculatedPositionConcourseMiningL2Y = 0;
 
 	/**
 	 * Stores the calculated position concourse mining L 2 Z.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningL2Z;
+	#_calculatedPositionConcourseMiningL2Z = 0;
 
 	/**
 	 * Stores the calculated command concourse mining RL.
 	 * @type {String}
 	 */
-	#_calculatedCommandConcourseMiningRL;
+	#_calculatedCommandConcourseMiningRL = String.empty;
 
 	/**
 	 * Stores the calculated position concourse mining RL 1 X.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningRL1X;
+	#_calculatedPositionConcourseMiningRL1X = 0;
 
 	/**
 	 * Stores the calculated position concourse mining RL 1 Y.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningRL1Y;
+	#_calculatedPositionConcourseMiningRL1Y = 0;
 
 	/**
 	 * Stores the calculated position concourse mining RL 1 Z.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningRL1Z;
+	#_calculatedPositionConcourseMiningRL1Z = 0;
 
 	/**
 	 * Stores the calculated position concourse mining RL 2 X.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningRL2X;
+	#_calculatedPositionConcourseMiningRL2X = 0;
 
 	/**
 	 * Stores the calculated position concourse mining RL 2 Y.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningRL2Y;
+	#_calculatedPositionConcourseMiningRL2Y = 0;
 
 	/**
 	 * Stores the calculated position concourse mining RL 2 Z.
 	 * @type {Number}
 	 */
-	#_calculatedPositionConcourseMiningRL2Z;
+	#_calculatedPositionConcourseMiningRL2Z = 0;
 
 	/**
 	 * Stores the calculated command arrival bell.
 	 * @type {String}
 	 */
-	#_calculatedCommandArrivalBell;
+	#_calculatedCommandArrivalBell = String.empty;
 
 	/**
 	 * Stores the calculated position arrival bell X.
 	 * @type {Number}
 	 */
-	#_calculatedPositionArrivalBellX;
+	#_calculatedPositionArrivalBellX = 0;
 
 	/**
 	 * Stores the calculated position arrival bell Y.
 	 * @type {Number}
 	 */
-	#_calculatedPositionArrivalBellY;
+	#_calculatedPositionArrivalBellY = 0;
 
 	/**
 	 * Stores the calculated position arrival bell Z.
 	 * @type {Number}
 	 */
-	#_calculatedPositionArrivalBellZ;
+	#_calculatedPositionArrivalBellZ = 0;
 
 	/**
 	 * Stores the calculated command departure bell.
 	 * @type {String}
 	 */
-	#_calculatedCommandDepartureBell;
+	#_calculatedCommandDepartureBell = String.empty;
 
 	/**
 	 * Stores the calculated position departure bell X.
 	 * @type {Number}
 	 */
-	#_calculatedPositionDepartureBellX;
+	#_calculatedPositionDepartureBellX = 0;
 
 	/**
 	 * Stores the calculated position departure bell Y.
 	 * @type {Number}
 	 */
-	#_calculatedPositionDepartureBellY;
+	#_calculatedPositionDepartureBellY = 0;
 
 	/**
 	 * Stores the calculated position departure bell Z.
 	 * @type {Number}
 	 */
-	#_calculatedPositionDepartureBellZ;
+	#_calculatedPositionDepartureBellZ = 0;
 
 	/**
 	 * Stores the calculated station rotation.
@@ -363,145 +363,145 @@ export class StationPositions extends AbstractBindable
 	 * Stores the calculated offset station head 1 X.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStationHead1X;
+	#_calculatedOffsetStationHead1X = 0;
 
 	/**
 	 * Stores the calculated offset station head 1 Y.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStationHead1Y;
+	#_calculatedOffsetStationHead1Y = 0;
 
 	/**
 	 * Stores the calculated offset station head 1 Z.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStationHead1Z;
+	#_calculatedOffsetStationHead1Z = 0;
 
 	/**
 	 * Stores the calculated offset station head 2 X.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStationHead2X;
+	#_calculatedOffsetStationHead2X = 0;
 
 	/**
 	 * Stores the calculated offset station head 2 Y.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStationHead2Y;
+	#_calculatedOffsetStationHead2Y = 0;
 
 	/**
 	 * Stores the calculated offset station head 2 Z.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStationHead2Z;
+	#_calculatedOffsetStationHead2Z = 0;
 
 	/**
 	 * Stores the calculated offset concourse X.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetConcourseX;
+	#_calculatedOffsetConcourseX = 0;
 
 	/**
 	 * Stores the calculated offset concourse Y.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetConcourseY;
+	#_calculatedOffsetConcourseY = 0;
 
 	/**
 	 * Stores the calculated offset concourse Z.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetConcourseZ;
+	#_calculatedOffsetConcourseZ = 0;
 
 	/**
 	 * Stores the calculated offset stairs port X.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairsPortX;
+	#_calculatedOffsetStairsPortX = 0;
 
 	/**
 	 * Stores the calculated offset stairs port Y.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairsPortY;
+	#_calculatedOffsetStairsPortY = 0;
 
 	/**
 	 * Stores the calculated offset stairs port Z.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairsPortZ;
+	#_calculatedOffsetStairsPortZ = 0;
 
 	/**
 	 * Stores the calculated offset stairs X.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairsX;
+	#_calculatedOffsetStairsX = 0;
 
 	/**
 	 * Stores the calculated offset stairs Y.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairsY;
+	#_calculatedOffsetStairsY = 0;
 
 	/**
 	 * Stores the calculated offset stairs Z.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairsZ;
+	#_calculatedOffsetStairsZ = 0;
 
 	/**
 	 * Stores the calculated offset stairs entrance X.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairsEntranceX;
+	#_calculatedOffsetStairsEntranceX = 0;
 
 	/**
 	 * Stores the calculated offset stairs entrance Y.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairsEntranceY;
+	#_calculatedOffsetStairsEntranceY = 0;
 
 	/**
 	 * Stores the calculated offset stairs entrance Z.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairsEntranceZ;
+	#_calculatedOffsetStairsEntranceZ = 0;
 
 	/**
 	 * Stores the calculated offset stairway left X.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairwayLeftX;
+	#_calculatedOffsetStairwayLeftX = 0;
 
 	/**
 	 * Stores the calculated offset stairway left Y.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairwayLeftY;
+	#_calculatedOffsetStairwayLeftY = 0;
 
 	/**
 	 * Stores the calculated offset stairway left Z.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairwayLeftZ;
+	#_calculatedOffsetStairwayLeftZ = 0;
 
 	/**
 	 * Stores the calculated offset stairway right X.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairwayRightX;
+	#_calculatedOffsetStairwayRightX = 0;
 
 	/**
 	 * Stores the calculated offset stairway right Y.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairwayRightY;
+	#_calculatedOffsetStairwayRightY = 0;
 
 	/**
 	 * Stores the calculated offset stairway right Z.
 	 * @type {Number}
 	 */
-	#_calculatedOffsetStairwayRightZ;
+	#_calculatedOffsetStairwayRightZ = 0;
 
 	/**
 	 * Constructor method.
