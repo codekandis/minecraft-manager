@@ -1,8 +1,8 @@
 'use strict';
 
 import { ClickEvent } from '../../../libraries/jotunheim/Dom/ClickEvent.js';
+import { BindableHtmlElementProxy } from '../../../libraries/jotunheim/Dom/DataBindings/BindableHtmlElementProxy.js';
 import { DomHelper } from '../../../libraries/jotunheim/Dom/DomHelper.js';
-import { BindableHtmlElementProxy } from '../../../libraries/jotunheim/Types/DataBindings/BindableHtmlElementProxy.js';
 import { DataBindingInitializationDirection } from '../../../libraries/jotunheim/Types/DataBindings/DataBindingInitializationDirection.js';
 import { Clipboard } from '../../../libraries/jotunheim/Utilities/Clipboard.js';
 import { AbstractComponent } from '../AbstractComponent.js';
