@@ -1,10 +1,10 @@
 'use strict';
 
-import { BindableHtmlElementProxy } from '../../../libraries/jotunheim/Types/DataBindings/BindableHtmlElementProxy.js';
+import { BindableHtmlElementProxy } from '../../../libraries/jotunheim/Dom/DataBindings/BindableHtmlElementProxy.js';
 import { DataBindingInitializationDirection } from '../../../libraries/jotunheim/Types/DataBindings/DataBindingInitializationDirection.js';
 import { PropertyChangedEvent } from '../../../libraries/jotunheim/Types/DataBindings/PropertyChangedEvent.js';
 import { AbstractComponent } from '../AbstractComponent.js';
-import { PropertyNames } from './Enumerations/PropertyNames.js';
+import { SettingsPropertyNames } from './Enumerations/SettingsPropertyNames.js';
 import { FormFieldSelectors } from './Html/FormFieldSelectors.js';
 import { ApiAjaxController } from './Net/Http/ApiAjaxController.js';
 
@@ -16,7 +16,7 @@ export class SettingsComponent extends AbstractComponent
 {
 	/**
 	 * Constructor method.
-	 * @param {Settings} settings The javascript's settings.
+	 * @param {Settings} settings The applications' settings.
 	 */
 	constructor( settings )
 	{
@@ -34,7 +34,7 @@ export class SettingsComponent extends AbstractComponent
 	}
 
 	/**
-	 * Reads the javascript's settings from the API.
+	 * Reads the applications' settings from the API.
 	 */
 	#readSettingsFromApi()
 	{
@@ -43,7 +43,7 @@ export class SettingsComponent extends AbstractComponent
 			.then(
 				( settings ) =>
 				{
-					this.__settings[ PropertyNames.CHUNKSIZE ] = settings[ PropertyNames.CHUNKSIZE ];
+					this.__settings.chunkSize = settings[ SettingsPropertyNames.CHUNKSIZE ];
 
 					this.__settings.propertyChangedEvent( this.#setting_propertyChanged );
 				}
@@ -51,7 +51,7 @@ export class SettingsComponent extends AbstractComponent
 	}
 
 	/**
-	 * Write the javascript's settings to the API.
+	 * Write the applications' settings to the API.
 	 */
 	#writeSettingsToApi()
 	{
@@ -64,7 +64,7 @@ export class SettingsComponent extends AbstractComponent
 	 */
 	_addDataBindings()
 	{
-		this.__settings.dataBindings.add( PropertyNames.CHUNKSIZE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CHUNKSIZE ), 'value', DataBindingInitializationDirection.BINDER );
+		this.__settings.dataBindings.add( SettingsPropertyNames.CHUNKSIZE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CHUNKSIZE ), 'value', DataBindingInitializationDirection.BINDER );
 	}
 
 	/**
@@ -72,18 +72,18 @@ export class SettingsComponent extends AbstractComponent
 	 */
 	_addFormFieldsEventHandlers()
 	{
-		this._attachEventDefaultValueMappings( FormFieldSelectors.CHUNKSIZE, PropertyNames.CHUNKSIZE );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.CHUNKSIZE, SettingsPropertyNames.CHUNKSIZE );
 	}
 
 	/**
-	 * Handles the property changed event of the settings of the javascript.
+	 * Handles the property changed event of the applications' settings.
 	 * @param {PropertyChangedEvent} event The property changed event which will be handled.
 	 */
 	#setting_propertyChanged = ( event ) =>
 	{
 		switch ( event.detail.eventArguments.propertyName )
 		{
-			case PropertyNames.CHUNKSIZE:
+			case SettingsPropertyNames.CHUNKSIZE:
 			{
 				this.#writeSettingsToApi();
 

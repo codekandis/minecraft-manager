@@ -10,13 +10,17 @@ return [
 	ApplicationStageNames::API      => [
 		'baseRoute' => '/api/',
 		'routes'    => [
-			'settings/settings'                     => [
+			'settings/settings'                       => [
 				Methods::GET  => Api\Get\Settings\SettingsAction::class,
 				Methods::POST => Api\Post\Settings\SettingsAction::class
 			],
-			'subway-rails-mapper/lantern-positions' => [
+			'subway-rails-mapper/lantern-positions'   => [
 				Methods::GET  => Api\Get\SubwayRailsMapper\LanternPositionsAction::class,
 				Methods::POST => Api\Post\SubwayRailsMapper\LanternPositionsAction::class
+			],
+			'subway-station-mapper/station-positions' => [
+				Methods::GET  => Api\Get\SubwayStationMapper\StationPositionsAction::class,
+				Methods::POST => Api\Post\SubwayStationMapper\StationPositionsAction::class
 			]
 		]
 	],

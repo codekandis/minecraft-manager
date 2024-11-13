@@ -1,8 +1,9 @@
 'use strict';
 
+import { Collection } from '../../../libraries/jotunheim/Collections/Collection.js';
+import { BindableHtmlElementProxy } from '../../../libraries/jotunheim/Dom/DataBindings/BindableHtmlElementProxy.js';
 import { DomHelper } from '../../../libraries/jotunheim/Dom/DomHelper.js';
 import { BooleanString } from '../../../libraries/jotunheim/Types/BooleanString.js';
-import { BindableHtmlElementProxy } from '../../../libraries/jotunheim/Types/DataBindings/BindableHtmlElementProxy.js';
 import { DataBindingInitializationDirection } from '../../../libraries/jotunheim/Types/DataBindings/DataBindingInitializationDirection.js';
 import { PropertyChangedEvent } from '../../../libraries/jotunheim/Types/DataBindings/PropertyChangedEvent.js';
 import { AbstractComponent } from '../AbstractComponent.js';
@@ -18,6 +19,25 @@ import { ApiAjaxController } from './Net/Http/ApiAjaxController.js';
 export class SubwayRailsMapperComponent extends AbstractComponent
 {
 	/**
+	 * Stores the lantern positions property names to form field selector mappings.
+	 * @type {Collection}
+	 */
+	#_lanternPositionsPropertyNameFormFieldSelectorMappings = new Collection(
+		{
+			lanternPositionsPropertyName: LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID,
+			formFieldSelector:            FormFieldSelectors.CURRENT_POSITION_X
+		},
+		{
+			lanternPositionsPropertyName: LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID,
+			formFieldSelector:            FormFieldSelectors.CURRENT_POSITION_Y
+		},
+		{
+			lanternPositionsPropertyName: LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID,
+			formFieldSelector:            FormFieldSelectors.CURRENT_POSITION_Z
+		}
+	);
+
+	/**
 	 * Stores the lantern positions.
 	 * @type {LanternPositions}
 	 */
@@ -25,7 +45,7 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 
 	/**
 	 * Constructor method.
-	 * @param {Settings} settings The settings of the javascript.
+	 * @param {Settings} settings The applications' settings.
 	 */
 	constructor( settings )
 	{
@@ -35,49 +55,21 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	}
 
 	/**
-	 * Sets if the current X position is valid.
-	 * @param {Boolean} value True if the current X position is valid, otherwise false.
-	 */
-	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ]( value )
-	{
-		this.#setPropertyValueAndDataIsValidAttribute( LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID, FormFieldSelectors.CURRENT_POSITION_X, value );
-	}
-
-	/**
-	 * Sets if the current Y position is valid.
-	 * @param {Boolean} value True if the current Y position is valid, otherwise false.
-	 */
-	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ]( value )
-	{
-		this.#setPropertyValueAndDataIsValidAttribute( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID, FormFieldSelectors.CURRENT_POSITION_Y, value );
-	}
-
-	/**
-	 * Sets if the current Z position is valid.
-	 * @param {Boolean} value True if the current Z position is valid, otherwise false.
-	 */
-	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ]( value )
-	{
-		this.#setPropertyValueAndDataIsValidAttribute( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID, FormFieldSelectors.CURRENT_POSITION_Z, value );
-	}
-
-	/**
 	 * Initializes the component.
 	 */
 	#initialize()
 	{
 		this.#_lanternPositions = new LanternPositions( this.__settings );
 
-		this.#readSubwayRailsMapperFromApi();
+		this.#readLanternPositionsFromApi();
 	}
 
 	/**
 	 * Sets the value of a property and its related HTML form field `data-is-valid` attribute.
-	 * @param {String} propertyName The name of the property.
 	 * @param {String} formFieldSelector The selector of the HTML form field.
 	 * @param {*} value The value to set.
 	 */
-	#setPropertyValueAndDataIsValidAttribute( propertyName, formFieldSelector, value )
+	#setPropertyValueAndDataIsValidAttribute( formFieldSelector, value )
 	{
 		const element = DomHelper.querySelector( formFieldSelector );
 
@@ -99,16 +91,16 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	/**
 	 * Reads the lantern positions from the API.
 	 */
-	#readSubwayRailsMapperFromApi()
+	#readLanternPositionsFromApi()
 	{
 		( new ApiAjaxController() )
 			.readLanternPositions()
 			.then(
 				( lanternPositions ) =>
 				{
-					this.#_lanternPositions[ LanternPositionsPropertyNames.START_POSITION_X ] = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_X ];
-					this.#_lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Y ] = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Y ];
-					this.#_lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Z ] = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Z ];
+					this.#_lanternPositions.startPositionX = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_X ];
+					this.#_lanternPositions.startPositionY = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Y ];
+					this.#_lanternPositions.startPositionZ = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Z ];
 
 					this.#_lanternPositions.propertyChangedEvent( this.#lanternPositions_propertyChanged );
 				}
@@ -118,7 +110,7 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	/**
 	 * Writes the lantern positions to the API.
 	 */
-	#writeSubwayRailsMapperToApi()
+	#writeLanternPositionsToApi()
 	{
 		( new ApiAjaxController() )
 			.writeLanternPositions( this.#_lanternPositions )
@@ -141,10 +133,6 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Y_POSITIVE ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Z_NEGATIVE ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Z_POSITIVE ), 'value', DataBindingInitializationDirection.BINDER );
-
-		this.dataBindings.add( LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID, this.#_lanternPositions, LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID, this.#_lanternPositions, LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID, this.#_lanternPositions, LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID, DataBindingInitializationDirection.BINDABLE );
 	}
 
 	/**
@@ -166,13 +154,26 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	 */
 	#lanternPositions_propertyChanged = ( event ) =>
 	{
-		switch ( event.detail.eventArguments.propertyName )
+		const propertyName = event.detail.eventArguments.propertyName;
+
+		switch ( propertyName )
 		{
 			case LanternPositionsPropertyNames.START_POSITION_X:
 			case LanternPositionsPropertyNames.START_POSITION_Y:
 			case LanternPositionsPropertyNames.START_POSITION_Z:
 			{
-				this.#writeSubwayRailsMapperToApi();
+				this.#writeLanternPositionsToApi();
+
+				break;
+			}
+			case LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID:
+			case LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID:
+			case LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID:
+			{
+				const mapping = this.#_lanternPositionsPropertyNameFormFieldSelectorMappings.findFirstOrUndefinedBy(
+					mapping => mapping.lanternPositionsPropertyName === propertyName
+				);
+				this.#setPropertyValueAndDataIsValidAttribute( mapping.formFieldSelector, this.#_lanternPositions[ propertyName ] );
 
 				break;
 			}

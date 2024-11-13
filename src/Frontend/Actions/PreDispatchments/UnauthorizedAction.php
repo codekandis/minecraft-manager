@@ -15,7 +15,7 @@ use CodeKandis\Tiphy\Throwables\ErrorInformation;
 class UnauthorizedAction extends AbstractAuthorizationAction
 {
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function execute(): void
 	{

@@ -14,14 +14,14 @@ interface SettingsEntityRepositoryInterface extends RepositoryInterface
 {
 	/**
 	 * Reads a settings by a specific user ID.
-	 * @param SettingsEntityInterface $settingsWithRecordId The settings with the setting's record ID.
+	 * @param SettingsEntityInterface $settingsWithRecordId The settings with the settingusers' record ID.
 	 * @return SettingsEntityInterface The read settings.
 	 */
 	public function readByRecordId( SettingsEntityInterface $settingsWithRecordId ): ?SettingsEntityInterface;
 
 	/**
 	 * Reads a settings by a specific user ID.
-	 * @param UserEntityInterface $userWithUserId The user with the user's ID.
+	 * @param UserEntityInterface $userWithUserId The user with the users' ID.
 	 * @return SettingsEntityInterface The read settings.
 	 */
 	public function readByUserId( UserEntityInterface $userWithUserId ): ?SettingsEntityInterface;
@@ -29,7 +29,7 @@ interface SettingsEntityRepositoryInterface extends RepositoryInterface
 	/**
 	 * Creates a settings by a specific user ID.
 	 * @param SettingsEntityInterface $settings The settings to create.
-	 * @param UserEntityInterface $userWithUserId The user with the user's ID.
+	 * @param UserEntityInterface $userWithUserId The user with the users' ID.
 	 */
 	public function createByUserId( SettingsEntityInterface $settings, UserEntityInterface $userWithUserId ): SettingsEntityInterface;
 

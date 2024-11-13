@@ -38,7 +38,7 @@ class ConfigurationRegistry extends AbstractConfigurationRegistry implements Con
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	protected function initialize(): void
 	{

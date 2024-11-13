@@ -7,6 +7,8 @@ use CodeKandis\MinecraftManager\Environment\Entities\Settings\EntityPropertyMapp
 use CodeKandis\MinecraftManager\Environment\Entities\Settings\SettingsEntity;
 use CodeKandis\MinecraftManager\Environment\Entities\SubwayRailsMapper\EntityPropertyMappings\LanternPositionsPersistableEntityPropertyMappings;
 use CodeKandis\MinecraftManager\Environment\Entities\SubwayRailsMapper\LanternPositionsEntity;
+use CodeKandis\MinecraftManager\Environment\Entities\SubwayStationMapper\EntityPropertyMappings\StationPositionsPersistableEntityPropertyMappings;
+use CodeKandis\MinecraftManager\Environment\Entities\SubwayStationMapper\StationPositionsEntity;
 use CodeKandis\MinecraftManager\Environment\Entities\UserEntity;
 use ReflectionException;
 
@@ -18,7 +20,7 @@ use ReflectionException;
 class EntityPropertyMapperBuilder implements EntityPropertyMapperBuilderInterface
 {
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The user entity class to reflect does not exist.
 	 */
 	public function buildUserEntityPropertyMapper(): EntityPropertyMapperInterface
@@ -27,7 +29,7 @@ class EntityPropertyMapperBuilder implements EntityPropertyMapperBuilderInterfac
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The settings settings entity class to reflect does not exist.
 	 */
 	public function buildSettingsSettingsEntityPropertyMapper(): EntityPropertyMapperInterface
@@ -36,11 +38,20 @@ class EntityPropertyMapperBuilder implements EntityPropertyMapperBuilderInterfac
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The subway rails mapper lantern positions entity class to reflect does not exist.
 	 */
-	public function buildSubwayRailsMapperLanternPositionEntityPropertyMapper(): EntityPropertyMapperInterface
+	public function buildSubwayRailsMapperLanternPositionsEntityPropertyMapper(): EntityPropertyMapperInterface
 	{
 		return new EntityPropertyMapper( LanternPositionsEntity::class, new LanternPositionsPersistableEntityPropertyMappings() );
+	}
+
+	/**
+	 * @inheritDoc
+	 * @throws ReflectionException The subway station mapper station positions entity class to reflect does not exist.
+	 */
+	public function buildSubwayStationMapperStationPositionsEntityPropertyMapper(): EntityPropertyMapperInterface
+	{
+		return new EntityPropertyMapper( StationPositionsEntity::class, new StationPositionsPersistableEntityPropertyMappings() );
 	}
 }

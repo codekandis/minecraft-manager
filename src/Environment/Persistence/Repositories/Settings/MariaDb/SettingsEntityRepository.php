@@ -26,7 +26,7 @@ use ReflectionException;
 class SettingsEntityRepository extends AbstractRepository implements SettingsEntityRepositoryInterface
 {
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The settings entity class to reflect does not exist.
 	 * @throws TransactionStartFailedException The transaction failed to start.
 	 * @throws TransactionRollbackFailedException The transaction failed to roll back.
@@ -43,7 +43,7 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 				`settings.settings`.`_id`,
 				`settings.settings`.`id`,
 				`settings.settings`.`userId`,
-				`settings.settings`.`chunksize`
+				`settings.settings`.`chunkSize`
 			FROM
 				`settings.settings`
 			WHERE
@@ -68,7 +68,7 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The settings entity class to reflect does not exist.
 	 * @throws EntityDoesNotMatchClassNameException The settings entity does not match the entity class name of the entity property mapper.
 	 * @throws PublicPropertyNotFoundException A public property does not exist in the settings entity class.
@@ -87,7 +87,7 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 				`settings.settings`.`_id`,
 				`settings.settings`.`id`,
 				`settings.settings`.`userId`,
-				`settings.settings`.`chunksize`
+				`settings.settings`.`chunkSize`
 			FROM
 				`settings.settings`
 			WHERE
@@ -114,7 +114,7 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The settings entity class to reflect does not exist.
 	 * @throws ReflectionException An error occurred during the creation of the settings entity.
 	 * @throws EntityDoesNotMatchClassNameException The settings entity does not match the entity class name of the entity property mapper.
@@ -133,9 +133,9 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 		$query = <<< END
 			INSERT INTO
 				`settings.settings`
-				( `id`, `userId`, `chunksize` )
+				( `id`, `userId`, `chunkSize` )
 			VALUES
-				( UUID(), :userId, :chunksize );
+				( UUID(), :userId, :chunkSize );
 		END;
 
 		$settingsEntityPropertyMapper = ( new EntityPropertyMapperBuilder() )
@@ -148,7 +148,7 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 
 		$arguments = [
 			'userId'    => $mappedUserWithUserId[ 'id' ],
-			'chunksize' => $mappedSettings[ 'chunksize' ]
+			'chunkSize' => $mappedSettings[ 'chunkSize' ]
 		];
 
 		$this->persistenceConnector->execute( $query, $arguments );
@@ -164,7 +164,7 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The settings entity class to reflect does not exist.
 	 * @throws ReflectionException An error occurred during the creation of the settings entity.
 	 * @throws EntityDoesNotMatchClassNameException The settings entity does not match the entity class name of the entity property mapper.
@@ -184,7 +184,7 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 			UPDATE
 				`settings.settings`
 			SET
-				`settings.settings`.`chunksize` = :chunksize
+				`settings.settings`.`chunkSize` = :chunkSize
 			WHERE
 				`settings.settings`.`_id` = :_id;
 		END;
@@ -197,7 +197,7 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 
 		$arguments = [
 			'_id'       => $mappedSettingWithRecordId[ '_id' ],
-			'chunksize' => $mappedSetting[ 'chunksize' ]
+			'chunkSize' => $mappedSetting[ 'chunkSize' ]
 		];
 
 		$this->persistenceConnector->execute( $query, $arguments );

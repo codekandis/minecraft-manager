@@ -13,7 +13,7 @@ interface UserEntityRepositoryInterface extends RepositoryInterface
 {
 	/**
 	 * Reads a user by a specific e-mail.
-	 * @param UserEntityInterface $userWithEMail The user with the user's e-mail.
+	 * @param UserEntityInterface $userWithEMail The user with the users' e-mail.
 	 * @return UserEntityInterface The read user.
 	 */
 	public function readUserByEMail( UserEntityInterface $userWithEMail ): ?UserEntityInterface;

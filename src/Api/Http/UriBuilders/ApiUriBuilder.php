@@ -12,7 +12,7 @@ use CodeKandis\Tiphy\Http\UriBuilders\AbstractUriBuilder;
 class ApiUriBuilder extends AbstractUriBuilder implements ApiUriBuilderInterface
 {
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function buildSettingsSettingsUri(): string
 	{
@@ -20,10 +20,18 @@ class ApiUriBuilder extends AbstractUriBuilder implements ApiUriBuilderInterface
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function buildSubwayRailsMapperLanternPositionsUri(): string
 	{
 		return $this->build( ApiUriNames::SUBWAY_RAILS_MAPPER_LANTERN_POSITIONS );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function buildSubwayStationMapperStationPositionsUri(): string
+	{
+		return $this->build( ApiUriNames::SUBWAY_STATION_MAPPER_STATION_POSITIONS );
 	}
 }

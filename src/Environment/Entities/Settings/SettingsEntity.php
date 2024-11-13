@@ -1,56 +1,34 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\MinecraftManager\Environment\Entities\Settings;
 
-use CodeKandis\MinecraftManager\Environment\Entities\AbstractPersistableEntity;
+use CodeKandis\MinecraftManager\Environment\Entities\AbstractPersistableUserBasedEntity;
 
 /**
  * Represents a settings entity.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-class SettingsEntity extends AbstractPersistableEntity implements SettingsEntityInterface
+class SettingsEntity extends AbstractPersistableUserBasedEntity implements SettingsEntityInterface
 {
-	/**
-	 * Stores the user ID of the settings.
-	 * @var string
-	 */
-	public string $userId = '';
-
 	/**
 	 * Stores the chunk size.
 	 * @var int
 	 */
-	public int $chunksize = 0;
+	public int $chunkSize = 0;
 
 	/**
-	 * {@inheritDoc}
-	 */
-	public function getUserId(): string
-	{
-		return $this->userId;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function setUserId( string $userId ): void
-	{
-		$this->userId = $userId;
-	}
-
-	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getChunkSize(): int
 	{
-		return $this->chunksize;
+		return $this->chunkSize;
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
-	public function setChunkSize( int $chunksize ): void
+	public function setChunkSize( int $chunkSize ): void
 	{
-		$this->chunksize = $chunksize;
+		$this->chunkSize = $chunkSize;
 	}
 }

@@ -9,8 +9,8 @@ import { AbstractStatic } from '../../../../libraries/jotunheim/Types/AbstractSt
 export class ApiUriNames extends AbstractStatic
 {
 	/**
-	 * Represents the URI of the settings of the javascript.
-	 * @returns {String} The URI of the settings of the javascript.
+	 * Represents the URI name of the applications' settings.
+	 * @returns {String} The URI name of the applications' settings.
 	 */
 	static get SETTINGS()
 	{

@@ -2,7 +2,7 @@
 namespace CodeKandis\MinecraftManager\Environment\Entities;
 
 /**
- * Represents the base class of any entity.
+ * Represents the base class of any persistable entity.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -15,7 +15,7 @@ abstract class AbstractPersistableEntity extends AbstractEntity implements Persi
 	public ?int $_id = null;
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function get_Id(): ?int
 	{
@@ -23,7 +23,7 @@ abstract class AbstractPersistableEntity extends AbstractEntity implements Persi
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function set_Id( ?int $_id ): void
 	{
@@ -31,7 +31,7 @@ abstract class AbstractPersistableEntity extends AbstractEntity implements Persi
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function jsonSerialize(): array
 	{

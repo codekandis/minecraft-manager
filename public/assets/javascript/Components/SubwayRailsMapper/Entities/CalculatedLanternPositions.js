@@ -1,7 +1,6 @@
 'use strict';
 
 import { Abstract } from '../../../../libraries/jotunheim/Types/Abstract.js';
-import { LanternPositionsPropertyNames } from '../Enumerations/LanternPositionsPropertyNames.js';
 
 /**
  * Represents the calculated lantern positions.
@@ -10,218 +9,218 @@ import { LanternPositionsPropertyNames } from '../Enumerations/LanternPositionsP
 export class CalculatedLanternPositions extends Abstract
 {
 	/**
-	 * Stores true if the current position X is valid, otherwise false.
+	 * Stores true if the current position X is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ];
+	#_isCurrentPositionXValid = false;
 
 	/**
-	 * Stores true if the current position Y is valid, otherwise false.
+	 * Stores true if the current position Y is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ];
+	#_isCurrentPositionYValid = false;
 
 	/**
-	 * Stores true if the current position Z is valid, otherwise false.
+	 * Stores true if the current position Z is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ];
+	#_isCurrentPositionZValid = false;
 
 	/**
 	 * Stores the calculated position X negative.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE ];
+	#_calculatedPositionXNegative = 0;
 
 	/**
 	 * Stores the calculated position X positive.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE ];
+	#_calculatedPositionXPositive = 0;
 
 	/**
 	 * Stores the calculated position Y negative.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE ];
+	#_calculatedPositionYNegative = 0;
 
 	/**
 	 * Stores the calculated position Y positive.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE ];
+	#_calculatedPositionYPositive = 0;
 
 	/**
 	 * Stores the calculated position Z negative.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE ];
+	#_calculatedPositionZNegative = 0;
 
 	/**
 	 * Stores the calculated position Z positive.
 	 * @type {Number}
 	 */
-	[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE ];
+	#_calculatedPositionZPositive = 0;
 
 	/**
 	 * Gets if the current position X is valid.
-	 * @returns {Boolean} True if the current position X is valid, otherwise false.
+	 * @returns {Boolean} `true` if the current position X is valid, otherwise `false`.
 	 */
-	get [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ]()
+	get isCurrentPositionXValid()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ];
+		return this.#_isCurrentPositionXValid;
 	}
 
 	/**
 	 * Sets if the current position X is valid.
-	 * @param {Boolean} value True if the current position X is valid, otherwise false.
+	 * @param {Boolean} value `true` if the current position X is valid, otherwise `false`.
 	 */
-	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ]( value )
+	set isCurrentPositionXValid( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID ] = value;
+		this.#_isCurrentPositionXValid = value;
 	}
 
 	/**
 	 * Gets if the current position Y is valid.
-	 * @returns {Boolean} True if the current position Y is valid, otherwise false.
+	 * @returns {Boolean} `true` if the current position Y is valid, otherwise `false`.
 	 */
-	get [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ]()
+	get isCurrentPositionYValid()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ];
+		return this.#_isCurrentPositionYValid;
 	}
 
 	/**
 	 * Sets if the current position Y is valid.
-	 * @param {Boolean} value True if the current position Y is valid, otherwise false.
+	 * @param {Boolean} value `true` if the current position Y is valid, otherwise `false`.
 	 */
-	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ]( value )
+	set isCurrentPositionYValid( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID ] = value;
+		this.#_isCurrentPositionYValid = value;
 	}
 
 	/**
 	 * Gets if the current position Z is valid.
-	 * @returns {Boolean} True if the current position Z is valid, otherwise false.
+	 * @returns {Boolean} `true` if the current position Z is valid, otherwise `false`.
 	 */
-	get [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ]()
+	get isCurrentPositionZValid()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ];
+		return this.#_isCurrentPositionZValid;
 	}
 
 	/**
 	 * Sets if the current position Z is valid.
-	 * @param {Boolean} value True if the current position Z is valid, otherwise false.
+	 * @param {Boolean} value `true` if the current position Z is valid, otherwise `false`.
 	 */
-	set [ LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ]( value )
+	set isCurrentPositionZValid( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID ] = value;
+		this.#_isCurrentPositionZValid = value;
 	}
 
 	/**
 	 * Gets the calculated position X negative.
 	 * @returns {Number} The calculated position X negative.
 	 */
-	get [ LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE ]()
+	get calculatedPositionXNegative()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE ];
+		return this.#_calculatedPositionXNegative;
 	}
 
 	/**
 	 * Sets the calculated position X negative.
 	 * @param {Number} value The calculated position X negative.
 	 */
-	set [ LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE ]( value )
+	set calculatedPositionXNegative( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE ] = value;
+		this.#_calculatedPositionXNegative = value;
 	}
 
 	/**
 	 * Gets the calculated position X positive.
 	 * @returns {Number} The calculated position X positive.
 	 */
-	get [ LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE ]()
+	get calculatedPositionXPositive()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE ];
+		return this.#_calculatedPositionXPositive;
 	}
 
 	/**
 	 * Sets the calculated position X positive.
 	 * @param {Number} value The calculated position X positive.
 	 */
-	set [ LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE ]( value )
+	set calculatedPositionXPositive( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE ] = value;
+		this.#_calculatedPositionXPositive = value;
 	}
 
 	/**
 	 * Gets the calculated position Y negative.
 	 * @returns {Number} The calculated position Y negative.
 	 */
-	get [ LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE ]()
+	get calculatedPositionYNegative()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE ];
+		return this.#_calculatedPositionYNegative;
 	}
 
 	/**
 	 * Sets the calculated position Y negative.
 	 * @param {Number} value The calculated position Y negative.
 	 */
-	set [ LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE ]( value )
+	set calculatedPositionYNegative( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE ] = value;
+		this.#_calculatedPositionYNegative = value;
 	}
 
 	/**
 	 * Gets the calculated position Y positive.
 	 * @returns {Number} The calculated position y positive.
 	 */
-	get [ LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE ]()
+	get calculatedPositionYPositive()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE ];
+		return this.#_calculatedPositionYPositive;
 	}
 
 	/**
 	 * Sets the calculated position Y positive.
 	 * @param {Number} value The calculated position Y positive.
 	 */
-	set [ LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE ]( value )
+	set calculatedPositionYPositive( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Y_POSITIVE ] = value;
+		this.#_calculatedPositionYPositive = value;
 	}
 
 	/**
 	 * Gets the calculated position Z negative.
 	 * @returns {Number} The calculated position Z negative.
 	 */
-	get [ LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE ]()
+	get calculatedPositionZNegative()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE ];
+		return this.#_calculatedPositionZNegative;
 	}
 
 	/**
 	 * Sets the calculated position Z negative.
 	 * @param {Number} value The calculated position Z negative.
 	 */
-	set [ LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE ]( value )
+	set calculatedPositionZNegative( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_NEGATIVE ] = value;
+		this.#_calculatedPositionZNegative = value;
 	}
 
 	/**
 	 * Gets the calculated position Z positive.
 	 * @returns {Number} The calculated position Z positive.
 	 */
-	get [ LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE ]()
+	get calculatedPositionZPositive()
 	{
-		return this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE ];
+		return this.#_calculatedPositionZPositive;
 	}
 
 	/**
 	 * Sets the calculated position Z positive.
 	 * @param {Number} value The calculated position Z positive.
 	 */
-	set [ LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE ]( value )
+	set calculatedPositionZPositive( value )
 	{
-		this[ '#_' + LanternPositionsPropertyNames.CALCULATED_POSITION_Z_POSITIVE ] = value;
+		this.#_calculatedPositionZPositive = value;
 	}
 }

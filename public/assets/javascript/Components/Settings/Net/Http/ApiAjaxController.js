@@ -2,7 +2,7 @@
 
 import { AbstractApiAjaxController } from '../../../../Net/Http/AbstractApiAjaxController.js';
 import { ApiHttpRequest } from '../../../../Net/Http/ApiHttpRequest.js';
-import { PropertyNames } from '../../Enumerations/PropertyNames.js';
+import { SettingsPropertyNames } from '../../Enumerations/SettingsPropertyNames.js';
 import { ApiUriBuilder } from '../ApiUriBuilder.js';
 
 /**
@@ -22,8 +22,8 @@ export class ApiAjaxController extends AbstractApiAjaxController
 	}
 
 	/**
-	 * Reads the settings of the javascript.
-	 * @returns {Object} The read settings of the javascript.
+	 * Reads the applications' settings.
+	 * @returns {Object} The read applications' settings.
 	 */
 	async readSettings()
 	{
@@ -43,8 +43,8 @@ export class ApiAjaxController extends AbstractApiAjaxController
 	}
 
 	/**
-	 * Write the settings of the javascript.
-	 * @param {Settings} settings The settings of the javascript to write.
+	 * Writes the applications' settings.
+	 * @param {Settings} settings The applications' settings to write.
 	 */
 	async writeSettings( settings )
 	{
@@ -54,7 +54,7 @@ export class ApiAjaxController extends AbstractApiAjaxController
 		request.payload = this._createRequestPayload(
 			{
 				settings: {
-					[ PropertyNames.CHUNKSIZE ]: settings[ PropertyNames.CHUNKSIZE ]
+					[ SettingsPropertyNames.CHUNKSIZE ]: settings[ SettingsPropertyNames.CHUNKSIZE ]
 				}
 			}
 		);

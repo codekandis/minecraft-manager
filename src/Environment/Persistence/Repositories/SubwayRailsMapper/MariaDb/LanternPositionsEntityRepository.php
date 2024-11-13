@@ -26,7 +26,7 @@ use ReflectionException;
 class LanternPositionsEntityRepository extends AbstractRepository implements LanternPositionsEntityRepositoryInterface
 {
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The lantern positions entity class to reflect does not exist.
 	 * @throws TransactionStartFailedException The transaction failed to start.
 	 * @throws TransactionRollbackFailedException The transaction failed to roll back.
@@ -55,7 +55,7 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 		END;
 
 		$lanternPositionsEntityPropertyMapper = ( new EntityPropertyMapperBuilder() )
-			->buildSubwayRailsMapperLanternPositionEntityPropertyMapper();
+			->buildSubwayRailsMapperLanternPositionsEntityPropertyMapper();
 
 		$mappedLanternPositionsWithRecordId = $lanternPositionsEntityPropertyMapper->mapToArray( $lanternPositionsWithRecordId );
 
@@ -70,7 +70,7 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The lantern positions entity class to reflect does not exist.
 	 * @throws EntityDoesNotMatchClassNameException The lantern positions entity does not match the entity class name of the entity property mapper.
 	 * @throws PublicPropertyNotFoundException A public property does not exist in the lantern positions entity class.
@@ -103,7 +103,7 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 		$userEntityPropertyMapper             = ( new EntityPropertyMapperBuilder() )
 			->buildUserEntityPropertyMapper();
 		$lanternPositionsEntityPropertyMapper = ( new EntityPropertyMapperBuilder() )
-			->buildSubwayRailsMapperLanternPositionEntityPropertyMapper();
+			->buildSubwayRailsMapperLanternPositionsEntityPropertyMapper();
 
 		$mappedUserWithUserId = $userEntityPropertyMapper->mapToArray( $userWithUserId );
 
@@ -118,7 +118,7 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The lantern positions entity class to reflect does not exist.
 	 * @throws ReflectionException An error occurred during the creation of the lantern positions entity.
 	 * @throws EntityDoesNotMatchClassNameException The lantern positions entity does not match the entity class name of the entity property mapper.
@@ -143,7 +143,7 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 		END;
 
 		$lanternPositionsEntityPropertyMapper = ( new EntityPropertyMapperBuilder() )
-			->buildSubwayRailsMapperLanternPositionEntityPropertyMapper();
+			->buildSubwayRailsMapperLanternPositionsEntityPropertyMapper();
 		$userEntityPropertyMapper             = ( new EntityPropertyMapperBuilder() )
 			->buildUserEntityPropertyMapper();
 
@@ -170,7 +170,7 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The lantern positions entity class to reflect does not exist.
 	 * @throws ReflectionException An error occurred during the creation of the lantern positions entity.
 	 * @throws EntityDoesNotMatchClassNameException The lantern positions entity does not match the entity class name of the entity property mapper.
@@ -198,7 +198,7 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 		END;
 
 		$lanternPositionsEntityPropertyMapper = ( new EntityPropertyMapperBuilder() )
-			->buildSubwayRailsMapperLanternPositionEntityPropertyMapper();
+			->buildSubwayRailsMapperLanternPositionsEntityPropertyMapper();
 
 		$mappedLanternPositions             = $lanternPositionsEntityPropertyMapper->mapToArray( $lanternPositions );
 		$mappedLanternPositionsWithRecordId = $lanternPositionsEntityPropertyMapper->mapToArray( $lanternPositionsWithRecordId );

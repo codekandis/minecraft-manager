@@ -28,39 +28,39 @@ export class FormFieldSelectors extends AbstractStatic
 	}
 
 	/**
-	 * Represents the station orientation.
-	 * @returns {String} The station orientation.
+	 * Represents the orientation.
+	 * @returns {String} The orientation.
 	 */
-	static get STATION_ORIENTATION()
+	static get ORIENTATION()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.STATION_ORIENTATION );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.ORIENTATION );
 	}
 
 	/**
-	 * Represents the current position X.
-	 * @returns {String} The current position X.
+	 * Represents the structure block position X.
+	 * @returns {String} The structure block position X.
 	 */
-	static get CURRENT_POSITION_X()
+	static get STRUCTURE_BLOCK_POSITION_X()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.CURRENT_POSITION_X );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X );
 	}
 
 	/**
-	 * Represents the current position Y.
-	 * @returns {String} The current position Y.
+	 * Represents the structure block position Y.
+	 * @returns {String} The structure block position Y.
 	 */
-	static get CURRENT_POSITION_Y()
+	static get STRUCTURE_BLOCK_POSITION_Y()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.CURRENT_POSITION_Y );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y );
 	}
 
 	/**
-	 * Represents the current position Z.
-	 * @returns {String} The current position Z.
+	 * Represents the structure block position Z.
+	 * @returns {String} The structure block position Z.
 	 */
-	static get CURRENT_POSITION_Z()
+	static get STRUCTURE_BLOCK_POSITION_Z()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.CURRENT_POSITION_Z );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z );
 	}
 
 	/**

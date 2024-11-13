@@ -1,21 +1,15 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\MinecraftManager\Environment\Entities\SubwayRailsMapper;
 
-use CodeKandis\MinecraftManager\Environment\Entities\AbstractPersistableEntity;
+use CodeKandis\MinecraftManager\Environment\Entities\AbstractPersistableUserBasedEntity;
 
 /**
  * Represents a lantern positions entity.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
-class LanternPositionsEntity extends AbstractPersistableEntity implements LanternPositionsEntityInterface
+class LanternPositionsEntity extends AbstractPersistableUserBasedEntity implements LanternPositionsEntityInterface
 {
-	/**
-	 * Stores the user ID of the lantern positions.
-	 * @var string
-	 */
-	public string $userId = '';
-
 	/**
 	 * Stores the start position X.
 	 * @var int
@@ -35,23 +29,7 @@ class LanternPositionsEntity extends AbstractPersistableEntity implements Lanter
 	public int $startPositionZ = 0;
 
 	/**
-	 * {@inheritDoc}
-	 */
-	public function getUserId(): string
-	{
-		return $this->userId;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function setUserId( string $userId ): void
-	{
-		$this->userId = $userId;
-	}
-
-	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getStartPositionX(): int
 	{
@@ -59,7 +37,7 @@ class LanternPositionsEntity extends AbstractPersistableEntity implements Lanter
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setStartPositionX( int $startPositionX ): void
 	{
@@ -67,7 +45,7 @@ class LanternPositionsEntity extends AbstractPersistableEntity implements Lanter
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getStartPositionY(): int
 	{
@@ -75,7 +53,7 @@ class LanternPositionsEntity extends AbstractPersistableEntity implements Lanter
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setStartPositionY( int $startPositionY ): void
 	{
@@ -83,7 +61,7 @@ class LanternPositionsEntity extends AbstractPersistableEntity implements Lanter
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function getStartPositionZ(): int
 	{
@@ -91,7 +69,7 @@ class LanternPositionsEntity extends AbstractPersistableEntity implements Lanter
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function setStartPositionZ( int $startPositionZ ): void
 	{

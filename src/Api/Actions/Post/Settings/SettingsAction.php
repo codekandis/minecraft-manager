@@ -28,7 +28,7 @@ use JsonException;
 use ReflectionException;
 
 /**
- * Represents the action to create or update a user's settings.
+ * Represents the action to create or update a users' settings.
  * @package codekandis/minecraft-manager
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -173,7 +173,7 @@ class SettingsAction extends AbstractWriteAction
 	/**
 	 * Creates or updates a settings by a specific user ID.
 	 * @param SettingsEntityInterface $settings The settings to create or update.
-	 * @param UserEntityInterface $userWithUserId The user with the user's ID.
+	 * @param UserEntityInterface $userWithUserId The user with the users' ID.
 	 * @return SettingsEntityInterface The settings with the record ID of the created setting.
 	 * @throws ReflectionException The settings entity class to reflect does not exist.
 	 * @throws EntityDoesNotMatchClassNameException The settings entity does not match the entity class name of the entity property mapper.

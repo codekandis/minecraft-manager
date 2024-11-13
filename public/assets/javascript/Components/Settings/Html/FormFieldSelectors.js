@@ -1,7 +1,7 @@
 'use strict';
 
 import { AbstractStatic } from '../../../../libraries/jotunheim/Types/AbstractStatic.js';
-import { PropertyNames } from '../Enumerations/PropertyNames.js';
+import { SettingsPropertyNames } from '../Enumerations/SettingsPropertyNames.js';
 
 /**
  * Represents an enumeration of HTML form field selectors of the settings component.
@@ -19,11 +19,11 @@ export class FormFieldSelectors extends AbstractStatic
 	}
 
 	/**
-	 * Represents the chunksize.
-	 * @returns {String} The chunksize.
+	 * Represents the chunk size.
+	 * @returns {String} The chunk size.
 	 */
 	static get CHUNKSIZE()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, PropertyNames.CHUNKSIZE );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, SettingsPropertyNames.CHUNKSIZE );
 	}
 }

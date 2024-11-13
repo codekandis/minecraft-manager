@@ -12,7 +12,7 @@ use CodeKandis\Tiphy\Http\UriBuilders\AbstractUriBuilder;
 class FrontendUriBuilder extends AbstractUriBuilder implements FrontendUriBuilderInterface
 {
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function buildIndexUri(): string
 	{
@@ -20,7 +20,7 @@ class FrontendUriBuilder extends AbstractUriBuilder implements FrontendUriBuilde
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function buildSignoutUri(): string
 	{

@@ -4,13 +4,13 @@ import { AbstractApplicationPage as AbstractApplicationPage_Library } from '../.
 import { Settings } from '../Components/Settings/Entities/Settings.js';
 
 /**
- * Represents the base class of any javascript page..
+ * Represents the base class of any application page.
  * @author Christian Ramelow <info@codekandis.net>
  */
 export class AbstractApplicationPage extends AbstractApplicationPage_Library
 {
 	/**
-	 * Stores the settings of the javascript.
+	 * Stores the applications' settings.
 	 * @type {Settings}
 	 */
 	__settings;

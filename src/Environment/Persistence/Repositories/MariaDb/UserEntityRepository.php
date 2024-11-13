@@ -24,7 +24,7 @@ use ReflectionException;
 class UserEntityRepository extends AbstractRepository implements UserEntityRepositoryInterface
 {
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 * @throws ReflectionException The user entity class to reflect does not exist.
 	 * @throws EntityDoesNotMatchClassNameException The user entity does not match the entity class name of the entity property mapper.
 	 * @throws PublicPropertyNotFoundException A public property does not exist in the user entity class.

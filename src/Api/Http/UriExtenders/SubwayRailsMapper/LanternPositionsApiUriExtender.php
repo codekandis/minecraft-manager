@@ -31,7 +31,7 @@ class LanternPositionsApiUriExtender extends AbstractApiUriExtender
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function extend(): void
 	{

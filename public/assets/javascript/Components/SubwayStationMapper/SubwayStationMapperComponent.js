@@ -1,14 +1,16 @@
 'use strict';
 
+import { Collection } from '../../../libraries/jotunheim/Collections/Collection.js';
 import { ClickEvent } from '../../../libraries/jotunheim/Dom/ClickEvent.js';
+import { BindableHtmlElementProxy } from '../../../libraries/jotunheim/Dom/DataBindings/BindableHtmlElementProxy.js';
 import { DomHelper } from '../../../libraries/jotunheim/Dom/DomHelper.js';
-import { BindableHtmlElementProxy } from '../../../libraries/jotunheim/Types/DataBindings/BindableHtmlElementProxy.js';
 import { DataBindingInitializationDirection } from '../../../libraries/jotunheim/Types/DataBindings/DataBindingInitializationDirection.js';
 import { Clipboard } from '../../../libraries/jotunheim/Utilities/Clipboard.js';
 import { AbstractComponent } from '../AbstractComponent.js';
 import { StationPositions } from './Entities/StationPositions.js';
 import { StationPositionsPropertyNames } from './Enumerations/StationPositionsPropertyNames.js';
 import { FormFieldSelectors } from './Html/FormFieldSelectors.js';
+import { ApiAjaxController } from './Net/Http/ApiAjaxController.js';
 
 /**
  * Represents the subway station mapper component.
@@ -17,25 +19,113 @@ import { FormFieldSelectors } from './Html/FormFieldSelectors.js';
 export class SubwayStationMapperComponent extends AbstractComponent
 {
 	/**
+	 * Stores the lantern positions property names to form field selector mappings.
+	 * @type {Collection}
+	 */
+	#_stationPositionsPropertyNameFormFieldSelectorMappings = new Collection(
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING,
+			formFieldSelector:            FormFieldSelectors.CALCULATED_COMMAND_STATION_HEAD_MINING
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING,
+			formFieldSelector:            FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R,
+			formFieldSelector:            FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_R
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L,
+			formFieldSelector:            FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_L
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL,
+			formFieldSelector:            FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_RL
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL,
+			formFieldSelector:            FormFieldSelectors.CALCULATED_COMMAND_ARRIVAL_BELL
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL,
+			formFieldSelector:            FormFieldSelectors.CALCULATED_COMMAND_DEPARTURE_BELL
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_STATION_HEAD_1
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_2,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_STATION_HEAD_2
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_CONCOURSE,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_CONCOURSE
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_PORT,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_STAIRS_PORT
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_STAIRS
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_ENTRANCE,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_STAIRS_ENTRANCE
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_LEFT,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_LEFT
+		},
+		{
+			stationPositionsPropertyName: StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_RIGHT,
+			formFieldSelector:            FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_RIGHT
+		}
+	);
+
+	/**
 	 * Stores the station positions.
 	 * @type {StationPositions}
 	 */
-	#_stationPositions = new StationPositions();
+	#_stationPositions;
 
 	/**
-	 * Sets the direction of the station.
-	 * @param {String} value The direction of the station.
+	 * Constructor method.
+	 * @param {Settings} settings The application's settings.
 	 */
-	set [ StationPositionsPropertyNames.STATION_ORIENTATION ]( value )
+	constructor( settings )
 	{
-		this.#setPropertyValueAndDataDirectionAttribute( StationPositionsPropertyNames.STATION_ORIENTATION, value, FormFieldSelectors.STATION_ORIENTATION );
+		super( settings );
+
+		this.#initialize();
+	}
+
+	/**
+	 * Initializes the component.
+	 */
+	#initialize()
+	{
+		this.#_stationPositions = new StationPositions( this.__settings );
+
+		this.#readStationPositionsFromApi();
+	}
+
+	/**
+	 * Sets the orientation of the station.
+	 * @param {String} value The orientation of the station.
+	 */
+	set orientation( value )
+	{
+		this.#setPropertyValueAndDataDirectionAttribute( StationPositionsPropertyNames.ORIENTATION, value, FormFieldSelectors.ORIENTATION );
 	}
 
 	/**
 	 * Sets the calculated station head command.
 	 * @param {String} value The calculated station head command.
 	 */
-	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING ]( value )
+	set calculatedCommandStationHeadMining( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING, value, FormFieldSelectors.CALCULATED_COMMAND_STATION_HEAD_MINING );
 	}
@@ -44,7 +134,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the calculated concourse command.
 	 * @param {String} value The calculated concourse command.
 	 */
-	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING ]( value )
+	set calculatedCommandConcourseMining( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING, value, FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING );
 	}
@@ -53,7 +143,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the calculated concourse R command.
 	 * @param {String} value The calculated concourse R command.
 	 */
-	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R ]( value )
+	set calculatedCommandConcourseMiningR( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R, value, FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_R );
 	}
@@ -62,7 +152,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the calculated concourse L command.
 	 * @param {String} value The calculated concourse L command.
 	 */
-	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L ]( value )
+	set calculatedCommandConcourseMiningL( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L, value, FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_L );
 	}
@@ -71,7 +161,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the calculated concourse RL command.
 	 * @param {String} value The calculated concourse RL command.
 	 */
-	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL ]( value )
+	set calculatedCommandConcourseMiningRL( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL, value, FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_RL );
 	}
@@ -80,7 +170,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the calculated arrival bell command.
 	 * @param {String} value The calculated arrival bell command.
 	 */
-	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL ]( value )
+	set calculatedCommandArrivalBell( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL, value, FormFieldSelectors.CALCULATED_COMMAND_ARRIVAL_BELL );
 	}
@@ -89,7 +179,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the calculated departure bell command.
 	 * @param {String} value The calculated departure bell command.
 	 */
-	set [ StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL ]( value )
+	set calculatedCommandDepartureBell( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL, value, FormFieldSelectors.CALCULATED_COMMAND_DEPARTURE_BELL );
 	}
@@ -98,7 +188,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the station head 1 structure name.
 	 * @param {String} value The station head 1 structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1 ]( value )
+	set structureNameStationHead1( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1, value, FormFieldSelectors.STRUCTURE_NAME_STATION_HEAD_1 );
 	}
@@ -107,7 +197,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the station head 2 structure name.
 	 * @param {String} value The station head 2 structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_2 ]( value )
+	set structureNameStationHead2( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_2, value, FormFieldSelectors.STRUCTURE_NAME_STATION_HEAD_2 );
 	}
@@ -116,7 +206,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the concourse structure name.
 	 * @param {String} value The concourse structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_CONCOURSE ]( value )
+	set structureNameConcourse( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_CONCOURSE, value, FormFieldSelectors.STRUCTURE_NAME_CONCOURSE );
 	}
@@ -125,7 +215,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the stairs port structure name.
 	 * @param {String} value The stairs port structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_PORT ]( value )
+	set structureNameStairsPort( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_PORT, value, FormFieldSelectors.STRUCTURE_NAME_STAIRS_PORT );
 	}
@@ -134,7 +224,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the stairs structure name.
 	 * @param {String} value The calculated stairs structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS ]( value )
+	set structureNameStairs( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS, value, FormFieldSelectors.STRUCTURE_NAME_STAIRS );
 	}
@@ -143,7 +233,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the stairs entrance structure name.
 	 * @param {String} value The stairs entrance structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_ENTRANCE ]( value )
+	set structureNameStairsEntrance( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_ENTRANCE, value, FormFieldSelectors.STRUCTURE_NAME_STAIRS_ENTRANCE );
 	}
@@ -152,7 +242,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the stairway left structure name.
 	 * @param {String} value The stairway left structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_LEFT ]( value )
+	set structureNameStairwayLeft( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_LEFT, value, FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_LEFT );
 	}
@@ -161,7 +251,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 * Sets the stairway right structure name.
 	 * @param {String} value The stairway right structure name.
 	 */
-	set [ StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_RIGHT ]( value )
+	set structureNameStairwayRight( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_RIGHT, value, FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_RIGHT );
 	}
@@ -191,14 +281,43 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	}
 
 	/**
+	 * Reads the lantern positions from the API.
+	 */
+	#readStationPositionsFromApi()
+	{
+		( new ApiAjaxController() )
+			.readStationPositions()
+			.then(
+				( stationPositions ) =>
+				{
+					this.#_stationPositions.orientation             = stationPositions[ StationPositionsPropertyNames.ORIENTATION ];
+					this.#_stationPositions.structureBlockPositionX = stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ];
+					this.#_stationPositions.structureBlockPositionY = stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ];
+					this.#_stationPositions.structureBlockPositionZ = stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ];
+
+					this.#_stationPositions.propertyChangedEvent( this.#stationPositions_propertyChanged );
+				}
+			);
+	}
+
+	/**
+	 * Writes the lantern positions to the API.
+	 */
+	async #writeStationPositionsToApi()
+	{
+		await ( new ApiAjaxController() )
+			.writeStationPositions( this.#_stationPositions )
+	}
+
+	/**
 	 * @inheritDoc
 	 */
 	_addDataBindings()
 	{
-		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.STATION_ORIENTATION, BindableHtmlElementProxy.with_selector( FormFieldSelectors.STATION_ORIENTATION ), 'value', DataBindingInitializationDirection.BINDER );
-		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CURRENT_POSITION_X, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_X ), 'value', DataBindingInitializationDirection.BINDER );
-		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CURRENT_POSITION_Y, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDER );
-		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CURRENT_POSITION_Z, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.ORIENTATION, BindableHtmlElementProxy.with_selector( FormFieldSelectors.ORIENTATION ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X, BindableHtmlElementProxy.with_selector( FormFieldSelectors.STRUCTURE_BLOCK_POSITION_X ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y, BindableHtmlElementProxy.with_selector( FormFieldSelectors.STRUCTURE_BLOCK_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z, BindableHtmlElementProxy.with_selector( FormFieldSelectors.STRUCTURE_BLOCK_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_COMMAND_STATION_HEAD_MINING ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_R ), 'value', DataBindingInitializationDirection.BINDER );
@@ -231,23 +350,6 @@ export class SubwayStationMapperComponent extends AbstractComponent
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_X, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_OFFSET_STAIRWAY_RIGHT_X ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Y, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_OFFSET_STAIRWAY_RIGHT_Y ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Z, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_OFFSET_STAIRWAY_RIGHT_Z ), 'value', DataBindingInitializationDirection.BINDER );
-
-		this.dataBindings.add( StationPositionsPropertyNames.STATION_ORIENTATION, this.#_stationPositions, StationPositionsPropertyNames.STATION_ORIENTATION, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_2, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_2, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_CONCOURSE, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_CONCOURSE, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_PORT, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_PORT, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_ENTRANCE, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_ENTRANCE, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_LEFT, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_LEFT, DataBindingInitializationDirection.BINDABLE );
-		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_RIGHT, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_RIGHT, DataBindingInitializationDirection.BINDABLE );
 	}
 
 	/**
@@ -255,10 +357,10 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 */
 	_addFormFieldsEventHandlers()
 	{
-		this._attachEventDefaultValueMappings( FormFieldSelectors.STATION_ORIENTATION, StationPositionsPropertyNames.STATION_ORIENTATION );
-		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_X, StationPositionsPropertyNames.CURRENT_POSITION_X );
-		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_Y, StationPositionsPropertyNames.CURRENT_POSITION_Y );
-		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_Z, StationPositionsPropertyNames.CURRENT_POSITION_Z );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.ORIENTATION, StationPositionsPropertyNames.ORIENTATION );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.STRUCTURE_BLOCK_POSITION_X, StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.STRUCTURE_BLOCK_POSITION_Y, StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.STRUCTURE_BLOCK_POSITION_Z, StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z );
 		this._attachEventDefaultValueMappings( FormFieldSelectors.CALCULATED_STATION_ROTATION, StationPositionsPropertyNames.CALCULATED_STATION_ROTATION );
 
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.CALCULATED_COMMAND_STATION_HEAD_MINING, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
@@ -276,6 +378,28 @@ export class SubwayStationMapperComponent extends AbstractComponent
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.STRUCTURE_NAME_STAIRS_ENTRANCE, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_LEFT, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_RIGHT, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
+	}
+
+	/**
+	 * Handles the property changed event of the station positions.
+	 * @param {PropertyChangedEvent} event The property changed event which will be handled.
+	 */
+	#stationPositions_propertyChanged = async ( event ) =>
+	{
+		const propertyName = event.detail.eventArguments.propertyName;
+
+		switch ( propertyName )
+		{
+			case StationPositionsPropertyNames.ORIENTATION:
+			case StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X:
+			case StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y:
+			case StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z:
+			{
+				await this.#writeStationPositionsToApi();
+
+				break;
+			}
+		}
 	}
 
 	/**
