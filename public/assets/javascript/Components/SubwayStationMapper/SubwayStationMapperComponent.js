@@ -113,12 +113,30 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	}
 
 	/**
+	 * Gets the orientation of the station.
+	 * @returns {String} The orientation of the station.
+	 */
+	get orientation()
+	{
+		return String.empty;
+	}
+
+	/**
 	 * Sets the orientation of the station.
 	 * @param {String} value The orientation of the station.
 	 */
 	set orientation( value )
 	{
 		this.#setPropertyValueAndDataDirectionAttribute( StationPositionsPropertyNames.ORIENTATION, value, FormFieldSelectors.ORIENTATION );
+	}
+
+	/**
+	 * Gets the calculated station head command.
+	 * @returns {String} The calculated station head command.
+	 */
+	get calculatedCommandStationHeadMining()
+	{
+		return String.empty;
 	}
 
 	/**
@@ -131,12 +149,30 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	}
 
 	/**
+	 * Gets the calculated concourse command.
+	 * @returns {String} The calculated concourse command.
+	 */
+	get calculatedCommandConcourseMining()
+	{
+		return String.empty;
+	}
+
+	/**
 	 * Sets the calculated concourse command.
 	 * @param {String} value The calculated concourse command.
 	 */
 	set calculatedCommandConcourseMining( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING, value, FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING );
+	}
+
+	/**
+	 * Gets the calculated concourse R command.
+	 * @returns {String} The calculated concourse R command.
+	 */
+	get calculatedCommandConcourseMiningR()
+	{
+		return String.empty;
 	}
 
 	/**
@@ -149,12 +185,30 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	}
 
 	/**
+	 * Gets the calculated concourse L command.
+	 * @returns {String} The calculated concourse L command.
+	 */
+	get calculatedCommandConcourseMiningL()
+	{
+		return String.empty;
+	}
+
+	/**
 	 * Sets the calculated concourse L command.
 	 * @param {String} value The calculated concourse L command.
 	 */
 	set calculatedCommandConcourseMiningL( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L, value, FormFieldSelectors.CALCULATED_COMMAND_CONCOURSE_MINING_L );
+	}
+
+	/**
+	 * Gets the calculated concourse RL command.
+	 * @returns {String} The calculated concourse RL command.
+	 */
+	get calculatedCommandConcourseMiningRL()
+	{
+		return String.empty;
 	}
 
 	/**
@@ -167,12 +221,30 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	}
 
 	/**
+	 * Gets the calculated arrival bell command.
+	 * @returns {String} The calculated arrival bell command.
+	 */
+	get calculatedCommandArrivalBell()
+	{
+		return String.empty;
+	}
+
+	/**
 	 * Sets the calculated arrival bell command.
 	 * @param {String} value The calculated arrival bell command.
 	 */
 	set calculatedCommandArrivalBell( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL, value, FormFieldSelectors.CALCULATED_COMMAND_ARRIVAL_BELL );
+	}
+
+	/**
+	 * Gets the calculated departure bell command.
+	 * @returns {String} The calculated departure bell command.
+	 */
+	get calculatedCommandDepartureBell()
+	{
+		return String.empty;
 	}
 
 	/**
@@ -185,12 +257,30 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	}
 
 	/**
+	 * Gets the station head 1 structure name.
+	 * @returns {String} The station head 1 structure name.
+	 */
+	get structureNameStationHead1()
+	{
+		return String.empty;
+	}
+
+	/**
 	 * Sets the station head 1 structure name.
 	 * @param {String} value The station head 1 structure name.
 	 */
 	set structureNameStationHead1( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1, value, FormFieldSelectors.STRUCTURE_NAME_STATION_HEAD_1 );
+	}
+
+	/**
+	 * Gets the station head 2 structure name.
+	 * @returns {String} The station head 2 structure name.
+	 */
+	get structureNameStationHead2()
+	{
+		return String.empty;
 	}
 
 	/**
@@ -203,12 +293,30 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	}
 
 	/**
+	 * Gets the concourse structure name.
+	 * @returns {String} The concourse structure name.
+	 */
+	get structureNameConcourse()
+	{
+		return String.empty;
+	}
+
+	/**
 	 * Sets the concourse structure name.
 	 * @param {String} value The concourse structure name.
 	 */
 	set structureNameConcourse( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_CONCOURSE, value, FormFieldSelectors.STRUCTURE_NAME_CONCOURSE );
+	}
+
+	/**
+	 * Gets the stairs port structure name.
+	 * @returns {String} The stairs port structure name.
+	 */
+	get structureNameStairsPort()
+	{
+		return String.empty;
 	}
 
 	/**
@@ -221,12 +329,30 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	}
 
 	/**
+	 * Gets the stairs structure name.
+	 * @returns {String} The calculated stairs structure name.
+	 */
+	get structureNameStairs()
+	{
+		return String.empty;
+	}
+
+	/**
 	 * Sets the stairs structure name.
 	 * @param {String} value The calculated stairs structure name.
 	 */
 	set structureNameStairs( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS, value, FormFieldSelectors.STRUCTURE_NAME_STAIRS );
+	}
+
+	/**
+	 * Gets the stairs entrance structure name.
+	 * @returns {String} The stairs entrance structure name.
+	 */
+	get structureNameStairsEntrance()
+	{
+		return String.empty;
 	}
 
 	/**
@@ -239,12 +365,30 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	}
 
 	/**
+	 * Gets the stairway left structure name.
+	 * @returns {String} The stairway left structure name.
+	 */
+	get structureNameStairwayLeft()
+	{
+		return String.empty;
+	}
+
+	/**
 	 * Sets the stairway left structure name.
 	 * @param {String} value The stairway left structure name.
 	 */
 	set structureNameStairwayLeft( value )
 	{
 		this.#setPropertyValueAndDataClipboardAttribute( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_LEFT, value, FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_LEFT );
+	}
+
+	/**
+	 * Gets the stairway right structure name.
+	 * @returns {String} The stairway right structure name.
+	 */
+	get structureNameStairwayRight()
+	{
+		return String.empty;
 	}
 
 	/**
@@ -350,6 +494,23 @@ export class SubwayStationMapperComponent extends AbstractComponent
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_X, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_OFFSET_STAIRWAY_RIGHT_X ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Y, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_OFFSET_STAIRWAY_RIGHT_Y ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_stationPositions.dataBindings.add( StationPositionsPropertyNames.CALCULATED_OFFSET_STAIRWAY_RIGHT_Z, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_OFFSET_STAIRWAY_RIGHT_Z ), 'value', DataBindingInitializationDirection.BINDER );
+
+		this.dataBindings.add( StationPositionsPropertyNames.ORIENTATION, this.#_stationPositions, StationPositionsPropertyNames.ORIENTATION, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_STATION_HEAD_MINING, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_R, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_L, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_CONCOURSE_MINING_RL, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_ARRIVAL_BELL, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL, this.#_stationPositions, StationPositionsPropertyNames.CALCULATED_COMMAND_DEPARTURE_BELL, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_1, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_2, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STATION_HEAD_2, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_CONCOURSE, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_CONCOURSE, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_PORT, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_PORT, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_ENTRANCE, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRS_ENTRANCE, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_LEFT, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_LEFT, DataBindingInitializationDirection.BINDABLE );
+		this.dataBindings.add( StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_RIGHT, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_NAME_STAIRWAY_RIGHT, DataBindingInitializationDirection.BINDABLE );
 	}
 
 	/**
