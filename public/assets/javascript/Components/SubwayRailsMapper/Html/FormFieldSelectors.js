@@ -28,33 +28,6 @@ export class FormFieldSelectors extends AbstractStatic
 	}
 
 	/**
-	 * Represents the start position X.
-	 * @returns {String} The start position X.
-	 */
-	static get START_POSITION_X()
-	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.START_POSITION_X );
-	}
-
-	/**
-	 * Represents the start position Y.
-	 * @returns {String} The start position Y.
-	 */
-	static get START_POSITION_Y()
-	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.START_POSITION_Y );
-	}
-
-	/**
-	 * Represents the start position Z.
-	 * @returns {String} The start position Z.
-	 */
-	static get START_POSITION_Z()
-	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.START_POSITION_Z );
-	}
-
-	/**
 	 * Represents the current values of the module.
 	 * @returns {String} The current values of the module.
 	 */

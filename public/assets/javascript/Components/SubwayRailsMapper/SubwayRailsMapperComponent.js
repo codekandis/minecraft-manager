@@ -98,9 +98,9 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 			.then(
 				( lanternPositions ) =>
 				{
-					this.#_lanternPositions.startPositionX = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_X ];
-					this.#_lanternPositions.startPositionY = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Y ];
-					this.#_lanternPositions.startPositionZ = lanternPositions[ LanternPositionsPropertyNames.START_POSITION_Z ];
+					this.#_lanternPositions.currentPositionX = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_X ];
+					this.#_lanternPositions.currentPositionY = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_Y ];
+					this.#_lanternPositions.currentPositionZ = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_Z ];
 
 					this.#_lanternPositions.propertyChangedEvent( this.#lanternPositions_propertyChanged );
 				}
@@ -121,9 +121,6 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	 */
 	_addDataBindings()
 	{
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.START_POSITION_X, BindableHtmlElementProxy.with_selector( FormFieldSelectors.START_POSITION_X ), 'value', DataBindingInitializationDirection.BINDER );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.START_POSITION_Y, BindableHtmlElementProxy.with_selector( FormFieldSelectors.START_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDER );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.START_POSITION_Z, BindableHtmlElementProxy.with_selector( FormFieldSelectors.START_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_X, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_X ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_Y, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_Z, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDER );
@@ -140,9 +137,6 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	 */
 	_addFormFieldsEventHandlers()
 	{
-		this._attachEventDefaultValueMappings( FormFieldSelectors.START_POSITION_X, LanternPositionsPropertyNames.START_POSITION_X );
-		this._attachEventDefaultValueMappings( FormFieldSelectors.START_POSITION_Y, LanternPositionsPropertyNames.START_POSITION_Y );
-		this._attachEventDefaultValueMappings( FormFieldSelectors.START_POSITION_Z, LanternPositionsPropertyNames.START_POSITION_Z );
 		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_X, LanternPositionsPropertyNames.CURRENT_POSITION_X );
 		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_Y, LanternPositionsPropertyNames.CURRENT_POSITION_Y );
 		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_Z, LanternPositionsPropertyNames.CURRENT_POSITION_Z );
@@ -158,9 +152,9 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 
 		switch ( propertyName )
 		{
-			case LanternPositionsPropertyNames.START_POSITION_X:
-			case LanternPositionsPropertyNames.START_POSITION_Y:
-			case LanternPositionsPropertyNames.START_POSITION_Z:
+			case LanternPositionsPropertyNames.CURRENT_POSITION_X:
+			case LanternPositionsPropertyNames.CURRENT_POSITION_Y:
+			case LanternPositionsPropertyNames.CURRENT_POSITION_Z:
 			{
 				this.#writeLanternPositionsToApi();
 

@@ -11,68 +11,68 @@ use CodeKandis\MinecraftManager\Environment\Entities\AbstractPersistableUserBase
 class LanternPositionsEntity extends AbstractPersistableUserBasedEntity implements LanternPositionsEntityInterface
 {
 	/**
-	 * Stores the start position X.
+	 * Stores the current position X.
 	 * @var int
 	 */
-	public int $startPositionX = 0;
+	public int $currentPositionX = 0;
 
 	/**
-	 * Stores the start position Y.
+	 * Stores the current position Y.
 	 * @var int
 	 */
-	public int $startPositionY = 0;
+	public int $currentPositionY = 0;
 
 	/**
-	 * Stores the start position Z.
+	 * Stores the current position Z.
 	 * @var int
 	 */
-	public int $startPositionZ = 0;
+	public int $currentPositionZ = 0;
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getStartPositionX(): int
+	public function getCurrentPositionX(): int
 	{
-		return $this->startPositionX;
+		return $this->currentPositionX;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function setStartPositionX( int $startPositionX ): void
+	public function setCurrentPositionX( int $currentPositionX ): void
 	{
-		$this->startPositionX = $startPositionX;
+		$this->currentPositionX = $currentPositionX;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getStartPositionY(): int
+	public function getCurrentPositionY(): int
 	{
-		return $this->startPositionY;
+		return $this->currentPositionY;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function setStartPositionY( int $startPositionY ): void
+	public function setCurrentPositionY( int $currentPositionY ): void
 	{
-		$this->startPositionY = $startPositionY;
+		$this->currentPositionY = $currentPositionY;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getStartPositionZ(): int
+	public function getCurrentPositionZ(): int
 	{
-		return $this->startPositionZ;
+		return $this->currentPositionZ;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function setStartPositionZ( int $startPositionZ ): void
+	public function setCurrentPositionZ( int $currentPositionZ ): void
 	{
-		$this->startPositionZ = $startPositionZ;
+		$this->currentPositionZ = $currentPositionZ;
 	}
 }

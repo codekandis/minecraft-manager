@@ -37,9 +37,9 @@ export class LanternPositionsCalculator extends Abstract
 	{
 		const calculatedValues = new CalculatedLanternPositions();
 
-		const differenceX = lanternPositions.currentPositionX - lanternPositions.startPositionX;
-		const differenceY = lanternPositions.currentPositionY - lanternPositions.startPositionY;
-		const differenceZ = lanternPositions.currentPositionZ - lanternPositions.startPositionZ;
+		const differenceX = lanternPositions.currentPositionX - this.#_settings.initialPositionX;
+		const differenceY = lanternPositions.currentPositionY - this.#_settings.initialPositionY;
+		const differenceZ = lanternPositions.currentPositionZ - this.#_settings.initialPositionZ;
 
 		calculatedValues.isCurrentPositionXValid = 0 === differenceX % this.#_settings.chunkSize;
 		calculatedValues.isCurrentPositionYValid = 0 === differenceY % this.#_settings.chunkSize;

@@ -9,33 +9,6 @@ import { AbstractStatic } from '../../../../libraries/jotunheim/Types/AbstractSt
 export class LanternPositionsPropertyNames extends AbstractStatic
 {
 	/**
-	 * Represents the property `startPositionX`.
-	 * @returns {String} The property `startPositionX`.
-	 */
-	static get START_POSITION_X()
-	{
-		return 'startPositionX';
-	}
-
-	/**
-	 * Represents the property `startPositionY`.
-	 * @returns {String} The property `startPositionY`.
-	 */
-	static get START_POSITION_Y()
-	{
-		return 'startPositionY';
-	}
-
-	/**
-	 * Represents the property `startPositionZ`.
-	 * @returns {String} The property `startPositionZ`.
-	 */
-	static get START_POSITION_Z()
-	{
-		return 'startPositionZ';
-	}
-
-	/**
 	 * Represents the property `currentPositionX`.
 	 * @returns {String} The property `currentPositionX`.
 	 */

@@ -19,24 +19,6 @@ export class LanternPositions extends AbstractBindable
 	#_settings;
 
 	/**
-	 * Stores the start position X.
-	 * @type {Number}
-	 */
-	#_startPositionX = 0;
-
-	/**
-	 * Stores the start position Y.
-	 * @type {Number}
-	 */
-	#_startPositionY = 0;
-
-	/**
-	 * Stores the start position Z.
-	 * @type {Number}
-	 */
-	#_startPositionZ = 0;
-
-	/**
 	 * Stores the current position X.
 	 * @type {Number}
 	 */
@@ -119,69 +101,6 @@ export class LanternPositions extends AbstractBindable
 		this.#_settings = settings;
 
 		this.#initialize();
-	}
-
-	/**
-	 * Gets the start position X.
-	 * @returns {Number} The start position X.
-	 */
-	get startPositionX()
-	{
-		return this.#_startPositionX;
-	}
-
-	/**
-	 * Sets the start position X.
-	 * @param {Number} value The start position X.
-	 */
-	set startPositionX( value )
-	{
-		this.#_startPositionX = Number.parseInt( value );
-		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.START_POSITION_X );
-
-		this.calculate();
-	}
-
-	/**
-	 * Gets the start position Y.
-	 * @returns {Number} The start position Y.
-	 */
-	get startPositionY()
-	{
-		return this.#_startPositionY;
-	}
-
-	/**
-	 * Sets the start position Y.
-	 * @param {Number} value The start position Y.
-	 */
-	set startPositionY( value )
-	{
-		this.#_startPositionY = Number.parseInt( value );
-		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.START_POSITION_Y );
-
-		this.calculate();
-	}
-
-	/**
-	 * Gets the start position Z.
-	 * @returns {Number} The start position Z.
-	 */
-	get startPositionZ()
-	{
-		return this.#_startPositionZ;
-	}
-
-	/**
-	 * Sets the start position Z.
-	 * @param {Number} value The start position Z.
-	 */
-	set startPositionZ( value )
-	{
-		this.#_startPositionZ = Number.parseInt( value );
-		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.START_POSITION_Z );
-
-		this.calculate();
 	}
 
 	/**
@@ -456,6 +375,9 @@ export class LanternPositions extends AbstractBindable
 		switch ( event.detail.eventArguments.propertyName )
 		{
 			case SettingsPropertyNames.CHUNKSIZE:
+			case SettingsPropertyNames.INITIAL_POSITION_X:
+			case SettingsPropertyNames.INITIAL_POSITION_Y:
+			case SettingsPropertyNames.INITIAL_POSITION_Z:
 			{
 				this.calculate();
 
