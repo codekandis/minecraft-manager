@@ -54,7 +54,10 @@ export class ApiAjaxController extends AbstractApiAjaxController
 		request.payload = this._createRequestPayload(
 			{
 				settings: {
-					[ SettingsPropertyNames.CHUNKSIZE ]: settings[ SettingsPropertyNames.CHUNKSIZE ]
+					[ SettingsPropertyNames.CHUNKSIZE ]:          settings[ SettingsPropertyNames.CHUNKSIZE ],
+					[ SettingsPropertyNames.INITIAL_POSITION_X ]: settings[ SettingsPropertyNames.INITIAL_POSITION_X ],
+					[ SettingsPropertyNames.INITIAL_POSITION_Y ]: settings[ SettingsPropertyNames.INITIAL_POSITION_Y ],
+					[ SettingsPropertyNames.INITIAL_POSITION_Z ]: settings[ SettingsPropertyNames.INITIAL_POSITION_Z ]
 				}
 			}
 		);

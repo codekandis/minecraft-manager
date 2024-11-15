@@ -26,4 +26,31 @@ export class FormFieldSelectors extends AbstractStatic
 	{
 		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, SettingsPropertyNames.CHUNKSIZE );
 	}
+
+	/**
+	 * Represents the initial position X.
+	 * @returns {String} The initial position X.
+	 */
+	static get INITIAL_POSITION_X()
+	{
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, SettingsPropertyNames.INITIAL_POSITION_X );
+	}
+
+	/**
+	 * Represents the initial position Y.
+	 * @returns {String} The initial position Y.
+	 */
+	static get INITIAL_POSITION_Y()
+	{
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, SettingsPropertyNames.INITIAL_POSITION_Y );
+	}
+
+	/**
+	 * Represents the initial position Z.
+	 * @returns {String} The initial position Z.
+	 */
+	static get INITIAL_POSITION_Z()
+	{
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, SettingsPropertyNames.INITIAL_POSITION_Z );
+	}
 }

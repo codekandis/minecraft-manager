@@ -16,4 +16,31 @@ export class SettingsPropertyNames extends AbstractStatic
 	{
 		return 'chunkSize';
 	}
+
+	/**
+	 * Represents the property `initialPositionX`.
+	 * @returns {String} The property `initialPositionX`.
+	 */
+	static get INITIAL_POSITION_X()
+	{
+		return 'initialPositionX';
+	}
+
+	/**
+	 * Represents the property `initialPositionY`.
+	 * @returns {String} The property `initialPositionY`.
+	 */
+	static get INITIAL_POSITION_Y()
+	{
+		return 'initialPositionY';
+	}
+
+	/**
+	 * Represents the property `initialPositionZ`.
+	 * @returns {String} The property `initialPositionZ`.
+	 */
+	static get INITIAL_POSITION_Z()
+	{
+		return 'initialPositionZ';
+	}
 }

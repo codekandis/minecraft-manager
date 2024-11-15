@@ -43,7 +43,10 @@ export class SettingsComponent extends AbstractComponent
 			.then(
 				( settings ) =>
 				{
-					this.__settings.chunkSize = settings[ SettingsPropertyNames.CHUNKSIZE ];
+					this.__settings.chunkSize        = settings[ SettingsPropertyNames.CHUNKSIZE ];
+					this.__settings.initialPositionX = settings[ SettingsPropertyNames.INITIAL_POSITION_X ];
+					this.__settings.initialPositionY = settings[ SettingsPropertyNames.INITIAL_POSITION_Y ];
+					this.__settings.initialPositionZ = settings[ SettingsPropertyNames.INITIAL_POSITION_Z ];
 
 					this.__settings.propertyChangedEvent( this.#setting_propertyChanged );
 				}
@@ -65,6 +68,9 @@ export class SettingsComponent extends AbstractComponent
 	_addDataBindings()
 	{
 		this.__settings.dataBindings.add( SettingsPropertyNames.CHUNKSIZE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CHUNKSIZE ), 'value', DataBindingInitializationDirection.BINDER );
+		this.__settings.dataBindings.add( SettingsPropertyNames.INITIAL_POSITION_X, BindableHtmlElementProxy.with_selector( FormFieldSelectors.INITIAL_POSITION_X ), 'value', DataBindingInitializationDirection.BINDER );
+		this.__settings.dataBindings.add( SettingsPropertyNames.INITIAL_POSITION_Y, BindableHtmlElementProxy.with_selector( FormFieldSelectors.INITIAL_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDER );
+		this.__settings.dataBindings.add( SettingsPropertyNames.INITIAL_POSITION_Z, BindableHtmlElementProxy.with_selector( FormFieldSelectors.INITIAL_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDER );
 	}
 
 	/**
@@ -73,6 +79,9 @@ export class SettingsComponent extends AbstractComponent
 	_addFormFieldsEventHandlers()
 	{
 		this._attachEventDefaultValueMappings( FormFieldSelectors.CHUNKSIZE, SettingsPropertyNames.CHUNKSIZE );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.INITIAL_POSITION_X, SettingsPropertyNames.INITIAL_POSITION_X );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.INITIAL_POSITION_Y, SettingsPropertyNames.INITIAL_POSITION_Y );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.INITIAL_POSITION_Z, SettingsPropertyNames.INITIAL_POSITION_Z );
 	}
 
 	/**
@@ -84,6 +93,9 @@ export class SettingsComponent extends AbstractComponent
 		switch ( event.detail.eventArguments.propertyName )
 		{
 			case SettingsPropertyNames.CHUNKSIZE:
+			case SettingsPropertyNames.INITIAL_POSITION_X:
+			case SettingsPropertyNames.INITIAL_POSITION_Y:
+			case SettingsPropertyNames.INITIAL_POSITION_Z:
 			{
 				this.#writeSettingsToApi();
 

@@ -43,7 +43,10 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 				`settings.settings`.`_id`,
 				`settings.settings`.`id`,
 				`settings.settings`.`userId`,
-				`settings.settings`.`chunkSize`
+				`settings.settings`.`chunkSize`,
+				`settings.settings`.`initialPositionX`,
+				`settings.settings`.`initialPositionY`,
+				`settings.settings`.`initialPositionZ`
 			FROM
 				`settings.settings`
 			WHERE
@@ -87,7 +90,10 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 				`settings.settings`.`_id`,
 				`settings.settings`.`id`,
 				`settings.settings`.`userId`,
-				`settings.settings`.`chunkSize`
+				`settings.settings`.`chunkSize`,
+				`settings.settings`.`initialPositionX`,
+				`settings.settings`.`initialPositionY`,
+				`settings.settings`.`initialPositionZ`
 			FROM
 				`settings.settings`
 			WHERE
@@ -133,9 +139,9 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 		$query = <<< END
 			INSERT INTO
 				`settings.settings`
-				( `id`, `userId`, `chunkSize` )
+				( `id`, `userId`, `chunkSize`, `initialPositionX`, `initialPositionY`, `initialPositionZ` )
 			VALUES
-				( UUID(), :userId, :chunkSize );
+				( UUID(), :userId, :chunkSize, :initialPositionX, :initialPositionY, :initialPositionZ );
 		END;
 
 		$settingsEntityPropertyMapper = ( new EntityPropertyMapperBuilder() )
@@ -147,8 +153,11 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 		$mappedUserWithUserId = $userEntityPropertyMapper->mapToArray( $userWithUserId );
 
 		$arguments = [
-			'userId'    => $mappedUserWithUserId[ 'id' ],
-			'chunkSize' => $mappedSettings[ 'chunkSize' ]
+			'userId'           => $mappedUserWithUserId[ 'id' ],
+			'chunkSize'        => $mappedSettings[ 'chunkSize' ],
+			'initialPositionX' => $mappedSettings[ 'initialPositionX' ],
+			'initialPositionY' => $mappedSettings[ 'initialPositionY' ],
+			'initialPositionZ' => $mappedSettings[ 'initialPositionZ' ]
 		];
 
 		$this->persistenceConnector->execute( $query, $arguments );
@@ -184,7 +193,10 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 			UPDATE
 				`settings.settings`
 			SET
-				`settings.settings`.`chunkSize` = :chunkSize
+				`settings.settings`.`chunkSize` = :chunkSize,
+				`settings.settings`.`initialPositionX` = :initialPositionX,
+				`settings.settings`.`initialPositionY` = :initialPositionY,
+				`settings.settings`.`initialPositionZ` = :initialPositionZ
 			WHERE
 				`settings.settings`.`_id` = :_id;
 		END;
@@ -192,12 +204,15 @@ class SettingsEntityRepository extends AbstractRepository implements SettingsEnt
 		$settingsEntityPropertyMapper = ( new EntityPropertyMapperBuilder() )
 			->buildSettingsSettingsEntityPropertyMapper();
 
-		$mappedSetting             = $settingsEntityPropertyMapper->mapToArray( $settings );
-		$mappedSettingWithRecordId = $settingsEntityPropertyMapper->mapToArray( $settingsWithRecordId );
+		$mappedSettings             = $settingsEntityPropertyMapper->mapToArray( $settings );
+		$mappedSettingsWithRecordId = $settingsEntityPropertyMapper->mapToArray( $settingsWithRecordId );
 
 		$arguments = [
-			'_id'       => $mappedSettingWithRecordId[ '_id' ],
-			'chunkSize' => $mappedSetting[ 'chunkSize' ]
+			'_id'              => $mappedSettingsWithRecordId[ '_id' ],
+			'chunkSize'        => $mappedSettings[ 'chunkSize' ],
+			'initialPositionX' => $mappedSettings[ 'initialPositionX' ],
+			'initialPositionY' => $mappedSettings[ 'initialPositionY' ],
+			'initialPositionZ' => $mappedSettings[ 'initialPositionZ' ]
 		];
 
 		$this->persistenceConnector->execute( $query, $arguments );
