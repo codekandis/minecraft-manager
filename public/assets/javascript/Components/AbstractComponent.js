@@ -54,6 +54,33 @@ export class AbstractComponent extends AbstractBindable
 		);
 	}
 
+	_addWheelEventHandler( formFieldSelector, data, propertyName )
+	{
+		const formField = DomHelper.querySelector( formFieldSelector );
+		formField.wheelEvent(
+			( event ) =>
+			{
+				event.preventDefault();
+
+				switch ( true )
+				{
+					case event.deltaY <= 1:
+					{
+						data[ propertyName ] = data[ propertyName ] + 1;
+
+						break;
+					}
+					case event.deltaY >= 1:
+					{
+						data[ propertyName ] = data[ propertyName ] - 1;
+
+						break;
+					}
+				}
+			}
+		);
+	}
+
 	/**
 	 * Adds all data bindings of the component.
 	 */
