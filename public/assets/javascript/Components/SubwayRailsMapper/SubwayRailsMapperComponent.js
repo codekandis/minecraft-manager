@@ -140,6 +140,10 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_X, LanternPositionsPropertyNames.CURRENT_POSITION_X );
 		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_Y, LanternPositionsPropertyNames.CURRENT_POSITION_Y );
 		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_Z, LanternPositionsPropertyNames.CURRENT_POSITION_Z );
+
+		this._addWheelEventHandler( FormFieldSelectors.CURRENT_POSITION_X, this.#_lanternPositions, LanternPositionsPropertyNames.CURRENT_POSITION_X );
+		this._addWheelEventHandler( FormFieldSelectors.CURRENT_POSITION_Y, this.#_lanternPositions, LanternPositionsPropertyNames.CURRENT_POSITION_Y );
+		this._addWheelEventHandler( FormFieldSelectors.CURRENT_POSITION_Z, this.#_lanternPositions, LanternPositionsPropertyNames.CURRENT_POSITION_Z );
 	}
 
 	/**

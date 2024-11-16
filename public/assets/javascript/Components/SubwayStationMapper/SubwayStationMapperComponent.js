@@ -539,6 +539,10 @@ export class SubwayStationMapperComponent extends AbstractComponent
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.STRUCTURE_NAME_STAIRS_ENTRANCE, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_LEFT, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
 		DomHelper.addEventHandlerBySelector( FormFieldSelectors.STRUCTURE_NAME_STAIRWAY_RIGHT, ClickEvent.EVENT_NAME, this.#copyableFormField_click );
+
+		this._addWheelEventHandler( FormFieldSelectors.STRUCTURE_BLOCK_POSITION_X, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X );
+		this._addWheelEventHandler( FormFieldSelectors.STRUCTURE_BLOCK_POSITION_Y, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y );
+		this._addWheelEventHandler( FormFieldSelectors.STRUCTURE_BLOCK_POSITION_Z, this.#_stationPositions, StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z );
 	}
 
 	/**

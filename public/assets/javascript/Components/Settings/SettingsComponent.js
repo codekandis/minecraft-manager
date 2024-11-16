@@ -82,6 +82,11 @@ export class SettingsComponent extends AbstractComponent
 		this._attachEventDefaultValueMappings( FormFieldSelectors.INITIAL_POSITION_X, SettingsPropertyNames.INITIAL_POSITION_X );
 		this._attachEventDefaultValueMappings( FormFieldSelectors.INITIAL_POSITION_Y, SettingsPropertyNames.INITIAL_POSITION_Y );
 		this._attachEventDefaultValueMappings( FormFieldSelectors.INITIAL_POSITION_Z, SettingsPropertyNames.INITIAL_POSITION_Z );
+
+		this._addWheelEventHandler( FormFieldSelectors.CHUNKSIZE, this.__settings, SettingsPropertyNames.CHUNKSIZE );
+		this._addWheelEventHandler( FormFieldSelectors.INITIAL_POSITION_X, this.__settings, SettingsPropertyNames.INITIAL_POSITION_X );
+		this._addWheelEventHandler( FormFieldSelectors.INITIAL_POSITION_Y, this.__settings, SettingsPropertyNames.INITIAL_POSITION_Y );
+		this._addWheelEventHandler( FormFieldSelectors.INITIAL_POSITION_Z, this.__settings, SettingsPropertyNames.INITIAL_POSITION_Z );
 	}
 
 	/**
