@@ -97,7 +97,7 @@ export class StationPositionsOffsetPresets extends Abstract
 	 * Stores the position offset concourse.
 	 * @type {PositionOffset}
 	 */
-	#_concourse = new PositionOffset( 2, 2, -18 );
+	#_concourse = new PositionOffset( 3, 2, -33 );
 
 	/**
 	 * Stores the position offset stairs port.

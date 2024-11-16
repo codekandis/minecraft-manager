@@ -11,38 +11,38 @@ use CodeKandis\MinecraftManager\Environment\Entities\PersistableUserBasedEntityI
 interface LanternPositionsEntityInterface extends PersistableUserBasedEntityInterface
 {
 	/**
-	 * Gets the chunk start position X.
-	 * @return int The chunk start position X.
+	 * Gets the current position X.
+	 * @return int The current position X.
 	 */
-	public function getStartPositionX(): int;
+	public function getCurrentPositionX(): int;
 
 	/**
-	 * Sets the start position X.
-	 * @param int $startPositionX The start position X.
+	 * Sets the current position X.
+	 * @param int $currentPositionX The current position X.
 	 */
-	public function setStartPositionX( int $startPositionX ): void;
+	public function setCurrentPositionX( int $currentPositionX ): void;
 
 	/**
-	 * Gets the chunk start position Y.
-	 * @return int The chunk start position Y.
+	 * Gets the current position Y.
+	 * @return int The current position Y.
 	 */
-	public function getStartPositionY(): int;
+	public function getCurrentPositionY(): int;
 
 	/**
-	 * Sets the start position Y.
-	 * @param int $startPositionY The start position Y.
+	 * Sets the current position Y.
+	 * @param int $currentPositionY The current position Y.
 	 */
-	public function setStartPositionY( int $startPositionY ): void;
+	public function setCurrentPositionY( int $currentPositionY ): void;
 
 	/**
-	 * Gets the chunk start position Z.
-	 * @return int The chunk start position Z.
+	 * Gets the current position Z.
+	 * @return int The current position Z.
 	 */
-	public function getStartPositionZ(): int;
+	public function getCurrentPositionZ(): int;
 
 	/**
-	 * Sets the start position Z.
-	 * @param int $startPositionZ The start position Z.
+	 * Sets the current position Z.
+	 * @param int $currentPositionZ The current position Z.
 	 */
-	public function setStartPositionZ( int $startPositionZ ): void;
+	public function setCurrentPositionZ( int $currentPositionZ ): void;
 }

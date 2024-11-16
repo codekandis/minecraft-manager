@@ -21,3 +21,8 @@
 {
 	width: 80px;
 }
+
+#settings-initialValues fieldset label
+{
+	width: 30px;
+}

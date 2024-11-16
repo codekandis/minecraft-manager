@@ -3,7 +3,7 @@
 :root
 {
 	--subway-station-mapper-calculated-values-base-top-position:     522px;
-	--subway-station-mapper-calculated-values-additional-top-offset: 175px;
+	--subway-station-mapper-calculated-values-additional-top-offset: 170px;
 	--subway-station-mapper-calculated-values-base-left-position:    220px;
 }
 
@@ -135,6 +135,16 @@
 	left: calc(var(--subway-station-mapper-calculated-values-base-left-position) * 2);
 }
 
+#subwayStationMapper-calculatedOffsetsStairsPort,
+#subwayStationMapper-calculatedOffsetsStairwayLeft,
+#subwayStationMapper-calculatedOffsetsStairwayRight
+{
+	padding-left:      20px;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: var(--codekandis-color-red);
+}
+
 #subwayStationMapper-calculatedOffsetsStairsPort
 {
 	top:  var(--subway-station-mapper-calculated-values-base-top-position);
@@ -144,13 +154,13 @@
 #subwayStationMapper-calculatedOffsetsStairs
 {
 	top:  var(--subway-station-mapper-calculated-values-base-top-position);
-	left: calc(var(--subway-station-mapper-calculated-values-base-left-position) * 4);
+	left: calc(var(--subway-station-mapper-calculated-values-base-left-position) * 4 + 21px);
 }
 
 #subwayStationMapper-calculatedOffsetsStairsEntrance
 {
 	top:  var(--subway-station-mapper-calculated-values-base-top-position);
-	left: calc(var(--subway-station-mapper-calculated-values-base-left-position) * 5);
+	left: calc(var(--subway-station-mapper-calculated-values-base-left-position) * 5 + 21px);
 }
 
 #subwayStationMapper-calculatedOffsetsStairwayLeft
