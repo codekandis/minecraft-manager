@@ -363,16 +363,16 @@
         },
         {
             "name": "codekandis/jotunheim",
-            "version": "0.7.0",
+            "version": "0.8.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:codekandis/jotunheim.git",
-                "reference": "2c8d8a592336e35b2e5cf45dcbf0c7ca67904842"
+                "reference": "4cf3ca0cd8bd22b1d39ee6e483d3ac118c252a54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codekandis/jotunheim/zipball/2c8d8a592336e35b2e5cf45dcbf0c7ca67904842",
-                "reference": "2c8d8a592336e35b2e5cf45dcbf0c7ca67904842",
+                "url": "https://api.github.com/repos/codekandis/jotunheim/zipball/4cf3ca0cd8bd22b1d39ee6e483d3ac118c252a54",
+                "reference": "4cf3ca0cd8bd22b1d39ee6e483d3ac118c252a54",
                 "shasum": ""
             },
             "require-dev": {
@@ -418,7 +418,7 @@
                 "docs": "https://github.com/codekandis/jotunheim/blob/master/README.md",
                 "source": "https://github.com/codekandis/jotunheim/tree/master"
             },
-            "time": "2024-11-13T20:45:57+00:00"
+            "time": "2024-11-16T15:11:43+00:00"
         },
         {
             "name": "codekandis/json-codec",
