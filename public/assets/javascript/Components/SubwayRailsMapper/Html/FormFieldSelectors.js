@@ -19,24 +19,6 @@ export class FormFieldSelectors extends AbstractStatic
 	}
 
 	/**
-	 * Represents the initial values of the module.
-	 * @returns {String} The initial values of the module.
-	 */
-	static get INITIAL_VALUES()
-	{
-		return String.format`${ 0 }-initialValues`( FormFieldSelectors.MODULE_ROOT );
-	}
-
-	/**
-	 * Represents the current values of the module.
-	 * @returns {String} The current values of the module.
-	 */
-	static get CURRENT_VALUES()
-	{
-		return String.format`${ 0 }-currentValues`( FormFieldSelectors.MODULE_ROOT );
-	}
-
-	/**
 	 * Represents the current position X.
 	 * @returns {String} The current position X.
 	 */

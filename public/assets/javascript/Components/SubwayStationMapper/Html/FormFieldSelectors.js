@@ -19,15 +19,6 @@ export class FormFieldSelectors extends AbstractStatic
 	}
 
 	/**
-	 * Represents the initial values of the module.
-	 * @returns {String} The initial values of the module.
-	 */
-	static get INITIAL_VALUES()
-	{
-		return String.format`${ 0 }-initialValues`( FormFieldSelectors.MODULE_ROOT );
-	}
-
-	/**
 	 * Represents the orientation.
 	 * @returns {String} The orientation.
 	 */
@@ -61,15 +52,6 @@ export class FormFieldSelectors extends AbstractStatic
 	static get STRUCTURE_BLOCK_POSITION_Z()
 	{
 		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z );
-	}
-
-	/**
-	 * Represents the calculated values.
-	 * @returns {String} The calculated values.
-	 */
-	static get CALCULATED_VALUES()
-	{
-		return String.format`${ 0 }-calculatedValues`( FormFieldSelectors.MODULE_ROOT );
 	}
 
 	/**
