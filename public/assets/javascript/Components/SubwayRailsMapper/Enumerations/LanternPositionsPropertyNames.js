@@ -9,57 +9,57 @@ import { AbstractStatic } from '../../../../libraries/jotunheim/Types/AbstractSt
 export class LanternPositionsPropertyNames extends AbstractStatic
 {
 	/**
-	 * Represents the property `currentPositionX`.
-	 * @returns {String} The property `currentPositionX`.
+	 * Represents the property `currentX`.
+	 * @returns {String} The property `currentX`.
 	 */
-	static get CURRENT_POSITION_X()
+	static get CURRENT_X()
 	{
-		return 'currentPositionX';
+		return 'currentX';
 	}
 
 	/**
-	 * Represents the property `isCurrentPositionXValid`.
-	 * @returns {String} The property `isCurrentPositionXValid`.
+	 * Represents the property `isCurrentXValid`.
+	 * @returns {String} The property `isCurrentXValid`.
 	 */
-	static get IS_CURRENT_POSITION_X_VALID()
+	static get IS_CURRENT_X_VALID()
 	{
-		return 'isCurrentPositionXValid';
+		return 'isCurrentXValid';
 	}
 
 	/**
-	 * Represents the property `currentPositionY`.
-	 * @returns {String} The property `currentPositionY`.
+	 * Represents the property `currentY`.
+	 * @returns {String} The property `currentY`.
 	 */
-	static get CURRENT_POSITION_Y()
+	static get CURRENT_Y()
 	{
-		return 'currentPositionY';
+		return 'currentY';
 	}
 
 	/**
-	 * Represents the property `isCurrentPositionYValid`.
-	 * @returns {String} The property `isCurrentPositionYValid`.
+	 * Represents the property `isCurrentYValid`.
+	 * @returns {String} The property `isCurrentYValid`.
 	 */
-	static get IS_CURRENT_POSITION_Y_VALID()
+	static get IS_CURRENT_Y_VALID()
 	{
-		return 'isCurrentPositionYValid';
+		return 'isCurrentYValid';
 	}
 
 	/**
-	 * Represents the property `currentPositionZ`.
-	 * @returns {String} The property `currentPositionZ`.
+	 * Represents the property `currentZ`.
+	 * @returns {String} The property `currentZ`.
 	 */
-	static get CURRENT_POSITION_Z()
+	static get CURRENT_Z()
 	{
-		return 'currentPositionZ';
+		return 'currentZ';
 	}
 
 	/**
-	 * Represents the property `isCurrentPositionZValid`.
-	 * @returns {String} The property `isCurrentPositionZValid`.
+	 * Represents the property `isCurrentZValid`.
+	 * @returns {String} The property `isCurrentZValid`.
 	 */
-	static get IS_CURRENT_POSITION_Z_VALID()
+	static get IS_CURRENT_Z_VALID()
 	{
-		return 'isCurrentPositionZValid';
+		return 'isCurrentZValid';
 	}
 
 	/**

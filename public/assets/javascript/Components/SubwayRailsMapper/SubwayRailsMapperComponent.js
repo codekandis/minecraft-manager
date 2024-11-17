@@ -24,16 +24,16 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	 */
 	#_lanternPositionsPropertyNameFormFieldSelectorMappings = new Collection(
 		{
-			lanternPositionsPropertyName: LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID,
-			formFieldSelector:            FormFieldSelectors.CURRENT_POSITION_X
+			lanternPositionsPropertyName: LanternPositionsPropertyNames.IS_CURRENT_X_VALID,
+			formFieldSelector:            FormFieldSelectors.CURRENT_X
 		},
 		{
-			lanternPositionsPropertyName: LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID,
-			formFieldSelector:            FormFieldSelectors.CURRENT_POSITION_Y
+			lanternPositionsPropertyName: LanternPositionsPropertyNames.IS_CURRENT_Y_VALID,
+			formFieldSelector:            FormFieldSelectors.CURRENT_Y
 		},
 		{
-			lanternPositionsPropertyName: LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID,
-			formFieldSelector:            FormFieldSelectors.CURRENT_POSITION_Z
+			lanternPositionsPropertyName: LanternPositionsPropertyNames.IS_CURRENT_Z_VALID,
+			formFieldSelector:            FormFieldSelectors.CURRENT_Z
 		}
 	);
 
@@ -98,9 +98,9 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 			.then(
 				( lanternPositions ) =>
 				{
-					this.#_lanternPositions.currentPositionX = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_X ];
-					this.#_lanternPositions.currentPositionY = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_Y ];
-					this.#_lanternPositions.currentPositionZ = lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_Z ];
+					this.#_lanternPositions.currentX = lanternPositions[ LanternPositionsPropertyNames.CURRENT_X ];
+					this.#_lanternPositions.currentY = lanternPositions[ LanternPositionsPropertyNames.CURRENT_Y ];
+					this.#_lanternPositions.currentZ = lanternPositions[ LanternPositionsPropertyNames.CURRENT_Z ];
 
 					this.#_lanternPositions.propertyChangedEvent( this.#lanternPositions_propertyChanged );
 				}
@@ -121,9 +121,9 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	 */
 	_addDataBindings()
 	{
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_X, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_X ), 'value', DataBindingInitializationDirection.BINDER );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_Y, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Y ), 'value', DataBindingInitializationDirection.BINDER );
-		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_POSITION_Z, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_POSITION_Z ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_X, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_X ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_Y, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_Y ), 'value', DataBindingInitializationDirection.BINDER );
+		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CURRENT_Z, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CURRENT_Z ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_X_NEGATIVE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_X_NEGATIVE ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_X_POSITIVE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_X_POSITIVE ), 'value', DataBindingInitializationDirection.BINDER );
 		this.#_lanternPositions.dataBindings.add( LanternPositionsPropertyNames.CALCULATED_POSITION_Y_NEGATIVE, BindableHtmlElementProxy.with_selector( FormFieldSelectors.CALCULATED_POSITION_Y_NEGATIVE ), 'value', DataBindingInitializationDirection.BINDER );
@@ -137,13 +137,13 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	 */
 	_addFormFieldsEventHandlers()
 	{
-		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_X, LanternPositionsPropertyNames.CURRENT_POSITION_X );
-		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_Y, LanternPositionsPropertyNames.CURRENT_POSITION_Y );
-		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_POSITION_Z, LanternPositionsPropertyNames.CURRENT_POSITION_Z );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_X, LanternPositionsPropertyNames.CURRENT_X );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_Y, LanternPositionsPropertyNames.CURRENT_Y );
+		this._attachEventDefaultValueMappings( FormFieldSelectors.CURRENT_Z, LanternPositionsPropertyNames.CURRENT_Z );
 
-		this._addWheelEventHandler( FormFieldSelectors.CURRENT_POSITION_X, this.#_lanternPositions, LanternPositionsPropertyNames.CURRENT_POSITION_X );
-		this._addWheelEventHandler( FormFieldSelectors.CURRENT_POSITION_Y, this.#_lanternPositions, LanternPositionsPropertyNames.CURRENT_POSITION_Y );
-		this._addWheelEventHandler( FormFieldSelectors.CURRENT_POSITION_Z, this.#_lanternPositions, LanternPositionsPropertyNames.CURRENT_POSITION_Z );
+		this._addWheelEventHandler( FormFieldSelectors.CURRENT_X, this.#_lanternPositions, LanternPositionsPropertyNames.CURRENT_X );
+		this._addWheelEventHandler( FormFieldSelectors.CURRENT_Y, this.#_lanternPositions, LanternPositionsPropertyNames.CURRENT_Y );
+		this._addWheelEventHandler( FormFieldSelectors.CURRENT_Z, this.#_lanternPositions, LanternPositionsPropertyNames.CURRENT_Z );
 	}
 
 	/**
@@ -156,17 +156,17 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 
 		switch ( propertyName )
 		{
-			case LanternPositionsPropertyNames.CURRENT_POSITION_X:
-			case LanternPositionsPropertyNames.CURRENT_POSITION_Y:
-			case LanternPositionsPropertyNames.CURRENT_POSITION_Z:
+			case LanternPositionsPropertyNames.CURRENT_X:
+			case LanternPositionsPropertyNames.CURRENT_Y:
+			case LanternPositionsPropertyNames.CURRENT_Z:
 			{
 				this.#writeLanternPositionsToApi();
 
 				break;
 			}
-			case LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID:
-			case LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID:
-			case LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID:
+			case LanternPositionsPropertyNames.IS_CURRENT_X_VALID:
+			case LanternPositionsPropertyNames.IS_CURRENT_Y_VALID:
+			case LanternPositionsPropertyNames.IS_CURRENT_Z_VALID:
 			{
 				const mapping = this.#_lanternPositionsPropertyNameFormFieldSelectorMappings.findFirstOrUndefinedBy(
 					mapping => mapping.lanternPositionsPropertyName === propertyName

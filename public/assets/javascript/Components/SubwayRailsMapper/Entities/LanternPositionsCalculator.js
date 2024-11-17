@@ -35,44 +35,44 @@ export class LanternPositionsCalculator extends Abstract
 	 */
 	calculate( lanternPositions )
 	{
-		const calculatedValues = new CalculatedLanternPositions();
+		const calculatedLanternPositions = new CalculatedLanternPositions();
 
-		const differenceX = lanternPositions.currentPositionX - this.#_settings.initialPositionX;
-		const differenceY = lanternPositions.currentPositionY - this.#_settings.initialPositionY;
-		const differenceZ = lanternPositions.currentPositionZ - this.#_settings.initialPositionZ;
+		const differenceX = lanternPositions.currentX - this.#_settings.initialPositionX;
+		const differenceY = lanternPositions.currentY - this.#_settings.initialPositionY;
+		const differenceZ = lanternPositions.currentZ - this.#_settings.initialPositionZ;
 
-		calculatedValues.isCurrentPositionXValid = 0 === differenceX % this.#_settings.chunkSize;
-		calculatedValues.isCurrentPositionYValid = 0 === differenceY % this.#_settings.chunkSize;
-		calculatedValues.isCurrentPositionZValid = 0 === differenceZ % this.#_settings.chunkSize;
+		calculatedLanternPositions.isCurrentXValid = 0 === differenceX % this.#_settings.chunkSize;
+		calculatedLanternPositions.isCurrentYValid = 0 === differenceY % this.#_settings.chunkSize;
+		calculatedLanternPositions.isCurrentZValid = 0 === differenceZ % this.#_settings.chunkSize;
 
 		for ( let n = 1; n <= this.#_settings.chunkSize; n++ )
 		{
 			if ( 0 === ( ( differenceX - n ) % this.#_settings.chunkSize ) )
 			{
-				calculatedValues.calculatedPositionXNegative = lanternPositions.currentPositionX - n;
+				calculatedLanternPositions.calculatedPositionXNegative = lanternPositions.currentX - n;
 			}
 			if ( 0 === ( ( differenceX + n ) % this.#_settings.chunkSize ) )
 			{
-				calculatedValues.calculatedPositionXPositive = lanternPositions.currentPositionX + n;
+				calculatedLanternPositions.calculatedPositionXPositive = lanternPositions.currentX + n;
 			}
 			if ( 0 === ( ( differenceY - n ) % this.#_settings.chunkSize ) )
 			{
-				calculatedValues.calculatedPositionYNegative = lanternPositions.currentPositionY - n;
+				calculatedLanternPositions.calculatedPositionYNegative = lanternPositions.currentY - n;
 			}
 			if ( 0 === ( ( differenceY + n ) % this.#_settings.chunkSize ) )
 			{
-				calculatedValues.calculatedPositionYPositive = lanternPositions.currentPositionY + n;
+				calculatedLanternPositions.calculatedPositionYPositive = lanternPositions.currentY + n;
 			}
 			if ( 0 === ( ( differenceZ - n ) % this.#_settings.chunkSize ) )
 			{
-				calculatedValues.calculatedPositionZNegative = lanternPositions.currentPositionZ - n;
+				calculatedLanternPositions.calculatedPositionZNegative = lanternPositions.currentZ - n;
 			}
 			if ( 0 === ( ( differenceZ + n ) % this.#_settings.chunkSize ) )
 			{
-				calculatedValues.calculatedPositionZPositive = lanternPositions.currentPositionZ + n;
+				calculatedLanternPositions.calculatedPositionZPositive = lanternPositions.currentZ + n;
 			}
 		}
 
-		return calculatedValues;
+		return calculatedLanternPositions;
 	}
 }

@@ -56,10 +56,10 @@ class LanternPositionsAction extends AbstractAction
 		{
 			$lanternPositions = LanternPositionsEntity::fromArray(
 				[
-					'userId'         => $user->getId(),
-					'startPositionX' => 0,
-					'startPositionY' => 0,
-					'startPositionZ' => 0
+					'userId'   => $user->getId(),
+					'currentX' => 0,
+					'currentY' => 0,
+					'currentZ' => 0
 				]
 			);
 		}

@@ -43,9 +43,9 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 				`subwayRailsMapper.lanternPositions`.`_id`,
 				`subwayRailsMapper.lanternPositions`.`id`,
 				`subwayRailsMapper.lanternPositions`.`userId`,
-				`subwayRailsMapper.lanternPositions`.`currentPositionX`,
-				`subwayRailsMapper.lanternPositions`.`currentPositionY`,
-				`subwayRailsMapper.lanternPositions`.`currentPositionZ`
+				`subwayRailsMapper.lanternPositions`.`currentX`,
+				`subwayRailsMapper.lanternPositions`.`currentY`,
+				`subwayRailsMapper.lanternPositions`.`currentZ`
 			FROM
 				`subwayRailsMapper.lanternPositions`
 			WHERE
@@ -89,9 +89,9 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 				`subwayRailsMapper.lanternPositions`.`_id`,
 				`subwayRailsMapper.lanternPositions`.`id`,
 				`subwayRailsMapper.lanternPositions`.`userId`,
-				`subwayRailsMapper.lanternPositions`.`currentPositionX`,
-				`subwayRailsMapper.lanternPositions`.`currentPositionY`,
-				`subwayRailsMapper.lanternPositions`.`currentPositionZ`
+				`subwayRailsMapper.lanternPositions`.`currentX`,
+				`subwayRailsMapper.lanternPositions`.`currentY`,
+				`subwayRailsMapper.lanternPositions`.`currentZ`
 			FROM
 				`subwayRailsMapper.lanternPositions`
 			WHERE
@@ -137,9 +137,9 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 		$query = <<< END
 			INSERT INTO
 				`subwayRailsMapper.lanternPositions`
-				( `id`, `userId`, `currentPositionX`, `currentPositionY`, `currentPositionZ` )
+				( `id`, `userId`, `currentX`, `currentY`, `currentZ` )
 			VALUES
-				( UUID(), :userId, :currentPositionX, :currentPositionY, :currentPositionZ );
+				( UUID(), :userId, :currentX, :currentY, :currentZ );
 		END;
 
 		$lanternPositionsEntityPropertyMapper = ( new EntityPropertyMapperBuilder() )
@@ -151,10 +151,10 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 		$mappedUserWithUserId   = $userEntityPropertyMapper->mapToArray( $userWithUserId );
 
 		$arguments = [
-			'userId'           => $mappedUserWithUserId[ 'id' ],
-			'currentPositionX' => $mappedLanternPositions[ 'currentPositionX' ],
-			'currentPositionY' => $mappedLanternPositions[ 'currentPositionY' ],
-			'currentPositionZ' => $mappedLanternPositions[ 'currentPositionZ' ]
+			'userId'   => $mappedUserWithUserId[ 'id' ],
+			'currentX' => $mappedLanternPositions[ 'currentX' ],
+			'currentY' => $mappedLanternPositions[ 'currentY' ],
+			'currentZ' => $mappedLanternPositions[ 'currentZ' ]
 		];
 
 		$this->persistenceConnector->execute( $query, $arguments );
@@ -190,9 +190,9 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 			UPDATE
 				`subwayRailsMapper.lanternPositions`
 			SET
-				`subwayRailsMapper.lanternPositions`.`currentPositionX` = :currentPositionX,
-				`subwayRailsMapper.lanternPositions`.`currentPositionY` = :currentPositionY,
-				`subwayRailsMapper.lanternPositions`.`currentPositionZ` = :currentPositionZ
+				`subwayRailsMapper.lanternPositions`.`currentX` = :currentX,
+				`subwayRailsMapper.lanternPositions`.`currentY` = :currentY,
+				`subwayRailsMapper.lanternPositions`.`currentZ` = :currentZ
 			WHERE
 				`subwayRailsMapper.lanternPositions`.`_id` = :_id;
 		END;
@@ -204,10 +204,10 @@ class LanternPositionsEntityRepository extends AbstractRepository implements Lan
 		$mappedLanternPositionsWithRecordId = $lanternPositionsEntityPropertyMapper->mapToArray( $lanternPositionsWithRecordId );
 
 		$arguments = [
-			'_id'              => $mappedLanternPositionsWithRecordId[ '_id' ],
-			'currentPositionX' => $mappedLanternPositions[ 'currentPositionX' ],
-			'currentPositionY' => $mappedLanternPositions[ 'currentPositionY' ],
-			'currentPositionZ' => $mappedLanternPositions[ 'currentPositionZ' ]
+			'_id'      => $mappedLanternPositionsWithRecordId[ '_id' ],
+			'currentX' => $mappedLanternPositions[ 'currentX' ],
+			'currentY' => $mappedLanternPositions[ 'currentY' ],
+			'currentZ' => $mappedLanternPositions[ 'currentZ' ]
 		];
 
 		$this->persistenceConnector->execute( $query, $arguments );

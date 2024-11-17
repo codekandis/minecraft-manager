@@ -54,10 +54,10 @@ export class ApiAjaxController extends AbstractApiAjaxController
 		request.payload = this._createRequestPayload(
 			{
 				stationPositions: {
-					[ StationPositionsPropertyNames.ORIENTATION ]:                stationPositions[ StationPositionsPropertyNames.ORIENTATION ],
-					[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ]: stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X ],
-					[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ]: stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y ],
-					[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ]: stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z ]
+					[ StationPositionsPropertyNames.ORIENTATION ]:       stationPositions[ StationPositionsPropertyNames.ORIENTATION ],
+					[ StationPositionsPropertyNames.STRUCTURE_BLOCK_X ]: stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_X ],
+					[ StationPositionsPropertyNames.STRUCTURE_BLOCK_Y ]: stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_Y ],
+					[ StationPositionsPropertyNames.STRUCTURE_BLOCK_Z ]: stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_Z ]
 				}
 			}
 		);

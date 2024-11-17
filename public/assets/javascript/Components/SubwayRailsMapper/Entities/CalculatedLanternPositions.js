@@ -9,22 +9,22 @@ import { Abstract } from '../../../../libraries/jotunheim/Types/Abstract.js';
 export class CalculatedLanternPositions extends Abstract
 {
 	/**
-	 * Stores true if the current position X is valid, otherwise `false`.
+	 * Stores true if the position current X is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	#_isCurrentPositionXValid = false;
+	#_isCurrentXValid = false;
 
 	/**
-	 * Stores true if the current position Y is valid, otherwise `false`.
+	 * Stores true if the position current Y is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	#_isCurrentPositionYValid = false;
+	#_isCurrentYValid = false;
 
 	/**
-	 * Stores true if the current position Z is valid, otherwise `false`.
+	 * Stores true if the position current Z is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	#_isCurrentPositionZValid = false;
+	#_isCurrentZValid = false;
 
 	/**
 	 * Stores the calculated position X negative.
@@ -63,57 +63,57 @@ export class CalculatedLanternPositions extends Abstract
 	#_calculatedPositionZPositive = 0;
 
 	/**
-	 * Gets if the current position X is valid.
-	 * @returns {Boolean} `true` if the current position X is valid, otherwise `false`.
+	 * Gets if the position current X is valid.
+	 * @returns {Boolean} `true` if the position current X is valid, otherwise `false`.
 	 */
-	get isCurrentPositionXValid()
+	get isCurrentXValid()
 	{
-		return this.#_isCurrentPositionXValid;
+		return this.#_isCurrentXValid;
 	}
 
 	/**
-	 * Sets if the current position X is valid.
-	 * @param {Boolean} value `true` if the current position X is valid, otherwise `false`.
+	 * Sets if the position current X is valid.
+	 * @param {Boolean} value `true` if the position current X is valid, otherwise `false`.
 	 */
-	set isCurrentPositionXValid( value )
+	set isCurrentXValid( value )
 	{
-		this.#_isCurrentPositionXValid = value;
+		this.#_isCurrentXValid = value;
 	}
 
 	/**
-	 * Gets if the current position Y is valid.
-	 * @returns {Boolean} `true` if the current position Y is valid, otherwise `false`.
+	 * Gets if the position current Y is valid.
+	 * @returns {Boolean} `true` if the position current Y is valid, otherwise `false`.
 	 */
-	get isCurrentPositionYValid()
+	get isCurrentYValid()
 	{
-		return this.#_isCurrentPositionYValid;
+		return this.#_isCurrentYValid;
 	}
 
 	/**
-	 * Sets if the current position Y is valid.
-	 * @param {Boolean} value `true` if the current position Y is valid, otherwise `false`.
+	 * Sets if the position current Y is valid.
+	 * @param {Boolean} value `true` if the position current Y is valid, otherwise `false`.
 	 */
-	set isCurrentPositionYValid( value )
+	set isCurrentYValid( value )
 	{
-		this.#_isCurrentPositionYValid = value;
+		this.#_isCurrentYValid = value;
 	}
 
 	/**
-	 * Gets if the current position Z is valid.
-	 * @returns {Boolean} `true` if the current position Z is valid, otherwise `false`.
+	 * Gets if the position current Z is valid.
+	 * @returns {Boolean} `true` if the position current Z is valid, otherwise `false`.
 	 */
-	get isCurrentPositionZValid()
+	get isCurrentZValid()
 	{
-		return this.#_isCurrentPositionZValid;
+		return this.#_isCurrentZValid;
 	}
 
 	/**
-	 * Sets if the current position Z is valid.
-	 * @param {Boolean} value `true` if the current position Z is valid, otherwise `false`.
+	 * Sets if the position current Z is valid.
+	 * @param {Boolean} value `true` if the position current Z is valid, otherwise `false`.
 	 */
-	set isCurrentPositionZValid( value )
+	set isCurrentZValid( value )
 	{
-		this.#_isCurrentPositionZValid = value;
+		this.#_isCurrentZValid = value;
 	}
 
 	/**

@@ -28,30 +28,30 @@ export class FormFieldSelectors extends AbstractStatic
 	}
 
 	/**
-	 * Represents the structure block position X.
-	 * @returns {String} The structure block position X.
+	 * Represents the position structure block X.
+	 * @returns {String} The position structure block X.
 	 */
-	static get STRUCTURE_BLOCK_POSITION_X()
+	static get STRUCTURE_BLOCK_X()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.STRUCTURE_BLOCK_X );
 	}
 
 	/**
-	 * Represents the structure block position Y.
-	 * @returns {String} The structure block position Y.
+	 * Represents the position structure block Y.
+	 * @returns {String} The position structure block Y.
 	 */
-	static get STRUCTURE_BLOCK_POSITION_Y()
+	static get STRUCTURE_BLOCK_Y()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.STRUCTURE_BLOCK_Y );
 	}
 
 	/**
-	 * Represents the structure block position Z.
-	 * @returns {String} The structure block position Z.
+	 * Represents the position structure block Z.
+	 * @returns {String} The position structure block Z.
 	 */
-	static get STRUCTURE_BLOCK_POSITION_Z()
+	static get STRUCTURE_BLOCK_Z()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, StationPositionsPropertyNames.STRUCTURE_BLOCK_Z );
 	}
 
 	/**

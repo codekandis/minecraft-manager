@@ -21,9 +21,9 @@ class StationPositionsPersistableEntityPropertyMappings extends AbstractUserBase
 	{
 		parent::__construct(
 			new EntityPropertyMapping( 'orientation', null ),
-			new EntityPropertyMapping( 'structureBlockPositionX', new IntToStringBiDirectionalConverter() ),
-			new EntityPropertyMapping( 'structureBlockPositionY', new IntToStringBiDirectionalConverter() ),
-			new EntityPropertyMapping( 'structureBlockPositionZ', new IntToStringBiDirectionalConverter() )
+			new EntityPropertyMapping( 'structureBlockX', new IntToStringBiDirectionalConverter() ),
+			new EntityPropertyMapping( 'structureBlockY', new IntToStringBiDirectionalConverter() ),
+			new EntityPropertyMapping( 'structureBlockZ', new IntToStringBiDirectionalConverter() )
 		);
 	}
 }

@@ -27,30 +27,30 @@ export class StationPositionsPropertyNames extends AbstractStatic
 	}
 
 	/**
-	 * Represents the structure block position X.
-	 * @returns {String} The structure block position X.
+	 * Represents the position structure block X.
+	 * @returns {String} The position structure block X.
 	 */
-	static get STRUCTURE_BLOCK_POSITION_X()
+	static get STRUCTURE_BLOCK_X()
 	{
-		return 'structureBlockPositionX';
+		return 'structureBlockX';
 	}
 
 	/**
-	 * Represents the structure block position Y.
-	 * @returns {String} The structure block position Y.
+	 * Represents the position structure block Y.
+	 * @returns {String} The position structure block Y.
 	 */
-	static get STRUCTURE_BLOCK_POSITION_Y()
+	static get STRUCTURE_BLOCK_Y()
 	{
-		return 'structureBlockPositionY';
+		return 'structureBlockY';
 	}
 
 	/**
-	 * Represents the structure block position Z.
-	 * @returns {String} The structure block position Z.
+	 * Represents the position structure block Z.
+	 * @returns {String} The position structure block Z.
 	 */
-	static get STRUCTURE_BLOCK_POSITION_Z()
+	static get STRUCTURE_BLOCK_Z()
 	{
-		return 'structureBlockPositionZ';
+		return 'structureBlockZ';
 	}
 
 	/**

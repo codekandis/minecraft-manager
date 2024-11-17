@@ -19,40 +19,40 @@ export class LanternPositions extends AbstractBindable
 	#_settings;
 
 	/**
-	 * Stores the current position X.
+	 * Stores the position current X.
 	 * @type {Number}
 	 */
-	#_currentPositionX = 0;
+	#_currentX = 0;
 
 	/**
-	 * Stores the current position Y.
+	 * Stores the position current Y.
 	 * @type {Number}
 	 */
-	#_currentPositionY = 0;
+	#_currentY = 0;
 
 	/**
-	 * Stores the current position Z.
+	 * Stores the position current Z.
 	 * @type {Number}
 	 */
-	#_currentPositionZ = 0;
+	#_currentZ = 0;
 
 	/**
-	 * Stores true if the current position X is valid, otherwise `false`.
+	 * Stores true if the position current X is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	#_isCurrentPositionXValid = false;
+	#_isCurrentXValid = false;
 
 	/**
-	 * Stores true if the current position Y is valid, otherwise `false`.
+	 * Stores true if the position current Y is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	#_isCurrentPositionYValid = false;
+	#_isCurrentYValid = false;
 
 	/**
-	 * Stores true if the current position Z is valid, otherwise `false`.
+	 * Stores true if the position current Z is valid, otherwise `false`.
 	 * @type {Boolean}
 	 */
-	#_isCurrentPositionZValid = false;
+	#_isCurrentZValid = false;
 
 	/**
 	 * Stores the calculated position X negative.
@@ -104,123 +104,123 @@ export class LanternPositions extends AbstractBindable
 	}
 
 	/**
-	 * Gets the current position X.
-	 * @returns {Number} The current position X.
+	 * Gets the position current X.
+	 * @returns {Number} The position current X.
 	 */
-	get currentPositionX()
+	get currentX()
 	{
-		return this.#_currentPositionX;
+		return this.#_currentX;
 	}
 
 	/**
-	 * Sets the current position X.
-	 * @param {Number} value The current position X.
+	 * Sets the position current X.
+	 * @param {Number} value The position current X.
 	 */
-	set currentPositionX( value )
+	set currentX( value )
 	{
-		this.#_currentPositionX = Number.parseInt( value );
-		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CURRENT_POSITION_X );
+		this.#_currentX = Number.parseInt( value );
+		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CURRENT_X );
 
 		this.calculate();
 	}
 
 	/**
-	 * Gets the current position Y.
-	 * @returns {Number} The current position Y.
+	 * Gets the position current Y.
+	 * @returns {Number} The position current Y.
 	 */
-	get currentPositionY()
+	get currentY()
 	{
-		return this.#_currentPositionY;
+		return this.#_currentY;
 	}
 
 	/**
-	 * Sets the current position Y.
-	 * @param {Number} value The current position Y.
+	 * Sets the position current Y.
+	 * @param {Number} value The position current Y.
 	 */
-	set currentPositionY( value )
+	set currentY( value )
 	{
-		this.#_currentPositionY = Number.parseInt( value );
-		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CURRENT_POSITION_Y );
+		this.#_currentY = Number.parseInt( value );
+		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CURRENT_Y );
 
 		this.calculate();
 	}
 
 	/**
-	 * Gets the current position Z.
-	 * @returns {Number} The current position Z.
+	 * Gets the position current Z.
+	 * @returns {Number} The position current Z.
 	 */
-	get currentPositionZ()
+	get currentZ()
 	{
-		return this.#_currentPositionZ;
+		return this.#_currentZ;
 	}
 
 	/**
-	 * Sets the current position Z.
-	 * @param {Number} value The current position Z.
+	 * Sets the position current Z.
+	 * @param {Number} value The position current Z.
 	 */
-	set currentPositionZ( value )
+	set currentZ( value )
 	{
-		this.#_currentPositionZ = Number.parseInt( value );
-		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CURRENT_POSITION_Z );
+		this.#_currentZ = Number.parseInt( value );
+		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.CURRENT_Z );
 
 		this.calculate();
 	}
 
 	/**
-	 * Gets if the current position X is valid.
-	 * @returns {Boolean} `true` if the current position X is valid, otherwise `false`.
+	 * Gets if the position current X is valid.
+	 * @returns {Boolean} `true` if the position current X is valid, otherwise `false`.
 	 */
-	get isCurrentPositionXValid()
+	get isCurrentXValid()
 	{
-		return this.#_isCurrentPositionXValid;
+		return this.#_isCurrentXValid;
 	}
 
 	/**
-	 * Sets if the current position X is valid.
-	 * @param {Boolean} value `true` if the current position X is valid, otherwise `false`.
+	 * Sets if the position current X is valid.
+	 * @param {Boolean} value `true` if the position current X is valid, otherwise `false`.
 	 */
-	set #isCurrentPositionXValid( value )
+	set #isCurrentXValid( value )
 	{
-		this.#_isCurrentPositionXValid = value;
-		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.IS_CURRENT_POSITION_X_VALID );
+		this.#_isCurrentXValid = value;
+		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.IS_CURRENT_X_VALID );
 	}
 
 	/**
-	 * Gets if the current position Y is valid.
-	 * @returns {Boolean} `true` if the current position Y is valid, otherwise `false`.
+	 * Gets if the position current Y is valid.
+	 * @returns {Boolean} `true` if the position current Y is valid, otherwise `false`.
 	 */
-	get isCurrentPositionYValid()
+	get isCurrentYValid()
 	{
-		return this.#_isCurrentPositionYValid;
+		return this.#_isCurrentYValid;
 	}
 
 	/**
-	 * Sets if the current position Y is valid.
-	 * @param {Boolean} value `true` if the current position Y is valid, otherwise `false`.
+	 * Sets if the position current Y is valid.
+	 * @param {Boolean} value `true` if the position current Y is valid, otherwise `false`.
 	 */
-	set #isCurrentPositionYValid( value )
+	set #isCurrentYValid( value )
 	{
-		this.#_isCurrentPositionYValid = value;
-		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Y_VALID );
+		this.#_isCurrentYValid = value;
+		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.IS_CURRENT_Y_VALID );
 	}
 
 	/**
-	 * Gets if the current position Z is valid.
-	 * @returns {Boolean} `true` if the current position Z is valid, otherwise `false`.
+	 * Gets if the position current Z is valid.
+	 * @returns {Boolean} `true` if the position current Z is valid, otherwise `false`.
 	 */
-	get isCurrentPositionZValid()
+	get isCurrentZValid()
 	{
-		return this.#_isCurrentPositionZValid;
+		return this.#_isCurrentZValid;
 	}
 
 	/**
-	 * Sets if the current position Z is valid.
-	 * @param {Boolean} value `true` if the current position Z is valid, otherwise `false`.
+	 * Sets if the position current Z is valid.
+	 * @param {Boolean} value `true` if the position current Z is valid, otherwise `false`.
 	 */
-	set #isCurrentPositionZValid( value )
+	set #isCurrentZValid( value )
 	{
-		this.#_isCurrentPositionZValid = value;
-		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.IS_CURRENT_POSITION_Z_VALID );
+		this.#_isCurrentZValid = value;
+		this._dispatchPropertyChangedEvent( LanternPositionsPropertyNames.IS_CURRENT_Z_VALID );
 	}
 
 	/**
@@ -355,9 +355,9 @@ export class LanternPositions extends AbstractBindable
 		const calculatedPositions = ( new LanternPositionsCalculator( this.#_settings ) )
 			.calculate( this );
 
-		this.#isCurrentPositionXValid     = calculatedPositions.isCurrentPositionXValid;
-		this.#isCurrentPositionYValid     = calculatedPositions.isCurrentPositionYValid;
-		this.#isCurrentPositionZValid     = calculatedPositions.isCurrentPositionZValid;
+		this.#isCurrentXValid             = calculatedPositions.isCurrentXValid;
+		this.#isCurrentYValid             = calculatedPositions.isCurrentYValid;
+		this.#isCurrentZValid             = calculatedPositions.isCurrentZValid;
 		this.#calculatedPositionXNegative = calculatedPositions.calculatedPositionXNegative;
 		this.#calculatedPositionXPositive = calculatedPositions.calculatedPositionXPositive;
 		this.#calculatedPositionYNegative = calculatedPositions.calculatedPositionYNegative;

@@ -54,9 +54,9 @@ export class ApiAjaxController extends AbstractApiAjaxController
 		request.payload = this._createRequestPayload(
 			{
 				lanternPositions: {
-					[ LanternPositionsPropertyNames.CURRENT_POSITION_X ]: lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_X ],
-					[ LanternPositionsPropertyNames.CURRENT_POSITION_Y ]: lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_Y ],
-					[ LanternPositionsPropertyNames.CURRENT_POSITION_Z ]: lanternPositions[ LanternPositionsPropertyNames.CURRENT_POSITION_Z ]
+					[ LanternPositionsPropertyNames.CURRENT_X ]: lanternPositions[ LanternPositionsPropertyNames.CURRENT_X ],
+					[ LanternPositionsPropertyNames.CURRENT_Y ]: lanternPositions[ LanternPositionsPropertyNames.CURRENT_Y ],
+					[ LanternPositionsPropertyNames.CURRENT_Z ]: lanternPositions[ LanternPositionsPropertyNames.CURRENT_Z ]
 				}
 			}
 		);

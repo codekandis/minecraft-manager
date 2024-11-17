@@ -44,9 +44,9 @@ class StationPositionsEntityRepository extends AbstractRepository implements Sta
 				`subwayStationMapper.stationPositions`.`id`,
 				`subwayStationMapper.stationPositions`.`userId`,
 				`subwayStationMapper.stationPositions`.`orientation`,
-				`subwayStationMapper.stationPositions`.`structureBlockPositionX`,
-				`subwayStationMapper.stationPositions`.`structureBlockPositionY`,
-				`subwayStationMapper.stationPositions`.`structureBlockPositionZ`
+				`subwayStationMapper.stationPositions`.`structureBlockX`,
+				`subwayStationMapper.stationPositions`.`structureBlockY`,
+				`subwayStationMapper.stationPositions`.`structureBlockZ`
 			FROM
 				`subwayStationMapper.stationPositions`
 			WHERE
@@ -91,9 +91,9 @@ class StationPositionsEntityRepository extends AbstractRepository implements Sta
 				`subwayStationMapper.stationPositions`.`id`,
 				`subwayStationMapper.stationPositions`.`userId`,
 				`subwayStationMapper.stationPositions`.`orientation`,
-				`subwayStationMapper.stationPositions`.`structureBlockPositionX`,
-				`subwayStationMapper.stationPositions`.`structureBlockPositionY`,
-				`subwayStationMapper.stationPositions`.`structureBlockPositionZ`
+				`subwayStationMapper.stationPositions`.`structureBlockX`,
+				`subwayStationMapper.stationPositions`.`structureBlockY`,
+				`subwayStationMapper.stationPositions`.`structureBlockZ`
 			FROM
 				`subwayStationMapper.stationPositions`
 			WHERE
@@ -139,9 +139,9 @@ class StationPositionsEntityRepository extends AbstractRepository implements Sta
 		$query = <<< END
 			INSERT INTO
 				`subwayStationMapper.stationPositions`
-				( `id`, `userId`, `orientation`, `structureBlockPositionX`, `structureBlockPositionY`, `structureBlockPositionZ` )
+				( `id`, `userId`, `orientation`, `structureBlockX`, `structureBlockY`, `structureBlockZ` )
 			VALUES
-				( UUID(), :userId, :orientation, :structureBlockPositionX, :structureBlockPositionY, :structureBlockPositionZ );
+				( UUID(), :userId, :orientation, :structureBlockX, :structureBlockY, :structureBlockZ );
 		END;
 
 		$stationPositionsEntityPropertyMapper = ( new EntityPropertyMapperBuilder() )
@@ -153,11 +153,11 @@ class StationPositionsEntityRepository extends AbstractRepository implements Sta
 		$mappedUserWithUserId   = $userEntityPropertyMapper->mapToArray( $userWithUserId );
 
 		$arguments = [
-			'userId'                  => $mappedUserWithUserId[ 'id' ],
-			'orientation'             => $mappedStationPositions[ 'orientation' ],
-			'structureBlockPositionX' => $mappedStationPositions[ 'structureBlockPositionX' ],
-			'structureBlockPositionY' => $mappedStationPositions[ 'structureBlockPositionY' ],
-			'structureBlockPositionZ' => $mappedStationPositions[ 'structureBlockPositionZ' ]
+			'userId'          => $mappedUserWithUserId[ 'id' ],
+			'orientation'     => $mappedStationPositions[ 'orientation' ],
+			'structureBlockX' => $mappedStationPositions[ 'structureBlockX' ],
+			'structureBlockY' => $mappedStationPositions[ 'structureBlockY' ],
+			'structureBlockZ' => $mappedStationPositions[ 'structureBlockZ' ]
 		];
 
 		$this->persistenceConnector->execute( $query, $arguments );
@@ -194,9 +194,9 @@ class StationPositionsEntityRepository extends AbstractRepository implements Sta
 				`subwayStationMapper.stationPositions`
 			SET
 				`subwayStationMapper.stationPositions`.`orientation` = :orientation,
-				`subwayStationMapper.stationPositions`.`structureBlockPositionX` = :structureBlockPositionX,
-				`subwayStationMapper.stationPositions`.`structureBlockPositionY` = :structureBlockPositionY,
-				`subwayStationMapper.stationPositions`.`structureBlockPositionZ` = :structureBlockPositionZ
+				`subwayStationMapper.stationPositions`.`structureBlockX` = :structureBlockX,
+				`subwayStationMapper.stationPositions`.`structureBlockY` = :structureBlockY,
+				`subwayStationMapper.stationPositions`.`structureBlockZ` = :structureBlockZ
 			WHERE
 				`subwayStationMapper.stationPositions`.`_id` = :_id;
 		END;
@@ -208,11 +208,11 @@ class StationPositionsEntityRepository extends AbstractRepository implements Sta
 		$mappedStationPositionsWithRecordId = $stationPositionsEntityPropertyMapper->mapToArray( $stationPositionsWithRecordId );
 
 		$arguments = [
-			'_id'                     => $mappedStationPositionsWithRecordId[ '_id' ],
-			'orientation'             => $mappedStationPositions[ 'orientation' ],
-			'structureBlockPositionX' => $mappedStationPositions[ 'structureBlockPositionX' ],
-			'structureBlockPositionY' => $mappedStationPositions[ 'structureBlockPositionY' ],
-			'structureBlockPositionZ' => $mappedStationPositions[ 'structureBlockPositionZ' ]
+			'_id'             => $mappedStationPositionsWithRecordId[ '_id' ],
+			'orientation'     => $mappedStationPositions[ 'orientation' ],
+			'structureBlockX' => $mappedStationPositions[ 'structureBlockX' ],
+			'structureBlockY' => $mappedStationPositions[ 'structureBlockY' ],
+			'structureBlockZ' => $mappedStationPositions[ 'structureBlockZ' ]
 		];
 
 		$this->persistenceConnector->execute( $query, $arguments );

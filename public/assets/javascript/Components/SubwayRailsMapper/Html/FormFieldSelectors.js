@@ -19,30 +19,30 @@ export class FormFieldSelectors extends AbstractStatic
 	}
 
 	/**
-	 * Represents the current position X.
-	 * @returns {String} The current position X.
+	 * Represents the position current X.
+	 * @returns {String} The position current X.
 	 */
-	static get CURRENT_POSITION_X()
+	static get CURRENT_X()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CURRENT_POSITION_X );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CURRENT_X );
 	}
 
 	/**
-	 * Represents the current position Y.
-	 * @returns {String} The current position Y.
+	 * Represents the position current Y.
+	 * @returns {String} The position current Y.
 	 */
-	static get CURRENT_POSITION_Y()
+	static get CURRENT_Y()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CURRENT_POSITION_Y );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CURRENT_Y );
 	}
 
 	/**
-	 * Represents the current position Z.
-	 * @returns {String} The current position Z.
+	 * Represents the position current Z.
+	 * @returns {String} The position current Z.
 	 */
-	static get CURRENT_POSITION_Z()
+	static get CURRENT_Z()
 	{
-		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CURRENT_POSITION_Z );
+		return String.format`${ 0 }-${ 1 }`( FormFieldSelectors.MODULE_ROOT, LanternPositionsPropertyNames.CURRENT_Z );
 	}
 
 	/**

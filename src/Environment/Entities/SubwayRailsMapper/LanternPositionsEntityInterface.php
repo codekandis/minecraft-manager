@@ -11,38 +11,38 @@ use CodeKandis\MinecraftManager\Environment\Entities\PersistableUserBasedEntityI
 interface LanternPositionsEntityInterface extends PersistableUserBasedEntityInterface
 {
 	/**
-	 * Gets the current position X.
-	 * @return int The current position X.
+	 * Gets the position current X.
+	 * @return int The position current X.
 	 */
-	public function getCurrentPositionX(): int;
+	public function getCurrentX(): int;
 
 	/**
-	 * Sets the current position X.
-	 * @param int $currentPositionX The current position X.
+	 * Sets the position current X.
+	 * @param int $currentX The position current X.
 	 */
-	public function setCurrentPositionX( int $currentPositionX ): void;
+	public function setCurrentX( int $currentX ): void;
 
 	/**
-	 * Gets the current position Y.
-	 * @return int The current position Y.
+	 * Gets the position current Y.
+	 * @return int The position current Y.
 	 */
-	public function getCurrentPositionY(): int;
+	public function getCurrentY(): int;
 
 	/**
-	 * Sets the current position Y.
-	 * @param int $currentPositionY The current position Y.
+	 * Sets the position current Y.
+	 * @param int $currentY The position current Y.
 	 */
-	public function setCurrentPositionY( int $currentPositionY ): void;
+	public function setCurrentY( int $currentY ): void;
 
 	/**
-	 * Gets the current position Z.
-	 * @return int The current position Z.
+	 * Gets the position current Z.
+	 * @return int The position current Z.
 	 */
-	public function getCurrentPositionZ(): int;
+	public function getCurrentZ(): int;
 
 	/**
-	 * Sets the current position Z.
-	 * @param int $currentPositionZ The current position Z.
+	 * Sets the position current Z.
+	 * @param int $currentZ The position current Z.
 	 */
-	public function setCurrentPositionZ( int $currentPositionZ ): void;
+	public function setCurrentZ( int $currentZ ): void;
 }

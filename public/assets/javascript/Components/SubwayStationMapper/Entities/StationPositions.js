@@ -78,22 +78,22 @@ export class StationPositions extends AbstractBindable
 	#_orientation = Orientation.NORTH;
 
 	/**
-	 * Stores the structure block position X.
+	 * Stores the position structure block X.
 	 * @type {Number}
 	 */
-	#_structureBlockPositionX = 0;
+	#_structureBlockX = 0;
 
 	/**
-	 * Stores the structure block position Y.
+	 * Stores the position structure block Y.
 	 * @type {Number}
 	 */
-	#_structureBlockPositionY = 0;
+	#_structureBlockY = 0;
 
 	/**
-	 * Stores the structure block position Z.
+	 * Stores the position structure block Z.
 	 * @type {Number}
 	 */
-	#_structureBlockPositionZ = 0;
+	#_structureBlockZ = 0;
 
 	/**
 	 * Stores the calculated command station head mining.
@@ -607,64 +607,64 @@ export class StationPositions extends AbstractBindable
 	}
 
 	/**
-	 * Gets the structure block position X.
-	 * @returns {Number} The structure block position X.
+	 * Gets the position structure block X.
+	 * @returns {Number} The position structure block X.
 	 */
-	get structureBlockPositionX()
+	get structureBlockX()
 	{
-		return this.#_structureBlockPositionX;
+		return this.#_structureBlockX;
 	}
 
 	/**
-	 * Sets the structure block position X.
-	 * @param {Number} value The structure block position X.
+	 * Sets the position structure block X.
+	 * @param {Number} value The position structure block X.
 	 */
-	set structureBlockPositionX( value )
+	set structureBlockX( value )
 	{
-		this.#_structureBlockPositionX = Number.parseInt( value );
-		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_X );
+		this.#_structureBlockX = Number.parseInt( value );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.STRUCTURE_BLOCK_X );
 
 		this.calculate();
 	}
 
 	/**
-	 * Gets the structure block position Y.
-	 * @returns {Number} The structure block position Y.
+	 * Gets the position structure block Y.
+	 * @returns {Number} The position structure block Y.
 	 */
-	get structureBlockPositionY()
+	get structureBlockY()
 	{
-		return this.#_structureBlockPositionY;
+		return this.#_structureBlockY;
 	}
 
 	/**
-	 * Sets the structure block position Y.
-	 * @param {Number} value The structure block position Y.
+	 * Sets the position structure block Y.
+	 * @param {Number} value The position structure block Y.
 	 */
-	set structureBlockPositionY( value )
+	set structureBlockY( value )
 	{
-		this.#_structureBlockPositionY = Number.parseInt( value );
-		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Y );
+		this.#_structureBlockY = Number.parseInt( value );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.STRUCTURE_BLOCK_Y );
 
 		this.calculate();
 	}
 
 	/**
-	 * Gets the structure block position Z.
-	 * @returns {Number} The structure block position Z.
+	 * Gets the position structure block Z.
+	 * @returns {Number} The position structure block Z.
 	 */
-	get structureBlockPositionZ()
+	get structureBlockZ()
 	{
-		return this.#_structureBlockPositionZ;
+		return this.#_structureBlockZ;
 	}
 
 	/**
-	 * Sets the structure block position Z.
-	 * @param {Number} value The structure block position Z.
+	 * Sets the position structure block Z.
+	 * @param {Number} value The position structure block Z.
 	 */
-	set structureBlockPositionZ( value )
+	set structureBlockZ( value )
 	{
-		this.#_structureBlockPositionZ = Number.parseInt( value );
-		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.STRUCTURE_BLOCK_POSITION_Z );
+		this.#_structureBlockZ = Number.parseInt( value );
+		this._dispatchPropertyChangedEvent( StationPositionsPropertyNames.STRUCTURE_BLOCK_Z );
 
 		this.calculate();
 	}

@@ -23,38 +23,38 @@ interface StationPositionsEntityInterface extends PersistableUserBasedEntityInte
 	public function setOrientation( string $orientation ): void;
 
 	/**
-	 * Gets the structure blocks' position X.
-	 * @return int The structure blocks' position X.
+	 * Gets the position structure block X.
+	 * @return int The position structure block X.
 	 */
-	public function getStructureBlockPositionX(): int;
+	public function getStructureBlockX(): int;
 
 	/**
-	 * Sets the structure blocks' position X.
-	 * @param int $structureBlockPositionX The structure blocks' position X.
+	 * Sets the position structure block X.
+	 * @param int $structureBlockX The position structure block X.
 	 */
-	public function setStructureBlockPositionX( int $structureBlockPositionX ): void;
+	public function setStructureBlockX( int $structureBlockX ): void;
 
 	/**
-	 * Gets the structure blocks' position Y.
-	 * @return int The structure blocks' position Y.
+	 * Gets the position structure block Y.
+	 * @return int The position structure block Y.
 	 */
-	public function getStructureBlockPositionY(): int;
+	public function getStructureBlockY(): int;
 
 	/**
-	 * Sets the structure blocks' position Y.
-	 * @param int $structureBlockPositionY The structure blocks' position Y.
+	 * Sets the position structure block Y.
+	 * @param int $structureBlockY The position structure block Y.
 	 */
-	public function setStructureBlockPositionY( int $structureBlockPositionY ): void;
+	public function setStructureBlockY( int $structureBlockY ): void;
 
 	/**
-	 * Gets the structure blocks' position Z.
-	 * @return int The structure blocks' position Z.
+	 * Gets the position structure block Z.
+	 * @return int The position structure block Z.
 	 */
-	public function getStructureBlockPositionZ(): int;
+	public function getStructureBlockZ(): int;
 
 	/**
-	 * Sets the structure blocks' position Z.
-	 * @param int $structureBlockPositionZ The structure blocks' position Z.
+	 * Sets the position structure block Z.
+	 * @param int $structureBlockZ The position structure block Z.
 	 */
-	public function setStructureBlockPositionZ( int $structureBlockPositionZ ): void;
+	public function setStructureBlockZ( int $structureBlockZ ): void;
 }

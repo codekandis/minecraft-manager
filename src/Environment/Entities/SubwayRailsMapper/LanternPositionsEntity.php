@@ -11,68 +11,68 @@ use CodeKandis\MinecraftManager\Environment\Entities\AbstractPersistableUserBase
 class LanternPositionsEntity extends AbstractPersistableUserBasedEntity implements LanternPositionsEntityInterface
 {
 	/**
-	 * Stores the current position X.
+	 * Stores the position current X.
 	 * @var int
 	 */
-	public int $currentPositionX = 0;
+	public int $currentX = 0;
 
 	/**
-	 * Stores the current position Y.
+	 * Stores the position current Y.
 	 * @var int
 	 */
-	public int $currentPositionY = 0;
+	public int $currentY = 0;
 
 	/**
-	 * Stores the current position Z.
+	 * Stores the position current Z.
 	 * @var int
 	 */
-	public int $currentPositionZ = 0;
+	public int $currentZ = 0;
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getCurrentPositionX(): int
+	public function getCurrentX(): int
 	{
-		return $this->currentPositionX;
+		return $this->currentX;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function setCurrentPositionX( int $currentPositionX ): void
+	public function setCurrentX( int $currentX ): void
 	{
-		$this->currentPositionX = $currentPositionX;
+		$this->currentX = $currentX;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getCurrentPositionY(): int
+	public function getCurrentY(): int
 	{
-		return $this->currentPositionY;
+		return $this->currentY;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function setCurrentPositionY( int $currentPositionY ): void
+	public function setCurrentY( int $currentY ): void
 	{
-		$this->currentPositionY = $currentPositionY;
+		$this->currentY = $currentY;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function getCurrentPositionZ(): int
+	public function getCurrentZ(): int
 	{
-		return $this->currentPositionZ;
+		return $this->currentZ;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function setCurrentPositionZ( int $currentPositionZ ): void
+	public function setCurrentZ( int $currentZ ): void
 	{
-		$this->currentPositionZ = $currentPositionZ;
+		$this->currentZ = $currentZ;
 	}
 }

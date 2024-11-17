@@ -57,11 +57,11 @@ class StationPositionsAction extends AbstractAction
 		{
 			$stationPositions = StationPositionsEntity::fromArray(
 				[
-					'userId'                  => $user->getId(),
-					'orientation'             => Orientations::NORTH,
-					'structureBlockPositionX' => 0,
-					'structureBlockPositionY' => 0,
-					'structureBlockPositionZ' => 0
+					'userId'          => $user->getId(),
+					'orientation'     => Orientations::NORTH,
+					'structureBlockX' => 0,
+					'structureBlockY' => 0,
+					'structureBlockZ' => 0
 				]
 			);
 		}

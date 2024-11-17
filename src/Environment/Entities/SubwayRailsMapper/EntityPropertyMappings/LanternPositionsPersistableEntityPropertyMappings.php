@@ -20,9 +20,9 @@ class LanternPositionsPersistableEntityPropertyMappings extends AbstractUserBase
 	public function __construct()
 	{
 		parent::__construct(
-			new EntityPropertyMapping( 'currentPositionX', new IntToStringBiDirectionalConverter() ),
-			new EntityPropertyMapping( 'currentPositionY', new IntToStringBiDirectionalConverter() ),
-			new EntityPropertyMapping( 'currentPositionZ', new IntToStringBiDirectionalConverter() )
+			new EntityPropertyMapping( 'currentX', new IntToStringBiDirectionalConverter() ),
+			new EntityPropertyMapping( 'currentY', new IntToStringBiDirectionalConverter() ),
+			new EntityPropertyMapping( 'currentZ', new IntToStringBiDirectionalConverter() )
 		);
 	}
 }
