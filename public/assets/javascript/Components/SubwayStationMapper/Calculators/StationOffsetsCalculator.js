@@ -4,8 +4,8 @@ import { Abstract } from '../../../../libraries/jotunheim/Types/Abstract.js';
 import { Orientation } from '../../../Entities/Orientation.js';
 import { Position } from '../../../Entities/Position.js';
 import { PositionOffset } from '../../../Entities/PositionOffset.js';
+import { StationPositionsOffsetPresets } from '../Entities/StationPositionsOffsetPresets.js';
 import { CalculatedStationPositions } from './CalculatedStationPositions.js';
-import { StationPositionsOffsetPresets } from './StationPositionsOffsetPresets.js';
 
 /**
  * Represents a station positions calculator.

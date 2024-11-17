@@ -3,8 +3,8 @@
 import { AbstractBindable } from '../../../../libraries/jotunheim/Types/DataBindings/AbstractBindable.js';
 import { PropertyChangedEvent } from '../../../../libraries/jotunheim/Types/DataBindings/PropertyChangedEvent.js';
 import { SettingsPropertyNames } from '../../Settings/Enumerations/SettingsPropertyNames.js';
+import { LanternPositionsCalculator } from '../Calculators/LanternPositionsCalculator.js';
 import { LanternPositionsPropertyNames } from '../Enumerations/LanternPositionsPropertyNames.js';
-import { LanternPositionsCalculator } from './LanternPositionsCalculator.js';
 
 /**
  * Represents the lantern positions.

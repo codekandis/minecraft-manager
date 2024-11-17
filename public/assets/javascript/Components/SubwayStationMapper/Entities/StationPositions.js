@@ -2,8 +2,8 @@
 
 import { AbstractBindable } from '../../../../libraries/jotunheim/Types/DataBindings/AbstractBindable.js';
 import { Orientation } from '../../../Entities/Orientation.js';
+import { StationOffsetsCalculator } from '../Calculators/StationOffsetsCalculator.js';
 import { StationPositionsPropertyNames } from '../Enumerations/StationPositionsPropertyNames.js';
-import { StationOffsetsCalculator } from './StationOffsetsCalculator.js';
 
 /**
  * Represents the station positions.
