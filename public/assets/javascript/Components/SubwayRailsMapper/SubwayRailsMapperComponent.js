@@ -60,8 +60,7 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	#initialize()
 	{
 		this.#_lanternPositions = new LanternPositions( this.__settings );
-
-		this.#readLanternPositionsFromApi();
+		this.#_lanternPositions.propertyChangedEvent( this.#lanternPositions_propertyChanged );
 	}
 
 	/**
@@ -101,8 +100,6 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 					this.#_lanternPositions.currentX = lanternPositions[ LanternPositionsPropertyNames.CURRENT_X ];
 					this.#_lanternPositions.currentY = lanternPositions[ LanternPositionsPropertyNames.CURRENT_Y ];
 					this.#_lanternPositions.currentZ = lanternPositions[ LanternPositionsPropertyNames.CURRENT_Z ];
-
-					this.#_lanternPositions.propertyChangedEvent( this.#lanternPositions_propertyChanged );
 				}
 			);
 	}
@@ -112,8 +109,11 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 	 */
 	#writeLanternPositionsToApi()
 	{
-		( new ApiAjaxController() )
-			.writeLanternPositions( this.#_lanternPositions )
+		if ( true === this.__isExecuting )
+		{
+			( new ApiAjaxController() )
+				.writeLanternPositions( this.#_lanternPositions )
+		}
 	}
 
 	/**
@@ -144,6 +144,17 @@ export class SubwayRailsMapperComponent extends AbstractComponent
 		this._addWheelEventHandler( FormFieldSelectors.CURRENT_X, this.#_lanternPositions, LanternPositionsPropertyNames.CURRENT_X );
 		this._addWheelEventHandler( FormFieldSelectors.CURRENT_Y, this.#_lanternPositions, LanternPositionsPropertyNames.CURRENT_Y );
 		this._addWheelEventHandler( FormFieldSelectors.CURRENT_Z, this.#_lanternPositions, LanternPositionsPropertyNames.CURRENT_Z );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	execute()
+	{
+		super.execute();
+
+		this.#readLanternPositionsFromApi();
+		this._toggleIsExecuting();
 	}
 
 	/**

@@ -10,6 +10,12 @@ import { AbstractBindable } from '../../libraries/jotunheim/Types/DataBindings/A
 export class AbstractComponent extends AbstractBindable
 {
 	/**
+	 * Stores if the component is executing.
+	 * @type {Boolean}
+	 */
+	#_isExecuting = false;
+
+	/**
 	 * Stores the applications' settings.
 	 * @type {Settings}
 	 */
@@ -24,6 +30,23 @@ export class AbstractComponent extends AbstractBindable
 		super();
 
 		this.__settings = settings;
+	}
+
+	/**
+	 * Determines if the component is executing.
+	 * @return {Boolean} `true` if the component is executing, otherwise `false`.
+	 */
+	get _isExecuting()
+	{
+		return this.#_isExecuting;
+	}
+
+	/**
+	 * Toggles if the component is executing.
+	 */
+	_toggleIsExecuting()
+	{
+		this.__isExecuting = !this.__isExecuting;
 	}
 
 	/**

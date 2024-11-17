@@ -108,8 +108,7 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	#initialize()
 	{
 		this.#_stationPositions = new StationPositions( this.__settings );
-
-		this.#readStationPositionsFromApi();
+		this.#_stationPositions.propertyChangedEvent( this.#stationPositions_propertyChanged );
 	}
 
 	/**
@@ -438,8 +437,6 @@ export class SubwayStationMapperComponent extends AbstractComponent
 					this.#_stationPositions.structureBlockX = stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_X ];
 					this.#_stationPositions.structureBlockY = stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_Y ];
 					this.#_stationPositions.structureBlockZ = stationPositions[ StationPositionsPropertyNames.STRUCTURE_BLOCK_Z ];
-
-					this.#_stationPositions.propertyChangedEvent( this.#stationPositions_propertyChanged );
 				}
 			);
 	}
@@ -449,8 +446,11 @@ export class SubwayStationMapperComponent extends AbstractComponent
 	 */
 	async #writeStationPositionsToApi()
 	{
-		await ( new ApiAjaxController() )
-			.writeStationPositions( this.#_stationPositions )
+		if ( true === this.__isExecuting )
+		{
+			await ( new ApiAjaxController() )
+				.writeStationPositions( this.#_stationPositions )
+		}
 	}
 
 	/**
@@ -565,6 +565,17 @@ export class SubwayStationMapperComponent extends AbstractComponent
 				break;
 			}
 		}
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	execute()
+	{
+		super.execute();
+
+		this.#readStationPositionsFromApi();
+		this._toggleIsExecuting();
 	}
 
 	/**

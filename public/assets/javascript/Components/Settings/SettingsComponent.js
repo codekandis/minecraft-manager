@@ -30,7 +30,7 @@ export class SettingsComponent extends AbstractComponent
 	 */
 	#initialize()
 	{
-		this.#readSettingsFromApi();
+		this.__settings.propertyChangedEvent( this.#setting_propertyChanged );
 	}
 
 	/**
@@ -47,8 +47,6 @@ export class SettingsComponent extends AbstractComponent
 					this.__settings.initialPositionX = settings[ SettingsPropertyNames.INITIAL_POSITION_X ];
 					this.__settings.initialPositionY = settings[ SettingsPropertyNames.INITIAL_POSITION_Y ];
 					this.__settings.initialPositionZ = settings[ SettingsPropertyNames.INITIAL_POSITION_Z ];
-
-					this.__settings.propertyChangedEvent( this.#setting_propertyChanged );
 				}
 			);
 	}
@@ -58,8 +56,11 @@ export class SettingsComponent extends AbstractComponent
 	 */
 	#writeSettingsToApi()
 	{
-		( new ApiAjaxController() )
-			.writeSettings( this.__settings );
+		if ( true === this.__isExecuting )
+		{
+			( new ApiAjaxController() )
+				.writeSettings( this.__settings );
+		}
 	}
 
 	/**
@@ -87,6 +88,17 @@ export class SettingsComponent extends AbstractComponent
 		this._addWheelEventHandler( FormFieldSelectors.INITIAL_POSITION_X, this.__settings, SettingsPropertyNames.INITIAL_POSITION_X );
 		this._addWheelEventHandler( FormFieldSelectors.INITIAL_POSITION_Y, this.__settings, SettingsPropertyNames.INITIAL_POSITION_Y );
 		this._addWheelEventHandler( FormFieldSelectors.INITIAL_POSITION_Z, this.__settings, SettingsPropertyNames.INITIAL_POSITION_Z );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	execute()
+	{
+		super.execute();
+
+		this.#readSettingsFromApi();
+		this._toggleIsExecuting();
 	}
 
 	/**
